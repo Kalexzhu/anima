@@ -1,0 +1,301 @@
+{
+  "tick": 9,
+  "event": "机舱外没有任何视觉参照——没有地平线，没有地面，没有光线方向。只有仪表盘上的数字，以及旋翼和发动机的声音。机体的倾斜角开始偏离正常飞行范围，但在云层中无法从窗外感知方向。大约从这一刻起，飞行员面临的是无法用感官纠正的空间迷失。螺旋俯冲在仪表读数上是清晰的，但在云层内部的机舱里，感觉可能是另一种描述。",
+  "time": "09:26",
+  "location": "空中，Calabasas 上方，高度约 2300 英尺",
+  "sleep_state": "AWAKE",
+  "emotion": {
+    "dominant": "anticipation",
+    "intensity": 0.177,
+    "anger": 0.022,
+    "fear": 0.229,
+    "joy": 0.127,
+    "sadness": 0.089,
+    "surprise": 0.112,
+    "disgust": 0.274,
+    "anticipation": 0.287,
+    "trust": 0.047
+  },
+  "moments": [
+    {
+      "id": 0,
+      "type": "visual_fragment",
+      "display_text": "左脚踝内侧，护踝边缘那道红痕，靠近骨突处颜色略深",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 1,
+      "type": "body_sensation",
+      "display_text": "右肩有点什么，不疼，就是硬",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 2,
+      "type": "compressed_speech",
+      "display_text": "等落地——",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 3,
+      "type": "voice_intrusion",
+      "display_text": "Gianna说，「好了，爸，我知道了」",
+      "source": "Gianna",
+      "module": "reactive"
+    },
+    {
+      "id": 4,
+      "type": "unsymbolized",
+      "display_text": "知道自己在想护踝压痕会不会再往里走一点，没有词，但认知是清楚的",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 5,
+      "type": "intrusion",
+      "display_text": "Mamba Academy下周场地时间表还没确认",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 6,
+      "type": "expanded_speech",
+      "display_text": "落地再说，不该悬着这件事",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 7,
+      "type": "body_sensation",
+      "display_text": "右手握着手机，拇指关节的皮肤绷着，不是用力，就是没有放松",
+      "source": null,
+      "module": "rumination"
+    },
+    {
+      "id": 8,
+      "type": "voice_intrusion",
+      "display_text": "Phil Jackson说，「你是我执教过最难搞的球员。」",
+      "source": "Phil Jackson",
+      "module": "rumination"
+    },
+    {
+      "id": 9,
+      "type": "compressed_speech",
+      "display_text": "最难——最难——最难教——",
+      "source": null,
+      "module": "rumination"
+    },
+    {
+      "id": 10,
+      "type": "unsymbolized",
+      "display_text": "Phil那句话和Gianna昨晚问的那个问题同时压在某个地方，不痛，就是有重量，散不开",
+      "source": null,
+      "module": "rumination"
+    },
+    {
+      "id": 11,
+      "type": "body_sensation",
+      "display_text": "右肩带扣压着锁骨，科比没有去调整它。座位在轻微颠一下之后稳住了，她察觉到自己的背脊主动往靠背上贴了一点，像是在确认什么东西还在原位。",
+      "source": null,
+      "module": "self_eval"
+    },
+    {
+      "id": 12,
+      "type": "unsymbolized",
+      "display_text": "有个东西跟Gianna昨晚练完之后说的某句话有关，具体的字没有浮上来，但那个东西此刻是偏暖的，不是悬的那一种。",
+      "source": null,
+      "module": "self_eval"
+    },
+    {
+      "id": 13,
+      "type": "expanded_speech",
+      "display_text": "科比的视线落在前排座椅背面，脑子里跑的是：「下周的课表要再压一下第三组的量，不是因为她不行，是因为现在这个节奏她会用惯性撑，不是用判断力撑。」这个想法走完了一整圈，收在「判断力」这个词上，停了一下。",
+      "source": null,
+      "module": "self_eval"
+    },
+    {
+      "id": 14,
+      "type": "visual_fragment",
+      "display_text": "窗外云层的边缘是平整的，没有向下的视角，高度感消失了，只剩一片白色和飞机发动机声，Gianna坐在几个座位外，没有看窗外",
+      "source": null,
+      "module": "philosophy"
+    },
+    {
+      "id": 15,
+      "type": "unsymbolized",
+      "display_text": "有什么东西关于「赢」和「终点」同时成立，但那两件事指向的不是同一个方向，这个矛盾没有被命名，也没有被解决，只是同时在那里",
+      "source": null,
+      "module": "philosophy"
+    },
+    {
+      "id": 16,
+      "type": "expanded_speech",
+      "display_text": "Mamba Academy那些孩子——他们训练的时候眼睛里有一种东西，科比记得自己17岁时没有那种东西，或者说有，但被另一种东西盖住了。那另一种东西叫什么？是「证明」还是别的什么？现在那个词还在不在？",
+      "source": null,
+      "module": "philosophy"
+    },
+    {
+      "id": 17,
+      "type": "unsymbolized",
+      "display_text": "一次赢，再一次赢，这个序列在某个点之后不再是积累，但它也不是空的——如果它不是积累，它是什么的重复，重复为了什么",
+      "source": null,
+      "module": "philosophy"
+    },
+    {
+      "id": 18,
+      "type": "visual_fragment",
+      "display_text": "逆光里一条街道，地面石板的缝隙间距是均匀的——人影拉长到原始体积的四到五倍，落在缝隙上形成一种切割关系。影子的边缘不是软的，是硬边。有什么东西关于「这个角度」和「这个高度」之间的比例是对的。",
+      "source": null,
+      "module": "aesthetic"
+    },
+    {
+      "id": 19,
+      "type": "unsymbolized",
+      "display_text": "有什么东西关于窗外云层的水平分层——不是颜色，是层与层之间的间距密度——和某个训练动作的节拍结构是同一个东西。",
+      "source": null,
+      "module": "aesthetic"
+    },
+    {
+      "id": 20,
+      "type": "voice_intrusion",
+      "display_text": "Gianna说，「爸你看」",
+      "source": "Gianna",
+      "module": "aesthetic"
+    },
+    {
+      "id": 21,
+      "type": "visual_fragment",
+      "display_text": "另一条时间线的更衣室。2008年奥运村，科比和沙奎尔·奥尼尔并排坐在储物柜前，各自低头系鞋带。两套美国队球衣挂在同一排钩上。没有对话，只有尼龙拉链的声音。",
+      "source": null,
+      "module": "counterfactual"
+    },
+    {
+      "id": 22,
+      "type": "compressed_speech",
+      "display_text": "如果我们没崩，沙奎尔拿几个冠军——我拿几个。",
+      "source": null,
+      "module": "counterfactual"
+    },
+    {
+      "id": 23,
+      "type": "visual_fragment",
+      "display_text": "另一条时间线的Mamba Academy球场。Gianna在三分线运球，视线锁着篮筐。科比站在边线，旁边站着沙奎尔·奥尼尔，两个人都看着Gianna，没有互相看对方。沙奎尔把手机举起来，给Gianna录视频。",
+      "source": null,
+      "module": "counterfactual"
+    },
+    {
+      "id": 24,
+      "type": "visual_fragment",
+      "display_text": "一卷VHS录像带，黑色外壳，白色标签纸上用黑色记号笔写着「Magic」，笔迹是科比自己的，字母歪斜，M的两笔竖线高度不一样。录像带放在意大利公寓卧室的木地板上，地板漆面已经起翘，翘起的一角是浅黄色。",
+      "source": null,
+      "module": "positive_memory"
+    },
+    {
+      "id": 25,
+      "type": "body_sensation",
+      "display_text": "右手食指和中指弯曲，指尖压在掌心皮肤上，那是模仿Kareem勾手出手瞬间的手型，在意大利公寓卧室里重复过很多次，没有篮球，只有手指弯曲时指节内侧的摩擦感。",
+      "source": null,
+      "module": "positive_memory"
+    },
+    {
+      "id": 26,
+      "type": "voice_intrusion",
+      "display_text": "Gianna说，「爸，你看我这个角度对不对？」",
+      "source": "Gianna",
+      "module": "positive_memory"
+    },
+    {
+      "id": 27,
+      "type": "visual_fragment",
+      "display_text": "舷窗玻璃上有一道细水痕，从左上角斜到右下角，云层的白压在外面，厚实，离得很近，窗框金属边沿是冷的",
+      "source": null,
+      "module": "daydream"
+    },
+    {
+      "id": 28,
+      "type": "body_sensation",
+      "display_text": "左手掌压在大腿上，牛仔布的横纹织线硌进掌心，五根手指的重量分别落实，小指侧的掌缘感觉到腿部肌肉随气流颠簸轻微收紧一次",
+      "source": null,
+      "module": "daydream"
+    },
+    {
+      "id": 29,
+      "type": "body_sensation",
+      "display_text": "颠簸结束后座椅靠背通过脊背传来一次细小的震动余波，从腰椎第四节向上散开三厘米，振幅不超过一枚硬币的厚度，停在肩胛骨内侧边缘就消失了",
+      "source": null,
+      "module": "daydream"
+    },
+    {
+      "id": 30,
+      "type": "body_sensation",
+      "display_text": "震动消失的位置，肩胛骨内侧边缘的皮肤下方留着一片轻微的热感，宽度不超过两根手指并拢，温度比周围高出一点点，像是刚被阳光晒过的混凝土地面——手掌贴上去一秒后感受到的那种残余的温",
+      "source": null,
+      "module": "daydream"
+    },
+    {
+      "id": 31,
+      "type": "visual_fragment",
+      "display_text": "今晚，科比坐在Gianna卧室门口的走廊地板上，背靠墙，膝盖微弯。走廊灯是暖黄色的，光从门缝里透出来，落在他左手腕的皮肤上。Gianna在里面跟队友打电话，声音很大，他能听见她说「那个pick-and-roll根本防不住我」，然后是一阵笑声。他低头看着自己手掌，右手掌心有一道旧伤疤，他用拇指慢慢压了一下那道疤。走廊里有一股晚饭后的米饭气味还没散干净。",
+      "source": null,
+      "module": "future"
+    },
+    {
+      "id": 32,
+      "type": "body_sensation",
+      "display_text": "明天早上，厨房。科比站在料理台旁，背对窗户，光从他左肩后面斜进来，打在台面的不锈钢水槽边缘上，形成一条细亮边。Gianna背着球包从楼梯跑下来，球包撞在她腰侧，发出一声闷响。她绕过椅子，鞋底在瓷砖地板上蹭出一下短促的摩擦声。科比感觉到气流从她经过的方向刷过来，带着一点洗发水的气味，已经有些散了。她路过他旁边时，肩膀碰了一下他的手肘，没有说话，只是侧过脸看了他一眼，嘴角往右边拉了一下，就转头去打开冰",
+      "source": null,
+      "module": "future"
+    },
+    {
+      "id": 33,
+      "type": "body_sensation",
+      "display_text": "明天早上，球馆停车场。科比坐在驾驶座里，发动机刚熄火，引擎盖下传来一阵细碎的金属冷却声，滴答，滴答，间隔不均匀。座椅皮革已经被身体压出了一个浅坑，脊背贴在上面有一点微温。Gianna已经推开副驾车门跳出去了，车身轻微弹了一下，弹簧的震动顺着座椅传进他的腰椎。他没有马上下车，手还搭在方向盘右侧，掌心感觉到塑料的纹路。停车场地面有一块被轮胎磨深了的沥青凹槽，里面积着一层薄水，反着灰白的天光。Gi",
+      "source": null,
+      "module": "future"
+    },
+    {
+      "id": 34,
+      "type": "compressed_speech",
+      "display_text": "回来再看。",
+      "source": null,
+      "module": "social_rehearsal"
+    },
+    {
+      "id": 35,
+      "type": "voice_intrusion",
+      "display_text": "Gianna说，「Gianna 在科比旁边低头看着球场草图，头发垂下来，手指在纸上划了一下：「爸，我们到了先去找 Alyssa 她们吗？」",
+      "source": "Gianna",
+      "module": "social_rehearsal"
+    },
+    {
+      "id": 36,
+      "type": "compressed_speech",
+      "display_text": "先找教练签到，Alyssa 她们自己知道在哪。",
+      "source": null,
+      "module": "social_rehearsal"
+    },
+    {
+      "id": 37,
+      "type": "compressed_speech",
+      "display_text": "等落地再说。",
+      "source": null,
+      "module": "social_rehearsal"
+    },
+    {
+      "id": 38,
+      "type": "visual_fragment",
+      "display_text": "Gianna右肩胛骨，投篮后的惯性让肩膀向前卷，白色训练服背面在肩胛骨处绷出一个浅浮凸，布料纹路被撑开",
+      "source": null,
+      "module": "imagery"
+    },
+    {
+      "id": 39,
+      "type": "body_sensation",
+      "display_text": "左膝关节内侧，一股很细的压力感，不痛，像是有什么在等着痛但还没到",
+      "source": null,
+      "module": "imagery"
+    }
+  ]
+}

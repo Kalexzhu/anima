@@ -1,0 +1,308 @@
+{
+  "tick": 4,
+  "event": "会议中有一个议题涉及训练强度标准的调整——有教练建议对青少年训练营降低强度要求以扩大招募人数。科比直接反对，理由是「稀释标准会稀释成果」。他的语气没有变化，但在场所有人都知道这个讨论就此关闭。会议结束前，有人提到明天 Camarillo 的活动有记者跟拍，科比说没问题。挂断电话后，书房里静了一会儿。他在笔记本上写了两行字，然后打开另一个窗口，看了一眼 ESPN 的实时数据：LeBron 今晚主场对阵费城 76 人。距离纪录还差 63 分。今天不会破。",
+  "time": "13:00",
+  "location": "Newport Beach 家中书房",
+  "sleep_state": "AWAKE",
+  "emotion": {
+    "dominant": "joy",
+    "intensity": 0.072,
+    "anger": 0.0,
+    "fear": 0.036,
+    "joy": 0.161,
+    "sadness": 0.0,
+    "surprise": 0.068,
+    "disgust": 0.0,
+    "anticipation": 0.043,
+    "trust": 0.087
+  },
+  "moments": [
+    {
+      "id": 0,
+      "type": "body_sensation",
+      "display_text": "右肩有点僵，没动它",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 1,
+      "type": "visual_fragment",
+      "display_text": "Gianna落地那一脚，脚踝内侧压进去半寸",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 2,
+      "type": "compressed_speech",
+      "display_text": "弧度——",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 3,
+      "type": "voice_intrusion",
+      "display_text": "Gianna说，「「我会比你更厉害的，爸」」",
+      "source": "Gianna",
+      "module": "reactive"
+    },
+    {
+      "id": 4,
+      "type": "unsymbolized",
+      "display_text": "知道自己在想那四个空心球，没有任何具体画面，只知道是那四个",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 5,
+      "type": "intrusion",
+      "display_text": "球鞋放在车里没拿进来",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 6,
+      "type": "expanded_speech",
+      "display_text": "重心再压低，就这一件事",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 7,
+      "type": "body_sensation",
+      "display_text": "左腿腓肠肌，静止站立时感到一个向内凹陷的点，不是痛，是缺了一块的感觉，就在跟腱上方三指",
+      "source": null,
+      "module": "rumination"
+    },
+    {
+      "id": 8,
+      "type": "compressed_speech",
+      "display_text": "「那个声音不是韧带」",
+      "source": null,
+      "module": "rumination"
+    },
+    {
+      "id": 9,
+      "type": "body_sensation",
+      "display_text": "左腿腓肠肌，还是那个凹陷，没有消失，手没有碰那里，但知道那里是空的",
+      "source": null,
+      "module": "rumination"
+    },
+    {
+      "id": 10,
+      "type": "voice_intrusion",
+      "display_text": "Gianna说，「「爸你看这个角度」」",
+      "source": "Gianna",
+      "module": "rumination"
+    },
+    {
+      "id": 11,
+      "type": "compressed_speech",
+      "display_text": "「那个声音不是韧带，是棒球棒」",
+      "source": null,
+      "module": "rumination"
+    },
+    {
+      "id": 12,
+      "type": "visual_fragment",
+      "display_text": "书桌左侧那张照片里，Gianna的手腕角度是错的，但科比当时没有开口，他等她连续做了第三次，第三次的手腕角度和第一次完全一样，然后他才走过去，把她的手腕托起来调了一下，没说话。照片里捕捉的是那个时刻之前的一秒，她的眼睛还在看着球，还不知道他要走过去。",
+      "source": null,
+      "module": "self_eval"
+    },
+    {
+      "id": 13,
+      "type": "unsymbolized",
+      "display_text": "书桌上的纸叠着，最上面那张的角被压弯了，不是折痕，是被什么东西压了一段时间自己弯下去的。科比现在坐着，没有在看那叠纸，但有什么东西知道那个弯角在那里。三次之后再纠正这件事，不是他想出来的，是某个更早的地方传下来的，那个地方现在不在书房里，但也没有完全不在。",
+      "source": null,
+      "module": "self_eval"
+    },
+    {
+      "id": 14,
+      "type": "body_sensation",
+      "display_text": "椅背抵着科比的脊背中段，不是不舒服，是一种重量被接住的感觉，但接住的程度还不完全，脊背和椅背之间有一点空隙，那个空隙没有在收紧，也没有在放松，就停在那里。",
+      "source": null,
+      "module": "self_eval"
+    },
+    {
+      "id": 15,
+      "type": "visual_fragment",
+      "display_text": "桌上有一张Gianna上周的训练计划表，是她自己写的，字迹比上个月工整，某一栏的时间她改过，原来写的数字被划掉，新数字比旧数字多四十分钟。",
+      "source": null,
+      "module": "philosophy"
+    },
+    {
+      "id": 16,
+      "type": "unsymbolized",
+      "display_text": "一个还没有形成问题的感知：这个「多出来的四十分钟」，是从哪里来的。是Gianna自己要的，还是Gianna认为应该要的，还是Gianna认为「我」认为应该要的。这三件事目前没有被区分开，但它们不是同一件事。",
+      "source": null,
+      "module": "philosophy"
+    },
+    {
+      "id": 17,
+      "type": "expanded_speech",
+      "display_text": "我退役之后接触她的时间多了，这是事实。多出来的时间我们在一起训练，这也是事实。但我不知道在这两件事之间，她的「想打球」有没有发生过形变。她告诉我她想打WNBA，我相信她说的是真的。但「真的想」和「在我旁边长大之后真的想」，我没有办法把这两个版本拆开看。",
+      "source": null,
+      "module": "philosophy"
+    },
+    {
+      "id": 18,
+      "type": "unsymbolized",
+      "display_text": "一个无法落地的问题正在悬着：如果Gianna不是我的女儿，她现在在做什么。这个问题没有答案，但它不消失。",
+      "source": null,
+      "module": "philosophy"
+    },
+    {
+      "id": 19,
+      "type": "body_sensation",
+      "display_text": "手腕内侧某个角度——不是弯曲角度，是旋转轴线的位置——在回想Gianna今天那个翻身跳投时激活了一下，持续不超过半秒，然后消散",
+      "source": null,
+      "module": "aesthetic"
+    },
+    {
+      "id": 20,
+      "type": "visual_fragment",
+      "display_text": "书桌上那叠打印的训练计划纸，边缘对齐但不完全，最上面一张右下角翘起约15度，纸的密度和桌面木纹方向形成两套不平行的网格",
+      "source": null,
+      "module": "aesthetic"
+    },
+    {
+      "id": 21,
+      "type": "unsymbolized",
+      "display_text": "有什么关于「重复次数」的东西是值得重新数的——不是总量，是某个特定动作在某个特定节拍位置出现的频率，这个频率目前是错的",
+      "source": null,
+      "module": "aesthetic"
+    },
+    {
+      "id": 22,
+      "type": "visual_fragment",
+      "display_text": "赛季末更衣室，Shaq背对着坐在储物柜前，脱球鞋，两个人都不说话。如果那时候科比走过去把手放在Shaq肩膀上，停三秒钟——Shaq会先开口。那条时间线里，2004年他们不分开。5连冠的队伍不拆。Gianna出生进的是一个还没输过总决赛的家。",
+      "source": null,
+      "module": "counterfactual"
+    },
+    {
+      "id": 23,
+      "type": "compressed_speech",
+      "display_text": "那个版本的我……还是那个版本的我吗",
+      "source": null,
+      "module": "counterfactual"
+    },
+    {
+      "id": 24,
+      "type": "visual_fragment",
+      "display_text": "另一条时间线：2010年总冠军庆典，Shaq也在场边。Gianna那时六岁，坐在科比肩膀上，离Shaq近到能摸他的手。不是这条时间线的样子——现在Gianna只从采访片段里认识Shaq。",
+      "source": null,
+      "module": "counterfactual"
+    },
+    {
+      "id": 25,
+      "type": "visual_fragment",
+      "display_text": "1996年，Forum Forum Forum——不，是大厅通往训练馆的走廊，地板是磨损的木色，灯管靠近出口那头有一盏是黄的。Shaquille O'Neal背对着走廊站着，汗衫颜色是深灰，背宽到挡住了后面的储物柜。科比从他左侧绕过去，两人之间的距离大概是半步。",
+      "source": null,
+      "module": "positive_memory"
+    },
+    {
+      "id": 26,
+      "type": "body_sensation",
+      "display_text": "那个犹豫发生在腰以下——脚还没有移，重心已经向左转了一度，然后停住。停住的那一刻，膝盖后侧有一个轻微的锁紧。",
+      "source": null,
+      "module": "positive_memory"
+    },
+    {
+      "id": 27,
+      "type": "voice_intrusion",
+      "display_text": "Shaquille O'Neal说，「「Ball.」」",
+      "source": "Shaquille O'Neal",
+      "module": "positive_memory"
+    },
+    {
+      "id": 28,
+      "type": "visual_fragment",
+      "display_text": "书房窗帘没拉严，一条下午阳光斜切进来，落在书桌左角，把木纹照得很亮，其余地方都是暗的",
+      "source": null,
+      "module": "daydream"
+    },
+    {
+      "id": 29,
+      "type": "body_sensation",
+      "display_text": "手指搭在书桌木纹边缘，那条阳光照到的地方比旁边木头明显热一些，大概两三度的差距，皮肤感觉得出来",
+      "source": null,
+      "module": "daydream"
+    },
+    {
+      "id": 30,
+      "type": "body_sensation",
+      "display_text": "手指离开桌边，掌心朝上放在腿上，牛仔布的织纹顶着手心，每一个交叉点都是一个小突起，密集但均匀，比桌面的木纹更硬，更冷",
+      "source": null,
+      "module": "daydream"
+    },
+    {
+      "id": 31,
+      "type": "body_sensation",
+      "display_text": "掌心的牛仔布突起还没消退，脚底先动了——左脚跟微微离地，鞋底橡胶在地板上轻轻转了半圈，木地板表面有一条细缝，鞋底边缘恰好卡进去又滑出来，比牛仔布光滑，比桌面温",
+      "source": null,
+      "module": "daydream"
+    },
+    {
+      "id": 32,
+      "type": "visual_fragment",
+      "display_text": "明天下午某个时刻，书房的光线斜切过书桌——一本翻开的笔记本，他用黑色签字笔在页面右下角写下某个句子，笔尖停在句号处没有抬起，墨水在纸面上晕出一个小小的圆点。",
+      "source": null,
+      "module": "future"
+    },
+    {
+      "id": 33,
+      "type": "body_sensation",
+      "display_text": "明天早上，他站在Gianna的训练场边缘，水泥地面的凉意从运动鞋底透上来。她运球转身，球鞋摩擦地板的声音在空旷的馆内短促地响一下，他的胸腔里有什么东西跟着那个声音微微收紧了一下，不是担忧，更像是某种还没有名字的确认。",
+      "source": null,
+      "module": "future"
+    },
+    {
+      "id": 34,
+      "type": "body_sensation",
+      "display_text": "明天早上训练结束后，体育馆侧门开着，外面的冷空气从那条缝隙压进来。Gianna把毛巾搭在脖子上朝他走过来，脸上还带着刚跑完的红。他站在那里，手插在口袋里，掌心感觉到裤子内衬布料的质地。她走到他旁边站定，两个人都没说话，只有远处馆外停车场偶尔一辆车驶过的声音穿过那条缝传进来，低沉的，然后消失。他的肩膀在那一刻是松的。",
+      "source": null,
+      "module": "future"
+    },
+    {
+      "id": 35,
+      "type": "compressed_speech",
+      "display_text": "电话三点。先把条款理清楚。",
+      "source": null,
+      "module": "social_rehearsal"
+    },
+    {
+      "id": 36,
+      "type": "voice_intrusion",
+      "display_text": "Rob Pelinka说，「Kobe, 我下午两点半有个会，三点可能会晚几分钟。」",
+      "source": "Rob Pelinka",
+      "module": "social_rehearsal"
+    },
+    {
+      "id": 37,
+      "type": "compressed_speech",
+      "display_text": "没事，我让Gianna先做热身。",
+      "source": null,
+      "module": "social_rehearsal"
+    },
+    {
+      "id": 38,
+      "type": "compressed_speech",
+      "display_text": "好，那我出发。",
+      "source": null,
+      "module": "social_rehearsal"
+    },
+    {
+      "id": 39,
+      "type": "visual_fragment",
+      "display_text": "犹他球馆的天花板灯光，黄白色，其中一盏微微偏移，光柱里有浮尘，Gianna右手食指指节上一条细线压痕，篮球纹路留下的，皮肤还没完全回弹",
+      "source": null,
+      "module": "imagery"
+    },
+    {
+      "id": 40,
+      "type": "body_sensation",
+      "display_text": "右脚踝内侧，一条沿骨缝走的细热线，不是痛，是热，从踝骨下沿向上两厘米停住",
+      "source": null,
+      "module": "imagery"
+    }
+  ]
+}

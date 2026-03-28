@@ -1,0 +1,308 @@
+{
+  "tick": 3,
+  "event": "午餐过程中 Natalia 提到她下个月的钢琴考级，Gianna 在旁边给她分析「备考策略」，Vanessa 补充了一句让她们先吃饭。科比基本没说话，但在听。Capri 在 Vanessa 旁边的儿童椅里打了个哈欠，把几个人都逗笑了。饭后科比留在餐桌旁，打开笔记本电脑看了一眼邮件，里面有一封来自 Granity Studios 编辑团队的进度报告，还有一封 Mamba Sports Academy 合伙人关于教练聘任问题的邮件。他大概浏览了一下，给其中一封发了简短回复，合上电脑。下午还有电话会议。",
+  "time": "11:00",
+  "location": "Newport Beach 家中餐厅",
+  "sleep_state": "AWAKE",
+  "emotion": {
+    "dominant": "trust",
+    "intensity": 0.104,
+    "anger": 0.0,
+    "fear": 0.181,
+    "joy": 0.075,
+    "sadness": 0.0,
+    "surprise": 0.084,
+    "disgust": 0.0,
+    "anticipation": 0.055,
+    "trust": 0.194
+  },
+  "moments": [
+    {
+      "id": 0,
+      "type": "visual_fragment",
+      "display_text": "Gianna抬头，下颌微微收，眼睛直着盯过来，没有笑",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 1,
+      "type": "body_sensation",
+      "display_text": "胸口有点松，同时有点紧，两个东西叠着",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 2,
+      "type": "compressed_speech",
+      "display_text": "宣战——",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 3,
+      "type": "voice_intrusion",
+      "display_text": "Gianna Bryant说，「「我会比你更厉害的，爸」」",
+      "source": "Gianna Bryant",
+      "module": "reactive"
+    },
+    {
+      "id": 4,
+      "type": "visual_fragment",
+      "display_text": "大西洋论坛走廊，袜子卷成球，落在地板上，闷的一声",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 5,
+      "type": "unsymbolized",
+      "display_text": "知道在想那个眼神和自己六岁时候的眼神是不是同一件事，没有词，但认知是清楚的",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 6,
+      "type": "expanded_speech",
+      "display_text": "她现在已经在借利息了",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 7,
+      "type": "body_sensation",
+      "display_text": "右手虎口，没有碰任何东西，但压感在那里，像握着球的最后一刻，皮料的纹路还在掌心里。",
+      "source": null,
+      "module": "rumination"
+    },
+    {
+      "id": 8,
+      "type": "visual_fragment",
+      "display_text": "四条弧线，四个空心入网，Gianna站在罚球线后面，脚没有动，就那样看着。",
+      "source": null,
+      "module": "rumination"
+    },
+    {
+      "id": 9,
+      "type": "compressed_speech",
+      "display_text": "四个都进了。",
+      "source": null,
+      "module": "rumination"
+    },
+    {
+      "id": 10,
+      "type": "visual_fragment",
+      "display_text": "四条弧线，Gianna的脚还是没有动，就那样看着，四个都进了。",
+      "source": null,
+      "module": "rumination"
+    },
+    {
+      "id": 11,
+      "type": "unsymbolized",
+      "display_text": "某个东西没有落地。",
+      "source": null,
+      "module": "rumination"
+    },
+    {
+      "id": 12,
+      "type": "visual_fragment",
+      "display_text": "餐桌上那本故事书的封面朝上，右下角有一道她上周留下的折痕，纸已经翻白了。她没有去碰它。",
+      "source": null,
+      "module": "self_eval"
+    },
+    {
+      "id": 13,
+      "type": "unsymbolized",
+      "display_text": "有什么东西停在那里，不是书，不是那折痕，是更早的某个决定，在她还没决定之前就已经结束了——Gianna 今天说的那句话没有进来，但她记得 Gianna 说话时头是侧着的。",
+      "source": null,
+      "module": "self_eval"
+    },
+    {
+      "id": 14,
+      "type": "body_sensation",
+      "display_text": "右手握着杯子，温度从掌心向上传，手指没有用力，但没有松开的意思。",
+      "source": null,
+      "module": "self_eval"
+    },
+    {
+      "id": 15,
+      "type": "visual_fragment",
+      "display_text": "餐桌上的盘子，Gianna的那份吃了一半，叉子斜放着，她已经回后院了。科比的那份还是满的。",
+      "source": null,
+      "module": "philosophy"
+    },
+    {
+      "id": 16,
+      "type": "unsymbolized",
+      "display_text": "有一个模糊的区分在形成：「赢」是一件事，「赢了之后还在」是另一件事。这两件事之前被当成同一件事处理过很长时间。",
+      "source": null,
+      "module": "philosophy"
+    },
+    {
+      "id": 17,
+      "type": "expanded_speech",
+      "display_text": "那个空洞不是因为没有对手了。比赛结束之后还有新赛季，空洞在新赛季开始之前就填上了。退役之后空洞没有被填上，这说明填它的不是下一场比赛。那它是什么——在每一场比赛开始之前就已经存在的那个东西，每次赢了只是暂时看不见它，不是它消失了。Gianna在后院运球，她不需要赢来证明她在场上。她就在那里。这两件事之间有什么差别。",
+      "source": null,
+      "module": "philosophy"
+    },
+    {
+      "id": 18,
+      "type": "unsymbolized",
+      "display_text": "一个还没有成形的问题：如果空洞一直在，那四十一岁之前那些「填上」的感觉，算什么。",
+      "source": null,
+      "module": "philosophy"
+    },
+    {
+      "id": 19,
+      "type": "visual_fragment",
+      "display_text": "录像定帧：进攻方三人形成钝角三角形，顶点在弧顶，两底角分别贴近两侧低位——防守方的重心分布被这个钝角的开口角度强制拉宽，空隙不是跑出来的，是三角形的内角和在地板上展开的结果",
+      "source": null,
+      "module": "aesthetic"
+    },
+    {
+      "id": 20,
+      "type": "unsymbolized",
+      "display_text": "有某个比例是错的——不是Gianna的，是录像里那个控球后卫站位偏了几度，钝角的开口稍微窄了，整个几何的「有效性」降了一档，但不知道该用哪个数字描述这个差",
+      "source": null,
+      "module": "aesthetic"
+    },
+    {
+      "id": 21,
+      "type": "visual_fragment",
+      "display_text": "餐桌木纹横向延伸，纹路密度在靠近桌边处略微压缩——和录像里内线两人间距在最后两帧突然收窄的节奏相同，都是某种东西在边界处的堆积",
+      "source": null,
+      "module": "aesthetic"
+    },
+    {
+      "id": 22,
+      "type": "visual_fragment",
+      "display_text": "餐桌边，Gianna把一块吐司折了一半塞进嘴里，同时用手机看比赛录像。画面切换：2003年之后的某一场季后赛，球馆走廊，一堆记者堵在更衣室门口，不是等他谈球——2003年那件事从来没发生的那条线里，记者只是等他谈进攻。走廊是空的。差别就这么一点。",
+      "source": null,
+      "module": "counterfactual"
+    },
+    {
+      "id": 23,
+      "type": "compressed_speech",
+      "display_text": "那年Gianna两岁。那年如果只是个普通夏天——她长大就只知道爸爸是打球的。不是那个还要解释很多东西的爸爸。",
+      "source": null,
+      "module": "counterfactual"
+    },
+    {
+      "id": 24,
+      "type": "unsymbolized",
+      "display_text": "有个模糊的感知：Gianna现在坐在这里，跟那条线里坐在这里，好像差了一层什么。不是比较，不是悔，就是知道差了一层。",
+      "source": null,
+      "module": "counterfactual"
+    },
+    {
+      "id": 25,
+      "type": "visual_fragment",
+      "display_text": "餐桌右侧，Gianna的练习本摊开在椅子上，封面右下角有一道铅笔划痕，歪斜的。本子边压着一只橙色的篮球护腕，橡皮筋松弛地垮下来，颜色和昨天训练时一样。",
+      "source": null,
+      "module": "positive_memory"
+    },
+    {
+      "id": 26,
+      "type": "body_sensation",
+      "display_text": "左手手指搭在咖啡杯外壁，瓷面是温的，不烫，热量在指节第二关节处停住了。",
+      "source": null,
+      "module": "positive_memory"
+    },
+    {
+      "id": 27,
+      "type": "unsymbolized",
+      "display_text": "LeBron今晚的比赛开球时间，以及一个还没有被说出来的数字，同时压在某处，不是担忧，也不是期待，就是压着。",
+      "source": null,
+      "module": "positive_memory"
+    },
+    {
+      "id": 28,
+      "type": "visual_fragment",
+      "display_text": "餐桌上的橙汁杯壁凝着细密水珠，Newport Beach 十一点的侧光从百叶窗条缝压进来，在桌面木纹上切出一排平行亮线，最近的那条正好压在Gianna昨晚留下的那张战术笔记纸边缘——铅笔线歪歪斜斜，数字写到一半",
+      "source": null,
+      "module": "daydream"
+    },
+    {
+      "id": 29,
+      "type": "body_sensation",
+      "display_text": "他伸手把那张笔记纸拿起来，纸边划过拇指指腹——薄薄的，有一点毛边的摩擦感，铅笔压过的地方微微凸起，指纹能感觉到每一道笔画的棱。纸还带着餐厅的温度，不冷，比手心略低一度。",
+      "source": null,
+      "module": "daydream"
+    },
+    {
+      "id": 30,
+      "type": "body_sensation",
+      "display_text": "他把那张纸放下，手掌平摊压在桌面上——餐桌是浅色橡木，纹理粗而直，掌心感受到木头的凉意从中心向四周漫开，比纸的温度低两三度，实，有重量感。窗外的光斜切进来，打在他左手的背面，那一条光带让皮肤表面有轻微的热度，和桌面的凉形成两层。他的手指微微弯曲，指节抵住木纹，感受到纹路的走向，横的、竖的，有一道纹比其他的略深，右手中指指尖停在那里。",
+      "source": null,
+      "module": "daydream"
+    },
+    {
+      "id": 31,
+      "type": "body_sensation",
+      "display_text": "他起身，椅脚在地板砖上发出一声短促的摩擦声，鞋底接触到冷砖的瞬间，凉意从脚掌前端透进来——比餐桌面更硬，没有木头的弹性，是那种密实的、不吸热的凉。他走向厨房方向，第三步踩到阳光照进来的那块地砖，温度立刻换了，砖面被晒透，脚底一暖，两块砖之间的温差像一条线踩过去。冰箱门拉开，冷气从胸口往下压，前颈和前胸先感觉到，衬衫布料被推着轻微贴紧皮肤。他拿出一瓶水，瓶身的冷直接转印进手心，",
+      "source": null,
+      "module": "daydream"
+    },
+    {
+      "id": 32,
+      "type": "visual_fragment",
+      "display_text": "今天下午晚些时候，Mamba Academy训练馆侧门的推拉玻璃门——光线从西侧斜切进来，在木地板上压出一道很长的橙黄色矩形。Gianna站在三分线弧顶偏右的位置，球刚离手，旋转着向篮筐飞去。科比坐在折叠椅上，双肘撑膝，视线跟着球。球进了，网绳轻轻弹了一下。Gianna没有回头，只是低着头走向罚球线，嘴里小声数着什么——这是她自己定的训练量，不是他要求的。折叠椅的金属支脚压在木地板上，地板微微发出一点声音。体育馆里有空调，但西侧那扇",
+      "source": null,
+      "module": "future"
+    },
+    {
+      "id": 33,
+      "type": "body_sensation",
+      "display_text": "明天早上，Gianna从楼梯跑下来，书包撞在她侧腰上发出一声闷响。科比站在厨房台面旁，手里握着一个装满果汁的玻璃杯，杯壁是凉的。Gianna经过他身边时头发还没完全干，带着一股洗发水的气味，她顺手从台面上抓起一片土司，嘴里含混地说了句什么，语气很快，尾音上扬。他没完全听清，但能判断那是个问句——关于今天训练的某件事。他的拇指在杯壁上轻轻摩挲了一下，玻璃微凉。",
+      "source": null,
+      "module": "future"
+    },
+    {
+      "id": 34,
+      "type": "body_sensation",
+      "display_text": "明天早上，他开口回答的瞬间——声音从喉咙出来，比预期的低了半个调，像是刚用完的肌肉。Gianna已经转过身面对他，土司还举在半空，嘴角沾着一点碎屑。他听见自己说出那句话，同时感觉到右手指节微微收紧，杯壁的凉意从指尖传进掌心。窗外停车道上有一辆车经过，轮胎压过沥青的声音很短，然后消失。Gianna的眼睛看着他，等他说完——那双眼睛有点像在核对一个答案，不是怀疑，是确认。他把最后一个字收住，停顿了一拍。那一拍里他感觉到腹腔有",
+      "source": null,
+      "module": "future"
+    },
+    {
+      "id": 35,
+      "type": "compressed_speech",
+      "display_text": "Granity那边……今晚回。",
+      "source": null,
+      "module": "social_rehearsal"
+    },
+    {
+      "id": 36,
+      "type": "voice_intrusion",
+      "display_text": "Gianna说，「爸，今天下午我可以提前去球馆练后撤步吗？」",
+      "source": "Gianna",
+      "module": "social_rehearsal"
+    },
+    {
+      "id": 37,
+      "type": "compressed_speech",
+      "display_text": "行，我陪你去。",
+      "source": null,
+      "module": "social_rehearsal"
+    },
+    {
+      "id": 38,
+      "type": "compressed_speech",
+      "display_text": "今天就我们两个。",
+      "source": null,
+      "module": "social_rehearsal"
+    },
+    {
+      "id": 39,
+      "type": "visual_fragment",
+      "display_text": "Gianna左脚踩在球馆木地板上，脚踝骨突出，白袜子拉到小腿肚，球在她右手里，手指间距比上个月宽了。",
+      "source": null,
+      "module": "imagery"
+    },
+    {
+      "id": 40,
+      "type": "body_sensation",
+      "display_text": "胸骨正中，一块压感，不痛，像一枚硬币平放在那里，呼气时硬币轻轻沉下去一点。",
+      "source": null,
+      "module": "imagery"
+    }
+  ]
+}

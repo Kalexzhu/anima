@@ -1,0 +1,167 @@
+[
+  {
+    "tick": 1,
+    "date": "2020-01-25",
+    "wall_clock_time": "07:00",
+    "location": "Newport Beach 家中主卧",
+    "activity": "独自清醒，未起床",
+    "sleep_state": "AWAKE",
+    "tick_duration_hours": 2.0,
+    "description": "科比在黎明前独自清醒，房间里只有海风和远处偶尔的车声。Vanessa 还在睡。他躺着，脑子里已经开始转——今天要开的教练会议、下周 Granity Studios 的截止日期、Gianna 明天要打的比赛。他习惯这样：比任何人都醒得早，这不是失眠，是他对自己的基本要求。",
+    "event": "清晨独醒，一天的第一次意识流。房间里 Vanessa 的呼吸声均匀。科比没有拿手机，只是盯着天花板。窗帘边缘透进来一条极细的蓝光——太平洋方向的黎明。他想到明天 Gianna 要打的比赛，想到上周她在训练中用错了脚步，他当时没有多说，但心里记着要找机会再讲。这一天有两件事要处理：上午陪 Gigi 训练，下午一个 Mamba Academy 教练组电话会议。此外，ESPN 昨天一直在讲 LeBron 接近历史得分纪录的事。科比在 Twitter 上看见了，没有发表任何评论，只是看了数据：LeBron 距离他的 33643 分还差 63 分。"
+  },
+  {
+    "tick": 2,
+    "date": "2020-01-25",
+    "wall_clock_time": "09:00",
+    "location": "Newport Beach 家中后院",
+    "activity": "与 Gianna 训练：篮球基本功",
+    "sleep_state": "AWAKE",
+    "tick_duration_hours": 2.0,
+    "description": "科比在自家后院陪 Gianna 训练。后院有一个可折叠篮球架，是他专门为 Gigi 装的。他们不是在玩，是在认真工作——脚步，身位，接球前的准备姿态。科比用的是他当年 Phil Jackson 反复给他讲的东西，但换了语言，换了方式，因为 Gigi 不是他，他需要看她是什么样的球员再决定怎么教。",
+    "event": "后院训练进行到第四十分钟时，Gianna 的左转身拉杆还是有问题——重心在落地前就向右偏了。科比没有立刻纠正，让她再做了两次，确认不是偶发，然后走上去，蹲下来，手放在她的左膝盖上，示范那个重心转移的时机。Gianna 点头，重做。第三次做对了。科比拍了一下她的肩膀。他没有说「很好」，他说的是「再来一次」。两人的对话很少，主要是球声和偶尔的脚步声。结束前 Gianna 问他明天去 Camarillo 是几点出发，他说大概九点，坐直升机去，快。"
+  },
+  {
+    "tick": 3,
+    "date": "2020-01-25",
+    "wall_clock_time": "11:00",
+    "location": "Newport Beach 家中餐厅",
+    "activity": "与家人共进午餐",
+    "sleep_state": "AWAKE",
+    "tick_duration_hours": 2.0,
+    "description": "家里的午饭时间。Vanessa 在，几个孩子都在——包括最小的 Capri，刚七个月大。这是科比退役后最喜欢的部分之一：中午不在训练场，不在飞机上，就在家里，可以看到桌子对面坐着的人。他吃得不多，但他在场，这对他来说算一件事。",
+    "event": "午餐过程中 Natalia 提到她下个月的钢琴考级，Gianna 在旁边给她分析「备考策略」，Vanessa 补充了一句让她们先吃饭。科比基本没说话，但在听。Capri 在 Vanessa 旁边的儿童椅里打了个哈欠，把几个人都逗笑了。饭后科比留在餐桌旁，打开笔记本电脑看了一眼邮件，里面有一封来自 Granity Studios 编辑团队的进度报告，还有一封 Mamba Sports Academy 合伙人关于教练聘任问题的邮件。他大概浏览了一下，给其中一封发了简短回复，合上电脑。下午还有电话会议。"
+  },
+  {
+    "tick": 4,
+    "date": "2020-01-25",
+    "wall_clock_time": "13:00",
+    "location": "Newport Beach 家中书房",
+    "activity": "Mamba Sports Academy 教练组电话会议",
+    "sleep_state": "AWAKE",
+    "tick_duration_hours": 2.0,
+    "description": "书房的门关着。电话会议大约一个小时，主题是某个教练项目的课程框架调整，以及一个关于招募年轻球员训练营的提案。科比参与这类事情和他打球时一样：准备充分，有具体意见，不轻易妥协，但也不是不听人说。退役后他花了大量时间在这上面，因为这不是慈善项目，这是他认为篮球教育应该做的样子。",
+    "event": "会议中有一个议题涉及训练强度标准的调整——有教练建议对青少年训练营降低强度要求以扩大招募人数。科比直接反对，理由是「稀释标准会稀释成果」。他的语气没有变化，但在场所有人都知道这个讨论就此关闭。会议结束前，有人提到明天 Camarillo 的活动有记者跟拍，科比说没问题。挂断电话后，书房里静了一会儿。他在笔记本上写了两行字，然后打开另一个窗口，看了一眼 ESPN 的实时数据：LeBron 今晚主场对阵费城 76 人。距离纪录还差 63 分。今天不会破。"
+  },
+  {
+    "tick": 5,
+    "date": "2020-01-25",
+    "wall_clock_time": "15:00",
+    "location": "Newport Beach 家中客厅",
+    "activity": "查看 ESPN 推送，处理社交媒体",
+    "sleep_state": "AWAKE",
+    "tick_duration_hours": 2.0,
+    "description": "下午手机推送：ESPN 头条「LeBron James 今晚将在费城出战，本赛季第三高效输出场次……」科比坐在客厅沙发上，手机屏幕开着。距离比赛开始还有几个小时，但数据分析已经铺天盖地。各媒体都在预测今晚的得分，算他到底差多少分才能在这场或下几场比赛打破科比的纪录。",
+    "event": "科比浏览了几篇文章，停在一篇关于「NBA 历史得分王」纪录演变历史的长文上，看了几段。文章回顾了 Kareem 创造纪录的时代，以及科比在 2006 年超越 Kareem 的那个夜晚。他在那段上停留了大概两分钟，然后退出。他发了一条 Instagram 快拍，内容是一段 Mamba Academy 训练营的剪辑视频，没有任何关于 LeBron 纪录的文字。他给 LeBron 发了一条私信——简短的，说的是「You deserve it」和「much respect」——但还没有发，先存在草稿里。今晚看完比赛再说。Gianna 从楼上跑下来问他们今晚是不是要一起看比赛，他说是。"
+  },
+  {
+    "tick": 6,
+    "date": "2020-01-25",
+    "wall_clock_time": "17:30",
+    "location": "Newport Beach 家中客厅，电视开着",
+    "activity": "与 Gianna 一起看费城 76 人 vs 湖人客场比赛",
+    "sleep_state": "AWAKE",
+    "tick_duration_hours": 2.0,
+    "description": "比赛在费城 Wells Fargo Center 开打。湖人客场作战。LeBron 出场，状态正常发挥。Gianna 坐在科比旁边，两人都在看，偶尔交流。客厅里电视声音开得不高，孩子们陆续上楼了，Vanessa 进来看了一会儿又出去。这是父女两个人的时间，这件事的内涵比表面上的看球复杂得多。",
+    "event": "比赛第一节，LeBron 得了 12 分。科比在心里计算：离纪录还差 51 分。这场打不完。第二节 LeBron 继续高效，但并非历史级别的爆发场次——他今晚会打不到 30 分，大概率后天主场再战才会破。科比把这个分析跟 Gianna 说了，Gianna 问「那你怎么知道他不会今晚大爆发」，科比说「因为他不会特意去追这个数字，他会在最舒服的节奏里打」。Gianna 点头，若有所思。中场休息时两人去厨房拿了东西回来。科比看着 LeBron 在场边和队友交流的画面，有一刻没有说话。"
+  },
+  {
+    "tick": 7,
+    "date": "2020-01-25",
+    "wall_clock_time": "19:00",
+    "location": "Newport Beach 家中客厅",
+    "activity": "目击 LeBron James 打破 NBA 历史得分纪录（33644 分）",
+    "sleep_state": "AWAKE",
+    "tick_duration_hours": 2.0,
+    "description": "这一刻发生在第三节，比赛进行到第三节还剩 7 分 34 秒时，LeBron James 在费城完成了一个跳投，得到 2 分，个人生涯总得分达到 33644 分，超越科比·布莱恩特的 33643 分，成为 NBA 历史新得分王。全场沸腾。电视直播立刻切入历史镜头，现场响起了「LeBron！LeBron！」的呼声。科比在沙发上看着这一切发生。",
+    "event": "电视解说员的声音很激动。屏幕右上角弹出了大号字幕「LeBron James: NBA All-Time Scoring Leader」。比赛暂停，场上裁判走上去，LeBron 拿着球向看台致意。科比没有动。Gianna 看了一眼爸爸。客厅里静了大概两秒。然后科比说：「他配得上。」Gianna 说：「你怎么感觉？」科比停了一下，说：「这是好事。这个纪录本来就应该被打破，不然它有什么意义。」他拿起手机，打开之前起草的那条私信，把草稿改了改，加了一段，然后发了出去。完整内容是：「Continuing to move the game forward @KingJames. Much respect my brother 💪🏾 #33644」。"
+  },
+  {
+    "tick": 8,
+    "date": "2020-01-25",
+    "wall_clock_time": "21:30",
+    "location": "Newport Beach 家中书房",
+    "activity": "整理明日行程，查看消息，准备就寝前的最后事务",
+    "sleep_state": "AWAKE",
+    "tick_duration_hours": 2.0,
+    "description": "比赛看完，孩子们都上楼了。科比在书房里还有一些事情要处理——明天的行程需要确认，直升机出发时间，到了 Camarillo 的安排，Gianna 的训练计划，以及 Mamba Academy 一个合作方下午发来的文件需要过一眼。他的手机消息数量爆炸，全是回应他发的那条 Instagram 的。他粗略扫了一遍，不一一回复。",
+    "event": "他给直升机飞行员 Ara Zobayan 发了一条确认消息，说明天出发时间九点左右，从 John Wayne Airport（SNA）飞往 Camarillo Airport（CMA），问天气情况。Ara 回复说目前预报有雾，但明天早上应该会散，他会再确认。科比发了个好的。他在日程本上写下了明天的完整时间表：9:00 出发，约 9:45 抵达 Camarillo，10:00 训练营开始。他关上日程本。发了最后一条 Instagram Story——是他发给 LeBron 那条私信的截图，没有加额外文字。然后把手机面朝下放在桌上，去洗漱。"
+  },
+  {
+    "tick": 9,
+    "date": "2020-01-26",
+    "wall_clock_time": "06:00",
+    "location": "Newport Beach 家中厨房及餐厅",
+    "activity": "出发前与 Gianna 共进早餐，最后的家庭时间",
+    "sleep_state": "AWAKE",
+    "tick_duration_hours": 2.75,
+    "description": "出发前最后一个早上。Gianna 起得很早，因为她对今天的训练活动很期待——她是 Mamba Academy 的常规参与者，认识那里的教练和球员。两人在厨房吃早餐，说的都是具体的事：今天的训练科目、其他要一起坐直升机的人、到了之后要先做什么。这是一个正常的早上，和他们过去两年里无数个正常的早上没有什么本质区别。",
+    "event": "厨房里 Vanessa 给 Capri 换尿布，Natalia 和 Bianka 还没起床。Gianna 在吃麦片，问科比到了 Camarillo 今天会不会下场打示范球，科比说看情况，时间够的话可以。他喝了咖啡。Gianna 说她最近在练的那个技术动作今天想展示给那边的教练看，科比说「先展示给我看」，她现场在厨房小幅度做了个虚假动作，科比点头说对了。Ara Zobayan 发来消息说天气有些状况，低云层，但飞行没有问题，他已经取得了 SNA 塔台许可。科比回复「好的，我们九点到」。Vanessa 把 Capri 抱过来，科比接过来，低头看了她一会儿。"
+  },
+  {
+    "tick": 10,
+    "date": "2020-01-26",
+    "wall_clock_time": "08:45",
+    "location": "John Wayne Airport (SNA)，停机坪区域",
+    "activity": "到达机场，等待其他乘客，确认出发",
+    "sleep_state": "AWAKE",
+    "tick_duration_hours": 0.167,
+    "description": "科比和 Gianna 抵达 John Wayne Airport 停机坪区域。Ara Zobayan 已经在那里，正在做飞行前检查。直升机是一架 Sikorsky S-76B，注册号 N72EX。停机坪上有雾，不算浓，能见度大约三到五英里，能看见跑道远端。今天同行的还有其他几位乘客，都是 Mamba Academy 相关的人员：助手教练 John Altobelli 和他的妻子 Keri、女儿 Alyssa，球员家长 Christina Mauser，以及球员 Payton Chester 和她的母亲 Sarah。",
+    "event": "科比和 Gianna 在停机坪上和其他人打招呼。John Altobelli 和科比握手，几个孩子在一起说话。Ara 完成检查后走过来说了一下今天的飞行路线：从 SNA 出发，经过洛杉矶盆地北缘，越过圣苏珊娜山口，降落 Camarillo。他提到能见度偏低，打算申请 SVFR（特殊目视飞行规则）许可，在云层下方低空飞行。科比点头，没有追问更多细节。"
+  },
+  {
+    "tick": 11,
+    "date": "2020-01-26",
+    "wall_clock_time": "08:55",
+    "location": "John Wayne Airport 停机坪，S-76B 机舱内",
+    "activity": "登机，系好安全带，做最后确认",
+    "sleep_state": "AWAKE",
+    "tick_duration_hours": 0.183,
+    "description": "所有人陆续登上直升机。机舱里九个座位，九个人坐满——包括 Ara Zobayan。科比坐在机舱左侧靠前的位置，Gianna 在他旁边。机舱内的说话声因引擎预热而变得需要抬高音量。Ara 在驾驶座完成最终检查列表，与塔台通讯。机外雾层有所加厚，但起飞走廊仍在目视范围内。",
+    "event": "Ara 通过机内通话系统说：「准备起飞，预计飞行时间约 35-40 分钟。」Gianna 把手机拿出来拍了张窗外的停机坪照片。科比没有拿手机，靠在座椅上，往窗外看了一眼雾气。机体开始震动，旋翼加速。9:06 AM，直升机从 John Wayne Airport 起飞。科比通过舷窗最后看了一眼地面，Orange County 的标准郊区形状：平整的公路，棕榈树，停车场。"
+  },
+  {
+    "tick": 12,
+    "date": "2020-01-26",
+    "wall_clock_time": "09:06",
+    "location": "空中，高度约 1200 英尺，洛杉矶盆地上空",
+    "activity": "飞行中，穿越洛杉矶盆地，向 Camarillo 方向",
+    "sleep_state": "AWAKE",
+    "tick_duration_hours": 0.167,
+    "description": "直升机在低空飞行，维持约 1200 英尺高度，从 Orange County 向西北方向穿越洛杉矶盆地。飞行初段相对平稳，地面可见，城市网格在薄雾中仍可辨认。Ara 与 SoCal Approach Control 保持通讯，申请并获得了 SVFR 许可，在 Class B 空域的低层飞行。机舱里的人们在聊天，几个孩子在看手机或说话。",
+    "event": "机舱外，灰白的雾层从太平洋方向随洛杉矶盆地的地形漫延过来，越过西部山脊向内陆推进。地面从机舱窗户看越来越模糊。Ara 报告给管制员当前能见度，申请追踪 VOR 信标。科比往窗外看，城市的轮廓变得只剩轮廓，线条被雾气磨平了。旋翼的震动从脚底一直传到背脊。Gianna 和 Alyssa Altobelli 在说什么，声音在引擎噪音里断断续续。"
+  },
+  {
+    "tick": 13,
+    "date": "2020-01-26",
+    "wall_clock_time": "09:16",
+    "location": "空中，Burbank 以北，进入 Las Virgenes 山谷走廊",
+    "activity": "飞行中，能见度持续下降，穿越丘陵走廊",
+    "sleep_state": "AWAKE",
+    "tick_duration_hours": 0.167,
+    "description": "直升机在丘陵地形走廊中飞行，Las Virgenes Road 以东的山脊逐渐在雾中消失。能见度已经降到不足一英里，云底高度与地面的距离正在压缩。Ara 向 SoCal Approach 申请继续维持 SVFR 通行，并表示正在「climbing to avoid」。飞行路线在偏离原计划的轨迹，开始爬升以寻找云层缺口。",
+    "event": "9:21 AM，管制员提醒 Ara 当前直升机已进入 Burbank 机场的 Class D 空域边界附近，询问 intentions。Ara 回复正在 climbing to 4000 feet。机舱内能感觉到机体倾角的变化，上升气流让座椅有些轻微颠簸。窗外完全是白色，没有地平线，没有地面参照。科比的手搭在膝盖上，身体保持静止。机舱里的说话声停了。"
+  },
+  {
+    "tick": 14,
+    "date": "2020-01-26",
+    "wall_clock_time": "09:26",
+    "location": "空中，Calabasas 上方，高度约 2300 英尺",
+    "activity": "飞行失控前最后阶段：零能见度中爬升",
+    "sleep_state": "AWAKE",
+    "tick_duration_hours": 0.167,
+    "description": "直升机此时在 Calabasas 山区上空约 2300 英尺处飞行，完全进入云层，地面能见度为零。Ara 最后与管制员的通讯是：「Climbing to 4000 feet」，时间为 9:26 AM。此后无进一步通讯记录。NTSB 调查显示，飞行员在无仪表飞行资质和装备的情况下，在云层内出现了空间迷向，飞机开始以高速螺旋俯冲下降。",
+    "event": "机舱外没有任何视觉参照——没有地平线，没有地面，没有光线方向。只有仪表盘上的数字，以及旋翼和发动机的声音。机体的倾斜角开始偏离正常飞行范围，但在云层中无法从窗外感知方向。大约从这一刻起，飞行员面临的是无法用感官纠正的空间迷失。螺旋俯冲在仪表读数上是清晰的，但在云层内部的机舱里，感觉可能是另一种描述。"
+  },
+  {
+    "tick": 15,
+    "date": "2020-01-26",
+    "wall_clock_time": "09:36",
+    "location": "Calabasas 山坡，地面冲击前数秒",
+    "activity": "坠机前最后意识时刻",
+    "sleep_state": "AWAKE",
+    "tick_duration_hours": 0.167,
+    "description": "9:45 AM，直升机以超过 180 英里每小时的速度、约 4000 英尺每分钟的下降率，接近地面。云层在 900 英尺以下开始变薄，当地面轮廓重新出现在视野中时，飞机与地面的距离已不足以完成任何有效机动。9:47 AM，N72EX 撞击 Calabasas 山坡，地理坐标 34.2219°N, 118.7719°W，高程约 1085 英尺。机上 9 人无一生还。",
+    "event": "这是最后一个 tick。引擎声在云层内以稳定的频率持续着，旋翼的转速数字在仪表上。下降速率的异常如果被所有人察觉，那也已经是俯冲的最后数十秒。外部世界在云层之外继续运转：Vanessa Bryant 在家中，Camarillo 训练营正在等待到场的球员和教练，洛杉矶正在一个普通的周日早晨缓慢醒来。这一刻之后，时间对机舱内的人们来说失去了一切意义。"
+  }
+]

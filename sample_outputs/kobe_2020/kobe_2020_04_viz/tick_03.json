@@ -1,0 +1,308 @@
+{
+  "tick": 3,
+  "event": "他给直升机飞行员 Ara Zobayan 发了一条确认消息，说明天出发时间九点左右，从 John Wayne Airport（SNA）飞往 Camarillo Airport（CMA），问天气情况。Ara 回复说目前预报有雾，但明天早上应该会散，他会再确认。科比发了个好的。他在日程本上写下了明天的完整时间表：9:00 出发，约 9:45 抵达 Camarillo，10:00 训练营开始。他关上日程本。发了最后一条 Instagram Story——是他发给 LeBron 那条私信的截图，没有加额外文字。然后把手机面朝下放在桌上，去洗漱。",
+  "time": "21:30",
+  "location": "Newport Beach 家中书房",
+  "sleep_state": "AWAKE",
+  "emotion": {
+    "dominant": "anger",
+    "intensity": 0.018,
+    "anger": 0.029,
+    "fear": 0.0,
+    "joy": 0.021,
+    "sadness": 0.0,
+    "surprise": 0.018,
+    "disgust": 0.0,
+    "anticipation": 0.015,
+    "trust": 0.028
+  },
+  "moments": [
+    {
+      "id": 0,
+      "type": "body_sensation",
+      "display_text": "右肩往上顶了一下，不疼，只是顶",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 1,
+      "type": "compressed_speech",
+      "display_text": "雾——",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 2,
+      "type": "visual_fragment",
+      "display_text": "手机屏幕上Ara发的那条消息，「应该会散」四个字没有标点",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 3,
+      "type": "unsymbolized",
+      "display_text": "知道自己在等一个不会来的确认，但没有词形容那种等法",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 4,
+      "type": "voice_intrusion",
+      "display_text": "Gianna说，「好了，爸，我知道了」",
+      "source": "Gianna",
+      "module": "reactive"
+    },
+    {
+      "id": 5,
+      "type": "compressed_speech",
+      "display_text": "明早六点——",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 6,
+      "type": "expanded_speech",
+      "display_text": "再打一次电话给机组确认",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 7,
+      "type": "body_sensation",
+      "display_text": "右肩后侧，靠近肩胛骨内缘，一点轻微的紧绷。不疼。就是紧。",
+      "source": null,
+      "module": "rumination"
+    },
+    {
+      "id": 8,
+      "type": "voice_intrusion",
+      "display_text": "Phil说，「你是我执教过最难搞的球员。」",
+      "source": "Phil",
+      "module": "rumination"
+    },
+    {
+      "id": 9,
+      "type": "unsymbolized",
+      "display_text": "那句话在那里。不是愤怒。不完全是。就是在那里。",
+      "source": null,
+      "module": "rumination"
+    },
+    {
+      "id": 10,
+      "type": "voice_intrusion",
+      "display_text": "Phil说，「最难搞的。」",
+      "source": "Phil",
+      "module": "rumination"
+    },
+    {
+      "id": 11,
+      "type": "body_sensation",
+      "display_text": "右肩后侧还是紧。没有松。",
+      "source": null,
+      "module": "rumination"
+    },
+    {
+      "id": 12,
+      "type": "visual_fragment",
+      "display_text": "桌上那页纸——左侧写了三行，第三行最后一个词后面有一个括号，括号没有闭合，钢笔放在纸的右边缘，笔尖对着那个开口的括号。",
+      "source": null,
+      "module": "self_eval"
+    },
+    {
+      "id": 13,
+      "type": "unsymbolized",
+      "display_text": "某个地方有一个东西没有落到位，不是纸上的字，是在字之前的某个地方，像一个还没决定往哪边压的重量。",
+      "source": null,
+      "module": "self_eval"
+    },
+    {
+      "id": 14,
+      "type": "body_sensation",
+      "display_text": "右手四根手指在桌面上轻敲了一下，不是节奏，只敲了一下就停了，手掌随即向下压平贴着桌面——掌心感受到木头的温度，比预期的凉。",
+      "source": null,
+      "module": "self_eval"
+    },
+    {
+      "id": 15,
+      "type": "visual_fragment",
+      "display_text": "书房里Gianna今天训练时的视频还开着，暂停在某一帧：Gianna的脚刚离地，重心偏左，还没完全到位。科比盯着那一帧。不是在看技术动作。是在看别的什么——那个「还没到位」的瞬间本身。",
+      "source": null,
+      "module": "philosophy"
+    },
+    {
+      "id": 16,
+      "type": "unsymbolized",
+      "display_text": "有某种东西关于「还没到位」和「已经到位」之间的差距——不是Gianna的，是关于那个差距本身作为一种状态。像是那个差距在消失的时候，某个东西也跟着消失了。不是失去，是别的词，但词还没来。",
+      "source": null,
+      "module": "philosophy"
+    },
+    {
+      "id": 17,
+      "type": "expanded_speech",
+      "display_text": "赢了之后那个空洞——不是因为没有下一个目标。目标一直有。是目标存在的方式变了。以前目标是一堵墙，你朝它走，它有重量，有阻力，你能感知到它在那里。现在Gianna在练，目标也在，但那堵墙是她的，不是我的。我站在旁边看那堵墙。我能看见它，我能告诉她怎么穿过它，但我撞不上去了。那个「撞上去」的感觉——是什么？那不只是竞争。那是什么？",
+      "source": null,
+      "module": "philosophy"
+    },
+    {
+      "id": 18,
+      "type": "unsymbolized",
+      "display_text": "某种关于「自己是谁」的认知，一直是通过那个「撞上去」来确认的。现在确认的路径变了。不知道变成了什么。或者还没变成任何东西。那个空档在哪里？",
+      "source": null,
+      "module": "philosophy"
+    },
+    {
+      "id": 19,
+      "type": "unsymbolized",
+      "display_text": "句子里有一个位置承重过多——不是词的问题，是那个位置本身的密度分布不对，前段和后段的信息重量比例失衡，类似两端质量不等的杠杆，支点偏了",
+      "source": null,
+      "module": "aesthetic"
+    },
+    {
+      "id": 20,
+      "type": "visual_fragment",
+      "display_text": "书桌上打印稿的行间距——第三段和第四段之间的空白比其他段间距宽了约一毫米，视线经过时有轻微停顿，不是内容停顿，是眼睛的停顿",
+      "source": null,
+      "module": "aesthetic"
+    },
+    {
+      "id": 21,
+      "type": "voice_intrusion",
+      "display_text": "Gianna说，「你写的那个——」，句子没说完，只有前半截留在听觉里，无后续内容」",
+      "source": "Gianna",
+      "module": "aesthetic"
+    },
+    {
+      "id": 22,
+      "type": "visual_fragment",
+      "display_text": "另一条时间线，2003年，某个东海岸赛季中段，夜里十一点，科比一个人在酒店房间里翻录像，电视屏幕上是湖人对阵活塞的比赛，不是自己打的那场，是从外面看进去的，他盯着18号的走位看了四十秒，然后按暂停，Gianna不存在于这条线，书桌上没有她的照片，因为没有什么可以放",
+      "source": null,
+      "module": "counterfactual"
+    },
+    {
+      "id": 23,
+      "type": "compressed_speech",
+      "display_text": "那个版本的科比大概也赢了总冠军，数量不确定，反正那几枚戒指不是紫金色的",
+      "source": null,
+      "module": "counterfactual"
+    },
+    {
+      "id": 24,
+      "type": "unsymbolized",
+      "display_text": "有一种认知在「如果」的边缘浮了一秒又沉下去，不是关于篮球的，是关于Gianna现在楼上睡着这件事是否依赖于1996年夏天某个具体的电话",
+      "source": null,
+      "module": "counterfactual"
+    },
+    {
+      "id": 25,
+      "type": "visual_fragment",
+      "display_text": "1996年6月，走廊的地板是浅棕色的木地板，靠近踢脚线的地方有一条细的深色纹路。手机是黑色的，机身背面贴着一层轻微的热。窗外已经暗了，走廊的壁灯只开了一盏，光圈打在左手边的墙上是黄的，右侧的墙是暗的。",
+      "source": null,
+      "module": "positive_memory"
+    },
+    {
+      "id": 26,
+      "type": "body_sensation",
+      "display_text": "手机贴着右耳，耳廓的软骨被压出一点钝感。脖子右侧的肌肉是绷的，不是用力，是静止。脚没有动，鞋底压在地板上的重量是均匀的。",
+      "source": null,
+      "module": "positive_memory"
+    },
+    {
+      "id": 27,
+      "type": "unsymbolized",
+      "display_text": "洛杉矶这两个字落进来的时候，没有配对上任何画面，只是一个方向，像地图上某处被按了一下，还没有街道，没有建筑，只是那个点在那里。",
+      "source": null,
+      "module": "positive_memory"
+    },
+    {
+      "id": 28,
+      "type": "body_sensation",
+      "display_text": "脚底的细沙粒硌进脚趾缝，温度还有点热，太阳下山之前最后留下来的那种热——不是烫，是沉的，压着脚弓往下走",
+      "source": null,
+      "module": "daydream"
+    },
+    {
+      "id": 29,
+      "type": "body_sensation",
+      "display_text": "手掌摊开，压在书桌玻璃垫上——玻璃是凉的，不是冷，是那种薄薄的、贴皮肤的凉，从掌心往手腕蔓延，把刚才沙粒的余热一层一层压下去",
+      "source": null,
+      "module": "daydream"
+    },
+    {
+      "id": 30,
+      "type": "body_sensation",
+      "display_text": "手掌离开玻璃垫，凉意还贴着掌纹没散——站起来，书房地板是深色硬木，脚底板踩上去，木头是室温的，不凉不暖，有点哑，不像玻璃那样滑，鞋底有沙，细沙粒压在木板纹路里，走两步，颗粒感从脚跟滚到趾球，硬的、碎的、细的，沙子在鞋底和木地板之间轧出很低的声音，几乎不是声音，是振动，从脚掌传到踝骨",
+      "source": null,
+      "module": "daydream"
+    },
+    {
+      "id": 31,
+      "type": "body_sensation",
+      "display_text": "走到书架前，右手抬起，指尖碰到第三层书脊——纸面是哑的，带一点粗，不是光滑的那种，有细小的纹路顶着指腹，书角是硬的，直角，压进指尖皮肤一条浅线，手指横扫过去，书脊一本一本从指肚滑过，有的厚有的窄，纸边有点凉，木架子的边缘是圆的、旧的，漆面磨得有点毛，掌侧蹭上去，不硬，有点涩，书房里的灯打在书脊上，光是黄的、低的，书脊上的字反光，金色的、白色的，一条一条横过去，光落在手背上，皮肤是暖的，灯的热",
+      "source": null,
+      "module": "daydream"
+    },
+    {
+      "id": 32,
+      "type": "visual_fragment",
+      "display_text": "明天上午，Mamba Academy训练馆。阳光从东侧高窗斜切进来，落在地板上一条硬边光带，Gianna站在三分线内侧，运球两下，停，抬头——她的眼神对上摄影师镜头的瞬间没有回避，直视。科比站在罚球线延长线外，手臂交叉，侧脸轮廓在逆光里清晰。",
+      "source": null,
+      "module": "future"
+    },
+    {
+      "id": 33,
+      "type": "body_sensation",
+      "display_text": "明天上午，训练馆同一块地板，光带已经移位——爬上了Gianna的左肩和侧脸。科比走到她身边，弯腰，两根手指按在她右脚外侧鞋帮上，地板的木纹凉意透过指腹传来，他感觉到她脚踝在鞋里的细微重心偏移。",
+      "source": null,
+      "module": "future"
+    },
+    {
+      "id": 34,
+      "type": "body_sensation",
+      "display_text": "明天上午，稍晚一些，Gianna在罚球线接住球的一刹那——科比站在三分线外，背对着那道移过来的光，球落进她掌心的那一声闷响从地板传上来，经过他的脚底板、膝盖，停在胸腔里某个地方。他的手臂垂着，袖口的棉布搭在手背上，微温，不重。他没有开口。Gianna的脚跟在地板上轻轻一顿，那个声音比刚才的持球声更短，更实。",
+      "source": null,
+      "module": "future"
+    },
+    {
+      "id": 35,
+      "type": "compressed_speech",
+      "display_text": "电话会议拖了两小时，什么都没定下来。",
+      "source": null,
+      "module": "social_rehearsal"
+    },
+    {
+      "id": 36,
+      "type": "compressed_speech",
+      "display_text": "两个小时。",
+      "source": null,
+      "module": "social_rehearsal"
+    },
+    {
+      "id": 37,
+      "type": "voice_intrusion",
+      "display_text": "Gianna说，「Dad, you said two hours ago you'd come watch me practice my post moves.」",
+      "source": "Gianna",
+      "module": "social_rehearsal"
+    },
+    {
+      "id": 38,
+      "type": "compressed_speech",
+      "display_text": "I said that. I did say that.",
+      "source": null,
+      "module": "social_rehearsal"
+    },
+    {
+      "id": 39,
+      "type": "visual_fragment",
+      "display_text": "Gianna的马尾辫从书桌灯的光锥边缘扫过，黑发丝带起一条细窄的影，书桌右角那叠纸的最上面一页被带起一个角，又落下，灯光没有晃",
+      "source": null,
+      "module": "imagery"
+    },
+    {
+      "id": 40,
+      "type": "body_sensation",
+      "display_text": "右手食指和中指的指腹，十六岁时按在球皮缝线上的那个压力点，从指腹下方向上顶，不是此刻，是皮肤层里存着的旧的密度",
+      "source": null,
+      "module": "imagery"
+    }
+  ]
+}

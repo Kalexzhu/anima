@@ -1,0 +1,44 @@
+{
+  "threads": [
+    {
+      "id": "t001",
+      "description": "陈总今天当众否定了她做了两周的方案",
+      "category": "work",
+      "urgency": 0.8,
+      "status": "open",
+      "tick_opened": 0,
+      "tick_resolved": null,
+      "resolution": null
+    },
+    {
+      "id": "t002",
+      "description": "李杨分手留下的话——「跟你在一起我喘不过气」",
+      "category": "relationship",
+      "urgency": 0.5,
+      "status": "open",
+      "tick_opened": 0,
+      "tick_resolved": null,
+      "resolution": null
+    },
+    {
+      "id": "t003",
+      "description": "妈妈的电话一直没回，知道打过去会被问婚事",
+      "category": "family",
+      "urgency": 0.35,
+      "status": "open",
+      "tick_opened": 0,
+      "tick_resolved": null,
+      "resolution": null
+    },
+    {
+      "id": "t004",
+      "description": "想换工作但怕找不到更好的，这个念头一直悬着",
+      "category": "self",
+      "urgency": 0.3,
+      "status": "open",
+      "tick_opened": 0,
+      "tick_resolved": null,
+      "resolution": null
+    }
+  ]
+}

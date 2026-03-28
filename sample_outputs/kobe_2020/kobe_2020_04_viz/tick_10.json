@@ -1,0 +1,301 @@
+{
+  "tick": 10,
+  "event": "这是最后一个 tick。引擎声在云层内以稳定的频率持续着，旋翼的转速数字在仪表上。下降速率的异常如果被所有人察觉，那也已经是俯冲的最后数十秒。外部世界在云层之外继续运转：Vanessa Bryant 在家中，Camarillo 训练营正在等待到场的球员和教练，洛杉矶正在一个普通的周日早晨缓慢醒来。这一刻之后，时间对机舱内的人们来说失去了一切意义。",
+  "time": "09:36",
+  "location": "Calabasas 山坡，地面冲击前数秒",
+  "sleep_state": "AWAKE",
+  "emotion": {
+    "dominant": "anticipation",
+    "intensity": 0.188,
+    "anger": 0.008,
+    "fear": 0.218,
+    "joy": 0.048,
+    "sadness": 0.081,
+    "surprise": 0.111,
+    "disgust": 0.245,
+    "anticipation": 0.391,
+    "trust": 0.018
+  },
+  "moments": [
+    {
+      "id": 0,
+      "type": "body_sensation",
+      "display_text": "右肩有点什么，旧的，不是今天的",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 1,
+      "type": "visual_fragment",
+      "display_text": "Gianna左脚落地前0.1秒，右肩胛骨那个浅浮凸向前冲",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 2,
+      "type": "compressed_speech",
+      "display_text": "角度——",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 3,
+      "type": "unsymbolized",
+      "display_text": "知道自己见过这个动作，但不是在Gianna身上，是在别处，是更早的地方，没有词",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 4,
+      "type": "voice_intrusion",
+      "display_text": "Vanessa Bryant说，「她们需要的是父亲，不是教练」",
+      "source": "Vanessa Bryant",
+      "module": "reactive"
+    },
+    {
+      "id": 5,
+      "type": "intrusion",
+      "display_text": "直升机油表",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 6,
+      "type": "expanded_speech",
+      "display_text": "落地再说，等她落地",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 7,
+      "type": "visual_fragment",
+      "display_text": "四个球从不同角度入网——Gianna的最后一个，入筐前沿顺时针旋了一圈，网绳抖了两下。",
+      "source": null,
+      "module": "rumination"
+    },
+    {
+      "id": 8,
+      "type": "body_sensation",
+      "display_text": "左耳后方有一块区域感觉不对，不是痛，是比周围稍微密一点的东西，像是手指压在那里又没有。",
+      "source": null,
+      "module": "rumination"
+    },
+    {
+      "id": 9,
+      "type": "compressed_speech",
+      "display_text": "那个弧线是对的。",
+      "source": null,
+      "module": "rumination"
+    },
+    {
+      "id": 10,
+      "type": "visual_fragment",
+      "display_text": "Gianna投篮时右肩比左肩低三度，四个空心球里有三个是这样，网绳抖了两下，入筐前沿顺时针旋了一圈，那个弧线是对的。",
+      "source": null,
+      "module": "rumination"
+    },
+    {
+      "id": 11,
+      "type": "unsymbolized",
+      "display_text": "有什么东西在那个游戏结果的边上——不是结果本身，是他站在板凳旁边等数据的那段，某个动作分解的顺序他当时就知道自己判断错了，没有在那一刻说，后来也没有追回来说，这个空缺还在那里。",
+      "source": null,
+      "module": "self_eval"
+    },
+    {
+      "id": 12,
+      "type": "body_sensation",
+      "display_text": "脚底板的力从脚跟往前移，但座位是实的，这两件事同时发生，不应该同时发生。",
+      "source": null,
+      "module": "self_eval"
+    },
+    {
+      "id": 13,
+      "type": "voice_intrusion",
+      "display_text": "Gianna说，「你昨天那个拆解顺序——」后面的字没有了，只剩那个停顿的形状，以及科比当时点头但其实在想别的事这件事本身。」",
+      "source": "Gianna",
+      "module": "self_eval"
+    },
+    {
+      "id": 14,
+      "type": "body_sensation",
+      "display_text": "脊椎底部有一个不是疼痛的东西，更接近压力的分布——不在皮肤，在骨头和座椅之间的那一层，像是某种还没完成的事情的重量停在那里",
+      "source": null,
+      "module": "philosophy"
+    },
+    {
+      "id": 15,
+      "type": "unsymbolized",
+      "display_text": "关于「给Gianna」和「给这件事本身」，有一个模糊的区分正在某个地方存在，但那个区分没有完成——两件事的边界在哪一刻消失的，不清楚，也没有被追问过",
+      "source": null,
+      "module": "philosophy"
+    },
+    {
+      "id": 16,
+      "type": "expanded_speech",
+      "display_text": "当你不再需要它证明什么，你还剩下什么——不是「热爱」，不是「选择」，就是：你还在不在里面，在的是哪个部分，那个部分属于谁",
+      "source": null,
+      "module": "philosophy"
+    },
+    {
+      "id": 17,
+      "type": "unsymbolized",
+      "display_text": "有一个问题没有被提出过：如果消耗和爱是同一个动作，那个动作朝向的终点，是让事情继续存在，还是让自己消失在里面——这两件事不一定是反义词，也不一定是同义词，停在中间，没有位置",
+      "source": null,
+      "module": "philosophy"
+    },
+    {
+      "id": 18,
+      "type": "unsymbolized",
+      "display_text": "有什么东西关于密度——不是视觉的，是时间切片的厚度，某些时刻比其他时刻占据更多空间，这一刻的厚度是异常的",
+      "source": null,
+      "module": "aesthetic"
+    },
+    {
+      "id": 19,
+      "type": "visual_fragment",
+      "display_text": "Gianna侧脸的轮廓线——下颌到颈部的弧度，与某张照片里科比自己的侧脸弧度，两条线的曲率几乎可以叠合，差值极小",
+      "source": null,
+      "module": "aesthetic"
+    },
+    {
+      "id": 20,
+      "type": "body_sensation",
+      "display_text": "内耳的参照系正在重新计算，不是眩晕，是「水平面」这个概念短暂失去了锚点，地面和天空之间的角度关系需要重新确认",
+      "source": null,
+      "module": "aesthetic"
+    },
+    {
+      "id": 21,
+      "type": "visual_fragment",
+      "display_text": "另一条时间线。斯台普斯中心2010年总决赛第七场，终场哨响，科比和沙奎尔·奥尼尔同框站在球场中央——沙奎尔38岁，腰身已经很宽，但还在场上。两个人没有拥抱，只是并排站着，各自看着记分板。记分板上是：洛杉矶湖人 83，波士顿凯尔特人 79。",
+      "source": null,
+      "module": "counterfactual"
+    },
+    {
+      "id": 22,
+      "type": "compressed_speech",
+      "display_text": "沙奎尔进了那球的话，总数就是五个……我是六个。",
+      "source": null,
+      "module": "counterfactual"
+    },
+    {
+      "id": 23,
+      "type": "unsymbolized",
+      "display_text": "一个模糊的认知浮上来，没有成形为语言：那条时间线里的科比在退役仪式上说话，但说的内容不是「Mamba out」——是别的什么，更长，里面有一个名字要念。",
+      "source": null,
+      "module": "counterfactual"
+    },
+    {
+      "id": 24,
+      "type": "visual_fragment",
+      "display_text": "Gianna坐在Academy球场边的折叠椅上，运动裤卷到膝盖下方，左脚踩在右膝上，手里拿着一支蓝色圆珠笔，在笔记本空白处画圈，圈的直径越来越大，直到笔尖划出页面边缘",
+      "source": null,
+      "module": "positive_memory"
+    },
+    {
+      "id": 25,
+      "type": "body_sensation",
+      "display_text": "直升机机身传来的振动频率从脚掌往上走，膝盖骨轻微共鸣，右侧肩胛骨下方有一块肌肉在无意识地等待什么，像赛前热身没做完的那种悬着感",
+      "source": null,
+      "module": "positive_memory"
+    },
+    {
+      "id": 26,
+      "type": "voice_intrusion",
+      "display_text": "Gianna说，「爸，落地之后我们先去哪个馆？」",
+      "source": "Gianna",
+      "module": "positive_memory"
+    },
+    {
+      "id": 27,
+      "type": "body_sensation",
+      "display_text": "直升机座椅靠背传来的轻微震动，从肩胛骨往下压进腰椎，皮革是冷的，和肌肉之间隔着一层薄外套的棉",
+      "source": null,
+      "module": "daydream"
+    },
+    {
+      "id": 28,
+      "type": "body_sensation",
+      "display_text": "左手五根手指压在膝盖上，牛仔布的粗粝纹路顶进指腹，掌心温度比布料高，热量从手心往下渗，膝盖骨表面开始发热",
+      "source": null,
+      "module": "daydream"
+    },
+    {
+      "id": 29,
+      "type": "body_sensation",
+      "display_text": "热量从膝盖往小腿骨沿线下走，胫骨前侧皮肤绷紧，靴筒内壁的皮革贴着踝骨，那一圈皮革比腿温低，凉意从踝关节往上顶，热与凉在胫骨中段撞在一起，肌肉微微收缩",
+      "source": null,
+      "module": "daydream"
+    },
+    {
+      "id": 30,
+      "type": "body_sensation",
+      "display_text": "凉意顶到胫骨中段就停住了，热压着它，两股力在那里僵着，脚趾头在靴尖里微微蜷了一下，靴尖的皮革硬，蜷不动，五根趾头各自压着各自的位置，大拇趾球下面的那一片皮肤感觉到地板——不是地板，是座位的踏板，金属的，隔着靴底有一层薄薄的振动，发动机的频率，低，匀，一直在那里，膝盖上方的大腿肌肉松着，重量压在座椅边沿，髋骨右侧靠着什么硬的，不痛，就是在那里，窗外的光从右边来，白的，Gianna坐在前面某个方向，她的声音",
+      "source": null,
+      "module": "daydream"
+    },
+    {
+      "id": 31,
+      "type": "visual_fragment",
+      "display_text": "明天上午，Mamba Academy的主馆，侧面高窗透进来的光斜切在地板上，Gianna站在三分线左侧，球刚离手，旋转着向篮筐去，科比站在她身后约两米，眼睛跟着球弧线走，还没看落点。",
+      "source": null,
+      "module": "future"
+    },
+    {
+      "id": 32,
+      "type": "body_sensation",
+      "display_text": "明天上午稍晚一些，同一块地板，Gianna的球已经进了，科比的右手掌心还带着刚才示范时的震动余感，他低头看了一眼自己的手，掌纹里有一道旧茧，手指微微弯着，馆里暖气管道在头顶嗡嗡作响，他感觉到左肩有一点僵，需要转一下。",
+      "source": null,
+      "module": "future"
+    },
+    {
+      "id": 33,
+      "type": "body_sensation",
+      "display_text": "明天上午再晚一些，馆外停车场的水泥地，阳光从云层边缘压下来，白而硬，Gianna的球包搭在他左肩，尼龙带勒着锁骨下方那块旧伤的皮肤，他的右手握着车钥匙，金属齿纹顶在虎口，脚下的沥青缝里有一条干裂的黑线。",
+      "source": null,
+      "module": "future"
+    },
+    {
+      "id": 34,
+      "type": "compressed_speech",
+      "display_text": "下午那个电话……先听他们怎么说。",
+      "source": null,
+      "module": "social_rehearsal"
+    },
+    {
+      "id": 35,
+      "type": "voice_intrusion",
+      "display_text": "Gianna说，「Kobe，我们今天的训练安排……」",
+      "source": "Gianna",
+      "module": "social_rehearsal"
+    },
+    {
+      "id": 36,
+      "type": "compressed_speech",
+      "display_text": "训练安排——等一下，Gigi在吗？",
+      "source": null,
+      "module": "social_rehearsal"
+    },
+    {
+      "id": 37,
+      "type": "voice_intrusion",
+      "display_text": "飞行员说，「她在，Coach，她已经上机了。」",
+      "source": "飞行员",
+      "module": "social_rehearsal"
+    },
+    {
+      "id": 38,
+      "type": "visual_fragment",
+      "display_text": "Gianna左手拇指指甲边缘一条极细的白色压痕，握球留下的，月牙形，指甲床下皮肤还没回色",
+      "source": null,
+      "module": "imagery"
+    },
+    {
+      "id": 39,
+      "type": "body_sensation",
+      "display_text": "右脚踝外侧皮肤感知到座椅金属边框的弧度，冷的，隔着袜子还是冷的，重量没有完全落在上面，悬着三分之一",
+      "source": null,
+      "module": "imagery"
+    }
+  ]
+}

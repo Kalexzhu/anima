@@ -1,0 +1,301 @@
+{
+  "tick": 1,
+  "event": "清晨独醒，一天的第一次意识流。房间里 Vanessa 的呼吸声均匀。科比没有拿手机，只是盯着天花板。窗帘边缘透进来一条极细的蓝光——太平洋方向的黎明。他想到明天 Gianna 要打的比赛，想到上周她在训练中用错了脚步，他当时没有多说，但心里记着要找机会再讲。这一天有两件事要处理：上午陪 Gigi 训练，下午一个 Mamba Academy 教练组电话会议。此外，ESPN 昨天一直在讲 LeBron 接近历史得分纪录的事。科比在 Twitter 上看见了，没有发表任何评论，只是看了数据：LeBron 距离他的 33643 分还差 63 分。",
+  "time": "07:00",
+  "location": "Newport Beach 家中主卧",
+  "sleep_state": "AWAKE",
+  "emotion": {
+    "dominant": "trust",
+    "intensity": 0.137,
+    "anger": 0.0,
+    "fear": 0.147,
+    "joy": 0.114,
+    "sadness": 0.0,
+    "surprise": 0.088,
+    "disgust": 0.0,
+    "anticipation": 0.118,
+    "trust": 0.308
+  },
+  "moments": [
+    {
+      "id": 0,
+      "type": "voice_intrusion",
+      "display_text": "Gianna Bryant说，「「我会比你更厉害的，爸」」",
+      "source": "Gianna Bryant",
+      "module": "reactive"
+    },
+    {
+      "id": 1,
+      "type": "body_sensation",
+      "display_text": "胸口有东西往上顶，不是痛，压不下去",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 2,
+      "type": "visual_fragment",
+      "display_text": "Gigi上周的左脚落点，比应该落的位置偏了半步",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 3,
+      "type": "compressed_speech",
+      "display_text": "上周那步——",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 4,
+      "type": "unsymbolized",
+      "display_text": "知道在想她会超过自己这件事，没有词，也没有具体画面，但这个认知非常清晰，完全接受",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 5,
+      "type": "intrusion",
+      "display_text": "走廊里袜子卷成球落地的那声闷响",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 6,
+      "type": "expanded_speech",
+      "display_text": "那步先讲，其他的之后",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 7,
+      "type": "body_sensation",
+      "display_text": "胸口有什么东西在往上顶，不是疼，是撑。手指头动了一下，没有原因。",
+      "source": null,
+      "module": "rumination"
+    },
+    {
+      "id": 8,
+      "type": "voice_intrusion",
+      "display_text": "Gianna说，「「爸你昨天说今天可以早点去的」」",
+      "source": "Gianna",
+      "module": "rumination"
+    },
+    {
+      "id": 9,
+      "type": "compressed_speech",
+      "display_text": "那批东西。那批东西。那批东西还在不在。",
+      "source": null,
+      "module": "rumination"
+    },
+    {
+      "id": 10,
+      "type": "compressed_speech",
+      "display_text": "那批东西还在不在。那批东西。",
+      "source": null,
+      "module": "rumination"
+    },
+    {
+      "id": 11,
+      "type": "visual_fragment",
+      "display_text": "科比站在镜子前系运动裤的腰绳，余光扫到梳妆台上Gianna昨晚随手丢下的那张练习纸——左侧是Gianna自己画的脚步分解图，右下角有一个被圈掉的箭头，那是科比帮她改过的方向，后来事实证明是科比改错了，Gianna原来的版本才对。纸还放在那里，没有人收。",
+      "source": null,
+      "module": "self_eval"
+    },
+    {
+      "id": 12,
+      "type": "unsymbolized",
+      "display_text": "科比站在那里，手停在腰绳上，有一个东西在脑子里，不是句子，是一种排列——那次改错的动作，和昨天Mamba Academy训练里他布置的跑位顺序，还有上周Gianna在三分线附近停顿了一拍然后看向他的那一秒，这三件事同时浮着，像三张卡片被并排摊开，没有谁在读它们，但它们就在那里。",
+      "source": null,
+      "module": "self_eval"
+    },
+    {
+      "id": 13,
+      "type": "expanded_speech",
+      "display_text": "科比把腰绳系好，转身去拿手机，脑子里出现一排东西：「脚步方向是我改错的。跑位我排太密了，中线那块空档是我没算进去。Gianna停下来看我那一秒——那是她在等我给信号，我没给，那一拍是我的。」这三条排得很整齐，没有第四条。科比拿起手机，准备去叫Gianna起床。",
+      "source": null,
+      "module": "self_eval"
+    },
+    {
+      "id": 14,
+      "type": "visual_fragment",
+      "display_text": "窗外光线还很平，Gianna的训练包靠在门边，拉链没拉完，一只Nike袜子露在外面。科比看了一秒，没有移开视线。",
+      "source": null,
+      "module": "philosophy"
+    },
+    {
+      "id": 15,
+      "type": "unsymbolized",
+      "display_text": "有什么东西在胸口是满的，但「满」不是准确的词，准确的词还没有。不是篮球带来的那种，那种是往外冲的。这个是往里压的，但不难受。",
+      "source": null,
+      "module": "philosophy"
+    },
+    {
+      "id": 16,
+      "type": "expanded_speech",
+      "display_text": "Gianna的跳步昨天对了。肩膀的角度对了，她自己也知道对了，所以她没有回头看我。——我以前也是这样的，投完不看结果那一秒，自己先知道。她是从哪里学到不回头这件事的？我没有教过她这个。",
+      "source": null,
+      "module": "philosophy"
+    },
+    {
+      "id": 17,
+      "type": "unsymbolized",
+      "display_text": "「如果把篮球从我身上拿走」这句话在脑子里转了一圈，但没有展开。不是因为问题太重，是因为问题的前提好像有什么地方还没对准——「拿走」是什么意思，「我」指的是哪个时段的我，现在的我是不是还需要靠篮球来定位自己，这几个问题同时出现，没有先后顺序，也没有一个先被回答。",
+      "source": null,
+      "module": "philosophy"
+    },
+    {
+      "id": 18,
+      "type": "visual_fragment",
+      "display_text": "Staples Center 地板木纹横向排列，漆面反光带宽约3cm，间距均匀，球弹起落点留下的圆形压痕直径略大于拳头，密度向罚球线方向递增",
+      "source": null,
+      "module": "aesthetic"
+    },
+    {
+      "id": 19,
+      "type": "unsymbolized",
+      "display_text": "有什么东西关于今天的训练时间和Gianna的脚步节奏是对的，具体内容未成形",
+      "source": null,
+      "module": "aesthetic"
+    },
+    {
+      "id": 20,
+      "type": "body_sensation",
+      "display_text": "胸腔上部轻微扩张感，未与任何具体图像绑定，持续约两秒后消散",
+      "source": null,
+      "module": "aesthetic"
+    },
+    {
+      "id": 21,
+      "type": "visual_fragment",
+      "display_text": "另一条线——夏洛特，1996，新秀赛季，Hornets的主场观众不知道我是谁，球衣号码不是8，没有Shaq，没有Phil，职业生涯在一个完全不同的形状里展开。Gianna还是会出生，但她不会在洛杉矶长大，不会在这里的道场里练球，Mamba Academy不会叫这个名字，可能根本不存在。早上的阳光会打在别的城市某间卧室里。",
+      "source": null,
+      "module": "counterfactual"
+    },
+    {
+      "id": 22,
+      "type": "compressed_speech",
+      "display_text": "还好当年那帮人被说动了。",
+      "source": null,
+      "module": "counterfactual"
+    },
+    {
+      "id": 23,
+      "type": "voice_intrusion",
+      "display_text": "Gianna说，「「爸，今天几点走？」」",
+      "source": "Gianna",
+      "module": "counterfactual"
+    },
+    {
+      "id": 24,
+      "type": "visual_fragment",
+      "display_text": "二〇〇六年一月二十二日，斯台普斯中心，第四节，计分板上的数字：81。球场灯光打在木地板上，蜡层反光是黄白色的。看台上有人站起来，动作像多米诺骨牌，从底层开始往上蔓延。科比站在罚球线后方，手里的球是橘色的，表面有汗，指缝里能感觉到皮革的粗粝纹路。",
+      "source": null,
+      "module": "positive_memory"
+    },
+    {
+      "id": 25,
+      "type": "body_sensation",
+      "display_text": "那个夜晚右手出手前一刻的感觉——手腕关节不需要计算角度，球脱手的时间点在念头形成之前已经确定了。肌肉不是在执行指令，是在回忆一件它已经做过无数次的事情，完全没有阻力。",
+      "source": null,
+      "module": "positive_memory"
+    },
+    {
+      "id": 26,
+      "type": "compressed_speech",
+      "display_text": "还有这个。",
+      "source": null,
+      "module": "positive_memory"
+    },
+    {
+      "id": 27,
+      "type": "body_sensation",
+      "display_text": "从书房椅子上起身，腰椎往后拱开，脊背发出轻响，脚底踩到走廊的硬木地板，比书房地毯凉，凉意从脚跟一路收进小腿",
+      "source": null,
+      "module": "daydream"
+    },
+    {
+      "id": 28,
+      "type": "body_sensation",
+      "display_text": "走到卧室门口，手掌推开门的瞬间，门把手的金属比走廊空气更凉，凉意从掌心压进虎口，门缝里漏出来的暖气扑在小臂上，温度落差很明显，皮肤上的汗毛先收紧再松开",
+      "source": null,
+      "module": "daydream"
+    },
+    {
+      "id": 29,
+      "type": "body_sensation",
+      "display_text": "门开了一道缝，暖气从缝里钻出来，先碰到小臂的汗毛，再往上推到脖子侧面——那里的皮肤比手背薄，温度落在上面有点像被手指轻轻按了一下，不痛，就是有感觉。脚还没迈进去，脚底板踩的还是走廊的硬木地板，凉的，脚趾头缩了一下。卧室里有一股她用的那种护发素的气味，甜的，但不腻，混着被子捂了一夜的那种闷热的棉布味，两股气味撞在鼻腔里，后面那股更重一点。光从窗帘缝里漏进来，是那种带橙色的早晨的光，打在地毯上",
+      "source": null,
+      "module": "daydream"
+    },
+    {
+      "id": 30,
+      "type": "body_sensation",
+      "display_text": "脚底板从走廊的硬木地板迈进来，踩到卧室地毯上，那种软把脚趾头往上托了一下，凉变成了暖，脚弓先落，然后脚跟跟上，整只脚陷进去一点点。膝盖弯了一下，重心往前移，腰跟着松了半寸。手扶着门框的手指头松开，指腹离开木头的边沿，那道缝里漏出来的暖气现在把整个正面都包住了，脖子侧面那块皮肤还有感觉，但已经和周围的温度混在一起，分不清了。她的护发素的气味和棉布的闷热现在都从鼻腔往下走，到喉咙后面压着。橙色的",
+      "source": null,
+      "module": "daydream"
+    },
+    {
+      "id": 31,
+      "type": "visual_fragment",
+      "display_text": "今天下午两点，Mamba Academy球馆内场边的折叠椅上——Gianna坐在他左侧，肩膀挨着他的手臂，两人都盯着场上另一组孩子的训练，她手里捏着一支没盖盖的记号笔，在白板纸边角随手画箭头，侧脸专注，嘴角微微撇着，那个撇法和Vanessa一模一样",
+      "source": null,
+      "module": "future"
+    },
+    {
+      "id": 32,
+      "type": "visual_fragment",
+      "display_text": "今天傍晚五点半，Academy停车场——他坐在黑色SUV驾驶座等Gianna从更衣室出来，车窗半开，外面橙红色的光斜切进来打在方向盘上，他手背搭在方向盘顶端，看着玻璃门那边，门推开，Gianna背着包大步走出来，包带从左肩滑落她随手一抖重新挂上，头发还是湿的，额前一缕贴着脸，她抬眼看见车，嘴角往上一扯，走过来拉开后座门直接把包扔进去，再绕到副驾驶坐下，关门声很实，带进来一股刚洗过头发的水汽气味",
+      "source": null,
+      "module": "future"
+    },
+    {
+      "id": 33,
+      "type": "body_sensation",
+      "display_text": "今晚八点四十，家里餐桌，头顶吊灯把桌面照成一块暖黄色的岛，他坐在椅子上身体微微前倾，两肘撑在桌沿，Gianna坐他斜对面，头发已经吹干了，手里拿着叉子戳盘子里最后一块鸡肉，他说了什么，自己也没料到说得那么响，笑声从喉咙里冲出来，压都压不住，他伸手按了一下自己嘴，手掌抵着下巴，笑声还是从指缝漏出去，Gianna抬眼斜看他一眼，嘴角撇了一下，把那块鸡肉塞进嘴里，他感觉胸腔里有什么东",
+      "source": null,
+      "module": "future"
+    },
+    {
+      "id": 34,
+      "type": "compressed_speech",
+      "display_text": "等他破了我再发。",
+      "source": null,
+      "module": "social_rehearsal"
+    },
+    {
+      "id": 35,
+      "type": "voice_intrusion",
+      "display_text": "Vanessa说，「Kobe, you're up early again.」",
+      "source": "Vanessa",
+      "module": "social_rehearsal"
+    },
+    {
+      "id": 36,
+      "type": "compressed_speech",
+      "display_text": "Yeah — Gigi's got that footwork drill at eight, I want to run it with her first.",
+      "source": null,
+      "module": "social_rehearsal"
+    },
+    {
+      "id": 37,
+      "type": "voice_intrusion",
+      "display_text": "Vanessa说，「Then go. She's been waiting by the door for twenty minutes already.」",
+      "source": "Vanessa",
+      "module": "social_rehearsal"
+    },
+    {
+      "id": 38,
+      "type": "voice_intrusion",
+      "display_text": "Gianna说，「我会比你更厉害的，爸。」",
+      "source": "Gianna",
+      "module": "imagery"
+    },
+    {
+      "id": 39,
+      "type": "body_sensation",
+      "display_text": "胸腔正中某处突然松开，像一块肌肉卸力，热的，往上漫。",
+      "source": null,
+      "module": "imagery"
+    }
+  ]
+}

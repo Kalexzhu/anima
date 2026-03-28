@@ -1,0 +1,315 @@
+{
+  "tick": 3,
+  "event": "林晓雨把手机从口袋里拿出来，屏幕还亮着，停在李杨发搬家公司问题的那个群界面，群名是\"小破组2019\"，最后一条消息显示为他的名字，时间戳是十六分钟前。",
+  "time": "19:00",
+  "location": "地铁→通州方向",
+  "sleep_state": "AWAKE",
+  "emotion": {
+    "dominant": "sadness",
+    "intensity": 0.15,
+    "anger": 0.03,
+    "fear": 0.15,
+    "joy": 0.0,
+    "sadness": 0.38,
+    "surprise": 0.1,
+    "disgust": 0.05,
+    "anticipation": 0.0,
+    "trust": 0.07
+  },
+  "moments": [
+    {
+      "id": 0,
+      "type": "voice_intrusion",
+      "display_text": "前男友李杨说，「你太累了，跟你在一起我喘不过气」",
+      "source": "前男友李杨",
+      "module": "unknown"
+    },
+    {
+      "id": 1,
+      "type": "body_sensation",
+      "display_text": "李杨那天的脸，侧过去，没看她",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 2,
+      "type": "body_sensation",
+      "display_text": "眼眶里有点热，压住了，没出来",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 3,
+      "type": "unsymbolized",
+      "display_text": "知道自己在想那件事——是不是每个人最后都会这样离开——但这个念头没有变成任何词",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 4,
+      "type": "voice_intrusion",
+      "display_text": "陈总说，「这个方案完全跑偏了」",
+      "source": "陈总",
+      "module": "unknown"
+    },
+    {
+      "id": 5,
+      "type": "compressed_speech",
+      "display_text": "又——",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 6,
+      "type": "compressed_speech",
+      "display_text": "通州还有十八分钟",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 7,
+      "type": "body_sensation",
+      "display_text": "胸口那块东西还在。地铁在动，身体在晃，它不跟着晃，压在那里。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 8,
+      "type": "voice_intrusion",
+      "display_text": "领导说，「这个方案完全跑偏了」",
+      "source": "领导",
+      "module": "unknown"
+    },
+    {
+      "id": 9,
+      "type": "visual_fragment",
+      "display_text": "13岁，站在讲台上，嘴还没完全闭上，那个错字还飘在空气里，底下有人在笑。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 10,
+      "type": "body_sensation",
+      "display_text": "喉咙往下一段，有什么东西堵着，不是哭，就是堵着，吸气的时候能感觉到。胸口那块没有散。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 11,
+      "type": "unsymbolized",
+      "display_text": "某种确认仍在运作。不是关于方案，不是关于领导说了什么。是关于一个更早的结论——她早就知道会是这样。这个「知道」没有语言形状，但它在那里，像一个已经稳定的底座。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 12,
+      "type": "expanded_speech",
+      "display_text": "地铁的振动传进脚底，再往上到膝盖。她两手叠在腿上，上面那只手的手指轻轻压着下面那只手的指节。这个动作她没有主动发起——它已经在那里了。压力是匀的，不重，但持续。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 13,
+      "type": "expanded_speech",
+      "display_text": "「还有两站。」她看了一下手机屏幕，锁屏，放回包里。「明天还要去。」这两句话在脑子里出现的顺序是先后的，但之间没有因果，也没有结论。它们只是两个事实，挨在一起。没有第三句话接上来。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 14,
+      "type": "body_sensation",
+      "display_text": "地铁座位的震动传上来，从腰椎往上走，到肩胛骨停住。不是痛，是一种被持续提示「你在这里」的感觉。林晓雨没有调整坐姿。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 15,
+      "type": "unsymbolized",
+      "display_text": "有什么东西在两周和两分钟之间。不是时间长度的问题。是关于那两周被放进了什么位置——不是被否定，是被归类到了某个她不确定是什么的类别里。这个认知没有进一步展开。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 16,
+      "type": "voice_intrusion",
+      "display_text": "领导说，「这个方向整体跑偏了」——这句话又出现了一次，不是回忆，是像有人把音量键调高了一格。林晓雨没有在重新听，但它就在那里。」",
+      "source": "领导",
+      "module": "unknown"
+    },
+    {
+      "id": 17,
+      "type": "expanded_speech",
+      "display_text": "她注意到自己在想：如果他说的是对的，那两周是什么。如果他说的是错的，那今晚是什么。这两个问题没有在争，但它们同时在场，没有哪一个先被她拿起来。认可是她需要的东西吗——还是她需要的是：那两周被放在一个不会消失的地方。这两件事是不是同一件事，她现在不知道。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 18,
+      "type": "visual_fragment",
+      "display_text": "地铁车厢顶部灯带，等间距排列，每段约1.2米，接缝处有0.5厘米暗区；列车加速时灯带间距在视野里产生压缩感，减速时反向；当前速度段：间距视觉节奏约每秒1.8个",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 19,
+      "type": "unsymbolized",
+      "display_text": "灯带间那个暗区的宽度和上轮铝型材拉丝纹路之间的「不是对齐，是」——两者有某种同构，不是比例同构，是间距逻辑相同，具体逻辑尚未成形",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 20,
+      "type": "expanded_speech",
+      "display_text": "窗外隧道壁上每隔固定距离有一根竖向管线支架，车速下支架频率约3根/秒；支架间距节奏和车顶灯带暗区节奏叠加，产生一个不对齐的双轨间距——两套节奏互相错位，没有公因数点",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 21,
+      "type": "expanded_speech",
+      "display_text": "合肥国企办公室，下午三点的桌面：一个印着公司logo的马克杯，半杯凉茶，旁边是她打印好的方案——不是两周，是三天，因为那份工作没有人要她做到两周才汇报。窗外是平的，没有北京的楼层压着楼层。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 22,
+      "type": "compressed_speech",
+      "display_text": "说了，然后留下来，然后就是那张桌子。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 23,
+      "type": "unsymbolized",
+      "display_text": "另一条线上那个她此刻在做什么——下班了，还是也坐在哪里。不知道。没有画面，只是一个「也在」或者「不在」的悬空判断，没有结论。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 24,
+      "type": "expanded_speech",
+      "display_text": "2018年夏天，北京某广告公司办公室，下午三点左右。公告栏是白色软木板，边框是深蓝色铝合金。她名字旁边那个红色圆圈，笔迹有轻微抖动，顺时针收口的地方有一点墨水积了起来，比其他部分颜色深。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 25,
+      "type": "body_sensation",
+      "display_text": "图钉钉入软木板的声音，四次，钝而短。每一次，她感觉喉咙里有什么东西轻轻往上顶了一下。胸腔的位置是热的。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 26,
+      "type": "voice_intrusion",
+      "display_text": "22岁时的主管说，「这个角度是你自己想的？」他问这句话的时候，没有看她，手指还按着图钉，但他在等她回答。」",
+      "source": "22岁时的主管",
+      "module": "unknown"
+    },
+    {
+      "id": 27,
+      "type": "visual_fragment",
+      "display_text": "车窗外路灯一根一根往后退，橙黄色的光在玻璃上拉成一条短线，又灭掉，再亮一根，再灭掉",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 28,
+      "type": "body_sensation",
+      "display_text": "眼皮很重，往下坠，像是贴了什么东西在上面。鼻梁根部有一点酸，不是疼，是那种按住了但没有完全按住的感觉。嘴唇是干的，舌头碰了一下，有点粗糙。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 29,
+      "type": "expanded_speech",
+      "display_text": "地铁在过桥，车厢轻轻晃了一下，身体往右边倒了两厘米，肩膀碰到了窗玻璃。玻璃是凉的，隔着外套能感觉到那层温度，从肩膀往脖子这边慢慢渗。车窗外面是暗的，偶尔有灯从外面扫过来，在玻璃上留一条白光，然后没了。眼皮还是沉的，视线落在前排座椅的椅背上，灰蓝色的布面，有一个小破口，线头翻出来一截，卷着。手放在腿上，手背朝上，能感觉到牛仔裤的织纹，一条一条，横的。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 30,
+      "type": "expanded_speech",
+      "display_text": "地铁开始减速，车厢震了一下，座椅底下传上来一阵低频的振动，从臀部往脊背走了半截，然后散掉了。脚踩着地板，能感觉到那个振动还留在鞋底里，像什么东西在里面滚了一圈。站名从喇叭里出来，声音是扁的，贴着天花板走了一圈，字没听清。车速越来越慢，身体往前压了一点点，重心跑到膝盖上面，手顺着腿面往前滑了一厘米，指节抵到了牛仔裤缝上，那条缝比旁边的布硬，压着有点顶手。车停了，门开了，站台上的空气灌进来，比车厢里凉，",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 31,
+      "type": "expanded_speech",
+      "display_text": "站台上的空气从门缝灌进来，先碰到脚踝，那里裤脚和袜口之间露着一截皮肤，凉气直接贴上去，起了一层细密的鸡皮疙瘩，毛孔缩紧，皮肤表面绷了一下。冷从脚踝往小腿走了两厘米，就停在那里了，车厢里的暖气从上面压下来，两股气在膝盖下面某个地方对着，皮肤感觉不到边界在哪，只是那一截腿比别处更清醒一点。手指还压在牛仔裤缝上，没动。门关了，那股凉气被切断，脚踝上残留的凉意开始慢慢被裤脚盖回去",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 32,
+      "type": "expanded_speech",
+      "display_text": "地铁到站，林晓雨推开出租屋的门，门锁转动声很轻。屋里没开灯，窗帘没拉，路灯的橙黄光从窗外透进来，把地板切出一条斜的亮带。她把包放在门边，没有往里走，就站在那条亮带旁边。外面偶尔有车经过，隔着玻璃声音是闷的。她的手还握着钥匙，钥匙圈的金属压在手心里，有点凉。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 33,
+      "type": "expanded_speech",
+      "display_text": "她终于把钥匙放到了玄关柜上，金属碰到木板面发出一声很小的「哒」。她走到沙发边，没有坐下，而是顺着扶手慢慢蹲下去，背靠着沙发侧面，坐在地板上。地板是木纹贴皮，隔着裤子感觉得到硬和凉。路灯那条斜光没有打到她这里，她在暗的一侧。膝盖弯着抵在胸口，手腕搭在膝盖上，什么都没有拿。鼻子里有一点酸，不是很重，就在鼻腔靠后的位置悬着。她没有哭，眼睛是干的，但眼眶的皮肤感觉绷得很",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 34,
+      "type": "expanded_speech",
+      "display_text": "不知道过了多久，她的背开始有点麻。不是痛，是那种久压之后的木，从腰骶往上漫，到肩胛骨下缘停住。她动了一下，脊椎发出一声很轻的响，响完之后房间还是那么静。路灯的斜光在地板上没有移动，或者移动了她没有注意到。鼻腔后面那点酸还在，没有散，也没有更重。她的手腕还搭在膝盖上，手指自己微微弯了一下，没有握住什么。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 35,
+      "type": "expanded_speech",
+      "display_text": "地铁到站的广播声从车厢顶部落下来，她的眼睛没有对焦，看着对面座位的椅背。车门开了，人进来，人坐下，有个包包的拉链碰了一下金属扶手，叮的一声，很短。车厢重新开动，地板传来低频的震动，从脚底进来，经过脚踝，停在膝盖以下。窗外是隧道壁，偶尔有一段灯带扫过来，她的反射在玻璃上出现一秒，又消失。背包带压着左肩，她没有调整。手机在外套口袋里，没有震动。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 36,
+      "type": "voice_intrusion",
+      "display_text": "张明（预演说，「如果现在回他——他可能会问'今天发生什么了'——然后我要说什么？说被否了？说在地铁上？他会说'没事的，下次再来'——就这句话——我不想听这句话。」",
+      "source": "张明（预演",
+      "module": "unknown"
+    },
+    {
+      "id": 37,
+      "type": "voice_intrusion",
+      "display_text": "想象中的他说，「'没事的，下次再来'——对，就这句，他肯定说这句——然后呢，然后我说'嗯'，然后他说'早点回来'，然后结束——整个对话二十秒——我把这件事说出去了，但什么都没发生。」",
+      "source": "想象中的他",
+      "module": "unknown"
+    },
+    {
+      "id": 38,
+      "type": "voice_intrusion",
+      "display_text": "林晓雨说，「那就不说了——说了也是'没事的下次再来'，二十秒，结束——不如不说——但不说我今晚就一个人扛着这个回去——扛回去又怎样，明天还是要上班，还是要见他——说不说都一样，说了还要多演一遍」",
+      "source": "林晓雨",
+      "module": "unknown"
+    },
+    {
+      "id": 39,
+      "type": "voice_intrusion",
+      "display_text": "林晓雨内部说，「说不说都一样——那就不说——手机放回去——今晚就这样——反正也没人知道今天发生了什么——没人知道也挺好的——不用解释，不用说'我没事'，不用看谁的表情——就这样回去——回去洗澡，睡觉，明天七点半的闹钟——就这样」",
+      "source": "林晓雨内部",
+      "module": "unknown"
+    },
+    {
+      "id": 40,
+      "type": "body_sensation",
+      "display_text": "手机屏幕的热度从右手掌心透进来，拇指指腹搭在屏幕边缘，玻璃的弧度硌着指节，轻微的。眼眶里有一层很薄的水，没有溢出来，只是让光变得散，荧光灯的白色分成了好几瓣。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 41,
+      "type": "body_sensation",
+      "display_text": "PPT第七页的配色——那个蓝，#1a5fbc，她调了四十分钟才定下来的——停在视网膜里某个地方，不动。地铁座位背面有一条细划痕，弯的，没头没尾。",
+      "source": null,
+      "module": "unknown"
+    }
+  ]
+}

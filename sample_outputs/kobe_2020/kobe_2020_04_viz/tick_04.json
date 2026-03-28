@@ -1,0 +1,301 @@
+{
+  "tick": 4,
+  "event": "厨房里 Vanessa 给 Capri 换尿布，Natalia 和 Bianka 还没起床。Gianna 在吃麦片，问科比到了 Camarillo 今天会不会下场打示范球，科比说看情况，时间够的话可以。他喝了咖啡。Gianna 说她最近在练的那个技术动作今天想展示给那边的教练看，科比说「先展示给我看」，她现场在厨房小幅度做了个虚假动作，科比点头说对了。Ara Zobayan 发来消息说天气有些状况，低云层，但飞行没有问题，他已经取得了 SNA 塔台许可。科比回复「好的，我们九点到」。Vanessa 把 Capri 抱过来，科比接过来，低头看了她一会儿。",
+  "time": "06:00",
+  "location": "Newport Beach 家中厨房及餐厅",
+  "sleep_state": "AWAKE",
+  "emotion": {
+    "dominant": "joy",
+    "intensity": 0.017,
+    "anger": 0.004,
+    "fear": 0.0,
+    "joy": 0.038,
+    "sadness": 0.0,
+    "surprise": 0.017,
+    "disgust": 0.0,
+    "anticipation": 0.011,
+    "trust": 0.017
+  },
+  "moments": [
+    {
+      "id": 0,
+      "type": "visual_fragment",
+      "display_text": "Gigi右肩向左沉，右脚跟离地约两厘米，重心转移比动作早了半拍",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 1,
+      "type": "unsymbolized",
+      "display_text": "那半拍的问题他没说出来，他知道在哪，但刚才他点了头",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 2,
+      "type": "body_sensation",
+      "display_text": "右手食指和中指指腹有轻微的摩擦感，旧的东西",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 3,
+      "type": "voice_intrusion",
+      "display_text": "Gianna说，「我会比你更厉害的，爸」",
+      "source": "Gianna",
+      "module": "reactive"
+    },
+    {
+      "id": 4,
+      "type": "compressed_speech",
+      "display_text": "不够快——",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 5,
+      "type": "intrusion",
+      "display_text": "冰箱上贴着Bianka画的一匹马",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 6,
+      "type": "expanded_speech",
+      "display_text": "今天下午她要把那个动作再做二十次",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 7,
+      "type": "body_sensation",
+      "display_text": "左手无名指，弯曲，再松开。弯曲，再松开。不是习惯动作。就是在做。",
+      "source": null,
+      "module": "rumination"
+    },
+    {
+      "id": 8,
+      "type": "visual_fragment",
+      "display_text": "厨房灯还没开。窗外天还没亮透。桌上Gianna昨晚没吃完的碗，还在那里。",
+      "source": null,
+      "module": "rumination"
+    },
+    {
+      "id": 9,
+      "type": "compressed_speech",
+      "display_text": "「Mamba out。」——那个字说出去之后有一秒没有声音。那一秒。那一秒。",
+      "source": null,
+      "module": "rumination"
+    },
+    {
+      "id": 10,
+      "type": "unsymbolized",
+      "display_text": "那一秒里有什么。不是空。不是结束。就是那一秒里有什么，还没完全摸清楚它是什么，就过去了。还没完全摸清楚。",
+      "source": null,
+      "module": "rumination"
+    },
+    {
+      "id": 11,
+      "type": "body_sensation",
+      "display_text": "她的右手拇指和食指在桌沿轻轻搓了一下——不是摩擦，是停顿，像在确认什么东西在不在那里。那里什么都没有。",
+      "source": null,
+      "module": "self_eval"
+    },
+    {
+      "id": 12,
+      "type": "unsymbolized",
+      "display_text": "厨房里咖啡机的声音还在，那页纸在餐厅，她没有去看它，但那个括号里还空着的感觉没有离开，它就在她背对的方向，保持着大约相同的重量。",
+      "source": null,
+      "module": "self_eval"
+    },
+    {
+      "id": 13,
+      "type": "expanded_speech",
+      "display_text": "她站起来，脚底踩到地板的瞬间，脑子里有一句话经过：「Gianna今天的训练是八点，还有两个小时。」她没有继续想训练的事。她往那页纸走过去，在距离一步的地方停下了，看着桌面，不是看那页纸，是看纸旁边的那块空桌面。",
+      "source": null,
+      "module": "self_eval"
+    },
+    {
+      "id": 14,
+      "type": "unsymbolized",
+      "display_text": "有什么东西关于「这个厨房」和「那个体育馆」——不是对比，不是怀念，是某种关于地点本身是否构成定义的模糊感知，还没有形状",
+      "source": null,
+      "module": "philosophy"
+    },
+    {
+      "id": 15,
+      "type": "body_sensation",
+      "display_text": "左手握着杯子，手指感觉到杯壁的温度在下降，没有对这个过程产生任何判断，但注意力停在那里，停的时间比预期的长",
+      "source": null,
+      "module": "philosophy"
+    },
+    {
+      "id": 16,
+      "type": "expanded_speech",
+      "display_text": "如果把篮球从我身上拿走——但问题是，这个「拿走」到底发生在哪一刻？退役那天？最后一场比赛结束时？还是说它已经发生了，而我一直在用Gi的训练填那个位置，还没有去看清楚那个位置本来是什么形状",
+      "source": null,
+      "module": "philosophy"
+    },
+    {
+      "id": 17,
+      "type": "unsymbolized",
+      "display_text": "有某种关于「Gianna在场上」和「我曾经在场上」的认知，但不是传承，不是延续——是某个更早的问题，关于一件事情是否可以同时属于两个人，以及这是否改变了它对其中一个人意味着什么",
+      "source": null,
+      "module": "philosophy"
+    },
+    {
+      "id": 18,
+      "type": "visual_fragment",
+      "display_text": "厨房台面上的玻璃杯——水位线以下是清晰的圆柱体，水位线以上杯壁的厚度变薄，折射角偏移。不是杯子本身改变，是截面的信息密度在那条线前后不对等。",
+      "source": null,
+      "module": "aesthetic"
+    },
+    {
+      "id": 19,
+      "type": "unsymbolized",
+      "display_text": "句子结构里某处的排布有一个东西是错的——不是词义，不是语法，是那几个字挨在一起之后产生了不该有的堆积感，像两块砖缝对齐了但压力没有分散出去。",
+      "source": null,
+      "module": "aesthetic"
+    },
+    {
+      "id": 20,
+      "type": "visual_fragment",
+      "display_text": "Gianna昨晚练习视频里的慢放帧——持球手型从正确到失位大约跨了0.4秒，变化不是发生在某一帧，是在三帧之间被摊薄了，每帧单独看都说得过去，连起来才看见密度在移动。",
+      "source": null,
+      "module": "aesthetic"
+    },
+    {
+      "id": 21,
+      "type": "visual_fragment",
+      "display_text": "另一条时间线，2006年或2007年，某个训练日，洛杉矶，室内球场，Shaq还在，体重应该控制在315磅左右，菲尔·杰克逊还坐在边线椅子上，科比在三分线左翼出手，球进，没人鼓掌，正常训练流程，Shaq在低位等下一轮，两个人没有对话，各自走回位置，球馆的顶灯照在地板上，反光是那种旧木头的黄，科比现在站在厨房里，盯着这个画面大约三秒，然后画面停在那里，不动了，因为下一帧他算不出来，那支球队的后续进攻体系他不知道会长什么样",
+      "source": null,
+      "module": "counterfactual"
+    },
+    {
+      "id": 22,
+      "type": "compressed_speech",
+      "display_text": "那支球队打不了多少年，Shaq膝盖的问题在2004、2005年就已经是既成事实了，不管两个人关系怎么样",
+      "source": null,
+      "module": "counterfactual"
+    },
+    {
+      "id": 23,
+      "type": "voice_intrusion",
+      "display_text": "菲尔·杰克逊说，「你们俩都需要对方，你们自己知道的。」",
+      "source": "菲尔·杰克逊",
+      "module": "counterfactual"
+    },
+    {
+      "id": 24,
+      "type": "visual_fragment",
+      "display_text": "2008年8月24日，北京五棵松篮球馆。颁奖台正中，金牌压在胸口，绶带是深红和金黄的宽布。台下的场地灯把地板烤成白色，影子短而硬，落在脚尖前方不到二十厘米。左侧站着德韦恩·韦德，右侧是勒布朗·詹姆斯，两人肩膀的轮廓被强光削成了黑色剪影。",
+      "source": null,
+      "module": "positive_memory"
+    },
+    {
+      "id": 25,
+      "type": "body_sensation",
+      "display_text": "2008年8月24日，颁奖台上。金牌的重量落在第四节颈椎和第五节颈椎之间，不是轻的，绶带布料贴着锁骨处皮肤，带一点热，不是体温的热，是金属在灯光下积了几分钟的热。双脚站在台阶顶面，脚底感觉到台阶边缘的棱角，通过鞋底传来。",
+      "source": null,
+      "module": "positive_memory"
+    },
+    {
+      "id": 26,
+      "type": "compressed_speech",
+      "display_text": "2008年8月24日，颁奖台，接过金牌后约三十秒。「就这个。」",
+      "source": null,
+      "module": "positive_memory"
+    },
+    {
+      "id": 27,
+      "type": "body_sensation",
+      "display_text": "右脚掌底部，凉瓷砖的硬度透过袜子传上来——厨房地板，06:00，冰箱压缩机的低频震动顺着脚骨往上走一寸",
+      "source": null,
+      "module": "daydream"
+    },
+    {
+      "id": 28,
+      "type": "body_sensation",
+      "display_text": "左手掌心，不锈钢咖啡壶把手的金属冷度——比瓷砖更集中，更硬，压在大鱼际肌肉上一个小圆点，四根手指弯曲时指节内侧感觉到把手边缘的直角棱",
+      "source": null,
+      "module": "daydream"
+    },
+    {
+      "id": 29,
+      "type": "body_sensation",
+      "display_text": "右手拇指和食指捏住咖啡壶盖顶部的小圆钮——直径不到一厘米，表面有细密的竖纹，指腹感觉到纹路的凸起间距，约0.5毫米一道；拇指甲边缘碰到钮的侧面，那里是光滑的，温度比纹路部分低一点，因为接触空气面积更大；向上提盖时，手腕轻微旋转，前臂桡侧肌肉收缩，感觉到那一条细长的张力从手腕延伸到肘关节内侧三指宽处",
+      "source": null,
+      "module": "daydream"
+    },
+    {
+      "id": 30,
+      "type": "body_sensation",
+      "display_text": "壶盖离开壶口的瞬间，右手拇指腹感觉到掌心朝上的重量从约180克突然降至不足20克——壶盖本身很轻，镀铬表面还沾着一点水雾，凉意从指腹传到第一指节背侧；左手握住壶把，壶把是塑料的，室温约22摄氏度，比金属部分高将近4度，掌心包住把手弧面时，小指下方的鱼际肌轻微承压，皮肤感觉到塑料表面极细的模具纹——比壶盖圆钮的竖纹更浅，间距更密，用指甲横划才能感觉到单独一道；壶嘴朝向马克杯，倾斜角度让前",
+      "source": null,
+      "module": "daydream"
+    },
+    {
+      "id": 31,
+      "type": "visual_fragment",
+      "display_text": "明天上午九点，Mamba Academy的室内训练馆。地板上反光漆面把头顶金属卤素灯的白光切成一格一格的方块。Gianna站在三分线弧顶，左脚鞋尖压着那道白漆边缘。她投完一球，球在铁框内壁滚了一圈弹出，她没追球，转过头来看科比——那个角度，下巴微微抬着，眉头还没松开，等他说话。",
+      "source": null,
+      "module": "future"
+    },
+    {
+      "id": 32,
+      "type": "body_sensation",
+      "display_text": "明天上午晚些时候，更衣室走廊尽头。荧光灯管有一根在轻微闪烁，发出细小的嗡声。科比背靠着冷水泥墙站着，手肘压进墙面，砖缝的棱角顶进左臂外侧皮肤。走廊里有橡胶地垫的气味，还有从远处吹来的空调风，从脚踝处往上走，带着铁器和汗布的混合气。他的手掌还留着篮球皮纹路压出的横纹触感，没有消散。",
+      "source": null,
+      "module": "future"
+    },
+    {
+      "id": 33,
+      "type": "body_sensation",
+      "display_text": "明天正午前后，体育馆主场地边缘的折叠椅上。椅面铁管的冷意透过运动裤布料压进大腿后侧，椅背的横杆顶着腰椎第四节偏右的位置。地板上蜡层反着顶棚筒灯的白光，光斑在视线低处铺开。Gianna在罚球线附近站定，持球的右手手腕在出手前一刻向后折了一下，那个折角和他十几岁时练出来的弧度几乎一样宽。鞋底在木地板上的摩擦声，每次停步都是同一个短促的闷响。科比的左手搭在膝盖上，指节因为微微弓背而轻轻绷着，没有动。",
+      "source": null,
+      "module": "future"
+    },
+    {
+      "id": 34,
+      "type": "compressed_speech",
+      "display_text": "他今晚能破。发还是不发。",
+      "source": null,
+      "module": "social_rehearsal"
+    },
+    {
+      "id": 35,
+      "type": "voice_intrusion",
+      "display_text": "Gianna说，「爸，你觉得我昨天那个右手上篮，脚步对了吗？」",
+      "source": "Gianna",
+      "module": "social_rehearsal"
+    },
+    {
+      "id": 36,
+      "type": "compressed_speech",
+      "display_text": "左脚蹬地那一下你提得太早了，等我吃完这口再说——不，现在就说，趁你还记得昨天的感觉。落地之前髋要压住。",
+      "source": null,
+      "module": "social_rehearsal"
+    },
+    {
+      "id": 37,
+      "type": "voice_intrusion",
+      "display_text": "Gianna说，「爸，你说的是第三步还是第四步落地？」",
+      "source": "Gianna",
+      "module": "social_rehearsal"
+    },
+    {
+      "id": 38,
+      "type": "body_sensation",
+      "display_text": "左手虎口贴着玻璃杯壁，杯壁上附着冷凝水，皮肤感受到那层薄湿，底下是玻璃的硬，虎口肌肉没有发力，只是搭着",
+      "source": null,
+      "module": "imagery"
+    },
+    {
+      "id": 39,
+      "type": "visual_fragment",
+      "display_text": "Gianna的左脚脚后跟，白色袜口压出的一条浅红印记，站在地板砖缝上，砖缝是深灰色，宽约四毫米",
+      "source": null,
+      "module": "imagery"
+    }
+  ]
+}

@@ -1,0 +1,301 @@
+{
+  "tick": 7,
+  "event": "机舱外，灰白的雾层从太平洋方向随洛杉矶盆地的地形漫延过来，越过西部山脊向内陆推进。地面从机舱窗户看越来越模糊。Ara 报告给管制员当前能见度，申请追踪 VOR 信标。科比往窗外看，城市的轮廓变得只剩轮廓，线条被雾气磨平了。旋翼的震动从脚底一直传到背脊。Gianna 和 Alyssa Altobelli 在说什么，声音在引擎噪音里断断续续。",
+  "time": "09:06",
+  "location": "空中，高度约 1200 英尺，洛杉矶盆地上空",
+  "sleep_state": "AWAKE",
+  "emotion": {
+    "dominant": "trust",
+    "intensity": 0.152,
+    "anger": 0.155,
+    "fear": 0.041,
+    "joy": 0.147,
+    "sadness": 0.095,
+    "surprise": 0.1,
+    "disgust": 0.086,
+    "anticipation": 0.033,
+    "trust": 0.332
+  },
+  "moments": [
+    {
+      "id": 0,
+      "type": "visual_fragment",
+      "display_text": "Gianna落地，右脚内侧，胶带在踝骨下方折出两道痕",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 1,
+      "type": "unsymbolized",
+      "display_text": "知道那折痕的角度和足弓塌陷是同一件事，但没有形成任何词",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 2,
+      "type": "body_sensation",
+      "display_text": "右肩往下一侧，很轻，像是被什么拉了一下",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 3,
+      "type": "voice_intrusion",
+      "display_text": "Gianna Bryant说，「好了，爸，我知道了」",
+      "source": "Gianna Bryant",
+      "module": "reactive"
+    },
+    {
+      "id": 4,
+      "type": "compressed_speech",
+      "display_text": "她不知道——",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 5,
+      "type": "visual_fragment",
+      "display_text": "一九九七年，更衣室，自己坐着，右腿伸直，膝盖上方皮肤有点烫，没有告诉任何人",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 6,
+      "type": "expanded_speech",
+      "display_text": "落地前就能改，现在说",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 7,
+      "type": "body_sensation",
+      "display_text": "右脚踝骨内侧，有一条细线状的钝痛，不是今天的，是旧的，一直在那里",
+      "source": null,
+      "module": "rumination"
+    },
+    {
+      "id": 8,
+      "type": "visual_fragment",
+      "display_text": "Gianna坐在体育馆地板上系鞋带，低着头，头顶的发旋",
+      "source": null,
+      "module": "rumination"
+    },
+    {
+      "id": 9,
+      "type": "body_sensation",
+      "display_text": "右脚踝内侧那条钝痛还在，没有加重，也没有消失，就在那里",
+      "source": null,
+      "module": "rumination"
+    },
+    {
+      "id": 10,
+      "type": "voice_intrusion",
+      "display_text": "Gianna说，「爸，你看那个脚步，是不是你以前的那个？」",
+      "source": "Gianna",
+      "module": "rumination"
+    },
+    {
+      "id": 11,
+      "type": "visual_fragment",
+      "display_text": "她看见Gianna把背包塞到座位侧边的空隙里，动作很熟练，肩膀往里压了一下，包进去了，然后Gianna抬头看了她一眼，没说什么，就转头去看窗外。",
+      "source": null,
+      "module": "self_eval"
+    },
+    {
+      "id": 12,
+      "type": "unsymbolized",
+      "display_text": "有什么东西在意识里轻轻转了一下，不是词，不是图像，只是一个模糊的确认感，关于今天上午的某个安排，具体内容抓不住，但那个「已经处理好了」的感觉是在的。",
+      "source": null,
+      "module": "self_eval"
+    },
+    {
+      "id": 13,
+      "type": "expanded_speech",
+      "display_text": "她在想：上周那场训练后她列的那张清单还没有完整过一遍，第三条是换防的时机她给晚了，不是Gianna，是她自己站的位置不对，那个角度她应该提前告诉Gianna的，没告诉，所以Gianna只能靠自己判断——这个还需要再说一次。",
+      "source": null,
+      "module": "self_eval"
+    },
+    {
+      "id": 14,
+      "type": "visual_fragment",
+      "display_text": "舷窗外云层不透明，地面已经看不见，洛杉矶盆地就在下方某处，但「下方某处」没有任何视觉内容可以附着。",
+      "source": null,
+      "module": "philosophy"
+    },
+    {
+      "id": 15,
+      "type": "unsymbolized",
+      "display_text": "一个认知：四年前那个终止点之后存在一个连续性，但这个连续性的名字不是「篮球之后的生活」，也不是「退役」，名字本身没有找到。",
+      "source": null,
+      "module": "philosophy"
+    },
+    {
+      "id": 16,
+      "type": "expanded_speech",
+      "display_text": "「Academy里那些孩子来找我，不是因为我现在是什么，是因为我曾经是什么——那个曾经是什么，现在还在不在？如果它还在，它住在哪里？如果它不在了，他们追的是什么？」",
+      "source": null,
+      "module": "philosophy"
+    },
+    {
+      "id": 17,
+      "type": "unsymbolized",
+      "display_text": "Gianna在对面，这个事实和「篮球」这个词之间没有任何连接，但「如果把篮球从我身上拿走」这个假设句在此刻找不到可以检验的条件——因为没有办法确认篮球是否已经被拿走，或者它从未真正在那里。",
+      "source": null,
+      "module": "philosophy"
+    },
+    {
+      "id": 18,
+      "type": "visual_fragment",
+      "display_text": "直升机舷窗框的矩形——铝合金边缘与外部雾层之间的间隙宽度，约等于球场三分线弧顶处地板缝的宽度。两个不同材质的分界线，水平方向上的密度相同。",
+      "source": null,
+      "module": "aesthetic"
+    },
+    {
+      "id": 19,
+      "type": "body_sensation",
+      "display_text": "左肩胛骨内侧：一个静止的压点，不是疼痛，是重量分布停在某个位置后未完全解除的残留——类似跳投随球动作末端手腕下压时躯干的对侧补偿，仍在。",
+      "source": null,
+      "module": "aesthetic"
+    },
+    {
+      "id": 20,
+      "type": "unsymbolized",
+      "display_text": "Gianna 昨天某个转身切入的步幅间距——有什么东西关于那个间距是对的，与舷窗外云层边缘的水平延伸长度之间存在某种比例关系，尚未被确认，但已经被注意到。",
+      "source": null,
+      "module": "aesthetic"
+    },
+    {
+      "id": 21,
+      "type": "visual_fragment",
+      "display_text": "另一条时间线，斯台普斯中心的更衣室，2003年某个常规赛后。科比和Shaq并排坐在长椅上，科比手里拿着一瓶运动饮料，没喝，Shaq在说什么，科比点了一下头。画面在这里停住——没有之后的交易，没有2004年总决赛的失利，Phil Jackson留下来的时间延长了几年。",
+      "source": null,
+      "module": "counterfactual"
+    },
+    {
+      "id": 22,
+      "type": "compressed_speech",
+      "display_text": "那条线上Vanessa还是Vanessa，Gigi出生的时间一样，但Gigi在斯台普斯中心边上的练习馆长大，地板是那种特定的枫木色，她认识的人都不一样。",
+      "source": null,
+      "module": "counterfactual"
+    },
+    {
+      "id": 23,
+      "type": "unsymbolized",
+      "display_text": "一种模糊的认知：那条线上的Gigi打球姿势是在人群里习得的，不是在一对一里习得的——区别存在，但无法确定哪种更好，这个问题此刻没有答案。",
+      "source": null,
+      "module": "counterfactual"
+    },
+    {
+      "id": 24,
+      "type": "visual_fragment",
+      "display_text": "二〇〇八年八月二十四日夜，五棵松体育馆颁奖台，国际奥委会官员把金牌挂到脖子上的瞬间——金牌正面图案朝上，绶带压住左侧锁骨，金属表面被顶部追光打出一块白色反光，白色反光的边缘不规则，向右偏移约一拳宽。台下第一排闪光灯同时亮起，整排人影在台板上瞬间缩短成一排深色方块，方块边界清晰，随即消失。",
+      "source": null,
+      "module": "positive_memory"
+    },
+    {
+      "id": 25,
+      "type": "body_sensation",
+      "display_text": "颈部绶带布料的重量，不完全对称，金牌偏向左侧胸口，锁骨下方感受到一个钝性压点，不超过五十克，但存在。双脚脚跟并拢，鞋底橡胶与颁奖台木板之间的接触面传来轻微的回弹感，木板有微小的弹性形变。",
+      "source": null,
+      "module": "positive_memory"
+    },
+    {
+      "id": 26,
+      "type": "voice_intrusion",
+      "display_text": "科比说，「这块牌子是真的。」",
+      "source": "科比",
+      "module": "positive_memory"
+    },
+    {
+      "id": 27,
+      "type": "visual_fragment",
+      "display_text": "舷窗玻璃上有一层薄薄的水汽，手指压上去，玻璃是凉的，比奖杯底座更凉，带着高空的那种干净冷。窗外云层是灰白色的，厚实，看不到地面，只有一片均匀的白，像棉花压实了以后的密度。",
+      "source": null,
+      "module": "daydream"
+    },
+    {
+      "id": 28,
+      "type": "body_sensation",
+      "display_text": "座椅靠背的皮革贴着后背，有轻微的震动从机身传进来，频率很低，像一根手指在脊椎骨两侧来回压。腿伸直，球鞋鞋底踩着地毯，地毯是那种短绒的，踩上去有一点点阻力。腰带扣压在腹部，金属边缘是凉的，比玻璃窗暖一点，但还没有到体温。",
+      "source": null,
+      "module": "daydream"
+    },
+    {
+      "id": 29,
+      "type": "body_sensation",
+      "display_text": "右手搭在扶手上，手指自然弯曲，指节贴着扶手侧面那条窄窄的缝，缝里有一道细小的凸起，塑料包边的接缝，拇指指腹来回蹭了两下，有一点点毛刺感。机舱里的空气是干的，鼻腔里能感觉到轻微的干燥，带着一丝油脂和布料混在一起的气味，不难闻，就是密封的空间才有的那种味道。窗外的光从左侧打进来，落在膝盖上方的裤腿上，那块布料被晒得比旁边稍暖，手如果放过去，能感觉到两三度的温差。",
+      "source": null,
+      "module": "daydream"
+    },
+    {
+      "id": 30,
+      "type": "body_sensation",
+      "display_text": "脖子往左转了一下，视线从膝盖移开，落到窗玻璃上。玻璃是双层的，边缘有一圈细小的冷凝水珠，不是水渍，是真的小水珠，密密的，直径大概一毫米不到。用左手食指指尖碰了一下最靠近窗框的那颗，指腹感觉到一点点凉，然后是湿，水珠被压扁了，在玻璃上留下一道浅浅的弧形痕迹。玻璃本身是凉的，比机舱内壁的塑料凉，指尖按上去的时候，冷意沿着指节往上走了一截，到第二个关节停住了。窗外的光照着那道水痕，反出一条窄窄",
+      "source": null,
+      "module": "daydream"
+    },
+    {
+      "id": 31,
+      "type": "visual_fragment",
+      "display_text": "今天下午四点左右，科比站在Mamba Academy的室内球场边线外，地板上的三分线是橙黄色的，正对着他。Gianna在弧顶运球，蓝白色球衣在LED灯光下有一点反光。她做了一个向左的假动作，然后跳投——球在空中划了一段弧线，碰了一下篮圈铁框，弹进去了。Gianna转过头，看向他。她没有喊什么，就是那样看过来，嘴角往上扯了一点。",
+      "source": null,
+      "module": "future"
+    },
+    {
+      "id": 32,
+      "type": "visual_fragment",
+      "display_text": "今天下午五点半左右，更衣室走廊，荧光灯管有一根在轻微闪烁。Gianna背着黑色球包走在他前面两步，球包的拉链头撞在金属扣上发出轻响。她左手还握着一瓶半空的水，瓶身上有她捏过的凹痕。",
+      "source": null,
+      "module": "future"
+    },
+    {
+      "id": 33,
+      "type": "body_sensation",
+      "display_text": "今晚九点多，Gianna坐在餐桌对面，头顶的吊灯把她脸右侧照亮，左侧留在阴影里。她手肘撑着桌面，叉子在盘子边缘碰了一下，发出一声短促的瓷声。她正在说什么，嘴角往右边歪了一下——那个他认识的表情，介于得意和撒娇之间。餐桌的木纹在灯下显出橙黄色，他的小臂压在上面，能感觉到木头表面细微的粗糙和温热。",
+      "source": null,
+      "module": "future"
+    },
+    {
+      "id": 34,
+      "type": "compressed_speech",
+      "display_text": "下午那个电话……先听他们说完再表态。",
+      "source": null,
+      "module": "social_rehearsal"
+    },
+    {
+      "id": 35,
+      "type": "voice_intrusion",
+      "display_text": "Gianna说，「Gianna：「爸，我们到了之后，我先去找教练签到，你去停机坪那边等我？」",
+      "source": "Gianna",
+      "module": "social_rehearsal"
+    },
+    {
+      "id": 36,
+      "type": "compressed_speech",
+      "display_text": "行，你去找教练，我在停机坪等你。",
+      "source": null,
+      "module": "social_rehearsal"
+    },
+    {
+      "id": 37,
+      "type": "voice_intrusion",
+      "display_text": "Gianna说，「爸，你觉得今天的训练，Alyssa 她们能跟上吗？」",
+      "source": "Gianna",
+      "module": "social_rehearsal"
+    },
+    {
+      "id": 38,
+      "type": "visual_fragment",
+      "display_text": "Gianna左脚踝外侧，白色护踝布带末端有一截翻起，约两毫米，贴着木地板。地板漆面在那一点已经磨薄，颜色偏黄。",
+      "source": null,
+      "module": "imagery"
+    },
+    {
+      "id": 39,
+      "type": "body_sensation",
+      "display_text": "右手食指第二关节内侧，感觉到一个很窄的横向压力，像是什么东西曾经被夹在那里，已经移走，压力还没散。",
+      "source": null,
+      "module": "imagery"
+    }
+  ]
+}

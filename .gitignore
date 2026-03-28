@@ -1,0 +1,58 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# 虚拟环境
+venv/
+.venv/
+env/
+.env
+
+# 环境变量 / 密钥
+.env
+.env.local
+*.env
+secrets.json
+api_keys.json
+
+# 运行时输出（测试结果、历史状态）
+output/
+!output/.gitkeep
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# 编辑器
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Jupyter
+.ipynb_checkpoints/
+
+# 缓存
+*.cache
+jieba.cache
+/var/
+
+# 测试脚本（临时）
+run_test_*.sh
+
+# 私有文档（推广策略，不对外公开）
+docs/launch-distribution.md
+docs/launch-copy.md
+docs/opensource-launch.md
+
+# 私有研究资料
+data/kobe_raw_research.md

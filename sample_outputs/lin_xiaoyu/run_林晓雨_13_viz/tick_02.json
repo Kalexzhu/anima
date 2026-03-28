@@ -1,0 +1,315 @@
+{
+  "tick": 2,
+  "event": "会议室的门从里面打开，陈总和另外两个人走出来，边走边说话，其中一个人手里拿着一叠打印纸，是林晓雨方案的纸质版，角上有红色手写标注。",
+  "time": "17:00",
+  "location": "望京某互联网公司",
+  "sleep_state": "AWAKE",
+  "emotion": {
+    "dominant": "sadness",
+    "intensity": 0.21,
+    "anger": 0.12,
+    "fear": 0.16,
+    "joy": 0.0,
+    "sadness": 0.52,
+    "surprise": 0.1,
+    "disgust": 0.16,
+    "anticipation": 0.0,
+    "trust": 0.0
+  },
+  "moments": [
+    {
+      "id": 0,
+      "type": "compressed_speech",
+      "display_text": "那叠纸，红色笔迹密密麻麻，有一处划了两道",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 1,
+      "type": "body_sensation",
+      "display_text": "眼眶后面有点热，鼻梁有点酸，喉咙那里卡着什么",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 2,
+      "type": "voice_intrusion",
+      "display_text": "陈总说，「这个方案完全跑偏了」",
+      "source": "陈总",
+      "module": "unknown"
+    },
+    {
+      "id": 3,
+      "type": "compressed_speech",
+      "display_text": "跑偏——",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 4,
+      "type": "voice_intrusion",
+      "display_text": "前男友李杨说，「跟你在一起我喘不过气」",
+      "source": "前男友李杨",
+      "module": "unknown"
+    },
+    {
+      "id": 5,
+      "type": "unsymbolized",
+      "display_text": "知道自己在把两件事放在一起，知道不该，但停不下来，就是知道",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 6,
+      "type": "compressed_speech",
+      "display_text": "张明说过要去楼下买奶茶",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 7,
+      "type": "body_sensation",
+      "display_text": "胸口那块东西还在，没有散，吸气的时候能感觉到它往上顶了一下，然后又压回去",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 8,
+      "type": "voice_intrusion",
+      "display_text": "领导说，「这个方案完全跑偏了」",
+      "source": "领导",
+      "module": "unknown"
+    },
+    {
+      "id": 9,
+      "type": "compressed_speech",
+      "display_text": "两周。跑偏了。两周。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 10,
+      "type": "body_sensation",
+      "display_text": "手还是放在膝盖上，没有移动，不知道从什么时候开始喉咙那里有点紧，不疼，就是紧着",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 11,
+      "type": "unsymbolized",
+      "display_text": "某种运作仍在继续——不是在复盘方案哪里出了问题，而是在确认一件已经被判定为真的事。那个判定的来源不重要，它只是在那里，压着。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 12,
+      "type": "body_sensation",
+      "display_text": "她看见窗玻璃上有自己的虚影。影子里的人姿势是收的，两手叠在膝上，背没有靠椅背。她注意到这个姿势——和会议室里站着被打断时是同一个姿势。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 13,
+      "type": "expanded_speech",
+      "display_text": "她在想：「如果当时第五页就讲清楚了，他可能不会……」——但这句话没有说完，因为下一个念头直接覆盖上来：「讲清楚了也没用。」两个判断之间没有过渡，没有论据。第二个判断更重，她停在那里。这个模式可以命名为「权威定论吸收」：批评尚未被理解，结论已经先于理解生效。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 14,
+      "type": "body_sensation",
+      "display_text": "窗玻璃的温度从额头传进来，是冷的，比预期的冷。没有在想任何事，但身体在接收这个温度，像是在确认一件什么事——不清楚是什么事。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 15,
+      "type": "unsymbolized",
+      "display_text": "有一个关于「被看见」的东西悬在那里，没有语言的形状。不是委屈，不是愤怒。是某种更早的、更基础的东西——像是对某个前提的怀疑，但还没有成为问题。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 16,
+      "type": "expanded_speech",
+      "display_text": "「两周不是重点。我知道两周不是重点。」但手还是没动。「如果方案是好的，他就会认可。如果方案不够好，那……」那什么。这里断掉了。不是因为没有后续，是因为后续的那句话——她没办法让自己把它说完整。「那我需要什么？」她不知道这个问题在问的是方案，还是别的什么。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 17,
+      "type": "unsymbolized",
+      "display_text": "「认可」这个词在某个地方浮了一下，没有被抓住。随即有一个更模糊的东西跟上来：认可是因为方案值得被认可，还是因为她在那里、做了那件事、需要有人看见这个事实本身？这两者之间有没有区别？如果有区别，她现在坐在这里，是在等哪一个？",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 18,
+      "type": "visual_fragment",
+      "display_text": "窗框右侧竖向铝型材，表面有拉丝纹路，间距约0.3毫米，平行排列，密度均匀。光从侧面打过来，纹路在某个角度显出来，另一个角度消失。宽度整体约18毫米。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 19,
+      "type": "unsymbolized",
+      "display_text": "那条细反光带和铝型材拉丝纹路之间有某种间距关系，不是对齐，是某个比例。没有名字。是的。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 20,
+      "type": "visual_fragment",
+      "display_text": "楼道地面的接缝线，深灰色，约1毫米宽，延伸到视野尽端。线本身没有变细，是透视让它变细的。最远端接近0像素但还在。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 21,
+      "type": "visual_fragment",
+      "display_text": "另一条时间线延续：合肥国企办公室，下午三点，她的桌上摆着一个不重要的表格，窗外那条老街有棵银杏，现在应该是黄的。没有人在等她做完两周的东西。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 22,
+      "type": "compressed_speech",
+      "display_text": "「说了又怎样」——",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 23,
+      "type": "body_sensation",
+      "display_text": "分叉点倒回：他站在门口穿外套，她张嘴，那句话停在喉咙里没出来。如果出来了——他停下来，外套还挂在手臂上，他们在门口站了很久，然后她没有来北京。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 24,
+      "type": "expanded_speech",
+      "display_text": "公告栏右下角，有人用红色细头记号笔在她名字旁边画了一个圆圈，不是标准的圆，微微歪的，笔迹有点重，纸面被压出了浅浅的凹痕。她当时盯着那个圆圈看了很久，不知道是谁画的。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 25,
+      "type": "body_sensation",
+      "display_text": "主管把那张打印纸贴上去的时候，用了四枚图钉，她站在旁边，听见图钉按进软木板时那四声闷响——「咚、咚、咚、咚」，每一声都很实，手心跟着收紧了一下，然后松开。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 26,
+      "type": "voice_intrusion",
+      "display_text": "主管说，「这个是林晓雨做的，你们可以看一下。」声音不高，像是在说一件普通的事，但走廊里那一刻没有别的声音。」",
+      "source": "主管",
+      "module": "unknown"
+    },
+    {
+      "id": 27,
+      "type": "body_sensation",
+      "display_text": "脊背抵着冷玻璃，透过外套能感觉到一层薄薄的凉意从肩胛骨慢慢渗进来",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 28,
+      "type": "body_sensation",
+      "display_text": "窗外对面楼的玻璃幕墙正在接住夕阳，整面墙是橙红色的，像烧到一半的炭，有两三个窗格反光特别亮，亮得有点刺眼，她没有移开视线",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 29,
+      "type": "body_sensation",
+      "display_text": "盯着那几个亮格子太久，眼睛开始发酸，泪腺的位置有一点胀，她眨了一下眼，睫毛碰到下眼睑，感觉到睫毛是湿的",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 30,
+      "type": "expanded_speech",
+      "display_text": "她抬起手背，轻轻压在下眼睑那一圈——皮肤是热的，手背是凉的，两个温度在那一点挤在一起，手背上浮起一小块潮湿，不多，只有指节宽的一条。她没有动，手背就那样贴着，感觉到皮肤底下眼球的弧度，硬的，微微在动。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 31,
+      "type": "expanded_speech",
+      "display_text": "她把手背从眼睛上移开，手背那条潮湿的地方碰到楼道里流动的冷气，凉了一下，变干。她低头看了一眼那条湿痕，皮肤已经恢复原来的颜色，什么都没有了。她把那只手放回膝盖上，掌心朝下，感觉到裤子的布料——涤纶的，有轻微的起球，食指指腹蹭过去，细小的颗粒一个一个挤过指纹的纹路。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 32,
+      "type": "visual_fragment",
+      "display_text": "今晚11点，坐在出租屋床边，卫生间的门关着，白色门缝透出一条黄光。隔壁电视声已经停了。窗帘没拉严，路灯橙光打在被子一角上。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 33,
+      "type": "expanded_speech",
+      "display_text": "明天早上九点多，她推开公司楼层的玻璃门，走廊的顶灯已经全亮，几个同事站在茶水间说话。她走过去的时候，其中一个转过头来，停顿了零点几秒，然后继续说话，没有叫她。格子间里，她的电脑屏幕是黑的，键盘上有一层昨天就有的薄灰。她在椅子上坐下来，椅背发出轻微的塑料摩擦声，午前的光从她右手边的百叶窗条隙打进来，横着切过桌面，落在鼠标垫的边缘上。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 34,
+      "type": "expanded_speech",
+      "display_text": "再往后一天，周五下班，她从公司门口出来，外面的光已经开始偏黄。她站在路边等滴滴，手机屏幕亮着，显示还有四分钟。旁边有人拖着行李箱经过，轮子碾过路面裂缝的声音很响。车来了，她拉开后车门坐进去，座椅是那种用了很久的深色绒面，有点扁。车开起来，她把头靠在窗玻璃上，玻璃是凉的，微微有震动。路上堵着，车走走停停，窗外的楼和招牌一块一块往后移。她的手机还亮着，但她没有再看。到家那条街，路灯已经开了，她下车，走进楼道，按了",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 35,
+      "type": "expanded_speech",
+      "display_text": "周六上午，她家卧室，光从没拉严的窗帘缝里进来，斜着打在地板上一条。她还躺着，被子压着腿，手机屏幕亮了一下又灭了。天花板是白的，有一块漆起了一点鼓泡，她盯着那块看了一会儿。外面有人在楼道里说话，声音隔着门传进来，听不清说什么，然后脚步声走远了。窗帘动了一下，有风，但不大。房间里安静，冰箱在厨房方向发出一声轻响，然后又没声了。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 36,
+      "type": "voice_intrusion",
+      "display_text": "林晓雨想象张明说话的声音说，「他可能就是随口问一下——'还好吗'三个字，发完他就去做别的事了。我要是现在回，他看到消息，大概会停一下，然后打几个字过来。他会问什么？'怎么了'还是'发生什么了'？我不知道怎么接那句话。说'还好'是假的，说'不好'——然后呢，他问，我说，他说'别想太多'或者'你已经很努力了'，我要在这里谢谢他吗。」",
+      "source": "林晓雨想象张明说话的声音",
+      "module": "unknown"
+    },
+    {
+      "id": 37,
+      "type": "voice_intrusion",
+      "display_text": "想象中朋友的回复说，「'怎么了'——就这三个字。我盯着这个假设的气泡看了一会儿。然后我要打什么？'今天被否了'，五个字，他会看到，他会回'啊'，或者'这领导也太'，然后停顿，然后'你别放心上'。我已经知道那句话的重量了。不是他的错，就是那句话本身——它落下来什么都压不住，只是填满了空白。我要回'嗯谢谢'，他要回'加油'，这个对话就结束了。我们都可以去做别的事了。」",
+      "source": "想象中朋友的回复",
+      "module": "unknown"
+    },
+    {
+      "id": 38,
+      "type": "voice_intrusion",
+      "display_text": "排演中的自己说，「所以我不打那五个字。我把手机翻过去，屏幕朝下放在腿上。——但是他发过来的'怎么了'还在那儿，我没有回，他会等一会儿，然后去做别的事，这也是一种结束。我在选哪种结束。」",
+      "source": "排演中的自己",
+      "module": "unknown"
+    },
+    {
+      "id": 39,
+      "type": "voice_intrusion",
+      "display_text": "林晓雨内部推演/陈昊的声音说，「他看了一眼手机，没有回音，就把手机插回口袋了。——就这样。他不会再发第二条。我知道他不会。他不是会追问的那种人，这点我一直是知道的，只是现在坐在这里，窗玻璃凉的，才觉得这个'知道'很重。他那边现在大概在吃饭，或者开着什么，声音在背景里。他的'怎么了'发出去之后他自己也就忘了一半。不是坏，就是这样。我把手机翻过去这个动作他永远不会知道。他不知道我在这儿坐着，不知道那个方案，不知道我从会议室出来之后第一件事是想给他」",
+      "source": "林晓雨内部推演/陈昊的声音",
+      "module": "unknown"
+    },
+    {
+      "id": 40,
+      "type": "body_sensation",
+      "display_text": "窗玻璃上贴着一张褪色的消防疏散图，边角翘起来，露出黄色的胶痕。图上的箭头指向右边，油墨已经浅到几乎看不见。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 41,
+      "type": "voice_intrusion",
+      "display_text": "李杨说，「你太累了」——声音从哪里进来的，停在耳朵和脖颈之间的某个地方，没有继续，也没有走」",
+      "source": "李杨",
+      "module": "unknown"
+    }
+  ]
+}

@@ -1,0 +1,322 @@
+{
+  "tick": 4,
+  "event": "手机屏幕再次亮起，通知栏显示妈妈在语音消息发出后又发了一条文字，内容是\"晓雨你在吗\"。",
+  "time": "21:00",
+  "location": "出租屋",
+  "sleep_state": "AWAKE",
+  "emotion": {
+    "dominant": "joy",
+    "intensity": 0.1,
+    "anger": 0.07,
+    "fear": 0.1,
+    "joy": 0.21,
+    "sadness": 0.11,
+    "surprise": 0.06,
+    "disgust": 0.09,
+    "anticipation": 0.0,
+    "trust": 0.02
+  },
+  "moments": [
+    {
+      "id": 0,
+      "type": "visual_fragment",
+      "display_text": "PPT第七页，蓝色色块，色值#1a5fbc，停在屏幕上",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 1,
+      "type": "body_sensation",
+      "display_text": "胸口有点沉，不是痛，就是压着",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 2,
+      "type": "voice_intrusion",
+      "display_text": "母亲说，「你这孩子就是太要强，累死自己有什么用」",
+      "source": "母亲",
+      "module": "unknown"
+    },
+    {
+      "id": 3,
+      "type": "unsymbolized",
+      "display_text": "知道自己在想值不值得，但没有具体的词，也没有一个人的脸",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 4,
+      "type": "visual_fragment",
+      "display_text": "实习时走廊公告栏，自己的稿子被贴在正中间，上面有红圈",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 5,
+      "type": "compressed_speech",
+      "display_text": "我在乎——",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 6,
+      "type": "compressed_speech",
+      "display_text": "那个蓝调了四十分钟",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 7,
+      "type": "body_sensation",
+      "display_text": "躺下了。被子压着胸口那块东西，没有压散，还是在那里。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 8,
+      "type": "voice_intrusion",
+      "display_text": "领导说，「这个方案完全跑偏了」",
+      "source": "领导",
+      "module": "unknown"
+    },
+    {
+      "id": 9,
+      "type": "unsymbolized",
+      "display_text": "13岁，站在讲台上。念错那个字的时候底下有笑声。不知道是不是真的有。现在也不知道今天底下有没有人在笑。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 10,
+      "type": "body_sensation",
+      "display_text": "胸口那块东西还在。被子没用。手放在上面，也没用。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 11,
+      "type": "compressed_speech",
+      "display_text": "两周。跑偏了。两周。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 12,
+      "type": "visual_fragment",
+      "display_text": "出租屋的桌面。方案的打印稿压在水杯底下，纸边已经翘起来。她没有把它扔掉，也没有把它收起来。它就放在那里，她坐在桌子对面，没有看它。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 13,
+      "type": "unsymbolized",
+      "display_text": "某个不成形的认知：这件事可以告诉谁。扫过去——没有落点。不是因为没有人，是因为说出去需要对方问「那你怎么办」，然后她需要回答。这个预期的回合让她在开口之前就停住了。这个停住不是决定，更像是某个习惯性的收缩。她自己没有命名它。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 14,
+      "type": "expanded_speech",
+      "display_text": "「其实也没什么，就是个方案。」她在脑子里把这句话过了一遍。不是准备说给谁听。是在确认这句话够不够用——够不够把今天装进去，让它不再需要处理。她检查了一下，发现够用。然后她去倒了杯水。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 15,
+      "type": "body_sensation",
+      "display_text": "坐在出租屋地板上，背靠床沿。右手无意识捏着手机边框，拇指在角上反复摩挲同一处。不是寻求什么，就是手在那里，在做这件事。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 16,
+      "type": "unsymbolized",
+      "display_text": "「两周」这件事还在某处没有结束。不是以完整的形式存在，而是像一个文件夹没有关掉。那里面的东西——不知道是「我的判断」还是「我花的时间」还是别的什么——没有被处理，只是被覆盖了一层什么。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 17,
+      "type": "voice_intrusion",
+      "display_text": "领导说，「这个方向整体有问题。」——这句话现在只剩一个轮廓，字的意思已经不重要了。重要的好像是那句话发生在那个房间里，发生在那些人都在的时候。那件事本身是一件什么样的事？」",
+      "source": "领导",
+      "module": "unknown"
+    },
+    {
+      "id": 18,
+      "type": "visual_fragment",
+      "display_text": "努力和结果之间有没有一种东西是稳定的——不依赖他人说不说「可以」？如果有，它叫什么？如果没有，那每次做事，到底是在为什么建立根据？",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 19,
+      "type": "unsymbolized",
+      "display_text": "灯带接缝处那个暗区的宽度——有什么东西是对的，不是对齐，是某种间距本身成立的方式",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 20,
+      "type": "body_sensation",
+      "display_text": "墨线极细，0.3mm以下，在白纸上走了一段后有轻微的墨量衰减，线尾比线头细约1/5，整条线不是均匀的",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 21,
+      "type": "unsymbolized",
+      "display_text": "线尾的那个收细——和灯带接缝处暗区的宽度——两个东西放在一起，有某种比例上的同构，但不是形状，是「收」这个状态本身",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 22,
+      "type": "expanded_speech",
+      "display_text": "那张桌子还在原位。合肥国企办公室，下午三点，马克杯的logo朝向窗户。她坐在对面的椅子上，不是现在这个出租屋的椅子，是那把靠背有点松动的椅子。两个人的文件混在一张桌子上。这个画面停在这里，没有往后走。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 23,
+      "type": "compressed_speech",
+      "display_text": "留下来之后就不会有今天这个会议室——",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 24,
+      "type": "unsymbolized",
+      "display_text": "一种关于「没说」和「说了」之间的模糊感，不是后悔，不是庆幸，是两条路都有重量，现在只站在其中一条上，另一条的重量还压着。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 25,
+      "type": "body_sensation",
+      "display_text": "喉咙里有什么东西往上顶，不是哭，是那种被憋住的、热的、圆的感觉。她没有动，手放在腿上，掌心朝下压着牛仔裤的布料，感觉到布料上细小的织纹。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 26,
+      "type": "expanded_speech",
+      "display_text": "公告栏上那张A4纸的右下角微微翘起来，没有被图钉压住。纸是普通的白色复印纸，墨迹有一点点洇开，最上面一行字用的是加粗黑体，她的名字在括号里，字号比正文小一号。日光灯管打下来，纸面反一点白光。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 27,
+      "type": "voice_intrusion",
+      "display_text": "主管说，「这个思路是对的，让大家都看看。」",
+      "source": "主管",
+      "module": "unknown"
+    },
+    {
+      "id": 28,
+      "type": "body_sensation",
+      "display_text": "工作室的北向窗，下午三点的光是白的、平的，不刺眼，落在一张倾斜的画板上，画板上夹着一张半湿的水彩纸，纸边翘起来一点点",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 29,
+      "type": "body_sensation",
+      "display_text": "翘起的纸边——指尖碰了一下，纸是凉的，带一点湿，像刚从水里捞出来的东西，还没干透，压下去又弹回来",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 30,
+      "type": "body_sensation",
+      "display_text": "手指离开纸边，指腹上留了一点凉意，贴着大腿外侧放着，牛仔布的纹路压进来，一条一条的，粗的细的交替",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 31,
+      "type": "body_sensation",
+      "display_text": "大腿外侧的手慢慢滑下去，落在椅面上，椅面是硬的，有一点木头的凉，隔着牛仔布还是能感觉到边缘的棱，坐骨的位置压着，不痛，就是实的",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 32,
+      "type": "body_sensation",
+      "display_text": "坐骨压着椅面边缘的那条棱，牛仔布的纹路贴着皮肤，硬的，有一点凉，脚底踩着地板，地板也是凉的，从脚心一直到脚跟都是平的，实的",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 33,
+      "type": "expanded_speech",
+      "display_text": "出租屋卫生间，21:20。浴室的排风扇已经开着，嗡嗡的低频震动把房间里其他声音压下去了。淋浴的热水还在流，白色瓷砖上方聚着一层雾气，镜子完全模糊了。林晓雨坐在马桶盖上，膝盖缩向胸口，T恤袖子被她攥在手里。水声大到她说话也没人听见。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 34,
+      "type": "expanded_speech",
+      "display_text": "出租屋卧室，21:55。浴室的门开着一条缝，还有余热散出来。林晓雨坐在床边，头发没有完全吹干，有几缕压在脖子侧面，凉的。她的后背靠着墙，脚底板踩在地板上，木地板有点凉。窗帘没拉严，路灯橙色的光落在被子上一条窄窄的斜线。排风扇已经关了，现在很安静，只有楼下偶尔过一辆车，轮胎在柏油路上的声音很低很远。她低着头，手机屏幕亮着，放在大腿上，但她没在看。屏幕的蓝白光照到她的手背，照到指关节。她的手指没有动。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 35,
+      "type": "expanded_speech",
+      "display_text": "出租屋卧室，22:20。手机屏幕已经自动熄灭，大腿上只剩一片暗。路灯的橙色斜线还在被子上，但林晓雨已经侧躺下去，膝盖微微弯着，把那条没吹干的头发压在了枕头和脖子之间，凉的地方更凉了一点。眼睛是睁着的，看着墙上那条橙色光线的边缘——边缘很清晰，一侧亮，一侧暗，中间没有过渡。楼下又过了一辆车，轮胎声来了又走。光线没有动。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 36,
+      "type": "expanded_speech",
+      "display_text": "出租屋卧室，22:47。那条橙色光线的边缘还在墙上，但林晓雨的眼睛已经不看它了——眼皮低垂着，睫毛的影子落在颧骨上，模糊的。呼吸变长了一点，胸口起伏的幅度更慢。压在枕头下的那缕头发还是凉的，但凉意已经不那么明显，因为脖子那里已经微微暖起来。膝盖还是弯着，被子在腰那里皱了一个浅弧。楼下没有车了。房间里只剩空调出风口很低很低的嗡声，一直在，像什么都没发生过。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 37,
+      "type": "voice_intrusion",
+      "display_text": "张明说，「他如果现在再问一次'还好吗'……我怎么说。说'还好'？他不信。说'不好'？然后呢，他说'怎么了'，我说被否了，他说'没事的下次再来'，然后我说'嗯'，然后就没了。」",
+      "source": "张明",
+      "module": "unknown"
+    },
+    {
+      "id": 38,
+      "type": "voice_intrusion",
+      "display_text": "想象中的陈浩说，「那你下次方案想怎么改？」",
+      "source": "想象中的陈浩",
+      "module": "unknown"
+    },
+    {
+      "id": 39,
+      "type": "voice_intrusion",
+      "display_text": "自己预演中的声音说，「我说：'我想在数据支撑那块再做厚一点，然后把执行节奏拆细……' 然后她会点头，或者直接说'这些上次也有'——我不知道她会不会这么说，但我能想到她那个表情，就是那种等着看你能说出什么新东西的表情。然后我会停一下，然后我会说'我觉得核心问题可能是我没有对齐你的优先级'——我不确定我说不说得出这句话，这句话说出来她会怎么想，会不会觉得我在推卸，说是她没讲清楚。」",
+      "source": "自己预演中的声音",
+      "module": "unknown"
+    },
+    {
+      "id": 40,
+      "type": "voice_intrusion",
+      "display_text": "林晓雨想象中的领导回应说，「'对齐优先级'——她可能会停一下，然后说'你觉得我的优先级是什么'。就这一句。然后等我。我说不出来。或者我说出来了，说'我理解是落地速度和可执行性'，然后她说'对，但你的方案里哪一页是在解决这个'——我翻不到那一页。方案里没有那一页。两周的东西里没有那一页。然后这个对话就结束了，不是她结束的，是我自己先没词了。」",
+      "source": "林晓雨想象中的领导回应",
+      "module": "unknown"
+    },
+    {
+      "id": 41,
+      "type": "voice_intrusion",
+      "display_text": "母亲说，「你这孩子就是太要强，累死自己有什么用。」——声音从右耳后侧进来，带着一点回响，像在瓷砖房间里说的」",
+      "source": "母亲",
+      "module": "unknown"
+    },
+    {
+      "id": 42,
+      "type": "body_sensation",
+      "display_text": "喉咙下方，胸骨正中偏左，一块东西，不疼，压着，吸气到一半就停在那里了",
+      "source": null,
+      "module": "unknown"
+    }
+  ]
+}

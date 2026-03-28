@@ -1,0 +1,301 @@
+{
+  "tick": 5,
+  "event": "科比浏览了几篇文章，停在一篇关于「NBA 历史得分王」纪录演变历史的长文上，看了几段。文章回顾了 Kareem 创造纪录的时代，以及科比在 2006 年超越 Kareem 的那个夜晚。他在那段上停留了大概两分钟，然后退出。他发了一条 Instagram 快拍，内容是一段 Mamba Academy 训练营的剪辑视频，没有任何关于 LeBron 纪录的文字。他给 LeBron 发了一条私信——简短的，说的是「You deserve it」和「much respect」——但还没有发，先存在草稿里。今晚看完比赛再说。Gianna 从楼上跑下来问他们今晚是不是要一起看比赛，他说是。",
+  "time": "15:00",
+  "location": "Newport Beach 家中客厅",
+  "sleep_state": "AWAKE",
+  "emotion": {
+    "dominant": "trust",
+    "intensity": 0.078,
+    "anger": 0.0,
+    "fear": 0.086,
+    "joy": 0.032,
+    "sadness": 0.049,
+    "surprise": 0.052,
+    "disgust": 0.088,
+    "anticipation": 0.008,
+    "trust": 0.164
+  },
+  "moments": [
+    {
+      "id": 0,
+      "type": "body_sensation",
+      "display_text": "手机握着，屏幕亮着没放下，右手指节有点凉",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 1,
+      "type": "visual_fragment",
+      "display_text": "Gianna跑下楼时指节内侧两道压痕，皮肤发白",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 2,
+      "type": "compressed_speech",
+      "display_text": "她在——",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 3,
+      "type": "voice_intrusion",
+      "display_text": "Gianna说，「「我会比你更厉害的，爸」」",
+      "source": "Gianna",
+      "module": "reactive"
+    },
+    {
+      "id": 4,
+      "type": "unsymbolized",
+      "display_text": "知道自己在想犹他那场，但没有画面，只有一个重量，欠账被还清之前的那种重量，她现在才在起点",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 5,
+      "type": "expanded_speech",
+      "display_text": "十三岁，账还没开",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 6,
+      "type": "intrusion",
+      "display_text": "草稿里的私信还没发",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 7,
+      "type": "body_sensation",
+      "display_text": "右手掌心，贴着大腿外侧的牛仔布，感到一个干的热，不是汗，是皮肤本身在往外顶，像一个不想被压住的东西。",
+      "source": null,
+      "module": "rumination"
+    },
+    {
+      "id": 8,
+      "type": "voice_intrusion",
+      "display_text": "Phil说，「「你是我执教过最难教的球员。」」",
+      "source": "Phil",
+      "module": "rumination"
+    },
+    {
+      "id": 9,
+      "type": "compressed_speech",
+      "display_text": "难教。难教。",
+      "source": null,
+      "module": "rumination"
+    },
+    {
+      "id": 10,
+      "type": "unsymbolized",
+      "display_text": "那句话停在某个地方，不在耳朵里，不在脑子里，在更靠前的地方，喉咙下面一点，一个没有形状的重量，既不往下走也不散。",
+      "source": null,
+      "module": "rumination"
+    },
+    {
+      "id": 11,
+      "type": "visual_fragment",
+      "display_text": "客厅北侧那面墙上，Gianna上周画的那条线还在——她用铅笔比着自己的身高，线条歪的，最上端有一个小圆圈，是她自己加的，科比当时没有擦掉。科比现在站在距那条线大约两米的位置，没有走近。",
+      "source": null,
+      "module": "self_eval"
+    },
+    {
+      "id": 12,
+      "type": "unsymbolized",
+      "display_text": "有什么东西不需要被处理，又不完全是静止的——介于「不用管」和「还没到要管的时候」之间，没有更具体的形状。",
+      "source": null,
+      "module": "self_eval"
+    },
+    {
+      "id": 13,
+      "type": "expanded_speech",
+      "display_text": "科比看着窗外，院子里那个篮筐的网今天早上还在，现在看起来松了一侧。他想到的不是网，是Gianna上午练习结束时说的那句话——「我觉得我右手那次进了」——她说这话时没有问他，只是陈述。科比当时点了头，没有说「对」也没有说「不对」。他现在还记得自己那个点头的幅度，比平时小一点。",
+      "source": null,
+      "module": "self_eval"
+    },
+    {
+      "id": 14,
+      "type": "visual_fragment",
+      "display_text": "客厅地板上有一双Gianna的运动鞋，鞋带没系，左脚向右倒着，鞋口朝外。科比没有弯腰去扶正它。",
+      "source": null,
+      "module": "philosophy"
+    },
+    {
+      "id": 15,
+      "type": "unsymbolized",
+      "display_text": "有某种东西在「看着Gianna训练」和「训练Gianna」之间，科比没有语言去占领那个位置，但那个位置确实存在，而且今天下午它变得更宽了一点。",
+      "source": null,
+      "module": "philosophy"
+    },
+    {
+      "id": 16,
+      "type": "expanded_speech",
+      "display_text": "他在想：当年老爸教我运球，是因为他知道怎么教，还是因为他需要和我在一起待着？这两件事在当时是同一件事。但现在Gianna已经开始纠正我某些动作的时机——那个时候，教这件事，还在我这里吗？",
+      "source": null,
+      "module": "philosophy"
+    },
+    {
+      "id": 17,
+      "type": "unsymbolized",
+      "display_text": "「父亲是一件可以被学会的事吗」这个问题在科比这里不产生焦虑，也不产生答案，只是停在那儿，像一个一直没关掉的标签页——它在后台运行的是什么进程，科比不知道。",
+      "source": null,
+      "module": "philosophy"
+    },
+    {
+      "id": 18,
+      "type": "visual_fragment",
+      "display_text": "客厅地板木纹条带方向与窗外泳池边缘平行线——两组平行系统之间有一段不对齐的区域，约15度偏差，这个偏差区域宽度大约是一块地板宽",
+      "source": null,
+      "module": "aesthetic"
+    },
+    {
+      "id": 19,
+      "type": "unsymbolized",
+      "display_text": "训练节拍第7或第8次重复时某个东西「对准了」——不是准确度，是密度分布，像两个网格叠合到某个相位",
+      "source": null,
+      "module": "aesthetic"
+    },
+    {
+      "id": 20,
+      "type": "body_sensation",
+      "display_text": "右肩胛骨内侧，不是疼痛，是一个很小的压力点，位置固定，在Gianna做第三组跳步时出现过，现在静止状态下仍可定位到",
+      "source": null,
+      "module": "aesthetic"
+    },
+    {
+      "id": 21,
+      "type": "visual_fragment",
+      "display_text": "另一条时间线里的训练馆——不是STAPLES，是某个我叫不出名字的城市的馆，地板颜色不对，观众席弧度不对，球衣号码一样但胸口字母不一样。Gianna不在那个版本的场边，因为那个版本的Gianna是在哪个城市长大的我算不清楚。",
+      "source": null,
+      "module": "counterfactual"
+    },
+    {
+      "id": 22,
+      "type": "compressed_speech",
+      "display_text": "那个版本的我有没有今天下午三点坐在这里的理由",
+      "source": null,
+      "module": "counterfactual"
+    },
+    {
+      "id": 23,
+      "type": "voice_intrusion",
+      "display_text": "Gianna说，「「爸你看这个后撤步我调整了重心」——这句话是在Newport Beach说的，不是在别的地方说的，这个时间线里说的」",
+      "source": "Gianna",
+      "module": "counterfactual"
+    },
+    {
+      "id": 24,
+      "type": "visual_fragment",
+      "display_text": "2000年6月，斯台普斯中心，庆典现场：金色彩带从顶棚往下掉，密度很高，落到肩膀上又滑走。地板反光，木纹在灯光下是浅黄色。Shaq站在左边三步远，嘴张得很大，有人把香槟倒在他头上，液体顺着他的鬓角往脖子流。科比低头，看自己手里的那截金色彩带，宽度大约两厘米，边缘有点毛。",
+      "source": null,
+      "module": "positive_memory"
+    },
+    {
+      "id": 25,
+      "type": "body_sensation",
+      "display_text": "2000年6月，同一个夜晚，斯台普斯中心，赛后更衣室门口走廊：小腿肌肉是松的，不是疲劳，是另一种——像橡皮筋被摘下来之后的状态。脚踩在地板砖上，凉意从鞋底传进来。两肩的重量是正常的，胸腔里面有一块地方是空的，不是空洞，是清空之后没有填东西。",
+      "source": null,
+      "module": "positive_memory"
+    },
+    {
+      "id": 26,
+      "type": "compressed_speech",
+      "display_text": "2000年6月，庆典噪音里：「下一个。」",
+      "source": null,
+      "module": "positive_memory"
+    },
+    {
+      "id": 27,
+      "type": "visual_fragment",
+      "display_text": "客厅西侧落地窗，下午三点的阳光压得很低，斜切进来，把米色地毯烧出一条窄窄的亮带，宽度大概是一只脚掌，边缘有点模糊，灰尘在里面飘",
+      "source": null,
+      "module": "daydream"
+    },
+    {
+      "id": 28,
+      "type": "body_sensation",
+      "display_text": "左脚踩在那条亮带边缘，袜子薄，能感觉到地毯受热后的温度从脚底板传上来，比阴影区域高两三度，脚趾微微发烫，右脚还踩在凉的一侧，两只脚温度不一样",
+      "source": null,
+      "module": "daydream"
+    },
+    {
+      "id": 29,
+      "type": "body_sensation",
+      "display_text": "右手握着那支马克笔，笔盖还没拔，塑料表面有一点油，是手心的温度把它捂热的，拇指压在笔夹上，金属片凉，比塑料低几度，能感觉出来",
+      "source": null,
+      "module": "daydream"
+    },
+    {
+      "id": 30,
+      "type": "body_sensation",
+      "display_text": "拇指从笔夹金属片挪开，指腹碰到桌面——木纹里嵌着一道浅划痕，边缘略微翘起，指甲盖宽度，摩擦感是干的，不像刚才笔身那点油",
+      "source": null,
+      "module": "daydream"
+    },
+    {
+      "id": 31,
+      "type": "visual_fragment",
+      "display_text": "明天早上，体育馆的侧门还没开，Gianna站在门缝旁边的水泥台阶上，球包斜挎着，运动裤腿上有昨晚洗没干透的浅色水渍，她在看手机，嘴角往上扯了一点点，不是对他，是对屏幕上的什么——那个角度他认识，那是她自己在想事情时候的表情，不是给别人看的。",
+      "source": null,
+      "module": "future"
+    },
+    {
+      "id": 32,
+      "type": "visual_fragment",
+      "display_text": "明天早上体育馆灯亮起来之后，训练进行到某个节点——地板上有他们鞋底蹭出的浅灰痕迹，Gianna在罚球线前站定，手指搭在球的气孔上，没有看他，在盯着篮筐左侧某个固定的点，那个习惯他知道，她在测量什么，不是距离，是某种她自己才懂的角度。荧光灯在她头顶打下来，她马尾根部有几根碎发因为汗贴在脖子上。",
+      "source": null,
+      "module": "future"
+    },
+    {
+      "id": 33,
+      "type": "body_sensation",
+      "display_text": "明天早上更晚一些，球已经出手了——他站在罚球线斜后方三步，脚跟压在地板缝隙上，感受到震动从她那侧传过来，不是脚步声，是球落地的频率，一次，停顿，然后是篮网的那个声音，干净，收得快，篮筐没有多余的震动，他的肩膀在那一刻往下沉了一毫米，不是因为他做了什么，是因为他什么都没有说，Gianna也没有转头。",
+      "source": null,
+      "module": "future"
+    },
+    {
+      "id": 34,
+      "type": "compressed_speech",
+      "display_text": "那份草稿——今天得回。",
+      "source": null,
+      "module": "social_rehearsal"
+    },
+    {
+      "id": 35,
+      "type": "voice_intrusion",
+      "display_text": "Gianna说，「爸，你说好今天陪我练后仰的。」",
+      "source": "Gianna",
+      "module": "social_rehearsal"
+    },
+    {
+      "id": 36,
+      "type": "compressed_speech",
+      "display_text": "行，走。",
+      "source": null,
+      "module": "social_rehearsal"
+    },
+    {
+      "id": 37,
+      "type": "compressed_speech",
+      "display_text": "走。",
+      "source": null,
+      "module": "social_rehearsal"
+    },
+    {
+      "id": 38,
+      "type": "visual_fragment",
+      "display_text": "Gianna右手食指第二节，皮肤横纹里压进去的一条浅白印，边缘微红，不是新伤，是反复的，指甲床旁边有一块淡黄色老茧，光从窗户斜进来，正好落在那一小块茧上，亮的",
+      "source": null,
+      "module": "imagery"
+    },
+    {
+      "id": 39,
+      "type": "body_sensation",
+      "display_text": "左肩胛骨内缘，一片钝的、宽的下沉感，不是酸，是重，像有人把一块温热的石板搁在那里，压着，没有移动",
+      "source": null,
+      "module": "imagery"
+    }
+  ]
+}

@@ -1,0 +1,308 @@
+{
+  "tick": 6,
+  "event": "Ara 通过机内通话系统说：「准备起飞，预计飞行时间约 35-40 分钟。」Gianna 把手机拿出来拍了张窗外的停机坪照片。科比没有拿手机，靠在座椅上，往窗外看了一眼雾气。机体开始震动，旋翼加速。9:06 AM，直升机从 John Wayne Airport 起飞。科比通过舷窗最后看了一眼地面，Orange County 的标准郊区形状：平整的公路，棕榈树，停车场。",
+  "time": "08:55",
+  "location": "John Wayne Airport 停机坪，S-76B 机舱内",
+  "sleep_state": "AWAKE",
+  "emotion": {
+    "dominant": "joy",
+    "intensity": 0.153,
+    "anger": 0.001,
+    "fear": 0.0,
+    "joy": 0.39,
+    "sadness": 0.0,
+    "surprise": 0.105,
+    "disgust": 0.0,
+    "anticipation": 0.087,
+    "trust": 0.131
+  },
+  "moments": [
+    {
+      "id": 0,
+      "type": "body_sensation",
+      "display_text": "右脚踩在舱底金属框上，有轻微回弹，不是地板",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 1,
+      "type": "visual_fragment",
+      "display_text": "停机坪混凝土缝，灰色，直线，宽度不足一厘米",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 2,
+      "type": "compressed_speech",
+      "display_text": "九毫米——",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 3,
+      "type": "unsymbolized",
+      "display_text": "她落地前那一帧——不是靠本能，是因为她想清楚了——这件事是确定的",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 4,
+      "type": "voice_intrusion",
+      "display_text": "Gianna Bryant说，「我会比你更厉害的，爸」",
+      "source": "Gianna Bryant",
+      "module": "reactive"
+    },
+    {
+      "id": 5,
+      "type": "intrusion",
+      "display_text": "降落后还要回邮件",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 6,
+      "type": "expanded_speech",
+      "display_text": "她知道怎么用工具了",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 7,
+      "type": "body_sensation",
+      "display_text": "左手掌心。座椅扶手的皮面。温度比手低三度左右。",
+      "source": null,
+      "module": "rumination"
+    },
+    {
+      "id": 8,
+      "type": "voice_intrusion",
+      "display_text": "Phil Jackson说，「你是我执教生涯里最难搞的一个。」",
+      "source": "Phil Jackson",
+      "module": "rumination"
+    },
+    {
+      "id": 9,
+      "type": "unsymbolized",
+      "display_text": "难搞。这两个字停在那里。不是批评。不完全是。但也不是表扬。停在中间某个位置。",
+      "source": null,
+      "module": "rumination"
+    },
+    {
+      "id": 10,
+      "type": "voice_intrusion",
+      "display_text": "Phil Jackson说，「你是我执教生涯里最难搞的一个。」",
+      "source": "Phil Jackson",
+      "module": "rumination"
+    },
+    {
+      "id": 11,
+      "type": "body_sensation",
+      "display_text": "喉咙。有什么东西想往上走。没有走成。停在那里。",
+      "source": null,
+      "module": "rumination"
+    },
+    {
+      "id": 12,
+      "type": "visual_fragment",
+      "display_text": "舱门被拉开，Gianna侧着身子往里走，背包带从肩膀滑了一下，她用手肘顶了一下把它推回去，没有回头。科比看着这个动作。她上周在Academy练后撤步跳投时右脚落地位置总是偏外侧两厘米，他记录在手机备忘录里了，今天准备让她在Thousand Oaks的练习里专门调。",
+      "source": null,
+      "module": "self_eval"
+    },
+    {
+      "id": 13,
+      "type": "unsymbolized",
+      "display_text": "有个模糊的东西浮在意识边缘，不是语言，是一种计划被打断时的轻微停顿感——昨天晚上她们输了那场比赛，Gianna在最后一节罚球线附近拿球时身体重心明显犹豫了，科比想着那个瞬间，脑子里同时有一张清单在刷新：他上个月安排的核心力量训练频率是不是太低，他给她讲解背身单打时有没有把保护球的动作拆解得足够细——不是结论，只是那些细节在排队。",
+      "source": null,
+      "module": "self_eval"
+    },
+    {
+      "id": 14,
+      "type": "compressed_speech",
+      "display_text": "「那个罚球弧度的问题我之前没盯够。」",
+      "source": null,
+      "module": "self_eval"
+    },
+    {
+      "id": 15,
+      "type": "visual_fragment",
+      "display_text": "Gianna坐在过道对面，膝盖上放着一个记事本，笔尖停在纸面上没有落下。她的手腕角度和处理接球时的手腕角度是同一个角度。",
+      "source": null,
+      "module": "philosophy"
+    },
+    {
+      "id": 16,
+      "type": "unsymbolized",
+      "display_text": "某种认知没有词语——不是「我教了她什么」，也不是「她学会了什么」，是这两件事之间有一个空隙，那个空隙是什么材质的还未被确认。",
+      "source": null,
+      "module": "philosophy"
+    },
+    {
+      "id": 17,
+      "type": "expanded_speech",
+      "display_text": "父亲这件事，我是从场边看Gianna的眼睛里逆向推断我自己做了什么的。不是我决定了怎么做，是她的反应在定义「我做了什么」。那意味着「学会父亲」这件事的主语从来不是我——那主语是谁？",
+      "source": null,
+      "module": "philosophy"
+    },
+    {
+      "id": 18,
+      "type": "unsymbolized",
+      "display_text": "有什么东西在询问：如果Gianna有一天也在某个地方、从某个人的眼睛里逆向推断自己，那个链条是否有起点，或者它是否需要起点。",
+      "source": null,
+      "module": "philosophy"
+    },
+    {
+      "id": 19,
+      "type": "body_sensation",
+      "display_text": "右手拇指与食指在膝盖上轻压——不是握拳，是篮球皮革纹路的负形，凹槽宽度约2毫米，间距重复到第四次时某个关节位置对了",
+      "source": null,
+      "module": "aesthetic"
+    },
+    {
+      "id": 20,
+      "type": "visual_fragment",
+      "display_text": "Gianna 右脚落地瞬间的慢镜头截面：脚跟先着地，重心线从踝骨向上穿过膝盖中轴，垂直度比上周训练时偏差缩小了大约3度，画面停在那个角度",
+      "source": null,
+      "module": "aesthetic"
+    },
+    {
+      "id": 21,
+      "type": "unsymbolized",
+      "display_text": "有什么东西关于「第八次重复」和「第十二次重复」之间的区间——不是计数，是密度变化，那个区间里有什么东西收紧了但没有说出来",
+      "source": null,
+      "module": "aesthetic"
+    },
+    {
+      "id": 22,
+      "type": "visual_fragment",
+      "display_text": "另一条时间线，停在某个芝加哥的体育馆走廊，走廊的荧光灯有一根在轻微闪烁，墙上钉着公牛队的赛程表，日期是某个十一月的主场夜，科比穿着客队球衣站在走廊里等检录，球衣胸口不是湖人紫金，颜色不对，号码也不对，脸是现在这张脸，四十一岁，但球衣是错的",
+      "source": null,
+      "module": "counterfactual"
+    },
+    {
+      "id": 23,
+      "type": "compressed_speech",
+      "display_text": "那条线上Gianna跟谁在训练——不是我教的",
+      "source": null,
+      "module": "counterfactual"
+    },
+    {
+      "id": 24,
+      "type": "unsymbolized",
+      "display_text": "一个关于「出口」方向的模糊感知——那条时间线里有一个城市是终点，但不是洛杉矶，「终点」这个词没有具体画面，只是一个方向感消失了的空白",
+      "source": null,
+      "module": "counterfactual"
+    },
+    {
+      "id": 25,
+      "type": "visual_fragment",
+      "display_text": "走廊地板，米色瓷砖，每块砖之间的灰色勾缝笔直延伸，管状长袜卷成的球落在第三块砖与第四块砖之间，棉布接缝处的一根白线松开，悬在半空。",
+      "source": null,
+      "module": "positive_memory"
+    },
+    {
+      "id": 26,
+      "type": "body_sensation",
+      "display_text": "左手掌心压住卷紧的袜球时，棉布纤维的粗糙感；手指松开瞬间，拇指与食指之间有一道轻微的摩擦热。",
+      "source": null,
+      "module": "positive_memory"
+    },
+    {
+      "id": 27,
+      "type": "voice_intrusion",
+      "display_text": "Joe说，「Kobe，过来。」",
+      "source": "Joe",
+      "module": "positive_memory"
+    },
+    {
+      "id": 28,
+      "type": "body_sensation",
+      "display_text": "皮革座椅靠背通过肩胛骨传来轻微震动，发动机转速在8:55稳定爬升，频率约每秒四次，脚底透过运动鞋鞋底能感觉到地板金属板的细微颤栗——比Newport Beach那天脚踩湿沙时沙粒向两侧位移的感觉密实得多，那是流动，这是固定的。",
+      "source": null,
+      "module": "daydream"
+    },
+    {
+      "id": 29,
+      "type": "body_sensation",
+      "display_text": "右手五指松握扶手边缘的金属冷感正在消退——体温渗入铝合金，接触面从刺凉变成微温，大约需要二十秒完成这个过渡。窗外停机坪的水泥地面在舷窗玻璃里呈现出一条灰白色水平线，光线是清晨侧逆光，玻璃内表面有一个直径约三厘米的指纹油脂痕迹，把那条水平线切断成两段。Gianna就坐在斜后方，她运动背包的尼龙拉链在机舱气流里偶尔发出一下轻响——频率不规则，和发动机震动频率不对齐，像两个节拍器彼此不搭理。",
+      "source": null,
+      "module": "daydream"
+    },
+    {
+      "id": 30,
+      "type": "body_sensation",
+      "display_text": "松开扶手——右手掌心离开金属边缘的瞬间，刚刚积累的那一层体温立刻暴露在机舱冷空气里，五根手指的指腹从微温骤然回到干燥的凉意，像把一块烤热的石头翻面。手掌放到左腿膝盖上，牛仔布的粗织纹路顶进掌纹里，温度是中性的，既不凉也不暖，压力均匀。发动机振动从座椅底部传上来，频率大约是每秒十二到十五次，膝盖骨下方的肌肉组织把这个振动吸收掉大半，只剩一个模糊的嗡感留在手掌里。",
+      "source": null,
+      "module": "daydream"
+    },
+    {
+      "id": 31,
+      "type": "body_sensation",
+      "display_text": "右膝外侧——裤腿布料因为刚才入座时的折叠，在髌骨右下方形成一道细褶，布纹边缘顶在皮肤上，宽度大约两毫米，压力集中。机身开始倾斜爬升，重力向后座椅背传递，那道细褶随着大腿肌肉绷紧被拉平，两毫米的顶压感在三秒内消失，皮肤表面留下一条浅浅的摩擦余温，比周围皮肤高大约半度，宽度刚好能被指甲盖覆盖。舷窗外地面在右侧视野下沿快速后移，灰色停机坪混凝土纹理变成一片均质的浅灰，速度感从",
+      "source": null,
+      "module": "daydream"
+    },
+    {
+      "id": 32,
+      "type": "visual_fragment",
+      "display_text": "今天上午某个时刻，Mamba Academy 体育馆的地板在科比眼里：Gianna 正站在三分线外某个位置，运动鞋橡胶底与木地板之间的摩擦声，阳光从高侧窗斜切进来，落在她左肩上形成一条亮边，她的马尾辫因为刚才的移步还在轻微晃动。",
+      "source": null,
+      "module": "future"
+    },
+    {
+      "id": 33,
+      "type": "visual_fragment",
+      "display_text": "今天上午稍晚，机舱舷窗外：云层在机身右侧大约平行的高度，白色的，边缘在阳光下有点毛糙。座椅头枕的织物顶着科比后脑，轻微的振动从椅背传进来。Gianna坐在斜对面，膝盖上压着一个打开的笔记本，她低着头，铅笔在纸上停着没动，嘴里在小声说什么，像是在默背某个进攻套路的名字，嘴唇动了两下又停住了。",
+      "source": null,
+      "module": "future"
+    },
+    {
+      "id": 34,
+      "type": "visual_fragment",
+      "display_text": "今天上午，卡拉巴萨斯上空，机舱内：Gianna抬起头，铅笔尖点了一下笔记本边缘，侧脸转向舷窗那边，窗玻璃把她脸右侧打亮了一条，下巴的弧度清楚。科比眼角余光落在她膝盖上那本笔记本，某一行字被她用力圈了两遍，圈的线条出了头。",
+      "source": null,
+      "module": "future"
+    },
+    {
+      "id": 35,
+      "type": "compressed_speech",
+      "display_text": "下午那个电话——先听他们怎么说，薪酬结构没谈到位之前不表态。",
+      "source": null,
+      "module": "social_rehearsal"
+    },
+    {
+      "id": 36,
+      "type": "voice_intrusion",
+      "display_text": "Gianna说，「Gianna: Dad, when we get there, can I work on my drop step first? Coach Quintero said my footwork on the left block still needs work.」",
+      "source": "Gianna",
+      "module": "social_rehearsal"
+    },
+    {
+      "id": 37,
+      "type": "compressed_speech",
+      "display_text": "Drop step left block — yeah, Quintero's right, we drill that first.",
+      "source": null,
+      "module": "social_rehearsal"
+    },
+    {
+      "id": 38,
+      "type": "compressed_speech",
+      "display_text": "Quintero's waiting. Let's go.",
+      "source": null,
+      "module": "social_rehearsal"
+    },
+    {
+      "id": 39,
+      "type": "visual_fragment",
+      "display_text": "Gianna落地时左脚内侧边缘压在地板胶带上，胶带被踩出一条浅白折痕，折痕宽度和那条膨胀缝在同一毫米刻度里",
+      "source": null,
+      "module": "imagery"
+    },
+    {
+      "id": 40,
+      "type": "body_sensation",
+      "display_text": "右手拇指指腹感到轻微隆起，像是在抚过某种细小的缝隙边缘，但手掌平放在大腿上，没有接触任何东西",
+      "source": null,
+      "module": "imagery"
+    }
+  ]
+}

@@ -1,0 +1,301 @@
+{
+  "tick": 5,
+  "event": "科比和 Gianna 在停机坪上和其他人打招呼。John Altobelli 和科比握手，几个孩子在一起说话。Ara 完成检查后走过来说了一下今天的飞行路线：从 SNA 出发，经过洛杉矶盆地北缘，越过圣苏珊娜山口，降落 Camarillo。他提到能见度偏低，打算申请 SVFR（特殊目视飞行规则）许可，在云层下方低空飞行。科比点头，没有追问更多细节。",
+  "time": "08:45",
+  "location": "John Wayne Airport (SNA)，停机坪区域",
+  "sleep_state": "AWAKE",
+  "emotion": {
+    "dominant": "joy",
+    "intensity": 0.116,
+    "anger": 0.002,
+    "fear": 0.0,
+    "joy": 0.296,
+    "sadness": 0.0,
+    "surprise": 0.081,
+    "disgust": 0.0,
+    "anticipation": 0.067,
+    "trust": 0.1
+  },
+  "moments": [
+    {
+      "id": 0,
+      "type": "body_sensation",
+      "display_text": "右脚掌底，压力分布的记忆，不是自己的脚，是Gianna落地时脚跟印在地板上的角度",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 1,
+      "type": "visual_fragment",
+      "display_text": "砖缝，红印，右脚跟内侧，大约偏移八度",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 2,
+      "type": "unsymbolized",
+      "display_text": "知道自己在算一个具体的数——落地瞬间重心线偏离踝关节轴心的距离，没有语言，只有结论",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 3,
+      "type": "compressed_speech",
+      "display_text": "还没固定——",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 4,
+      "type": "voice_intrusion",
+      "display_text": "Gianna Bryant说，「好了，爸，我知道了」",
+      "source": "Gianna Bryant",
+      "module": "reactive"
+    },
+    {
+      "id": 5,
+      "type": "intrusion",
+      "display_text": "直升机起飞时间",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 6,
+      "type": "expanded_speech",
+      "display_text": "今天训练后让她专门练落地",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 7,
+      "type": "body_sensation",
+      "display_text": "右脚跟，靴子边缘压着的那条线。不是疼。是存在。",
+      "source": null,
+      "module": "rumination"
+    },
+    {
+      "id": 8,
+      "type": "compressed_speech",
+      "display_text": "跟腱断的时候没有疼。先有声音。",
+      "source": null,
+      "module": "rumination"
+    },
+    {
+      "id": 9,
+      "type": "body_sensation",
+      "display_text": "右脚跟，靴子边缘压着的那条线。还在。",
+      "source": null,
+      "module": "rumination"
+    },
+    {
+      "id": 10,
+      "type": "compressed_speech",
+      "display_text": "声音先来的。然后才知道。",
+      "source": null,
+      "module": "rumination"
+    },
+    {
+      "id": 11,
+      "type": "visual_fragment",
+      "display_text": "停机坪的光很平，Gianna背着包走在科比前两步，她的球鞋踩在沥青地面留下轻微的摩擦声——科比的视线落在她左脚踝的位置，那里上周有一次落地他注意到重心偏了大概三到四厘米，还没到第三次。",
+      "source": null,
+      "module": "self_eval"
+    },
+    {
+      "id": 12,
+      "type": "unsymbolized",
+      "display_text": "直升机在那里，舱门还没开，登机的顺序已经在某个位置确定了，没有具体的词，只是一个排列，Gianna会坐哪一侧，这件事已经被解决了，不需要再运算。",
+      "source": null,
+      "module": "self_eval"
+    },
+    {
+      "id": 13,
+      "type": "compressed_speech",
+      "display_text": "「还差一场」——不是说出来的，是关于今天比赛时间的某个数字在意识里过了一下，然后停了。",
+      "source": null,
+      "module": "self_eval"
+    },
+    {
+      "id": 14,
+      "type": "visual_fragment",
+      "display_text": "停机坪的混凝土地面，有一条细长的油渍纹路，从左脚尖往前延伸大约两米，然后消失在轮椅坡道的边缘。Gianna站在直升机舱门旁边，背对着，在调整背包肩带。这个画面没有被命名为任何东西。",
+      "source": null,
+      "module": "philosophy"
+    },
+    {
+      "id": 15,
+      "type": "unsymbolized",
+      "display_text": "有某种认知在运作，关于「四年」这个数字——不是时间长度，也不是事件列表；更像是一个单位，但这个单位测量的不是已知的任何维度。这个认知没有继续推进，也没有停止，它只是在那里。",
+      "source": null,
+      "module": "philosophy"
+    },
+    {
+      "id": 16,
+      "type": "expanded_speech",
+      "display_text": "在菲律宾的训练营里有个十六岁的孩子，连续三天凌晨四点半出现在场馆外面等门开。当时我想的不是「这孩子很拼」，我想的是——这个行为是朝向某人的，还是朝向某个没有人在里面的东西的？现在站在这里，这个问题又出现了，但我不确定它在问谁。",
+      "source": null,
+      "module": "philosophy"
+    },
+    {
+      "id": 17,
+      "type": "unsymbolized",
+      "display_text": "有什么东西关于「单独训练」和「带着Gianna训练」——不是这两件事的比较；是一个更底层的、尚未成形的问题：当另一个人在场时，孤独是否还在发生，还是它只是变得不可见——而不可见和不存在，这两者之间有没有区别，这个问题没有找到方向。",
+      "source": null,
+      "module": "philosophy"
+    },
+    {
+      "id": 18,
+      "type": "visual_fragment",
+      "display_text": "停机坪地面的膨胀缝——等间距的深色线条切割混凝土，每段长度相同，但其中一条缝的走向偏了大约三度，整个网格的节奏在那里断了一拍，然后继续",
+      "source": null,
+      "module": "aesthetic"
+    },
+    {
+      "id": 19,
+      "type": "unsymbolized",
+      "display_text": "句子里某个位置的东西放得太早了——不是错的，是位置提前了，导致后面的部分变轻，整体重心前倾，有什么需要往后移",
+      "source": null,
+      "module": "aesthetic"
+    },
+    {
+      "id": 20,
+      "type": "visual_fragment",
+      "display_text": "Gianna昨天在白板上写的战术图示——箭头密度在左侧积压，右侧几乎空白，空白不是留白，是没有完成，两者的区别在于右下角那个未落点的虚线",
+      "source": null,
+      "module": "aesthetic"
+    },
+    {
+      "id": 21,
+      "type": "visual_fragment",
+      "display_text": "另一条时间线，2013年12月，新闻发布会，麦克风前，科比穿便服，没有球衣，桌上没有球。记者席有人举手。画面定格在那双没有护膝的腿。",
+      "source": null,
+      "module": "counterfactual"
+    },
+    {
+      "id": 22,
+      "type": "compressed_speech",
+      "display_text": "Gianna那时候几岁，三岁，那个时间线里Mamba Academy可能早五年。",
+      "source": null,
+      "module": "counterfactual"
+    },
+    {
+      "id": 23,
+      "type": "voice_intrusion",
+      "display_text": "Vanessa说，「你不会觉得少了什么？」——另一条时间线，家里，不是训练馆，科比没有立刻回答，时间线在这里模糊。」",
+      "source": "Vanessa",
+      "module": "counterfactual"
+    },
+    {
+      "id": 24,
+      "type": "visual_fragment",
+      "display_text": "停机坪混凝土地面，油渍痕迹呈深灰色弧线，直升机旋翼投下的阴影以固定频率扫过。Gianna的运动鞋鞋尖踩在阴影边缘，白色鞋底底纹压着一条细碎砂粒线。",
+      "source": null,
+      "module": "positive_memory"
+    },
+    {
+      "id": 25,
+      "type": "body_sensation",
+      "display_text": "手机屏幕亮起时，拇指右侧指腹感受到玻璃边框的直角。屏幕显示ESPN推送，数字「36」悬在通知栏里——LeBron距纪录剩余分数。拇指没有点开，屏幕熄灭，玻璃重新变凉。",
+      "source": null,
+      "module": "positive_memory"
+    },
+    {
+      "id": 26,
+      "type": "compressed_speech",
+      "display_text": "今晚。",
+      "source": null,
+      "module": "positive_memory"
+    },
+    {
+      "id": 27,
+      "type": "body_sensation",
+      "display_text": "右手掌心贴着登机舷梯的金属扶手，冷，比预期的冷，表面有细小的防滑纹路压进指腹，停机坪的风从西边过来，带着航空煤油和湿草的混合气味，夹克袖口的松紧带贴着手腕内侧",
+      "source": null,
+      "module": "daydream"
+    },
+    {
+      "id": 28,
+      "type": "body_sensation",
+      "display_text": "左脚踩上舷梯第一级踏板，橡胶防滑垫在球鞋前掌底部产生轻微摩擦阻力，踏板边缘的金属条硬，从鞋底传上来，右手继续握住扶手，指腹的防滑纹路压感还在，身体重心前移，小腿肌肉收紧，耳边风声变大了一点，从右侧耳廓边缘过",
+      "source": null,
+      "module": "daydream"
+    },
+    {
+      "id": 29,
+      "type": "body_sensation",
+      "display_text": "右脚跟上第二级踏板，踏板比第一级稍窄，鞋跟外侧边缘悬在金属条外约半厘米，脚掌横弓轻微向内调整压力分布，左手从身侧抬起搭上扶手左侧，掌心接触到冷金属表面，比右侧扶手温度低两三度，手指自然弯曲包住管径，表面有细小凹点状防滑纹，指腹逐个落下，头顶进入机舱门框投下的阴影区域，阳光从后颈移开，后颈皮肤温度立刻下降，风在这个高度从两侧耳廓同时通过，不再只是右侧",
+      "source": null,
+      "module": "daydream"
+    },
+    {
+      "id": 30,
+      "type": "body_sensation",
+      "display_text": "左脚抬离第二级踏板踏入机舱地板，鞋底从金属踏板的菱形防滑纹转移到机舱地毯，脚掌压力从前掌集中点扩散为整面接触，地毯厚度约八毫米，鞋底感觉到轻微的弹性回压，左手松开舱门左侧扶手，掌心离开冷金属，皮肤表面留存的低温在空气里维持约两秒，头顶完全进入机舱，机舱顶板距头顶约十五厘米，外部风声被机身截断，耳腔内气压轻微变化，右耳感觉到一个细小的闷响，机舱内气味与舱外不同，有轻度循环空气的干燥",
+      "source": null,
+      "module": "daydream"
+    },
+    {
+      "id": 31,
+      "type": "visual_fragment",
+      "display_text": "今天下午大约两点，Mamba Academy的主训练馆内，阳光从西侧高窗斜切进来，落在木质地板上形成三条平行的亮带。Gianna站在罚球线附近，球刚离手，弧线正在最高点，科比站在三分线外侧，看见那枚橙色球体在光带里转动，网绳微微震动了一下。",
+      "source": null,
+      "module": "future"
+    },
+    {
+      "id": 32,
+      "type": "visual_fragment",
+      "display_text": "今天下午大约三点半，Academy侧门走廊，Gianna背着训练包走在前面，汗渍在她T恤背面晕开一块深色，走廊尽头的玻璃门透进来逆光，她的马尾在光里显得有些散乱，科比走在她身后两步，地板砖缝里有一块浅灰色的口香糖印记，头顶的日光灯有一根轻微地嗡嗡响。",
+      "source": null,
+      "module": "future"
+    },
+    {
+      "id": 33,
+      "type": "body_sensation",
+      "display_text": "今天傍晚大约六点，Academy更衣室外走廊的长椅上，科比坐着等Gianna换衣服，长椅表面的金属扶手凉进掌心，椅背的塑料边缘顶着他的脊椎下段，走廊里的暖气出风口在脚踝附近吹出一股微热气流，地板上有水迹，来自Gianna的运动鞋鞋底，鞋印轮廓已经快干透了，剩下轮廓边缘一圈浅灰色的湿痕，里面有一根细发丝压在地板缝里，更衣室门缝透出来的灯光是黄白色的，门把手上还挂着Gianna的护腕，松紧带搭下来一截。",
+      "source": null,
+      "module": "future"
+    },
+    {
+      "id": 34,
+      "type": "compressed_speech",
+      "display_text": "下午的电话——先听他们怎么说，薪酬结构和课程主导权这两块没谈清楚之前不表态。",
+      "source": null,
+      "module": "social_rehearsal"
+    },
+    {
+      "id": 35,
+      "type": "voice_intrusion",
+      "display_text": "Vanessa说，「Kobe，飞机几点到？Gianna说她今天的训练要用新的那套分解动作，你带笔记本了吗？」",
+      "source": "Vanessa",
+      "module": "social_rehearsal"
+    },
+    {
+      "id": 36,
+      "type": "compressed_speech",
+      "display_text": "笔记本在包里，Gigi的分解动作昨晚已经打印出来了。",
+      "source": null,
+      "module": "social_rehearsal"
+    },
+    {
+      "id": 37,
+      "type": "compressed_speech",
+      "display_text": "Gigi，走了。",
+      "source": null,
+      "module": "social_rehearsal"
+    },
+    {
+      "id": 38,
+      "type": "visual_fragment",
+      "display_text": "停机坪混凝土地面，一条膨胀缝，宽约九毫米，边缘被轮胎碾出黑色痕迹。砖缝宽度叠进Gianna右脚起跳落点的间距——前掌蹬地的那块矩形压痕，长约二十二厘米，中段颜色比两端深。",
+      "source": null,
+      "module": "imagery"
+    },
+    {
+      "id": 39,
+      "type": "unsymbolized",
+      "display_text": "脚后跟红印的弧度和跑道白线的粗细同时在场，没有先后，没有连接。",
+      "source": null,
+      "module": "imagery"
+    }
+  ]
+}

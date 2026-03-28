@@ -1,0 +1,301 @@
+{
+  "tick": 8,
+  "event": "9:21 AM，管制员提醒 Ara 当前直升机已进入 Burbank 机场的 Class D 空域边界附近，询问 intentions。Ara 回复正在 climbing to 4000 feet。机舱内能感觉到机体倾角的变化，上升气流让座椅有些轻微颠簸。窗外完全是白色，没有地平线，没有地面参照。科比的手搭在膝盖上，身体保持静止。机舱里的说话声停了。",
+  "time": "09:16",
+  "location": "空中，Burbank 以北，进入 Las Virgenes 山谷走廊",
+  "sleep_state": "AWAKE",
+  "emotion": {
+    "dominant": "joy",
+    "intensity": 0.166,
+    "anger": 0.058,
+    "fear": 0.158,
+    "joy": 0.338,
+    "sadness": 0.106,
+    "surprise": 0.098,
+    "disgust": 0.202,
+    "anticipation": 0.012,
+    "trust": 0.125
+  },
+  "moments": [
+    {
+      "id": 0,
+      "type": "body_sensation",
+      "display_text": "右脚踝内侧有点什么，不是痛，是记着那个位置",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 1,
+      "type": "visual_fragment",
+      "display_text": "布带翻起的那截，和护踝边缘之间的缝隙，大概两毫米",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 2,
+      "type": "voice_intrusion",
+      "display_text": "Gianna说，「好了，爸，我知道了」",
+      "source": "Gianna",
+      "module": "reactive"
+    },
+    {
+      "id": 3,
+      "type": "compressed_speech",
+      "display_text": "她不知道——",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 4,
+      "type": "unsymbolized",
+      "display_text": "昨天鞋带是同一件事，不是两件事，她没系紧这个动作出现了两次",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 5,
+      "type": "intrusion",
+      "display_text": "Mamba Academy下周场地时间要确认",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 6,
+      "type": "expanded_speech",
+      "display_text": "落地就说护踝，具体怎么系",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 7,
+      "type": "body_sensation",
+      "display_text": "左肩，座椅安全带斜过来的压力，正好压在锁骨下方那块旧伤的边缘，不是痛，是一种被认出来的感觉",
+      "source": null,
+      "module": "rumination"
+    },
+    {
+      "id": 8,
+      "type": "compressed_speech",
+      "display_text": "四年了还是四年了还是",
+      "source": null,
+      "module": "rumination"
+    },
+    {
+      "id": 9,
+      "type": "visual_fragment",
+      "display_text": "告别赛之后走廊里，球鞋踩地板的声音，一下一下，脚底传上来的震动，不是朝哪里走，只是在走",
+      "source": null,
+      "module": "rumination"
+    },
+    {
+      "id": 10,
+      "type": "compressed_speech",
+      "display_text": "四年了还是四年了，脚底还是那个震动",
+      "source": null,
+      "module": "rumination"
+    },
+    {
+      "id": 11,
+      "type": "visual_fragment",
+      "display_text": "窗外山脊线压得很低，雾把远处的坡切掉了一半。科比的视线落在玻璃上某个点，不是在看窗外，是在看玻璃本身的厚度。Gianna的腿在旁边轻轻晃着，鞋底蹭过座椅边缘的金属条，发出细小的声音。",
+      "source": null,
+      "module": "self_eval"
+    },
+    {
+      "id": 12,
+      "type": "unsymbolized",
+      "display_text": "有一个东西在意识里悬着，跟「被质疑」有关，但没有展开成任何具体批评者的脸或任何具体的词。只是一个重量，放在某处，不往下压，也不往旁边移。",
+      "source": null,
+      "module": "self_eval"
+    },
+    {
+      "id": 13,
+      "type": "expanded_speech",
+      "display_text": "科比注意到自己没有在想今天要说什么、到了之后要怎么带热身。他在想的是：Gianna刚才接住那个话题的方式，那个「I know」——不是小孩说的「I know」。他想：「下次有人在她面前问我当初那些事，她会怎么站。」然后这个念头自己停了，不是因为有答案，是因为他不需要把它想完。",
+      "source": null,
+      "module": "self_eval"
+    },
+    {
+      "id": 14,
+      "type": "visual_fragment",
+      "display_text": "Gianna在训练场地板上捡起一个打偏的球，没有看科比，但脚步已经移向了下一个站位——这个动作不是从科比身上学来的，这个动作是Gianna自己长出来的。",
+      "source": null,
+      "module": "philosophy"
+    },
+    {
+      "id": 15,
+      "type": "unsymbolized",
+      "display_text": "有一种东西介于「礼物」和「压力」这两个词之间，但那个东西没有名字，也不确定它是单一的——",
+      "source": null,
+      "module": "philosophy"
+    },
+    {
+      "id": 16,
+      "type": "expanded_speech",
+      "display_text": "我进入她的训练，我提供我能给的所有技术判断，我把我四年里积累的那些分析角度全部打开。但有一个问题我没法回答：Gianna下一次上场时，她听见的是她自己的判断还是我的？我分不清那条线在哪里，我也不确定那条线是否应该存在。",
+      "source": null,
+      "module": "philosophy"
+    },
+    {
+      "id": 17,
+      "type": "unsymbolized",
+      "display_text": "「礼物」这个词预设了接收者想要这个东西——但我有没有问过这个问题？",
+      "source": null,
+      "module": "philosophy"
+    },
+    {
+      "id": 18,
+      "type": "visual_fragment",
+      "display_text": "球在木地板落点的瞬间——接触面积从一个点向外扩展约3毫米，随即收回。这个扩展-收回的周期大约0.04秒。地板纹理在那个圆形接触区域内被压平，然后弹回。不是声音，是那个形状变化的节奏本身。",
+      "source": null,
+      "module": "aesthetic"
+    },
+    {
+      "id": 19,
+      "type": "unsymbolized",
+      "display_text": "有什么东西关于「重复次数」是对的。不是数字，是密度——某种训练量堆叠到某个厚度之后，材质会变。Gianna的手型在运球时的某个细节，和那个密度阈值之间存在一个距离，这个距离是可以被测量的。",
+      "source": null,
+      "module": "aesthetic"
+    },
+    {
+      "id": 20,
+      "type": "compressed_speech",
+      "display_text": "还差一层。",
+      "source": null,
+      "module": "aesthetic"
+    },
+    {
+      "id": 21,
+      "type": "visual_fragment",
+      "display_text": "另一条时间线的训练馆。不是英格尔伍德，不是ARCO，是某个东部城市的室内练习场，荧光灯管，木地板上有两条交叉磨损的弧线。Gianna站在三分线外，动作和现在一模一样，右脚稍微内扣那几度。背景里的队徽颜色是错的。",
+      "source": null,
+      "module": "counterfactual"
+    },
+    {
+      "id": 22,
+      "type": "compressed_speech",
+      "display_text": "Gianna还是Gianna。",
+      "source": null,
+      "module": "counterfactual"
+    },
+    {
+      "id": 23,
+      "type": "unsymbolized",
+      "display_text": "那个认知没有语言形状——那条线上没有消失的东西，和这条线上没有得到的东西，两组数字加起来是不是同一个总量。不确定。运算没有完成。",
+      "source": null,
+      "module": "counterfactual"
+    },
+    {
+      "id": 24,
+      "type": "visual_fragment",
+      "display_text": "台口侧面，一个灯架的金属支脚压在黑色地布上。奖杯在手里，表面有细小的螺旋纹路，底座是圆的，不是方的。前排第三排有一个空座位，座位套是红色天鹅绒。",
+      "source": null,
+      "module": "positive_memory"
+    },
+    {
+      "id": 25,
+      "type": "voice_intrusion",
+      "display_text": "Vanessa说，「你有没有听见他们叫你名字？」",
+      "source": "Vanessa",
+      "module": "positive_memory"
+    },
+    {
+      "id": 26,
+      "type": "body_sensation",
+      "display_text": "右脚跟踩在台板上，台板有轻微的弹性，不像球场地板，更软一些。重心落稳之后左膝没有动。握住奖杯底座的四根手指，指尖感觉到底座边缘的棱线。",
+      "source": null,
+      "module": "positive_memory"
+    },
+    {
+      "id": 27,
+      "type": "visual_fragment",
+      "display_text": "舷窗外的雾把山脊线压得很低，灰白色，棱角模糊，像没烧透的灰。座位靠背的皮革贴着后颈，温度比体温低两三度，有一点点黏。",
+      "source": null,
+      "module": "daydream"
+    },
+    {
+      "id": 28,
+      "type": "body_sensation",
+      "display_text": "左手拇指侧面压着手机屏幕边框，金属冷边切进皮肤里，比靠背皮革更硬、更窄，像球场地板的缝隙。",
+      "source": null,
+      "module": "daydream"
+    },
+    {
+      "id": 29,
+      "type": "body_sensation",
+      "display_text": "拇指离开手机边框，指腹落回大腿上的运动裤面料——比刚才的金属冷边软，有细密的网格纹路顶着皮肤，像篮球表面的皮纹但更小、更密，整条大腿的重量压下去，座椅的震动从腿骨传上来。",
+      "source": null,
+      "module": "daydream"
+    },
+    {
+      "id": 30,
+      "type": "body_sensation",
+      "display_text": "震动从腿骨向上走，过髋关节，在腰椎第三节停了一下——那里有个旧伤，不疼，只是一个熟悉的回响，像敲了一下空心的木头。右手五根指头分开压在网格布上，掌心的弧度贴住大腿外侧，皮肤温度比布面高，热量从掌心向下渗进去，掌纹里有汗，不多，刚好把布面压出一个浅浅的湿印。窗外的光从左侧切进来，白的，硬边，落在手背的关节骨上，四个指节各自亮了一条细线。",
+      "source": null,
+      "module": "daydream"
+    },
+    {
+      "id": 31,
+      "type": "visual_fragment",
+      "display_text": "今晚某个时刻，Mamba Academy 训练馆的侧门，荧光灯管刚刚熄灭一半，地板上还留着运动鞋的深色摩擦痕。Gianna 站在罚球线附近，汗湿的马尾辫贴在脖子上，手里抓着球，没有抬头，但嘴角的弧度说明她知道他在看。",
+      "source": null,
+      "module": "future"
+    },
+    {
+      "id": 32,
+      "type": "body_sensation",
+      "display_text": "今晚更晚些，Mamba Academy 的停车场，发动机已经关掉，车里还有一点余热。副驾驶座上 Gianna 的运动包占了一整个座位，拉链没拉好，一只护膝从里面滑出来一半。他手搭在方向盘顶端，掌心感觉到皮革的微凉，窗外停车场灯打下来一条白光，斜切过仪表盘边缘。",
+      "source": null,
+      "module": "future"
+    },
+    {
+      "id": 33,
+      "type": "body_sensation",
+      "display_text": "明天早上，卧室里，窗帘还没拉开，光从边缝透进来一条，落在地板上。他侧躺着，床单压在肩膀下面，有点硬，腰那里还带着昨天的酸。隔壁Gianna的房间传来闹钟声，响了两下停了，她自己按掉的。他没动，听着脚步声踩过走廊，厨房冰箱门开了又关，然后是水龙头的声音。掌心还是那种微凉——不是停车场皮革的凉，是床单边沿叠起来那道缝压着手背的凉。嘴里有点干。",
+      "source": null,
+      "module": "future"
+    },
+    {
+      "id": 34,
+      "type": "compressed_speech",
+      "display_text": "63分。他能拿到的。",
+      "source": null,
+      "module": "social_rehearsal"
+    },
+    {
+      "id": 35,
+      "type": "voice_intrusion",
+      "display_text": "Gianna说，「Gianna说：爸，你觉得他今天能破你的纪录吗？」",
+      "source": "Gianna",
+      "module": "social_rehearsal"
+    },
+    {
+      "id": 36,
+      "type": "compressed_speech",
+      "display_text": "他破得了。",
+      "source": null,
+      "module": "social_rehearsal"
+    },
+    {
+      "id": 37,
+      "type": "compressed_speech",
+      "display_text": "破得了。",
+      "source": null,
+      "module": "social_rehearsal"
+    },
+    {
+      "id": 38,
+      "type": "visual_fragment",
+      "display_text": "Gianna左脚踝内侧，白色护踝布带压出的浅红痕，皮肤在痕迹边缘颜色稍深，像是待会儿会起泡但还没到那一步",
+      "source": null,
+      "module": "imagery"
+    },
+    {
+      "id": 39,
+      "type": "body_sensation",
+      "display_text": "右手掌心，感觉到某个习惯性的重量不在了，像是球已经撒手但手还没收回来",
+      "source": null,
+      "module": "imagery"
+    }
+  ]
+}

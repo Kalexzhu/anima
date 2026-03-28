@@ -1,0 +1,28 @@
+{
+  "tick": 5,
+  "event": "楼道里有人经过，对着电话说\"那个方案他们怎么说\"，脚步声往电梯方向去，渐渐听不见了。",
+  "time": "23:00",
+  "location": "出租屋卧室",
+  "sleep_state": "ASLEEP",
+  "emotion": {
+    "dominant": "joy",
+    "intensity": 0.07,
+    "anger": 0.05,
+    "fear": 0.07,
+    "joy": 0.15,
+    "sadness": 0.07,
+    "surprise": 0.04,
+    "disgust": 0.06,
+    "anticipation": 0.0,
+    "trust": 0.01
+  },
+  "moments": [
+    {
+      "id": 0,
+      "type": "compressed_speech",
+      "display_text": "（睡眠中）",
+      "source": null,
+      "module": "unknown"
+    }
+  ]
+}

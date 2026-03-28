@@ -1,0 +1,322 @@
+{
+  "tick": 1,
+  "event": "",
+  "time": "15:00",
+  "location": "望京某互联网公司",
+  "sleep_state": "AWAKE",
+  "emotion": {
+    "dominant": "sadness",
+    "intensity": 0.29,
+    "anger": 0.22,
+    "fear": 0.31,
+    "joy": 0.0,
+    "sadness": 0.62,
+    "surprise": 0.19,
+    "disgust": 0.3,
+    "anticipation": 0.0,
+    "trust": 0.0
+  },
+  "moments": [
+    {
+      "id": 0,
+      "type": "voice_intrusion",
+      "display_text": "李杨说，「你太累了」",
+      "source": "李杨",
+      "module": "unknown"
+    },
+    {
+      "id": 1,
+      "type": "body_sensation",
+      "display_text": "手抖还没停，指甲压着掌心",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 2,
+      "type": "body_sensation",
+      "display_text": "会议室里陈总转过来看她的那一秒，其他人低着头",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 3,
+      "type": "unsymbolized",
+      "display_text": "知道自己在想那件事和这件事是不是同一件事，但没有词",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 4,
+      "type": "compressed_speech",
+      "display_text": "一直都是——",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 5,
+      "type": "voice_intrusion",
+      "display_text": "陈总说，「这点基本逻辑都不懂？」",
+      "source": "陈总",
+      "module": "unknown"
+    },
+    {
+      "id": 6,
+      "type": "compressed_speech",
+      "display_text": "窗外那棵树上有个塑料袋挂着",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 7,
+      "type": "body_sensation",
+      "display_text": "胸口有一块东西，不疼，压着，手放在膝盖上没有温度",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 8,
+      "type": "voice_intrusion",
+      "display_text": "领导说，「这个方案完全跑偏了」",
+      "source": "领导",
+      "module": "unknown"
+    },
+    {
+      "id": 9,
+      "type": "compressed_speech",
+      "display_text": "两周。跑偏了。两周。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 10,
+      "type": "voice_intrusion",
+      "display_text": "领导说，「这个方案完全跑偏了」",
+      "source": "领导",
+      "module": "unknown"
+    },
+    {
+      "id": 11,
+      "type": "body_sensation",
+      "display_text": "喉咙那里有什么东西卡着，不动，胸口还是压着，手还是没有温度",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 12,
+      "type": "body_sensation",
+      "display_text": "她看见自己在会议室站着的样子——PPT翻到第七页，领导抬手打断，她立刻把遥控器放回桌上。她没有等对方说完第一句话就把那个动作做完了。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 13,
+      "type": "unsymbolized",
+      "display_text": "某种认定正在运作：那份方案是错的，不是因为听懂了批评，而是因为批评本身发生了。这个认定来得早于任何具体内容。她坐在楼道窗边，这个认定还在。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 14,
+      "type": "expanded_speech",
+      "display_text": "她现在坐在这里，想的是：「两周。我查了十几份竞品，自己画的数据图，每一页都改过至少四遍。」然后她停了一下，接着想：「但他说不行就是不行。」她没有在这两件事之间停留，直接从前一件事跳到了后一件事。这个跳跃没有经过任何中间步骤。她注意到自己在楼道坐着，窗外是下午三点的望京，她对那个光线没有任何反应。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 15,
+      "type": "body_sensation",
+      "display_text": "胸腔有一个钝的东西，不是疼，是压着不动。手放在腿上，感觉不到腿的温度。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 16,
+      "type": "unsymbolized",
+      "display_text": "某种关于「两周」的认知悬在那里——不是时间的长度，而是那些时间被放进去之后现在不在了的感觉。没有形状，没有方向，就是不在了。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 17,
+      "type": "expanded_speech",
+      "display_text": "我不是在想那个方案对不对。我在想的是：我在做那个方案的时候，我以为我在做一件有去处的事。现在那个「去处」没了。那段时间里的我，算什么？那个坐在那里以为自己在朝某个地方走的人——她还算数吗？",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 18,
+      "type": "unsymbolized",
+      "display_text": "如果努力本身不指向任何可以留下来的东西，那努力发生的那段时间里，究竟在发生什么？",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 19,
+      "type": "visual_fragment",
+      "display_text": "走廊窗玻璃上有一条细长反光带，约3毫米宽，颜色接近冷白偏青。它正好压在远处楼体立面灰色砖块的水平缝线上。两条线重合，宽度比例约1:4。有什么东西是对的。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 20,
+      "type": "unsymbolized",
+      "display_text": "某个配比是对的。不是「好看」，是「准确」。跟刚才那些事无关，但同时存在。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 21,
+      "type": "visual_fragment",
+      "display_text": "地板是浅灰色哑光砖，阳光从窗打进来形成一块不规则亮区，边缘模糊。亮区内有一小块颜色偏暖，约15%面积，其余偏冷。这个比例出现过，具体在哪里不确定。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 22,
+      "type": "expanded_speech",
+      "display_text": "另一条时间线：合肥，某国企办公室，下午三点，窗外是熟悉的老街道，办公桌上放着一杯放凉的茶，同事在隔壁讨论下周值班安排，声音不大，林晓雨坐在椅子上翻一份打印好的表格，没有人在等她汇报，也没有人在看她。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 23,
+      "type": "compressed_speech",
+      "display_text": "不用准备那个方案。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 24,
+      "type": "unsymbolized",
+      "display_text": "一种模糊的认知浮动：那条线上不存在「今天的会议室」这件事，但同时也没有这扇望着京城楼群的窗——两件事是同一件事，此刻还没想清楚这意味着什么。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 25,
+      "type": "expanded_speech",
+      "display_text": "公告栏是深棕色的软木板，边缘有一圈细金属条。她的作品打印在A4纸上，纸张四个角各别了一枚银色图钉。纸面微微翘起，左下角有一道轻微折痕。标题行用的是宋体加粗，她现在还记得那个字号是14。旁边贴着一张活动通知，蓝色边框。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 26,
+      "type": "body_sensation",
+      "display_text": "脸颊有一阵热，从耳根往下走，到脖子停住。不是烫，是那种持续的、均匀的温度。手掌心稍微有点湿。站着没动，但小腿肌肉是绷着的。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 27,
+      "type": "voice_intrusion",
+      "display_text": "22岁时的主管说，「这个思路很清晰，值得给大家看看。」",
+      "source": "22岁时的主管",
+      "module": "unknown"
+    },
+    {
+      "id": 28,
+      "type": "body_sensation",
+      "display_text": "手掌托着那只纸杯，隔着杯壁渗进来的热度压在掌心，皮肤感觉到的不是烫，是一种钝钝的、均匀的重量，像有什么东西在缓慢地、持续地往下坠。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 29,
+      "type": "body_sensation",
+      "display_text": "手指微微收拢，指尖碰到杯口折叠的那圈纸边，表面有一点轻微的毛糙，压下去会有细小的阻力，松开又弹回来。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 30,
+      "type": "body_sensation",
+      "display_text": "那圈纸边在指尖弹回来的瞬间，手指停住了。杯壁的温度从热变成了微温，隔着纸杯能感觉到一层薄薄的水汽贴在掌心，不烫，只是潮的。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 31,
+      "type": "body_sensation",
+      "display_text": "水汽贴着掌心，皮肤慢慢把那点潮湿吸进去，变得黏。手没动。纸杯侧面有一道竖着的压痕，大拇指指腹压在那条痕上，边缘是凸起的一条细线，硬的。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 32,
+      "type": "expanded_speech",
+      "display_text": "大拇指离开那条压痕。指腹上留着一道浅红，细的，两三毫米宽，摸上去还有点烫。纸杯放回窗台，底部蹭过灰尘，发出一声很短的摩擦声。窗玻璃上有一个指纹，不知道是谁的，油脂的边缘反着下午的光，白的。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 33,
+      "type": "expanded_speech",
+      "display_text": "今晚十一点，坐在出租屋卫生间地板上。瓷砖是冷的，贴着脊背。头顶那盏灯有点黄，灯管边缘积了一圈灰。水龙头没拧紧，每隔几秒滴一声。门缝底下透进来隔壁开着的电视声，很远，听不清说什么。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 34,
+      "type": "expanded_speech",
+      "display_text": "还没到那个卫生间。现在是十点五十几分，她站在出租屋门口，钥匙刚插进去，还没转。走廊灯是感应的，亮了一下，灭了。黑里站着，手没动。包带还挂在肩上，鞋没换。脚底是外面带进来的凉，隔着鞋底还是感觉得到地板的硬。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 35,
+      "type": "expanded_speech",
+      "display_text": "钥匙转了。门开了一条缝，客厅里没开灯，窗帘没拉，对面楼的某一扇窗透过来一点橘黄色，落在地板上一块。她侧身进去，没开灯。包带从肩上滑下来，她没接，让它自己落到地上，听见一声闷响。鞋还穿着，站在门口的垫子上，垫子边缘有一根线头翘起来，她低着头看见了，没动。冰箱在厨房那边发出轻微的嗡嗡声，一直在响，之前没注意到。客厅里有一点凉，窗缝没关严，细风从那边过来，碰到她小臂上的皮肤。包在地上，带子还没展开，就",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 36,
+      "type": "expanded_speech",
+      "display_text": "她就那样站着，鞋底踩着门口的垫子，没有再往里走。那根翘起来的线头还在那里。冰箱的嗡嗡声从厨房传过来，一直没断。凉从窗缝那边慢慢过来，贴着小臂，没有散。包带在地板上没动，暗里看不清颜色。她的手垂着，指尖微微弯着，没有去碰任何东西。对面楼那一块橘黄色还在地板上，形状不规则，有一个角被桌腿切掉了一部分。嗡嗡声还在响。凉还在小臂上。她站在垫子边缘，一只脚的重心慢慢压向另一只脚，地板没有出声。",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 37,
+      "type": "voice_intrusion",
+      "display_text": "模拟张明的声音说，「你怎么不回我消息」",
+      "source": "模拟张明的声音",
+      "module": "unknown"
+    },
+    {
+      "id": 38,
+      "type": "voice_intrusion",
+      "display_text": "想象中的自己开口说，「我在想事情。」",
+      "source": "想象中的自己开口",
+      "module": "unknown"
+    },
+    {
+      "id": 39,
+      "type": "voice_intrusion",
+      "display_text": "林晓雨内部演练说，「如果我去找他谈——我说：'王总，我想了解一下今天方案哪里有问题'——他会说什么。他会说：'你自己好好想想。'或者他会说：'小林，这个思路太基础了。'然后我说什么。我说：'我可以重新做。'——不对，这样说显得我在求他。我说：'我想听具体反馈。'——他会看我一眼，然后转头继续讲别的。就这样结束。我站在那里。没有用。」",
+      "source": "林晓雨内部演练",
+      "module": "unknown"
+    },
+    {
+      "id": 40,
+      "type": "voice_intrusion",
+      "display_text": "自己（复盘刚才模拟的结果说，「所以不去。这条路走完了——去了也是那个结局。站在那里。没有用。」",
+      "source": "自己（复盘刚才模拟的结果",
+      "module": "unknown"
+    },
+    {
+      "id": 41,
+      "type": "visual_fragment",
+      "display_text": "会议室白板上油性笔写的「第三季度」，笔画末尾有一个墨水晕开的小点，蓝色，直径约两毫米",
+      "source": null,
+      "module": "unknown"
+    },
+    {
+      "id": 42,
+      "type": "body_sensation",
+      "display_text": "喉咙里有一块硬的东西，不痛，压着，吞咽时它没有动",
+      "source": null,
+      "module": "unknown"
+    }
+  ]
+}

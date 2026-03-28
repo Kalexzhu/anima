@@ -1,0 +1,301 @@
+{
+  "tick": 1,
+  "event": "比赛第一节，LeBron 得了 12 分。科比在心里计算：离纪录还差 51 分。这场打不完。第二节 LeBron 继续高效，但并非历史级别的爆发场次——他今晚会打不到 30 分，大概率后天主场再战才会破。科比把这个分析跟 Gianna 说了，Gianna 问「那你怎么知道他不会今晚大爆发」，科比说「因为他不会特意去追这个数字，他会在最舒服的节奏里打」。Gianna 点头，若有所思。中场休息时两人去厨房拿了东西回来。科比看着 LeBron 在场边和队友交流的画面，有一刻没有说话。",
+  "time": "17:30",
+  "location": "Newport Beach 家中客厅，电视开着",
+  "sleep_state": "AWAKE",
+  "emotion": {
+    "dominant": "joy",
+    "intensity": 0.174,
+    "anger": 0.0,
+    "fear": 0.0,
+    "joy": 0.351,
+    "sadness": 0.0,
+    "surprise": 0.067,
+    "disgust": 0.0,
+    "anticipation": 0.117,
+    "trust": 0.316
+  },
+  "moments": [
+    {
+      "id": 0,
+      "type": "voice_intrusion",
+      "display_text": "Gianna Bryant说，「你会拼命吧」",
+      "source": "Gianna Bryant",
+      "module": "reactive"
+    },
+    {
+      "id": 1,
+      "type": "body_sensation",
+      "display_text": "胸腔里有什么东西要漏出来，压不住",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 2,
+      "type": "visual_fragment",
+      "display_text": "Gianna侧脸，刚才说话时眼睛没看电视，是看着他的",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 3,
+      "type": "compressed_speech",
+      "display_text": "她知道——",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 4,
+      "type": "unsymbolized",
+      "display_text": "知道自己在想她拿那个问题做了什么：不是在问纪录，是在问他会不会消耗自己",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 5,
+      "type": "intrusion",
+      "display_text": "明天早训六点",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 6,
+      "type": "expanded_speech",
+      "display_text": "她比任何人都更懂那个问题的分量",
+      "source": null,
+      "module": "reactive"
+    },
+    {
+      "id": 7,
+      "type": "body_sensation",
+      "display_text": "右脚跟那一块，皮肤底下，有什么东西在轻微颤动。不痛。就是在那里。",
+      "source": null,
+      "module": "rumination"
+    },
+    {
+      "id": 8,
+      "type": "visual_fragment",
+      "display_text": "Gianna刚才在走廊转角消失的背影，马尾辫还在晃。",
+      "source": null,
+      "module": "rumination"
+    },
+    {
+      "id": 9,
+      "type": "compressed_speech",
+      "display_text": "她今天那个左手上篮的角度对了。对了。",
+      "source": null,
+      "module": "rumination"
+    },
+    {
+      "id": 10,
+      "type": "body_sensation",
+      "display_text": "右脚跟那一块还在。还是那个颤动。不痛。就是在那里，一直在那里。",
+      "source": null,
+      "module": "rumination"
+    },
+    {
+      "id": 11,
+      "type": "visual_fragment",
+      "display_text": "电视屏幕上播着一段Mamba Academy训练剪辑，Gianna在三分线外接球，起跳，球弧线偏左擦框而出。科比的手指无意识扣紧沙发扶手边缘，眼睛没有离开屏幕。",
+      "source": null,
+      "module": "self_eval"
+    },
+    {
+      "id": 12,
+      "type": "expanded_speech",
+      "display_text": "科比在心里过了一遍今天下午Gianna那次练习局：「她的落点我给设早了，那个距离对她现在的力量来说还不对，我应该往里移两步再定桩的——还有换防那次，我叫了错误的阵型，让她在不熟的角度上硬上，那个失位是我的问题。」他在脑子里列到第三条的时候，电视里切到了广告，画面突然亮了一下，他停了停，没继续往下。",
+      "source": null,
+      "module": "self_eval"
+    },
+    {
+      "id": 13,
+      "type": "unsymbolized",
+      "display_text": "某种还没有变成词的东西停在胸口，和客厅里Vanessa和几个女儿偶尔传来的笑声混在一起，很难完全落定，也没有要落定的意思。",
+      "source": null,
+      "module": "self_eval"
+    },
+    {
+      "id": 14,
+      "type": "visual_fragment",
+      "display_text": "Gianna在练习场罚球线站定，出手，球进。科比站在边线，双臂交叉，嘴角压不住。没有刻意看，就一直在看。",
+      "source": null,
+      "module": "philosophy"
+    },
+    {
+      "id": 15,
+      "type": "unsymbolized",
+      "display_text": "某种东西和「给她」这两个字之间的距离，模糊，还没有变成问题，但也不是安静。",
+      "source": null,
+      "module": "philosophy"
+    },
+    {
+      "id": 16,
+      "type": "expanded_speech",
+      "display_text": "我退役之后把所有时间压进来，是因为终于可以，还是因为不知道如果不压进来，那个空着的地方该怎么办？Gianna需要我，Academy需要我——这是真的。但「需要」和「我没有别的地方可以放这些」，这两件事是不是可以同时是真的？爱一件事会不会本来就带着一个缺口，让你用消耗自己的方式填它，而你感觉到的只是喜悦？",
+      "source": null,
+      "module": "philosophy"
+    },
+    {
+      "id": 17,
+      "type": "unsymbolized",
+      "display_text": "如果「消耗」和「给予」从外部看完全一样，那区分它们的那个东西在哪里？",
+      "source": null,
+      "module": "philosophy"
+    },
+    {
+      "id": 18,
+      "type": "visual_fragment",
+      "display_text": "Gianna 侧切变向时右脚落地的瞬间——脚掌外侧先触地，重心压下去，膝盖角度和自己二十三岁时练过的一个动作叠在一起，画面里有两个时间的轮廓同时存在",
+      "source": null,
+      "module": "aesthetic"
+    },
+    {
+      "id": 19,
+      "type": "body_sensation",
+      "display_text": "胸腔上部有一个轻微的鼓胀，不在肺，在更浅的位置，接近皮肤，和某一次反复做后仰跳投到第四十几次时出现的那个「卡进去了」的感觉结构相同，但现在没有运动",
+      "source": null,
+      "module": "aesthetic"
+    },
+    {
+      "id": 20,
+      "type": "unsymbolized",
+      "display_text": "有什么东西关于节拍和间隔是对的，不是音乐，是重复动作之间停顿的长度——那个长度现在在客厅里也在，电视声音的节奏碰到了它的边缘",
+      "source": null,
+      "module": "aesthetic"
+    },
+    {
+      "id": 21,
+      "type": "visual_fragment",
+      "display_text": "另一条时间线：2013年10月，新闻发布会桌前，科比穿西装坐着，旁边是Vanessa，没有球衣。镜头快进：2014年Gianna六岁，在后院投篮，科比蹲下去调整Gianna的出手角度，不用担心跟腱还剩多少弹性。镜头继续快进：Mamba Academy的第一块地基2015年打下，不是2018年，早了三年。现在客厅电视里那个画面，Gianna十三岁，身高已经到科比肩膀，科比站在边线看Gianna打比赛的画面——出现在脑子里的时间长度比平时多了几秒钟。",
+      "source": null,
+      "module": "counterfactual"
+    },
+    {
+      "id": 22,
+      "type": "compressed_speech",
+      "display_text": "多出来那五年——Gianna看到的是全职的科比，不是还在追最后一个赛季的科比。",
+      "source": null,
+      "module": "counterfactual"
+    },
+    {
+      "id": 23,
+      "type": "unsymbolized",
+      "display_text": "一个模糊的认知：现在这个状态和那条假设时间线的终点之间，结果相同，但中间那段路的密度不一样。具体差在哪里没有成型的语言，就是知道有差。电视声音还在，没有被这个认知打断。",
+      "source": null,
+      "module": "counterfactual"
+    },
+    {
+      "id": 24,
+      "type": "visual_fragment",
+      "display_text": "电视屏幕左下角有一个黄色数字角标，数字是38分。客厅光线偏暗，只有电视打过来的蓝白光落在地毯上。沙发扶手的皮革是深棕色，科比的右手搭在上面，拇指指节压着扶手边缘。",
+      "source": null,
+      "module": "positive_memory"
+    },
+    {
+      "id": 25,
+      "type": "body_sensation",
+      "display_text": "胸腔正中偏右的位置有一块热，不是疼，是压着的热。呼吸比平时浅一点，每次吸气落不到底部。嘴角肌肉在用力压平。",
+      "source": null,
+      "module": "positive_memory"
+    },
+    {
+      "id": 26,
+      "type": "expanded_speech",
+      "display_text": "那个笔记本就在书房第二格抽屉里。上面写的日期是1月25日，旁边画了一个圈。今天是23号。今晚比赛结束之前，差不多就知道了。",
+      "source": null,
+      "module": "positive_memory"
+    },
+    {
+      "id": 27,
+      "type": "body_sensation",
+      "display_text": "脚底板通过球鞋鞋底感觉到意大利那块草皮的硬度——不是Newport Beach客厅地毯的厚软，是冻过一夜又晒了半天的黏土硬地，脚跟落下去有一点点震动传上脚踝",
+      "source": null,
+      "module": "daydream"
+    },
+    {
+      "id": 28,
+      "type": "body_sensation",
+      "display_text": "脚跟那点震动还没散，鼻腔里先进来一股气味——不是客厅空调的循环空气，是那块意大利球场边缘割草机刚过的青草腥，混着一点晒热的橡皮颗粒，温度比Newport Beach高出七八度，湿的，粘在鼻毛上",
+      "source": null,
+      "module": "daydream"
+    },
+    {
+      "id": 29,
+      "type": "body_sensation",
+      "display_text": "舌根后侧忽然多了一点唾液，不是渴，是那种吃过的东西在提醒你——球场边小卖部铝箔包装的三明治，白面包压扁了，火腿片是冷的，芥末酱从侧面渗出来糊在拇指和食指之间，粘，要在短裤上蹭两下才擦得干，手指温度比面包低，铝箔边缘割过指节一条细线，没破皮，只是凉的",
+      "source": null,
+      "module": "daydream"
+    },
+    {
+      "id": 30,
+      "type": "body_sensation",
+      "display_text": "右手食指和拇指之间还留着那条铝箔边缘划过的感觉——不是疼，是一道细的、凉的压痕，像指甲掐过，皮肤表面有一点轻微的凸起。低头看，什么都没有，皮肤是光的。客厅沙发皮面是暖的，背靠上去腰这一段有热气顶着，电视声音从正前方过来，低频的，不是在听，是震在胸口肋骨里面。右脚踩在地毯上，地毯毛短，脚趾稍微扣下去，有一点阻力。窗外光线斜进来，打在左侧小腿上，是下午五点半的橙，皮肤表面有一点热，不烫。",
+      "source": null,
+      "module": "daydream"
+    },
+    {
+      "id": 31,
+      "type": "visual_fragment",
+      "display_text": "明天早上 Gianna 坐在厨房吧台前，校服还没穿整齐，衬衫扣子差着一颗，她低着头盯着那本翻开的战术笔记本，用铅笔在纸上戳了个小圈。窗外橙树的影子斜切进来，落在她的左肩上，一条窄窄的亮带。",
+      "source": null,
+      "module": "future"
+    },
+    {
+      "id": 32,
+      "type": "visual_fragment",
+      "display_text": "明天早上再晚一点，Gianna 站在车道边上，书包的肩带被她单手攥着拖在地上，另一只手捂着嘴打了个哈欠。她的球鞋鞋带一边松了，鞋舌往外翻着。她抬起头，眯着眼看他，嘴角往一边咧了一下——不是笑，但比笑更随便的那种表情，像是在说「你又要说什么了」。",
+      "source": null,
+      "module": "future"
+    },
+    {
+      "id": 33,
+      "type": "body_sensation",
+      "display_text": "明天早上，他坐进驾驶座，车门刚带上，Gianna 就把脚搭上了仪表板边缘的凸台——球鞋底蹭着塑料，发出一声闷响。他没说话。副驾驶侧窗玻璃上还有一圈昨晚留下的指印，晨光从那个方向斜进来，把指印打成一个毛边的光晕。他的手搭在方向盘上，手心感觉到皮质是凉的，还没被体温焐热。她在旁边翻书包，拉链声响了两下，停住，又响了一下。车厢里有她身上洗发水的气味，和后座球袋里橡胶的气味混在一起。引擎低频震动从座椅底部",
+      "source": null,
+      "module": "future"
+    },
+    {
+      "id": 34,
+      "type": "compressed_speech",
+      "display_text": "看看这球……LeBron今晚状态真的猛，63分……发还是不发，算了先看完这节。",
+      "source": null,
+      "module": "social_rehearsal"
+    },
+    {
+      "id": 35,
+      "type": "voice_intrusion",
+      "display_text": "Gianna说，「爸爸你在看什么？」",
+      "source": "Gianna",
+      "module": "social_rehearsal"
+    },
+    {
+      "id": 36,
+      "type": "voice_intrusion",
+      "display_text": "Gianna说，「爸爸你在看什么？」",
+      "source": "Gianna",
+      "module": "social_rehearsal"
+    },
+    {
+      "id": 37,
+      "type": "voice_intrusion",
+      "display_text": "Gianna说，「爸爸你在看什么？」",
+      "source": "Gianna",
+      "module": "social_rehearsal"
+    },
+    {
+      "id": 38,
+      "type": "visual_fragment",
+      "display_text": "电视屏幕上LeBron侧脸，汗水从太阳穴滑到下颌角，毛巾边缘是白色的，场边灯光打得很硬，地板是枫木色",
+      "source": null,
+      "module": "imagery"
+    },
+    {
+      "id": 39,
+      "type": "voice_intrusion",
+      "display_text": "Gianna说，「爸，他换手的时候——」",
+      "source": "Gianna",
+      "module": "imagery"
+    }
+  ]
+}
