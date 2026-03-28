@@ -32,15 +32,13 @@
 
 ## 🎬 演示
 
-> 以下演示人物为**林晓雨**：28 岁产品设计师，刚在会议上被领导当众否定了做了两周的方案，独自坐在公司楼道的窗边。
-
-**可视化层 · 科比·布莱恩特（2020 年 1 月 25 日深夜）**
+**科比·布莱恩特（2020 年 1 月 25 日深夜）**
 
 <div align="center">
 <img src="docs/assets/Kobe_zh.gif" width="75%" alt="科比心理仿真演示"/>
 </div>
 
-**可视化层 · 林晓雨（方案被否后独坐楼道）**
+**林晓雨（方案被否后独坐楼道）**
 
 <div align="center">
 <img src="docs/assets/lin_zh.gif" width="75%" alt="林晓雨心理仿真演示"/>
@@ -217,15 +215,6 @@ python3 scenarios/kobe_2020/runner.py
 
 ---
 
-## 🌟 Star History
-
-<div align="center">
-
-[![Star History Chart](https://api.star-history.com/svg?repos=Kalexzhu/anima&type=Date)](https://star-history.com/#Kalexzhu/anima&Date)
-
-</div>
-
----
 
 ## 📄 License
 
