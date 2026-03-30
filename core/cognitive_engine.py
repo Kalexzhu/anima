@@ -105,7 +105,8 @@ _drift_modules: list[CognitiveModule] = create_drift_modules()
 _drift_module_map: dict[str, CognitiveModule] = {m.name: m for m in _drift_modules}
 _module_runner = ModuleRunner([_reactive_module] + _drift_modules, max_workers=4)
 
-_PASSIVE_DECAY = 0.7  # 每轮无条件衰退系数（约3轮强度减半）
+_PASSIVE_DECAY = 0.7   # 清醒时每小时衰减 30%（约3轮强度减半）
+_SLEEP_DECAY   = 0.95  # 睡眠时每小时衰减 5%（8小时后保留 ~66%）
 
 # ── 测试模式开关 ────────────────────────────────────────────────────────────────
 _TEST_ALL_MODULES = False  # True = 每轮运行全部 drift 模块（不经 drift_sampler 采样）
@@ -523,7 +524,8 @@ def run_cognitive_cycle(
 
     # ── ASLEEP 简化循环 ────────────────────────────────────────────────────────
     if behavior.sleep_state == "ASLEEP":
-        _decay_factor = _PASSIVE_DECAY ** tick_duration_hours if tick_duration_hours is not None else _PASSIVE_DECAY
+        _decay_base = _SLEEP_DECAY  # B1：睡眠时衰减更慢，保留情绪底色
+        _decay_factor = _decay_base ** tick_duration_hours if tick_duration_hours is not None else _decay_base
         decayed = _apply_decay(state.emotion, factor=_decay_factor)
         new_state = ThoughtState(
             text="（睡眠中）",

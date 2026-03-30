@@ -179,9 +179,9 @@ class WorldEngine:
         """生成一件推进指定线索的事件。"""
         history_block = ""
         if self._event_history:
-            recent = self._event_history[-3:]
+            recent = self._event_history[-5:]
             history_block = (
-                "近期已发生的事（避免重复）：\n"
+                "【已发生事件（禁止重复相同人物、地点、对话内容）】\n"
                 + "\n".join(f"  · {e}" for e in recent)
                 + "\n\n"
             )
@@ -211,7 +211,10 @@ class WorldEngine:
             trunk_context = ""
             trunk_id = None
 
-        trunk_block = f"{trunk_context}\n" if trunk_context else ""
+        trunk_block = (
+            f"{trunk_context}\n事件应与此主干所在域（工作/感情/家庭等）有关联，或形成对比。\n"
+            if trunk_context else ""
+        )
 
         system = (
             "你是事件记录员。用第三人称平白陈述发生了什么，不加感受描写，不加修辞。"
@@ -249,9 +252,9 @@ class WorldEngine:
         """所有线索已关闭时，生成开放性事件（新发现/机会/日常）。"""
         history_block = ""
         if self._event_history:
-            recent = self._event_history[-3:]
+            recent = self._event_history[-5:]
             history_block = (
-                "近期已发生的事（避免重复）：\n"
+                "【已发生事件（禁止重复相同人物、地点、对话内容）】\n"
                 + "\n".join(f"  · {e}" for e in recent)
                 + "\n\n"
             )
@@ -268,7 +271,9 @@ class WorldEngine:
         if self.world_state is not None:
             trunk_id, trunk_context = self.world_state.get_trunk_context(state.emotion, state.tick)
             if trunk_context:
-                trunk_block = f"{trunk_context}\n"
+                trunk_block = (
+                    f"{trunk_context}\n事件应与此主干所在域（工作/感情/家庭等）有关联，或形成对比。\n"
+                )
 
         system = (
             "你是事件记录员。用第三人称平白陈述发生了什么，不加感受描写，不加修辞。"
@@ -307,7 +312,7 @@ class WorldEngine:
         if self._event_history:
             recent = self._event_history[-5:]
             history_block = (
-                "近期已发生的事件（避免重复，可延续未竟的线索）：\n"
+                "【已发生事件（禁止重复相同人物、地点、对话内容）】\n"
                 + "\n".join(f"  · {e}" for e in recent)
                 + "\n\n"
             )

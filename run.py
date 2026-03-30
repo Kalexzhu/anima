@@ -377,6 +377,7 @@ def main(profile_path: str, max_ticks_override: int | None = None):
             f_txt.write(f"\n{'─'*62}\n")
             f_txt.write(f"  轮次 {tick:02d}  |  [{bar}] {state.emotion.intensity:.2f}  |  {state.emotion.dominant()}  |  mem:{memory.mode}\n")
             f_txt.write(f"  线索：{thread_summary}\n")
+            f_txt.write(f"  主干：{world_state.summary_line()}\n")
             f_txt.write(f"  {event_str}\n")
             f_txt.write(f"{'─'*62}\n")
 
