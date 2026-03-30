@@ -368,10 +368,27 @@ Phase 2（进行中）：数字生命 · 实时感知 + 具身输出
     ✅ Trunk 域正交约束（VALID_DOMAINS 8个域，同域去重）
     ✅ ASLEEP 状态事件抑制（睡眠时 WorldEngine 静默）
     ✅ Trunk → drift 层横向接入（rumination/self_eval/philosophy/future 强/中接入）
-    ⬜ 事件记忆注入（最近 N 个事件摘要注入 prompt，防重复）
-    ⬜ 事件风格扩展（超越 dramatic/subtle 二元分类）
-    ⬜ 情绪自然节律（积压-释放机制，防长期麻木）
-    ⬜ 叙事线索淡出（关闭后 N tick 渐退，不硬切断）
+
+    Phase A 精修（设计文档：iterations/2026-03-30-phase-a-polish-design.md）
+    优先级：D1 → B1 → A1 → B3 → C1 → A2 → C2 → A3 → B2 → C3
+
+    第一批（单文件微调）：
+    ⬜ D1  Trunk 写入日志（run.py 1行，txt 可观察性）
+    ⬜ B1  睡眠衰减率（_SLEEP_DECAY=0.95，睡眠时每小时衰减 5%）
+    ⬜ A1  事件记忆注入（禁止重复约束 + Trunk 域提示，core/world_engine.py）
+
+    第二批（跨文件但逻辑独立）：
+    ⬜ B3  清晨情绪特征（ASLEEP→AWAKE 切换时 fear/sadness 轻微上调）
+    ⬜ C1  Urgency 双向运动（未激活 Trunk 缓慢发酵上涨，resolving 加速衰减）
+    ⬜ A2  正向事件类型（joy/trust/anticipation 触发，细小喘息型事件）
+
+    第三批（需要新字段/新机制）：
+    ⬜ C2  认知疲劳强制切换（consecutive_activation 连续计数惩罚）
+    ⬜ A3  事件因果性链（action_history 注入 WorldEngine，防重复驱动）
+    ⬜ C3  Trunk 间渗透（secondary_trunk_context 注入 drift anchor）
+
+    第四批（最复杂）：
+    ⬜ B2  情绪积压-释放机制（suppression_pressure 积累 → release 事件触发）
 
   Phase B：音频感知输入
     ⬜ audio/stt_listener.py（Whisper 本地流式，Mac M 系列）
@@ -425,3 +442,4 @@ Phase 3（暂缓）：
 | TTS 定位 | 纯视觉化载体，念出内心独白，不模拟行为 | 最简形式创造最强在场感，行为模拟暂不在范围 |
 | 双循环架构 | Fast Loop（STT）+ Slow Loop（认知引擎），EventQueue 做桥 | 两个时间尺度（秒 vs 分钟）不兼容，必须解耦；WorldEngine 降为 idle generator |
 | Phase A 优先 | 先迭代 WorldEngine 事件质量，再接入真实感知 | 感知输入槽位已存在，先拉高基线；技术风险最高的在前 |
+| Phase A 精修 | 10项改动分4批，优先级：可观察性→情绪→事件→Trunk系统→复杂机制 | 改动小+收益大在前，架构复杂在后；设计文档已归档至 iterations/ |
