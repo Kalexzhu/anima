@@ -143,7 +143,12 @@ class WorldEngine:
                     self.thread_mgr.mark_thread_used(thread["id"], state.tick)
                 return result
             else:
-                # 所有线索已关闭：生成开放性事件（新发现/机会）
+                # 所有线索已关闭：检查是否触发正向事件，否则生成开放性事件
+                pos_score = state.emotion.joy + state.emotion.trust + state.emotion.anticipation
+                if (self._ticks_since_last_event >= self.calm_interval
+                        and pos_score > 0.2
+                        and state.emotion.intensity <= self.threshold):
+                    return self._generate_positive_event(state, behavior)
                 return self._generate_open_event(state, behavior)
 
         # ── 旧情绪驱动逻辑（无 thread_mgr 时兼容回退）──────────────────────────
@@ -297,6 +302,57 @@ class WorldEngine:
             except Exception as e:
                 if _attempt == 3:
                     print(f"[WorldEngine] 开放事件生成失败: {e}")
+        return ""
+
+    def _generate_positive_event(
+        self,
+        state: ThoughtState,
+        behavior: "BehaviorState | None",
+    ) -> str:
+        """A2：正向事件——情绪平静且有正向残余时，生成细小喘息型事件。
+        触发条件：joy + trust + anticipation > 0.2，且情绪强度不在峰值。
+        风格：细小、不戏剧化、来自外部环境或非核心关系（路人/天气/物件）。
+        """
+        history_block = ""
+        if self._event_history:
+            recent = self._event_history[-5:]
+            history_block = (
+                "【已发生事件（禁止重复相同人物、地点、对话内容）】\n"
+                + "\n".join(f"  · {e}" for e in recent)
+                + "\n\n"
+            )
+
+        context_parts = []
+        if behavior:
+            context_parts.append(
+                f"当前时间：{behavior.wall_clock_time}，地点：{behavior.location}，活动：{behavior.activity}"
+            )
+        context_parts.append(
+            f"正向情绪：joy={state.emotion.joy:.2f} trust={state.emotion.trust:.2f} anticipation={state.emotion.anticipation:.2f}"
+        )
+        rich_context = "\n".join(context_parts) + "\n\n" if context_parts else ""
+
+        system = (
+            "你是事件记录员。用第三人称平白陈述发生了什么，不加感受描写，不加修辞。"
+            "直接输出内容，不加任何前缀或解释。"
+        )
+        user = (
+            f"人物：{self.profile.name}，{self.profile.current_situation}\n"
+            + rich_context
+            + f"当前思维片段：{state.text[-100:] if state.text else '（初始）'}\n\n"
+            + history_block
+            + "任务：生成一件细小的正向时刻。要求：\n"
+            "- 来自外部环境或非核心关系（路人/天气/物件/偶然发现），不涉及人物的核心矛盾\n"
+            "- 不解决任何问题，只是短暂的喘息或意外的小惊喜\n"
+            "- 1~2句话，纯事实陈述，不写情绪"
+        )
+
+        for _attempt in range(4):
+            try:
+                return claude_call(user, system=system, max_tokens=512)
+            except Exception as e:
+                if _attempt == 3:
+                    print(f"[WorldEngine] 正向事件生成失败: {e}")
         return ""
 
     # ── 事件生成 ───────────────────────────────────────────────────────────────

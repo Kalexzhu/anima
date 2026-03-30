@@ -82,6 +82,10 @@ PHASE_TO_ACTION: dict[str, tuple[str, str] | None] = {
 # 2h/tick 时：每轮衰退 0.006×2 = 0.012，~50 轮从 0.6 衰退到 0
 _TRUNK_DECAY_PER_HOUR = 0.006
 
+# C1：未激活时后台发酵上涨（per tick，非 per hour，幅度小）
+_TRUNK_FERMENT_PER_TICK = 0.03   # 超过 3 轮未激活时每轮上涨
+_TRUNK_FERMENT_LAG = 3           # 静默几轮后才开始发酵
+
 # Phase 前进阈值（urgency 超过时向前一步）
 _PHASE_FORWARD: dict[str, tuple[str, float]] = {
     "latent":      ("emerging",    0.25),
@@ -190,10 +194,21 @@ class WorldState:
     # ── 每 tick 更新 ──────────────────────────────────────────────────────────
 
     def tick_update(self, tick: int, tick_duration_hours: float = 2.0) -> None:
-        """每 tick 末尾调用：衰退 urgency，更新 phase。"""
+        """每 tick 末尾调用：衰退 urgency，更新 phase。
+        C1：developing/critical 阶段超过 3 轮未激活时，urgency 缓慢上涨（后台发酵）；
+            resolving 阶段加速衰减；其余阶段正常衰减。
+        """
         decay = _TRUNK_DECAY_PER_HOUR * tick_duration_hours
         for trunk in self.trunks:
-            trunk.urgency = max(0.0, trunk.urgency - decay)
+            ticks_since = tick - trunk.last_activated_tick
+            if trunk.phase == "resolving":
+                # resolving 阶段加速衰减
+                trunk.urgency = max(0.0, trunk.urgency - decay * 2)
+            elif trunk.phase in ("developing", "critical") and ticks_since > _TRUNK_FERMENT_LAG:
+                # 后台发酵：未激活超过阈值则缓慢上涨
+                trunk.urgency = min(1.0, trunk.urgency + _TRUNK_FERMENT_PER_TICK)
+            else:
+                trunk.urgency = max(0.0, trunk.urgency - decay)
             _update_phase(trunk)
 
     # ── 对外接口（供 WorldEngine 使用）───────────────────────────────────────

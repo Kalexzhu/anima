@@ -490,6 +490,7 @@ def run_cognitive_cycle(
     behavior_override: "BehaviorState | None" = None,
     tick_duration_hours: float | None = None,
     active_trunk_context: str = "",
+    prev_sleep_state: str = "",
 ) -> tuple[ThoughtState, BehaviorState, dict]:
     """
     执行一轮完整认知循环，返回 (ThoughtState, BehaviorState)。
@@ -550,6 +551,14 @@ def run_cognitive_cycle(
     # 被动衰退（时长感知：2h tick 衰退 30%，10min tick 仅衰退 ~6%）
     _decay_factor = _PASSIVE_DECAY ** tick_duration_hours if tick_duration_hours is not None else _PASSIVE_DECAY
     new_emotion = _apply_decay(new_emotion, factor=_decay_factor)
+
+    # B3：清晨情绪特征——ASLEEP→AWAKE 切换后第一 tick 轻微上调 fear/sadness
+    if prev_sleep_state == "ASLEEP" and behavior.sleep_state == "AWAKE":
+        wakeup_boost = {
+            "fear": new_emotion.fear + 0.08,
+            "sadness": new_emotion.sadness + 0.05,
+        }
+        new_emotion = new_emotion.update_from_dict(wakeup_boost)
 
     # 认知残差检索
     layer_ctx = tick_store.retrieve(new_emotion) if tick_store else None

@@ -343,6 +343,7 @@ def main(profile_path: str, max_ticks_override: int | None = None):
     tick_records = []
     tick_store = TickHistoryStore(profile_name=profile.name)
     prev_tick_outputs: dict = {}  # 跨轮传递，供多模块影响机制使用
+    prev_sleep_state: str = "AWAKE"  # B3：跟踪上一轮睡眠状态，检测清晨切换
 
     # ── 情绪初始播种（tick 1 前用 current_physical_state 种入初始情绪）──────────
     state = _seed_initial_emotion(profile, state)
@@ -387,8 +388,10 @@ def main(profile_path: str, max_ticks_override: int | None = None):
                 prev_tick_outputs=prev_tick_outputs,
                 narrative_thread=top,
                 active_trunk_context=trunk_context,
+                prev_sleep_state=prev_sleep_state,
             )
             prev_tick_outputs = module_outputs  # 保存供下轮影响机制使用
+            prev_sleep_state = behavior.sleep_state  # B3：更新上一轮睡眠状态
 
             # 显示行为状态
             time_loc = f"  ⏰ {behavior.wall_clock_time}  📍 {behavior.location}  {'💤' if behavior.sleep_state == 'ASLEEP' else '👁'}"
