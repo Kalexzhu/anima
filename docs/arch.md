@@ -373,22 +373,22 @@ Phase 2（进行中）：数字生命 · 实时感知 + 具身输出
     优先级：D1 → B1 → A1 → B3 → C1 → A2 → C2 → A3 → B2 → C3
 
     第一批（单文件微调）：
-    ⬜ D1  Trunk 写入日志（run.py 1行，txt 可观察性）
-    ⬜ B1  睡眠衰减率（_SLEEP_DECAY=0.95，睡眠时每小时衰减 5%）
-    ⬜ A1  事件记忆注入（禁止重复约束 + Trunk 域提示，core/world_engine.py）
+    ✅ D1  Trunk 写入日志（run.py 1行，txt 可观察性）
+    ✅ B1  睡眠衰减率（_SLEEP_DECAY=0.95，睡眠时每小时衰减 5%）
+    ✅ A1  事件记忆注入（禁止重复约束 + Trunk 域提示，core/world_engine.py）
 
     第二批（跨文件但逻辑独立）：
-    ⬜ B3  清晨情绪特征（ASLEEP→AWAKE 切换时 fear/sadness 轻微上调）
-    ⬜ C1  Urgency 双向运动（未激活 Trunk 缓慢发酵上涨，resolving 加速衰减）
-    ⬜ A2  正向事件类型（joy/trust/anticipation 触发，细小喘息型事件）
+    ✅ B3  清晨情绪特征（ASLEEP→AWAKE 切换时 fear/sadness 轻微上调）
+    ✅ C1  Urgency 双向运动（未激活 Trunk 缓慢发酵上涨，resolving 加速衰减）
+    ✅ A2  正向事件类型（joy/trust/anticipation 触发，细小喘息型事件）
 
     第三批（需要新字段/新机制）：
-    ⬜ C2  认知疲劳强制切换（consecutive_activation 连续计数惩罚）
-    ⬜ A3  事件因果性链（action_history 注入 WorldEngine，防重复驱动）
-    ⬜ C3  Trunk 间渗透（secondary_trunk_context 注入 drift anchor）
+    ✅ C2  认知疲劳强制切换（consecutive_activation 连续计数惩罚）
+    ✅ A3  事件因果性链（action_history 注入 WorldEngine，防重复驱动）
+    ✅ C3  Trunk 间渗透（secondary_trunk_context 注入 drift anchor）
 
     第四批（最复杂）：
-    ⬜ B2  情绪积压-释放机制（suppression_pressure 积累 → release 事件触发）
+    ✅ B2  情绪积压-释放机制（suppression_pressure 积累 → release 事件触发）
 
   Phase B：音频感知输入
     ⬜ audio/stt_listener.py（Whisper 本地流式，Mac M 系列）
