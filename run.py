@@ -372,6 +372,7 @@ def main(profile_path: str, max_ticks_override: int | None = None):
             # 本 tick 统一取一次 trunk_context，同时传给认知循环和 WorldEngine
             # 保证同一 tick 内 drift 模块与事件生成指向同一条 Trunk
             _trunk_id, trunk_context = world_state.get_trunk_context(state.emotion, tick)
+            secondary_trunk_context = world_state.get_secondary_trunk_context(_trunk_id)  # C3
 
             bar = "█" * int(state.emotion.intensity * 20) + "░" * (20 - int(state.emotion.intensity * 20))
             event_str = f"事件：{event}" if event else "（无新事件）"
@@ -389,6 +390,7 @@ def main(profile_path: str, max_ticks_override: int | None = None):
                 narrative_thread=top,
                 active_trunk_context=trunk_context,
                 prev_sleep_state=prev_sleep_state,
+                secondary_trunk_context=secondary_trunk_context,
             )
             prev_tick_outputs = module_outputs  # 保存供下轮影响机制使用
             prev_sleep_state = behavior.sleep_state  # B3：更新上一轮睡眠状态
@@ -433,6 +435,7 @@ def main(profile_path: str, max_ticks_override: int | None = None):
             # B2 结论立刻传给线索管理器（关闭/新建线索）
             if state.conclusion:
                 thread_mgr.process_action(state.conclusion, current_tick=tick)
+                world.push_action(state.conclusion)  # A3：角色行动注入 WorldEngine
 
             thread_mgr.save()  # 持久化线索状态
             world_state.tick_update(tick, profile.tick_duration_hours)  # Trunk 衰退与 phase 转移

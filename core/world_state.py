@@ -151,6 +151,9 @@ class WorldState:
     def __init__(self, state_path: str):
         self._path = state_path
         self.trunks: list[Situation] = []
+        # C2：运行时认知疲劳计数器（不持久化，重启重置）
+        self._consecutive_count: dict[str, int] = {}  # trunk_id → 连续激活次数
+        self._last_selected_id: str | None = None
         self._load()
 
     # ── 持久化 ────────────────────────────────────────────────────────────────
@@ -241,6 +244,11 @@ class WorldState:
                 ticks_since = current_tick - t.last_activated_tick
                 recency_penalty = math.exp(-ticks_since / _RECENCY_HALFLIFE)
                 adjusted = base * (1.0 - _RECENCY_WEIGHT * recency_penalty)
+                # C2：认知疲劳——连续激活 3 次以上施加额外惩罚
+                consecutive = self._consecutive_count.get(t.id, 0)
+                if consecutive >= 3:
+                    fatigue_factor = 1.0 - min(0.6, (consecutive - 2) * 0.15)
+                    adjusted *= fatigue_factor
                 scores.append(max(adjusted, 1e-6))
 
             # Softmax（数值稳定版）
@@ -249,6 +257,13 @@ class WorldState:
             total = sum(exps)
             probs = [e / total for e in exps]
             best = random.choices(active, weights=probs, k=1)[0]
+
+        # C2：更新连续激活计数
+        if best.id == self._last_selected_id:
+            self._consecutive_count[best.id] = self._consecutive_count.get(best.id, 0) + 1
+        else:
+            self._consecutive_count[best.id] = 1
+            self._last_selected_id = best.id
 
         action = PHASE_TO_ACTION.get(best.phase)
         phase_hint = f"（{action[1][:10]}）" if action else ""
@@ -266,6 +281,18 @@ class WorldState:
         if entry is None:
             return "open", "生成一件日常小事，轻轻触动主题边缘"
         return entry
+
+    def get_secondary_trunk_context(self, primary_trunk_id: Optional[str]) -> str:
+        """C3：返回第二高分 Trunk 的 context_str，供 drift 模块渗透注入。
+        primary_trunk_id 为本轮已选主 Trunk，排除它后取下一个。"""
+        active = [t for t in self.trunks if t.phase != "latent"]
+        others = [t for t in active if t.id != primary_trunk_id]
+        if not others:
+            return ""
+        secondary = max(others, key=lambda t: t.urgency)
+        action = PHASE_TO_ACTION.get(secondary.phase)
+        phase_hint = f"（{action[1][:10]}）" if action else ""
+        return f"次级背景主干[{secondary.domain}]：{secondary.title}——{secondary.description}{phase_hint}"
 
     def mark_trunk_activated(self, trunk_id: str, tick: int) -> None:
         """事件生成后调用，记录 Trunk 被提及，略微提升其 urgency。"""

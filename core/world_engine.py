@@ -57,6 +57,7 @@ class WorldEngine:
         self._ticks_since_last_event = 0
         self._dramatic_cooldown = 0
         self._event_history: list[str] = []
+        self._recent_actions: list[str] = []  # A3：角色最近行动记录（供事件生成去重）
 
         # 跨轮次持久化
         safe_name = profile.name.replace(" ", "_")
@@ -92,6 +93,20 @@ class WorldEngine:
                 f.write(json.dumps({"event": event}, ensure_ascii=False) + "\n")
         except OSError as e:
             print(f"[WorldEngine] 事件历史写入失败：{e}")
+
+    def push_action(self, action: str) -> None:
+        """A3：记录角色最近行动（来自 reactive 结论），保留最近 2 条。"""
+        if action:
+            self._recent_actions.append(action)
+            if len(self._recent_actions) > 2:
+                self._recent_actions.pop(0)
+
+    def _action_block(self) -> str:
+        """A3：生成角色行动历史注入块。"""
+        if not self._recent_actions:
+            return ""
+        items = "；".join(self._recent_actions)
+        return f"角色最近的行动：[{items}]\n（生成事件时请避免重复驱动相同行动）\n\n"
 
     # ── 触发逻辑 ───────────────────────────────────────────────────────────────
 
@@ -232,6 +247,7 @@ class WorldEngine:
             + f"正在推进的故事线索：{thread['description']}（urgency={thread['urgency']:.2f}，类别={thread['category']}）\n"
             + f"近期思维片段：{state.text[-100:] if state.text else '（初始）'}\n\n"
             + history_block
+            + self._action_block()
             + f"任务：生成一件与这条线索直接相关的事。{action_hint}\n"
             "1~2句话，纯事实陈述，不写感受，不写情绪暗示。"
             "可以是：线索的直接发展、相关人物出现、环境触发对线索的联想。"
@@ -290,6 +306,7 @@ class WorldEngine:
             + trunk_block
             + f"当前思维片段：{state.text[-100:] if state.text else '（初始）'}\n\n"
             + history_block
+            + self._action_block()
             + "任务：生成一件日常小事或新的发现/机会。1~2句话，纯事实陈述。"
         )
 

@@ -44,6 +44,10 @@ class ModuleContext:
     # 供 rumination / philosophy / self_eval / future 作为认知焦点锚点
     active_trunk_context: str = ""
 
+    # C3：次级主干渗透——第二高分 Trunk 的 context_str（可为空）
+    # 供 rumination / self_eval / philosophy 在 anchor 构建时注入背景，模拟跨域渗透
+    secondary_trunk_context: str = ""
+
     # 上轮所有模块的输出（跨轮次影响机制）
     # {module_name: [{"type": ..., "content": ...}, ...]}
     prev_tick_outputs: "dict[str, list[dict]]" = field(default_factory=dict)

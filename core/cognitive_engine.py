@@ -491,6 +491,7 @@ def run_cognitive_cycle(
     tick_duration_hours: float | None = None,
     active_trunk_context: str = "",
     prev_sleep_state: str = "",
+    secondary_trunk_context: str = "",
 ) -> tuple[ThoughtState, BehaviorState, dict]:
     """
     执行一轮完整认知循环，返回 (ThoughtState, BehaviorState)。
@@ -606,6 +607,7 @@ def run_cognitive_cycle(
         prev_tick_outputs=prev_tick_outputs or {},
         memory_sample=memory_sample,
         active_trunk_context=active_trunk_context,
+        secondary_trunk_context=secondary_trunk_context,
     )
 
     module_outputs = _module_runner.run_selected(ctx, modules_to_run)
