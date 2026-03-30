@@ -120,43 +120,56 @@ PersonProfile JSON
 
 ### LAYER 2 · 认知引擎
 
-**现状（v3 已实现）**：六层架构（Layer 0 行为预测 + 原五层）。
+**当前版本（v5，已实现）**：10 模块并发架构。
 
-#### 六层数据流（v3）
+#### 数据流（v5）
 
 ```
-event（外部事件，可为空）
+event（外部事件，可为空）+ profile + emotion + prev_tick_outputs
     ↓
-behavior_layer(profile, tick, emotion)  ← Layer 0（新增）
+behavior_layer(profile, tick, emotion)
     → BehaviorState {location, activity, sleep_state, wall_clock_time}
     ↓
-[ASLEEP?] → _dream_arbiter → ThoughtState  ← 简化睡眠循环
-[AWAKE?] ↓
-perception_layer(profile, event, state, behavior)
-    → perceived: str（≤60字，注意焦点）
+[ASLEEP?] → 静默输出"（睡眠中）"，情绪继续衰减
+[AWAKE?]  ↓
+
+ThreadPoolExecutor（max_workers=6）并发运行 10 个认知模块：
+  ┌─ ReactiveModule（情绪反应式，B1 锚点选择 + B2 时刻链生成）
+  ├─ DriftModule × 9（各自独立 LLM 调用）：
+  │   emotion_drift   · 情绪惯性漂移
+  │   memory_surface  · 无意识记忆浮现
+  │   voice_intrusion · 他人声音侵入
+  │   imagery         · 意象碎片（视觉画面）
+  │   philosophy      · 哲学沉思
+  │   daydream        · 白日梦/另一种可能
+  │   counterfactual  · 反事实假设（如果当时…）
+  │   rumination      · 反刍思维
+  │   self_eval       · 自我评价
+  └─ （drift_sampler 按情绪状态采样 2~3 个 DriftModule 运行）
     ↓
-emotion_layer(profile, perceived, state)
-    → EmotionState（OCC六维评价 → Plutchik 8D → 认知偏差修正 → 情绪惯性平滑）
+cognitive_engine 整合 module_outputs
+    → 合并 DES moments（7类：compressed_speech/visual_fragment/
+      unsymbolized/body_sensation/intrusion/voice_intrusion/expanded_speech）
+    → 提取 reactive._conclusion → WritebackManager
+    → 更新 ThoughtState.text（连续意识流）
     ↓
-passive_decay × 0.7（无条件，每轮）
+OCC emotion_layer（fast_call，事件+感知→8D Plutchik 向量）
+    → EmotionState（惯性衰减 × 0.4/轮）
     ↓
-memory_layer(memory_manager, perceived, emotion)
-    → mem_fragment: str（语义检索，top-3）
-    ↓
-reasoning_layer(profile, perceived, emotion, memory, behavior)
-    → reasoning: str（≤80字，认知偏差介入的内心推演）
-    ↓
-arbiter_layer(...)  ← 非流式，Direction B
-    → full_thought（100~200字，事件/记忆/欲望为主，情绪调色）
-    ↓
-ThoughtState {text, emotion, tick, last_event, perceived, memory_fragment, reasoning}
+ThoughtState {text, emotion, tick, perceived, memory_fragment, reasoning, conclusion}
 ```
 
-#### Direction B：arbiter 内容规则
+#### 关键参数（v5）
 
-- **主要内容** = 脑子里在想的具体事物（某人/某件事/欲望/记忆画面）
-- **情绪** = 只影响语气和用词，不是话题本身
-- **禁止** = "我好难受""我真的很痛苦"等情绪陈述作为主体
+| 参数 | 当前值 | 含义 |
+|------|--------|------|
+| MAX_TICKS | 20 | 每次运行轮次 |
+| tick_duration_hours | 2.0 | 每轮 = 2 小时真实时间 |
+| EMOTION_DECAY | 0.4 | 情绪惯性衰减/轮 |
+| INTENSITY_THRESHOLD | 0.45 | 触发 dramatic 事件阈值 |
+| CALM_INTERVAL | 3 | 触发 subtle 事件间隔（轮）|
+| _MODULE_TIMEOUT_S | 90 | 单模块最长等待（超时跳过）|
+| 轮次间 sleep | 2s | 防限流 |
 
 #### 睡眠状态机
 
@@ -165,20 +178,9 @@ AWAKE ──睡眠时段──→ ASLEEP
   ↑                     ↓
   └──醒来时段←──────────┘
 
-ASLEEP 时：behavior_layer 判定 → _dream_arbiter → 情绪衰退继续
-AWAKE 时：完整六层循环
+ASLEEP 时：behavior_layer 判定 → 静默输出 → 情绪衰退继续
+AWAKE 时：10 模块并发循环
 ```
-
-#### 关键参数（v3）
-
-| 参数 | 当前值 | 含义 |
-|------|--------|------|
-| MAX_TICKS | 40 | 每次运行轮次 |
-| tick_duration_hours | 2.0 | 每轮 = 2 小时真实时间 |
-| PASSIVE_DECAY | 0.7 | 情绪被动衰退/轮（约3轮减半） |
-| INTENSITY_THRESHOLD | 0.45 | 触发 dramatic 事件阈值 |
-| CALM_INTERVAL | 3 | 触发 subtle 事件间隔（轮） |
-| 轮次间 sleep | 2s | 防限流 |
 
 ---
 
@@ -229,53 +231,67 @@ twin.compare_scenarios([
 
 | 层 | 技术 |
 |----|------|
-| LLM 快速层 | qwen3-max（DashScope OpenAI 兼容接口） |
-| LLM 降级层 | Anthropic Claude（Sonnet 4.6，fallback） |
-| 记忆系统 | 简单情绪编码检索（CAMEL 暂不依赖） |
-| 情绪模型 | Plutchik 情绪轮（8维）+ OCC 六维评价模型 |
-| 输出模式 | fast_call 非流式（arbiter 层） |
-| 持久化 | JSON（Profile）+ jsonl（tick history / event history） |
+| LLM 核心层 | Anthropic Claude Sonnet 4.6（ReactiveModule/DriftModule/WorldEngine/Writeback）|
+| LLM 快速层 | qwen3-max via DashScope OpenAI 兼容接口（OCC 情绪计算/Behavior 行为推断）|
+| 记忆系统 | MemoryManager 简单情绪编码检索（CAMEL LongtermAgentMemory 可选，需配置）|
+| 情绪模型 | Plutchik 8维向量，intensity = RMS（均方根），OCC 认知评估模型驱动 |
+| 并发 | ThreadPoolExecutor（max_workers=6）并发调度 10 个认知模块 |
+| 持久化 | JSON（Profile + narrative_state）+ jsonl（tick_history / event_history）|
+| 可视化 | p5.js 浏览器端，每 tick 写 viz JSON，支持实时轮询和历史回放 |
 
 ---
 
 ## 目录结构
 
 ```
-mind-reading/
+anima/
 ├── config.py                 # .env 加载（force override）
-├── run.py                    # 认知引擎主入口
-├── viz_from_txt.py           # 离线可视化工具
+├── run.py                    # 主入口（林晓雨等通用 profile）
+├── viz_from_txt.py           # 离线 txt → viz JSON 工具
 │
 ├── core/                     # 认知引擎
-│   ├── profile.py            # PersonProfile schema
-│   ├── emotion.py            # EmotionState（8D Plutchik）
-│   ├── thought.py            # ThoughtState（含中间层数据）
-│   ├── memory.py             # MemoryManager（CAMEL）
-│   ├── cognitive_engine.py   # 五层认知循环
-│   └── world_engine.py       # 世界事件生成引擎
+│   ├── profile.py            # PersonProfile schema（含 output_language 等 v5 字段）
+│   ├── emotion.py            # EmotionState（8D Plutchik + RMS intensity）
+│   ├── thought.py            # ThoughtState（各层中间数据）
+│   ├── memory.py             # MemoryManager（简单检索 + CAMEL 可选）
+│   ├── cognitive_engine.py   # 编排层（10模块并发 + 情绪更新 + 输出渲染）
+│   ├── world_engine.py       # 世界事件生成（情绪阈值触发）
+│   ├── occ.py                # OCC 情绪评估模型
+│   ├── narrative.py          # NarrativeThreadManager（叙事线索）
+│   ├── viz_renderer.py       # viz JSON 生成（每 tick）
+│   ├── residual_feedback.py  # 认知残差自动写回 profile
+│   ├── writeback.py          # B2 结论批量写回 memories
+│   └── cognitive_modules/    # 10 个并发认知模块
+│       ├── base.py           # CognitiveModule 基类 + ModuleContext
+│       ├── runner.py         # ModuleRunner（ThreadPoolExecutor）
+│       ├── reactive.py       # ReactiveModule（B1锚点 + B2时刻链）
+│       └── drift.py          # DriftModule × 9（各类漂移内容）
 │
-├── agents/                   # LLM agent 工厂
-│   └── base_agent.py         # CAMEL ChatAgent + Anthropic 直连兜底
+├── agents/                   # LLM 调用工厂
+│   └── base_agent.py         # 双层路由（claude_call 主力 / fast_call 快速层）
+│                             # + Key 轮转池 + output_language 旁路
 │
 ├── extraction/               # Profile 提取引擎【待建】
 │   ├── scenario_bank.py      # 情境题库（强迫选择→字段映射）
-│   ├── interviewer.py        # 对话式AI访谈
-│   ├── text_extractor.py     # 原始文本语义提取
-│   └── profile_builder.py    # Profile 合成器（置信度评分）
+│   └── profile_builder.py    # Profile 合成器
 │
-├── twin/                     # 数字分身运行时【待建】
-│   ├── twin.py               # CognitiveTwin 主类
-│   ├── scenario_runner.py    # 任意情境模拟
-│   └── twin_store.py         # 分身持久化
+├── twin/                     # 数字分身运行时【骨架】
+│   └── twin.py               # CognitiveTwin 主类（未完成）
 │
-├── examples/
-│   ├── demo_profile.json     # 林晓雨（手写）
-│   └── scenarios/            # 情境题示例【待建】
+├── scenarios/                # 特定人物场景
+│   └── kobe_2020/            # 科比场景（含 timeline.json + runner.py）
 │
-├── output/                   # 所有生成文件
+├── examples/                 # 示例人物档案
+│   ├── demo_profile.json     # 林晓雨
+│   └── demo_narrative_state.json
+│
+├── tests/                    # 单元测试
+├── ui/viz/                   # p5.js 浏览器端可视化
+├── sample_outputs/           # 开源展示用示例输出
+├── output/                   # 运行时生成文件（gitignore）
 └── docs/
     ├── arch.md               # 本文档
-    └── profile-field-rules.md  # Profile 字段收录规则（准入条件 + 字段边界）
+    └── profile-field-rules.md
 ```
 
 ---
@@ -283,27 +299,30 @@ mind-reading/
 ## 开发优先级
 
 ```
-Phase 1（当前）：打通认知引擎闭环
-  ✅ 五层认知架构
-  ✅ 世界引擎（情绪阈值触发）
-  ✅ 可视化输出（txt + json + viz）
-  ⬜ 情绪向量 bug 验证修复
-  ⬜ API 调用优化（减少每轮次数，合并 perception+emotion）
+Phase 1（已完成）：认知引擎闭环 ✅
+  ✅ 10 模块并发认知架构（v5）
+  ✅ OCC 情绪模型 + Plutchik 8D + 惯性衰减
+  ✅ 叙事线索系统（NarrativeThreadManager）
+  ✅ 世界引擎（情绪阈值触发 + 关系登场）
+  ✅ 可视化输出（txt + json + p5.js viz 实时漂浮）
+  ✅ 情绪初始播种（tick 1 前 OCC 种入）
+  ✅ 两套示例人物档案（林晓雨 + 科比·布莱恩特）
+  ✅ 断点续跑 + 原子写入
+  ✅ ModuleRunner 超时保护
+  ⬜ ResidualFeedback 关系检测误报（已知问题，尚未修）
 
-Phase 2：数字分身运行时
-  ⬜ CognitiveTwin 持久化封装
-  ⬜ 任意情境模拟接口
-  ⬜ 跨情境对比功能
+Phase 2（待建）：
+  ⬜ 问卷系统：通过填写问卷自动生成心理档案
+  ⬜ 英文 persona 完整支持（当前旁路有双括号/混码问题）
+  ⬜ TTS + 对口型视频输出
+  ⬜ CognitiveTwin 持久化封装（跨情境对比接口）
 
-Phase 3：Profile 提取引擎
-  ⬜ 情境题库设计（50~100题）
-  ⬜ 对话式访谈（AI 主导问答）
-  ⬜ 文本提取（日记/自述）
-  ⬜ 可选：聊天记录解析
-
-Phase 4：产品化
+Phase 3（远期）：
+  ⬜ Profile 提取引擎（情境题库 + 对话访谈 + 文本提取）
   ⬜ Web 界面
   ⬜ 用户隐私边界设计
+  ⬜ 历史人物 / 剧本角色内容包
+```
   ⬜ 历史人物 / 剧本角色内容包
 ```
 

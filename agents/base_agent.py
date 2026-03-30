@@ -9,6 +9,7 @@ LLM 分层策略：
 
 from __future__ import annotations
 import os
+import threading
 from typing import Optional
 
 import config  # 加载 .env
@@ -41,7 +42,8 @@ def _load_key_pool() -> list[str]:
     return keys
 
 _KEY_POOL: list[str] = _load_key_pool()
-_key_index: int = 0  # 当前使用的 key 下标
+_key_index: int = 0        # 当前使用的 key 下标
+_key_lock = threading.Lock()  # 保护 _key_index 的并发读写
 
 # ── 输出语言控制 ──────────────────────────────────────────────────────────────
 _OUTPUT_LANGUAGE: str = "zh"
@@ -64,8 +66,10 @@ def set_output_language(lang: str) -> None:
 
 def _get_client() -> anthropic.Anthropic:
     """返回当前 key 对应的 Anthropic 客户端。"""
+    with _key_lock:
+        key = _KEY_POOL[_key_index]
     return anthropic.Anthropic(
-        api_key=_KEY_POOL[_key_index],
+        api_key=key,
         base_url=_BASE_URL,
         timeout=90.0,  # 单次请求最长 90 秒，防止挂死
     )
@@ -75,15 +79,17 @@ def _rotate_key(reason: str = "") -> bool:
     """
     切换到下一个 key。
     返回 True 表示切换成功，False 表示已轮转一圈无可用 key。
+    线程安全：使用 _key_lock 保护 _key_index 读写。
     """
     global _key_index
-    next_index = (_key_index + 1) % len(_KEY_POOL)
-    if next_index == 0 and _key_index != 0:
-        return False  # 已经轮转一圈
-    if next_index == _key_index:
-        return False  # 只有一个 key
-    _key_index = next_index
-    print(f"[KeyRotation] 切换至 key #{_key_index + 1}（原因：{reason}）")
+    with _key_lock:
+        next_index = (_key_index + 1) % len(_KEY_POOL)
+        if next_index == 0 and _key_index != 0:
+            return False  # 已经轮转一圈
+        if next_index == _key_index:
+            return False  # 只有一个 key
+        _key_index = next_index
+        print(f"[KeyRotation] 切换至 key #{_key_index + 1}（原因：{reason}）")
     return True
 
 

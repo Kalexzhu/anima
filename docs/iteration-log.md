@@ -1,4 +1,4 @@
-# Mind Reading — 迭代索引
+# ANIMA — 迭代索引
 
 每次迭代新增一行，不删除。详细记录见 `iterations/` 目录。
 
@@ -13,3 +13,8 @@
 | 2026-03-26 | [2026-03-26-viz-floating-text-impl.md](iterations/2026-03-26-viz-floating-text-impl.md) | 文字漂浮动画实现：viz_renderer.py/txt_to_viz.py/p5.js sketch、逐字淡入淡出、半透明拖影背景、Aurora 径向渐变、离线回放+实时轮询架构 |
 | 2026-03-27 | [2026-03-27-viz-visual-iteration.md](iterations/2026-03-27-viz-visual-iteration.md) | sketch.js v2→v3：DES类型色相区分、情绪背景调色（EMOTION_BG_RGB+lerp）、Y轴偏好、微振动、60s/tick、全局alpha渐退（replacing hold+逐字消隐）、跨tick叠压残留 |
 | 2026-03-28 | [2026-03-28-kobe-scenario-and-output-quality.md](iterations/2026-03-28-kobe-scenario-and-output-quality.md) | 科比场景接入 viz 管线（runner.py/timeline.json/kobe_profile.json）+ 三项输出质量修复：social_rehearsal 代词/B1 事件权重/daydream 链条重复；daydream+rumination 锚点扩展；--max-ticks 参数 |
+| 2026-03-28 | — | 稳定性修复：ModuleRunner 增加 _MODULE_TIMEOUT_S=90 超时机制（防 LLM 挂死导致进程卡住）；Anthropic client 加 timeout=90s；voice_intrusion 双括号修复（viz_renderer/cognitive_engine 均加 re.sub 去重）；voice_intrusion 跨轮去重（B1 注入上轮禁止列表）；ResidualFeedback 关系污染问题已知未修 |
+| 2026-03-28 | — | 英文旁路：profile 增加 output_language 字段（默认 zh）；claude_call 检测到 en 时注入 _EN_INJECTION 系统提示；fast_call/OCC 管线不受影响；kobe_profile.json 加 output_language=en 做英文演示（现已重置为 zh）；--start-tick 参数支持分段跑 kobe 场景 |
+| 2026-03-28 | — | viz 视觉迭代：停留时长 1.5→1.0 tick；入场随机初始倾角（±0.06rad）；左上角 tick 事件信息图标（点击展开/收起面板）；sketch.js drawMoment 改用 translate+rotate 坐标系 |
+| 2026-03-28 | — | demo_profile.json（林晓雨）扩充：daydream_anchors/rumination_anchors 各扩展至 8 条；新增 2 条 memories（23岁初到北京/28岁厕所里哭完补妆）；移除3条自动检测关系垃圾条目 |
+| 2026-03-30 | — | 开源准备：项目改名 ANIMA（全量替换展示层字符串，viz_from_txt.py regex 同步）；新增 .env.example；_TEST_ALL_MODULES 改 False（省 ~10x API 开销）；修正 README kobe 路径；.gitignore 补充；sample_outputs/ 归档两套示例输出 |

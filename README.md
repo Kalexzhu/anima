@@ -180,6 +180,10 @@ python3 run.py examples/demo_profile.json
 明早将带 Gigi 去打训练赛
 ```
 
+> **声明**：此档案为**艺术创作与技术演示**，不代表科比·布莱恩特本人的真实想法或内心世界。
+> 所有思维流内容均由 AI 根据公开资料虚构生成，不构成对其心理状态的真实描述。
+> 谨以此向他和 Gianna 致敬。
+
 ```bash
 python3 scenarios/kobe_2020/runner.py
 ```

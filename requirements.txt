@@ -1,24 +1,21 @@
 # 核心 LLM 调用
-anthropic>=0.40.0
+anthropic==0.84.0
 
 # 快速层 LLM（Perception/OCC/WorldEngine/Reasoning）— DashScope qwen3-max，OpenAI 兼容接口
-openai>=1.0.0
-
-# CAMEL 框架 — 记忆系统 (LongtermAgentMemory) + ChatAgent 基类
-camel-ai>=0.2.0
-
-# camel-oasis 依赖链损坏（unstructured==0.13.7 不存在），已放弃
-# 时间引擎逻辑已手写在 core/world_engine.py
-
-# 向量检索后端（VectorDBBlock 默认依赖）
-# 可选：换成 Qdrant 本地内存版，无需外部服务
-qdrant-client>=1.7.0
+openai==2.24.0
 
 # 情绪标定：中文分词（DUTIR 词典查表）
-jieba>=0.42.1
+jieba==0.42.1
 
 # 词典读取
-openpyxl>=3.1.0
+openpyxl==3.1.5
 
 # JSON 容错解析（LLM 输出内含 ASCII 引号时兜底）
-json-repair>=0.30.0
+json-repair==0.58.0
+
+# ── 可选依赖（不安装也能运行）──────────────────────────────────────────────────
+# CAMEL 框架 — LongtermAgentMemory（camel mode 记忆检索）
+# camel-ai>=0.2.0
+
+# 向量检索后端（camel mode 需要）
+# qdrant-client>=1.7.0
