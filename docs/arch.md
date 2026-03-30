@@ -309,20 +309,37 @@ Phase 1（已完成）：认知引擎闭环 ✅
   ✅ 两套示例人物档案（林晓雨 + 科比·布莱恩特）
   ✅ 断点续跑 + 原子写入
   ✅ ModuleRunner 超时保护
-  ⬜ ResidualFeedback 关系检测误报（已知问题，尚未修）
+  ✅ ResidualFeedback 停用词表（修复关系检测误报）
 
-Phase 2（待建）：
+Phase 2（进行中）：数字生命 · 实时感知 + 具身输出
+  构建顺序：A → B → C → D
+
+  Phase A：WorldEngine 迭代（长跑质量）
+    ⬜ 事件记忆注入（最近 N 个事件摘要注入 prompt，防重复）
+    ⬜ 事件风格扩展（超越 dramatic/subtle 二元分类）
+    ⬜ 情绪自然节律（积压-释放机制，防长期麻木）
+    ⬜ 叙事线索淡出（关闭后 N tick 渐退，不硬切断）
+
+  Phase B：音频感知输入
+    ⬜ audio/stt_listener.py（Whisper 本地流式，Mac M 系列）
+    ⬜ audio/salience_filter.py（显著性评分：定向性/情绪触点/新颖性）
+    ⬜ audio/event_queue.py（线程安全队列 + drain 接口）
+
+  Phase C：双循环集成
+    ⬜ run.py 改造（从 EventQueue drain，WorldEngine 降为 idle generator）
+    ⬜ 双模运行支持（--realtime 真实感知 / 默认虚构事件）
+
+  Phase D：具身输出
+    ⬜ TTS 接入（内心独白文本 → 语音）
+    ⬜ 对口型视频输出
+
+Phase 3（暂缓）：
   ⬜ 问卷系统：通过填写问卷自动生成心理档案
-  ⬜ 英文 persona 完整支持（当前旁路有双括号/混码问题）
-  ⬜ TTS + 对口型视频输出
+  ⬜ 英文 persona 完整支持
   ⬜ CognitiveTwin 持久化封装（跨情境对比接口）
-
-Phase 3（远期）：
   ⬜ Profile 提取引擎（情境题库 + 对话访谈 + 文本提取）
   ⬜ Web 界面
   ⬜ 用户隐私边界设计
-  ⬜ 历史人物 / 剧本角色内容包
-```
   ⬜ 历史人物 / 剧本角色内容包
 ```
 
@@ -348,3 +365,8 @@ Phase 3（远期）：
 | 标定约束策略 | 软约束：词典提供候选集合，LLM 方向优先 | 词义歧义问题（"背叛+信任"）导致词典不能做硬性方向断言 |
 | 统计修正机制 | 同类事件 ≥20 条后统计 prior 覆盖词典约束 | 无人工干预，冷启动期词典兜底，数据积累后自动收敛 |
 | 标定数据存储 | output/event_emotion_log.jsonl（append-only）| 轻量，支持离线分析，不依赖数据库 |
+| **Phase 2 方向** | **实时感知 + 认知引擎 + TTS 数字生命** | 三者组合产生质变：有内心、有身体、被真实世界影响但不打算交流 |
+| 实时感知延迟 | 单 tick 5 分钟以内可接受 | 不是回复机器人，自有节奏，长延迟是特性 |
+| TTS 定位 | 纯视觉化载体，念出内心独白，不模拟行为 | 最简形式创造最强在场感，行为模拟暂不在范围 |
+| 双循环架构 | Fast Loop（STT）+ Slow Loop（认知引擎），EventQueue 做桥 | 两个时间尺度（秒 vs 分钟）不兼容，必须解耦；WorldEngine 降为 idle generator |
+| Phase A 优先 | 先迭代 WorldEngine 事件质量，再接入真实感知 | 感知输入槽位已存在，先拉高基线；技术风险最高的在前 |

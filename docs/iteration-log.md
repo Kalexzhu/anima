@@ -18,3 +18,5 @@
 | 2026-03-28 | — | viz 视觉迭代：停留时长 1.5→1.0 tick；入场随机初始倾角（±0.06rad）；左上角 tick 事件信息图标（点击展开/收起面板）；sketch.js drawMoment 改用 translate+rotate 坐标系 |
 | 2026-03-28 | — | demo_profile.json（林晓雨）扩充：daydream_anchors/rumination_anchors 各扩展至 8 条；新增 2 条 memories（23岁初到北京/28岁厕所里哭完补妆）；移除3条自动检测关系垃圾条目 |
 | 2026-03-30 | — | 开源准备：项目改名 ANIMA（全量替换展示层字符串，viz_from_txt.py regex 同步）；新增 .env.example；_TEST_ALL_MODULES 改 False（省 ~10x API 开销）；修正 README kobe 路径；.gitignore 补充；sample_outputs/ 归档两套示例输出 |
+| 2026-03-30 | — | 技术债修复：_key_index 加 threading.Lock（10 并发模块竞争条件）；ResidualFeedback 加停用词表（过滤"睡眠中"等假阳性关系）；删除废弃测试 T-WE-3/T-WE-4（drift_stability 特性从未实现）；base_agent.py 注释更新；requirements.txt 版本精确锁定 |
+| 2026-03-30 | [2026-03-30-realtime-cognitive-direction.md](iterations/2026-03-30-realtime-cognitive-direction.md) | 方向三决策记录：实时感知 + 认知引擎 + TTS 数字生命；Producer-Consumer 双循环架构；延迟 5 分钟可接受；构建顺序 WorldEngine迭代→音频输入→集成→TTS；WorldEngine 三个长跑问题识别 |

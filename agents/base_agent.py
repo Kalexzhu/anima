@@ -1,6 +1,6 @@
 """
-agents/base_agent.py — CAMEL ChatAgent 工厂。
-为认知子系统的每一层创建 ChatAgent 实例。
+agents/base_agent.py — LLM 调用工厂。
+为认知子系统的每一层提供 LLM 调用接口。
 
 LLM 分层策略：
   快速层（Perception / OCC / WorldEngine / Reasoning）→ fast_call()  → qwen3-max（DashScope）

@@ -1,5 +1,25 @@
 # ANIMA — TODO
 
+## 下次最重要的 3 件事（2026-03-30 方向三规划后更新）
+
+1. **Phase A 第一步：WorldEngine 事件记忆注入**
+   - 目标：生成事件前，把最近 N 个事件摘要注入 prompt，让 LLM 自动规避重复
+   - 改动范围：仅 `core/world_engine.py` 的 prompt 构建部分，不影响其他模块
+   - 验证方式：跑 50 轮，主观评估事件句式多样性是否提升
+   - 详细设计见 `docs/iterations/2026-03-30-realtime-cognitive-direction.md`
+
+2. **先初始化 git，再动代码**
+   - `cd ~/Projects/mind-reading && git init && git add . && git commit -m "feat: 初始化 ANIMA — v5 认知引擎开源版本"`
+   - 之后每次改动一件事就 commit 一次，格式参考 CLAUDE.md
+   - 原因：接下来改动较多，没有 git 等于没有安全网
+
+3. **Phase A 其余三项（事件记忆注入验证通过后）**
+   - 事件风格扩展（超越 dramatic/subtle）
+   - 情绪自然节律（积压-释放机制）
+   - 叙事线索淡出（关闭后渐退，不硬切断）
+
+---
+
 ## 下次最重要的 3 件事（2026-03-27 视觉迭代后更新）
 
 1. **恢复生产模式，跑 run_14（完整 20 轮）**：

@@ -44,12 +44,31 @@ def _extract_nouns(text: str, min_len: int = 2, max_len: int = 4) -> List[str]:
     return [m for m in re.findall(r'[\u4e00-\u9fff]{' + str(min_len) + r',' + str(max_len) + r'}', text)]
 
 
-# 不可能是人名的中文虚词/助词
-_FUNCTION_CHARS = set("你我了的是啊吗吧呢哦啦呀")
+# 不可能是人名的中文虚词/助词/尾缀
+# "在"（存在动词/介词）、"过"（时态助词）几乎不出现在人名末位
+_FUNCTION_CHARS = set("你我了的是啊吗吧呢哦啦呀在过")
+
+# 常见非人名词：感知层高频但肯定不是人物名的 2-3 字词组
+_NAME_STOP_WORDS = frozenset({
+    # 生理/心理状态
+    "睡眠", "睡眠中", "深睡眠", "浅睡眠",
+    "呼吸", "喘息", "心跳", "心跳声", "喘不过",
+    "情绪", "感受", "感知", "意识", "思维",
+    "记忆", "回忆", "想象", "想起",
+    # 感官词
+    "声音", "声音在", "光线", "影子", "气味",
+    # 环境/时间
+    "黑暗", "空气", "时间", "空间", "黄昏", "清晨",
+    "窗外", "楼道", "走廊", "天花板",
+    # 状态描述
+    "不确定", "感受到", "意识到", "想起来",
+})
 
 
 def _is_valid_person_name(name: str) -> bool:
-    """过滤不像人名的词：含常见虚词/助词。"""
+    """过滤不像人名的词：含常见虚词/助词，或在已知非人名停用词表中。"""
+    if name in _NAME_STOP_WORDS:
+        return False
     if any(c in _FUNCTION_CHARS for c in name):
         return False
     return True

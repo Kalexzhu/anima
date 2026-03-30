@@ -4,10 +4,11 @@ tests/test_world_engine_v2.py — WorldEngine v2 单元测试
 覆盖范围：
   T-WE-1: dramatic 事件在情绪超阈值时触发
   T-WE-2: dramatic 冷却保护（触发后不立即重复）
-  T-WE-3: drift 检测（情绪稳定 → [DRIFT] 前缀）
-  T-WE-4: drift 触发后清空历史，不连续触发
   T-WE-5: subtle 兜底（平静太久）
   T-WE-6: 事件历史加载失败 → 静默降级为空历史
+
+注：T-WE-3/T-WE-4（drift_stability 检测）已移除。
+    对应特性（drift_stability_threshold 参数）未在 WorldEngine 实现，测试为废弃计划残留。
 """
 
 import json
@@ -115,46 +116,6 @@ def test_dramatic_fires_again_after_cooldown():
 
         mock_gen.assert_called_once_with(state, "dramatic", behavior=None)
         assert result == "new dramatic"
-
-
-# ── T-WE-3: drift 检测 ────────────────────────────────────────────────────────
-
-def test_drift_detected_with_stable_emotions():
-    """T-WE-3: 情绪长期平稳（delta < threshold）→ _decide_event 返回 [DRIFT] 前缀。"""
-    with tempfile.TemporaryDirectory() as tmpdir:
-        engine = _make_engine_in_dir(
-            tmpdir, threshold=0.45, drift_stability_threshold=0.05, drift_stability_ticks=3
-        )
-        # 注入稳定的情绪历史（全部约 0.2，变化 < 0.05）
-        engine._intensity_history = [0.20, 0.21, 0.20]
-        engine._dramatic_cooldown = 2  # 确保 dramatic 不触发
-
-        state = _make_state(intensity_target=0.2)
-
-        with patch.object(engine, "_generate_event", return_value="内省念头"):
-            result = engine._decide_event(state)
-
-        assert result.startswith("[DRIFT]")
-        assert "内省念头" in result
-
-
-# ── T-WE-4: drift 触发后清空历史 ─────────────────────────────────────────────
-
-def test_drift_clears_intensity_history():
-    """T-WE-4: drift 触发后 _intensity_history 应被清空，避免连续触发。"""
-    with tempfile.TemporaryDirectory() as tmpdir:
-        engine = _make_engine_in_dir(
-            tmpdir, threshold=0.45, drift_stability_threshold=0.05, drift_stability_ticks=3
-        )
-        engine._intensity_history = [0.20, 0.21, 0.20]
-        engine._dramatic_cooldown = 2
-
-        state = _make_state(intensity_target=0.2)
-
-        with patch.object(engine, "_generate_event", return_value="内省"):
-            engine._decide_event(state)
-
-        assert engine._intensity_history == []
 
 
 # ── T-WE-5: subtle 兜底 ──────────────────────────────────────────────────────
