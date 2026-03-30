@@ -111,6 +111,13 @@ class FragmentModule(CognitiveModule):
                 m.get("content", "")[:30] for m in sample if "content" in m
             )
 
+        # 跨模块 voice_intrusion 去重（避免同一声音在不同模块反复出现）
+        voice_dedup_ctx = ""
+        if ctx.recent_voice_contents:
+            voice_dedup_ctx = "\n\n上轮已出现的声音侵入（禁止重复相同内容）：" + "；".join(
+                v for v in ctx.recent_voice_contents[:4]
+            )
+
         user = (
             f"人物：{ctx.profile.name}，{ctx.profile.age}岁\n"
             f"处境：{ctx.profile.current_situation}\n"
@@ -118,6 +125,7 @@ class FragmentModule(CognitiveModule):
             + location_ctx
             + f"\n\n锚点：{anchor}"
             + prev_ctx
+            + voice_dedup_ctx
             + f"\n\n生成 {self._moment_count} 个时刻。{_DES_TYPES}"
         )
 

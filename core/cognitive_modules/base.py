@@ -52,6 +52,10 @@ class ModuleContext:
     # {module_name: [{"type": ..., "content": ...}, ...]}
     prev_tick_outputs: "dict[str, list[dict]]" = field(default_factory=dict)
 
+    # 上轮所有模块生成的 voice_intrusion 内容（跨模块去重用）
+    # 注入各 FragmentModule 的 prompt，禁止重复相同声音侵入
+    recent_voice_contents: "list[str]" = field(default_factory=list)
+
     # 本轮预采样的记忆列表（由 run_cognitive_cycle 统一采样一次，传入所有模块）
     # 保证同一 tick 内 perception / B1 / B2 看到相同的记忆组合
     memory_sample: "list[dict]" = field(default_factory=list)

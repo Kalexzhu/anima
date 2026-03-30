@@ -260,7 +260,10 @@ def emotion_layer(profile: PersonProfile, perceived: str, state: ThoughtState) -
     plutchik = occ_to_plutchik(appraisal)
     plutchik = apply_personality_modifiers(plutchik, profile.cognitive_biases)
     prev_dict = {k: v for k, v in state.emotion.to_dict().items() if k != "intensity"}
-    blended = blend_with_prev_state(plutchik, prev_dict)
+    # 自适应 decay：情绪越强，对新信号的抵抗越大（高峰情绪难以被单一事件扭转）
+    intensity = state.emotion.intensity
+    adaptive_decay = min(0.65, 0.4 + 0.25 * min(1.0, intensity / 0.5))
+    blended = blend_with_prev_state(plutchik, prev_dict, decay=adaptive_decay)
 
     # DUTIR 方向校准（正式接入，之前只记录日志）
     blended = _apply_dutir_calibration(blended, state.last_event, perceived)
@@ -574,8 +577,14 @@ def run_cognitive_cycle(
         _decay_base = _SLEEP_DECAY  # B1：睡眠时衰减更慢，保留情绪底色
         _decay_factor = _decay_base ** tick_duration_hours if tick_duration_hours is not None else _decay_base
         decayed = _apply_decay(state.emotion, factor=_decay_factor)
+        # 每个睡眠 tick 生成梦境碎片（fast_call，轻量）
+        try:
+            dream_text = _dream_arbiter(profile, behavior, event, state)
+        except Exception as e:
+            print(f"[dream] 生成失败：{e}")
+            dream_text = "（睡眠中）"
         new_state = ThoughtState(
-            text="（睡眠中）",
+            text=dream_text,
             emotion=decayed,
             tick=current_tick,
             last_event=event,
@@ -640,6 +649,13 @@ def run_cognitive_cycle(
 
     modules_to_run = ["reactive"] + selected_drift
 
+    # 提取上轮所有 voice_intrusion 内容，供跨模块去重
+    _recent_voices: list[str] = []
+    for _mouts in (prev_tick_outputs or {}).values():
+        for _m in _mouts:
+            if _m.get("type") == "voice_intrusion" and _m.get("content"):
+                _recent_voices.append(_m["content"][:40])
+
     ctx = ModuleContext(
         profile=profile,
         state=state,
@@ -653,6 +669,7 @@ def run_cognitive_cycle(
         memory_sample=memory_sample,
         active_trunk_context=active_trunk_context,
         secondary_trunk_context=secondary_trunk_context,
+        recent_voice_contents=_recent_voices,
     )
 
     module_outputs = _module_runner.run_selected(ctx, modules_to_run)

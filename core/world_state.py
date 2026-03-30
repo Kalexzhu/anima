@@ -237,14 +237,21 @@ class WorldState:
             _RECENCY_WEIGHT   = 0.75  # 最大折扣75%（刚激活后的下一轮几乎不会再选）
             # Softmax 温度：越低越确定性，越高越均匀；0.25 在"有偏好但不锁死"之间
             _TEMPERATURE      = 0.25
+            # C2 硬冷却阈值：连续激活 4 次强制跳过 1 轮
+            _HARD_COOLDOWN    = 4
+
+            # C2：预过滤——连续激活 >= 阈值的 Trunk 本轮强制跳过
+            candidates = [t for t in active if self._consecutive_count.get(t.id, 0) < _HARD_COOLDOWN]
+            if not candidates:
+                candidates = active  # 所有 Trunk 均在冷却期时，解除限制（兜底）
 
             scores = []
-            for t in active:
+            for t in candidates:
                 base = _score_trunk(t, emotion)
                 ticks_since = current_tick - t.last_activated_tick
                 recency_penalty = math.exp(-ticks_since / _RECENCY_HALFLIFE)
                 adjusted = base * (1.0 - _RECENCY_WEIGHT * recency_penalty)
-                # C2：认知疲劳——连续激活 3 次以上施加额外惩罚
+                # C2：渐进惩罚（consecutive >= 3，在强制冷却前额外降分）
                 consecutive = self._consecutive_count.get(t.id, 0)
                 if consecutive >= 3:
                     fatigue_factor = 1.0 - min(0.6, (consecutive - 2) * 0.15)
@@ -256,7 +263,7 @@ class WorldState:
             exps = [math.exp((s - max_s) / _TEMPERATURE) for s in scores]
             total = sum(exps)
             probs = [e / total for e in exps]
-            best = random.choices(active, weights=probs, k=1)[0]
+            best = random.choices(candidates, weights=probs, k=1)[0]
 
         # C2：更新连续激活计数
         if best.id == self._last_selected_id:

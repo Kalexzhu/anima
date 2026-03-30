@@ -390,6 +390,12 @@ Phase 2（进行中）：数字生命 · 实时感知 + 具身输出
     第四批（最复杂）：
     ✅ B2  情绪积压-释放机制（suppression_pressure 积累 → release 事件触发）
 
+    Phase A 测试反馈修复（run_05 评估后）：
+    ✅ 梦境接入（ASLEEP tick 调用 _dream_arbiter，fast_call 轻量生成梦境碎片）
+    ✅ voice_intrusion 跨模块去重（ModuleContext.recent_voice_contents 注入去重约束）
+    ✅ C2 强制冷却期（consecutive >= 4 强制跳过该 Trunk，兜底：全部冷却时解除）
+    ✅ OCC 自适应惯性（adaptive_decay = 0.4~0.65，随情绪强度线性增大，防单事件扭转高峰情绪）
+
   Phase B：音频感知输入
     ⬜ audio/stt_listener.py（Whisper 本地流式，Mac M 系列）
     ⬜ audio/salience_filter.py（显著性评分：定向性/情绪触点/新颖性）
@@ -443,3 +449,7 @@ Phase 3（暂缓）：
 | 双循环架构 | Fast Loop（STT）+ Slow Loop（认知引擎），EventQueue 做桥 | 两个时间尺度（秒 vs 分钟）不兼容，必须解耦；WorldEngine 降为 idle generator |
 | Phase A 优先 | 先迭代 WorldEngine 事件质量，再接入真实感知 | 感知输入槽位已存在，先拉高基线；技术风险最高的在前 |
 | Phase A 精修 | 10项改动分4批，优先级：可观察性→情绪→事件→Trunk系统→复杂机制 | 改动小+收益大在前，架构复杂在后；设计文档已归档至 iterations/ |
+| ASLEEP 梦境 | 每个睡眠 tick 调用 _dream_arbiter（fast_call，qwen3-max）| 连续静默 tick 失去观察价值；梦境碎片化特征与睡眠 DES 学术研究一致 |
+| voice_intrusion 去重 | ModuleContext.recent_voice_contents 跨模块注入禁止重复约束 | 同一声音在同一 tick 多模块重复破坏沉浸感；约束在 prompt 层实现，零架构成本 |
+| C2 强制冷却 | consecutive >= 4 强制排除候选（兜底：全冷却时解除限制）| 渐进惩罚在绝对强势 Trunk 面前失效；强制冷却保证最多 4 轮后强制领域轮转 |
+| OCC 自适应惯性 | adaptive_decay = 0.4 + 0.25 × min(1, intensity/0.5)，上限 0.65 | 高峰情绪（intensity > 0.4）被单一正向事件扭转不符合心理真实；随强度线性增大抵抗 |
