@@ -488,6 +488,7 @@ def run_cognitive_cycle(
     narrative_thread: dict | None = None,
     behavior_override: "BehaviorState | None" = None,
     tick_duration_hours: float | None = None,
+    active_trunk_context: str = "",
 ) -> tuple[ThoughtState, BehaviorState, dict]:
     """
     执行一轮完整认知循环，返回 (ThoughtState, BehaviorState)。
@@ -497,8 +498,9 @@ def run_cognitive_cycle(
     ASLEEP：简化循环（直出梦境文本）
 
     新增参数：
-      prev_tick_outputs — 上轮所有模块输出，传入 ModuleContext 供影响机制使用
-      narrative_thread  — 当前最高优先级叙事线索（可选）
+      prev_tick_outputs     — 上轮所有模块输出，传入 ModuleContext 供影响机制使用
+      narrative_thread      — 当前最高优先级叙事线索（可选）
+      active_trunk_context  — 当前 tick 选中的主干情境描述，供 drift 模块作为认知焦点
     """
     from agents.base_agent import set_output_language
     set_output_language(getattr(profile, "output_language", "zh"))
@@ -592,6 +594,7 @@ def run_cognitive_cycle(
         narrative_thread=narrative_thread,
         prev_tick_outputs=prev_tick_outputs or {},
         memory_sample=memory_sample,
+        active_trunk_context=active_trunk_context,
     )
 
     module_outputs = _module_runner.run_selected(ctx, modules_to_run)

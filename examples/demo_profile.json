@@ -207,6 +207,14 @@
       "power_dynamic": "",
       "unresolved_conflicts": [],
       "typical_phrases": []
+    },
+    {
+      "name": "耳边响",
+      "role": "（自动检测）",
+      "valence": 0.0,
+      "power_dynamic": "",
+      "unresolved_conflicts": [],
+      "typical_phrases": []
     }
   ],
   "daydream_anchors": [

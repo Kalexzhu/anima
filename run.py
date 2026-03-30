@@ -22,6 +22,7 @@ from core.world_engine import WorldEngine
 from core.residual_feedback import ResidualFeedback
 from core.writeback import WritebackManager
 from core.narrative import NarrativeThreadManager
+from core.world_state import WorldState
 MAX_TICKS          = 20
 INTENSITY_THRESHOLD = 0.45
 CALM_INTERVAL       = 3
@@ -305,6 +306,10 @@ def main(profile_path: str, max_ticks_override: int | None = None):
     narrative_path = _resolve_narrative_state_path(profile_path)
     thread_mgr = NarrativeThreadManager(state_path=narrative_path)
 
+    # 初始化世界状态（Trunk 层）
+    world_state = WorldState(state_path="output/world_state.json")
+    world_state.init_trunks(profile)  # 首次运行提取 Trunk，续跑直接加载
+
     world = WorldEngine(
         profile,
         threshold=INTENSITY_THRESHOLD,
@@ -314,6 +319,7 @@ def main(profile_path: str, max_ticks_override: int | None = None):
         rel_appear_threshold=REL_APPEAR_THRESHOLD,
         rel_appear_slope=REL_APPEAR_SLOPE,
         thread_mgr=thread_mgr,
+        world_state=world_state,
     )
     state = ThoughtState(text="", emotion=EmotionState(), tick=0)
     event = ""
@@ -360,6 +366,11 @@ def main(profile_path: str, max_ticks_override: int | None = None):
 
             print_divider(tick, event, state.emotion.intensity, state.emotion.dominant(), memory.mode)
             print(f"  线索：{thread_summary}")
+            print(f"  主干：{world_state.summary_line()}")
+
+            # 本 tick 统一取一次 trunk_context，同时传给认知循环和 WorldEngine
+            # 保证同一 tick 内 drift 模块与事件生成指向同一条 Trunk
+            _trunk_id, trunk_context = world_state.get_trunk_context(state.emotion, tick)
 
             bar = "█" * int(state.emotion.intensity * 20) + "░" * (20 - int(state.emotion.intensity * 20))
             event_str = f"事件：{event}" if event else "（无新事件）"
@@ -374,6 +385,7 @@ def main(profile_path: str, max_ticks_override: int | None = None):
                 profile, state, memory, event, tick_store,
                 prev_tick_outputs=prev_tick_outputs,
                 narrative_thread=top,
+                active_trunk_context=trunk_context,
             )
             prev_tick_outputs = module_outputs  # 保存供下轮影响机制使用
 
@@ -419,6 +431,8 @@ def main(profile_path: str, max_ticks_override: int | None = None):
                 thread_mgr.process_action(state.conclusion, current_tick=tick)
 
             thread_mgr.save()  # 持久化线索状态
+            world_state.tick_update(tick, profile.tick_duration_hours)  # Trunk 衰退与 phase 转移
+            world_state.save()
 
             writeback_mgr.add_candidate(tick, state.conclusion)
             writeback_mgr.maybe_flush(tick)

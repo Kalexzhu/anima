@@ -237,9 +237,10 @@ def create_drift_modules() -> list[CognitiveModule]:
         ),
         moment_count="3~4",
         get_anchor=lambda ctx: (
-            random.choice(ctx.profile.rumination_anchors)
-            if ctx.profile.rumination_anchors
-            else ctx.perceived[:30]
+            ctx.active_trunk_context
+            or (random.choice(ctx.profile.rumination_anchors)
+                if ctx.profile.rumination_anchors
+                else ctx.perceived[:30])
         ),
     ))
 
@@ -257,9 +258,10 @@ def create_drift_modules() -> list[CognitiveModule]:
         ),
         moment_count="2~3",
         get_anchor=lambda ctx: (
-            random.choice(ctx.profile.self_eval_patterns)
-            if ctx.profile.self_eval_patterns
-            else ""
+            ctx.active_trunk_context
+            or (random.choice(ctx.profile.self_eval_patterns)
+                if ctx.profile.self_eval_patterns
+                else "")
         ),
     ))
 
@@ -276,9 +278,10 @@ def create_drift_modules() -> list[CognitiveModule]:
         ),
         moment_count="2~4",
         get_anchor=lambda ctx: (
-            random.choice(ctx.profile.philosophy_seeds)
-            if ctx.profile.philosophy_seeds
-            else ctx.profile.current_situation[:30]
+            ctx.active_trunk_context
+            or (random.choice(ctx.profile.philosophy_seeds)
+                if ctx.profile.philosophy_seeds
+                else ctx.profile.current_situation[:30])
         ),
     ))
 
@@ -388,9 +391,12 @@ def create_drift_modules() -> list[CognitiveModule]:
         ),
         chain_length=3,
         get_anchor=lambda ctx: (
-            random.choice(ctx.profile.desires)
-            if ctx.profile.desires
-            else ctx.profile.current_situation[:30]
+            (ctx.active_trunk_context + "\n" + random.choice(ctx.profile.desires))
+            if ctx.active_trunk_context and ctx.profile.desires
+            else (ctx.active_trunk_context
+                  or (random.choice(ctx.profile.desires)
+                      if ctx.profile.desires
+                      else ctx.profile.current_situation[:30]))
         ),
     ))
 

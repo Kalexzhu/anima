@@ -184,22 +184,69 @@ AWAKE 时：10 模块并发循环
 
 ---
 
-### LAYER 3 · 世界引擎
+### LAYER 3 · 世界引擎 + WorldState 主干情境系统
 
-**触发逻辑**（已实现）：
+**WorldState（Phase A，已实现）**：
+
+人物有 2~4 个长期悬而未决的主干情境（Trunk），每个属于一个独立生命域（work / romance / family / identity / friendship / health / finance / home）。Trunk 驱动外部事件和内部漂移认知，是比"叙事线索"更深层的心理基底。
+
+```
+WorldState (output/world_state.json)
+  ├── Trunk × 2~4（各属不同域，强制正交）
+  │     ├── title：一句话情境标题
+  │     ├── description：具体未解决的处境
+  │     ├── domain：生命域（work/romance/family/identity...）
+  │     ├── phase：developing / critical / resolving
+  │     └── urgency：0~1（每轮自然衰减 + 叙事时间归一化）
+  │
+  └── get_trunk_context(emotion, tick)
+        → Softmax + Recency Penalty 概率选择
+        → 返回 context_str："当前主干情境[domain]：title——description"
+```
+
+**Trunk 选择算法**（防 Winner-Take-All 垄断）：
+
+```
+base_score = f(phase, urgency, emotion_resonance)
+recency_penalty = exp(-ticks_since_activated / 4.0)
+adjusted = base_score × (1 - 0.75 × recency_penalty)
+
+→ Softmax(adjusted / 0.25)  # temperature=0.25
+→ random.choices(trunks, weights=probs)  # 概率选择，非贪心
+```
+
+**Trunk → 认知闭环**（Phase A.5，已实现）：
+
+```
+get_trunk_context() → active_trunk_context
+    ├── WorldEngine.tick()            外部事件（领域一致性）
+    └── ModuleContext.active_trunk_context
+          ├── rumination.get_anchor()   [强接入] Trunk 优先
+          ├── self_eval.get_anchor()    [强接入] Trunk 优先
+          ├── philosophy.get_anchor()   [强接入] Trunk 优先
+          └── future.get_anchor()       [中接入] Trunk + desire 组合
+```
+
+同一 tick，外部事件与内省漂移共享同一个 Trunk 锚点，产生领域内聚的认知输出。
+
+**WorldEngine 触发逻辑**：
 
 ```python
+# 睡眠时不推进外部叙事
+if behavior.sleep_state == "ASLEEP":
+    return ""
+
 if intensity > 0.45:        # 情绪激烈 → dramatic 事件
     mode = "dramatic"
 elif ticks_since_event >= 3: # 平静太久 → subtle 事件
     mode = "subtle"
 else:
-    return ""               # 世界沉默
+    return ""
 ```
 
 **两种事件风格**：
-- `dramatic`：突然、有冲击力、直击人物最敏感点
-- `subtle`：细小但意味深长，悄悄推动故事
+- `dramatic`：突然、有冲击力、直击当前 Trunk 最敏感点
+- `subtle`：细小但意味深长，悄悄推动 Trunk 内部进展
 
 ---
 
@@ -254,18 +301,19 @@ anima/
 │   ├── emotion.py            # EmotionState（8D Plutchik + RMS intensity）
 │   ├── thought.py            # ThoughtState（各层中间数据）
 │   ├── memory.py             # MemoryManager（简单检索 + CAMEL 可选）
-│   ├── cognitive_engine.py   # 编排层（10模块并发 + 情绪更新 + 输出渲染）
-│   ├── world_engine.py       # 世界事件生成（情绪阈值触发）
+│   ├── cognitive_engine.py   # 编排层（11模块并发 + 情绪更新 + 输出渲染）
+│   ├── world_engine.py       # 世界事件生成（情绪阈值触发 + Trunk 驱动）
+│   ├── world_state.py        # WorldState 主干情境系统（Trunk tree）
 │   ├── occ.py                # OCC 情绪评估模型
 │   ├── narrative.py          # NarrativeThreadManager（叙事线索）
 │   ├── viz_renderer.py       # viz JSON 生成（每 tick）
 │   ├── residual_feedback.py  # 认知残差自动写回 profile
 │   ├── writeback.py          # B2 结论批量写回 memories
-│   └── cognitive_modules/    # 10 个并发认知模块
+│   └── cognitive_modules/    # 11 个并发认知模块
 │       ├── base.py           # CognitiveModule 基类 + ModuleContext
 │       ├── runner.py         # ModuleRunner（ThreadPoolExecutor）
 │       ├── reactive.py       # ReactiveModule（B1锚点 + B2时刻链）
-│       └── drift.py          # DriftModule × 9（各类漂移内容）
+│       └── drift.py          # DriftModule × 10（各类漂移内容）
 │
 ├── agents/                   # LLM 调用工厂
 │   └── base_agent.py         # 双层路由（claude_call 主力 / fast_call 快速层）
@@ -315,6 +363,11 @@ Phase 2（进行中）：数字生命 · 实时感知 + 具身输出
   构建顺序：A → B → C → D
 
   Phase A：WorldEngine 迭代（长跑质量）
+    ✅ WorldState 主干情境系统（Trunk tree，2~4 个生命域）
+    ✅ Softmax + Recency Penalty Trunk 选择算法（防 Winner-Take-All 垄断）
+    ✅ Trunk 域正交约束（VALID_DOMAINS 8个域，同域去重）
+    ✅ ASLEEP 状态事件抑制（睡眠时 WorldEngine 静默）
+    ✅ Trunk → drift 层横向接入（rumination/self_eval/philosophy/future 强/中接入）
     ⬜ 事件记忆注入（最近 N 个事件摘要注入 prompt，防重复）
     ⬜ 事件风格扩展（超越 dramatic/subtle 二元分类）
     ⬜ 情绪自然节律（积压-释放机制，防长期麻木）
@@ -365,7 +418,9 @@ Phase 3（暂缓）：
 | 标定约束策略 | 软约束：词典提供候选集合，LLM 方向优先 | 词义歧义问题（"背叛+信任"）导致词典不能做硬性方向断言 |
 | 统计修正机制 | 同类事件 ≥20 条后统计 prior 覆盖词典约束 | 无人工干预，冷启动期词典兜底，数据积累后自动收敛 |
 | 标定数据存储 | output/event_emotion_log.jsonl（append-only）| 轻量，支持离线分析，不依赖数据库 |
-| **Phase 2 方向** | **实时感知 + 认知引擎 + TTS 数字生命** | 三者组合产生质变：有内心、有身体、被真实世界影响但不打算交流 |
+| **Phase A 方向** | **WorldState 主干情境系统（Trunk tree）** | 以生命域具体处境（非心理元主题）作为认知基底，驱动事件和内省 |
+| Trunk 选择算法 | Softmax + Recency Penalty（temperature=0.25，halflife=4，weight=0.75） | 概率选择防垄断；Recency Penalty 强制领域轮转，模拟认知"换气" |
+| drift 接入策略 | 分级接入（强/中/不接入），10模块中4个接入 | 内省型模块（philosophy/self_eval/rumination/future）与外部事件共享 Trunk 锚点；享乐/感知型模块不接入 |
 | 实时感知延迟 | 单 tick 5 分钟以内可接受 | 不是回复机器人，自有节奏，长延迟是特性 |
 | TTS 定位 | 纯视觉化载体，念出内心独白，不模拟行为 | 最简形式创造最强在场感，行为模拟暂不在范围 |
 | 双循环架构 | Fast Loop（STT）+ Slow Loop（认知引擎），EventQueue 做桥 | 两个时间尺度（秒 vs 分钟）不兼容，必须解耦；WorldEngine 降为 idle generator |

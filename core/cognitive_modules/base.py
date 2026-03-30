@@ -39,6 +39,11 @@ class ModuleContext:
     # 叙事线索（可选，NarrativeThreadManager 提供）
     narrative_thread: "dict | None" = None
 
+    # Trunk 层注入：当前 tick 选中的主干情境描述（可选）
+    # 格式：「当前主干情境[work]：方案被否后的去留——…」
+    # 供 rumination / philosophy / self_eval / future 作为认知焦点锚点
+    active_trunk_context: str = ""
+
     # 上轮所有模块的输出（跨轮次影响机制）
     # {module_name: [{"type": ..., "content": ...}, ...]}
     prev_tick_outputs: "dict[str, list[dict]]" = field(default_factory=dict)

@@ -21,6 +21,7 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
     from core.behavior import BehaviorState
     from core.narrative import NarrativeThreadManager
+    from core.world_state import WorldState
 
 _MODEL = os.environ.get("CLAUDE_MODEL", "claude-sonnet-4-6")
 
@@ -40,6 +41,7 @@ class WorldEngine:
         rel_appear_slope: float = 0.7,
         output_dir: str = "output",
         thread_mgr: "NarrativeThreadManager | None" = None,
+        world_state: "WorldState | None" = None,
     ):
         self.profile = profile
         self.threshold = threshold
@@ -49,6 +51,7 @@ class WorldEngine:
         self._rel_threshold = rel_appear_threshold
         self._rel_slope = rel_appear_slope
         self.thread_mgr = thread_mgr
+        self.world_state = world_state
 
         # 运行时状态
         self._ticks_since_last_event = 0
@@ -117,6 +120,10 @@ class WorldEngine:
         """每轮认知循环后调用。返回事件字符串（空字符串表示本轮无事件）。"""
         self._ticks_since_last_event += 1
         self._dramatic_cooldown = max(0, self._dramatic_cooldown - 1)
+
+        # 睡眠中不推进外部事件——让 drift 层自由运转
+        if behavior is not None and getattr(behavior, "sleep_state", None) == "ASLEEP":
+            return ""
 
         event = self._decide_event(state, behavior)
         if event:
@@ -190,11 +197,21 @@ class WorldEngine:
 
         rich_context = "\n".join(context_parts) + "\n\n" if context_parts else ""
 
-        tone_hint = (
-            "这件事带有迫切感，直接触发线索的核心矛盾。"
-            if tone == "pressing"
-            else "这件事是线索的静默回响，可以是间接提醒或环境触发的联想。"
-        )
+        # 行动方向：由 WorldState 根据 thread urgency 推导
+        if self.world_state is not None:
+            action_type, action_hint = self.world_state.get_action_directive(thread["urgency"])
+            trunk_id, trunk_context = self.world_state.get_trunk_context(state.emotion, state.tick)
+        else:
+            # 兼容回退：沿用旧 tone 逻辑
+            action_hint = (
+                "这件事带有迫切感，直接触发线索的核心矛盾。"
+                if tone == "pressing"
+                else "这件事是线索的静默回响，可以是间接提醒或环境触发的联想。"
+            )
+            trunk_context = ""
+            trunk_id = None
+
+        trunk_block = f"{trunk_context}\n" if trunk_context else ""
 
         system = (
             "你是事件记录员。用第三人称平白陈述发生了什么，不加感受描写，不加修辞。"
@@ -203,17 +220,22 @@ class WorldEngine:
         user = (
             f"人物：{self.profile.name}，{self.profile.current_situation}\n"
             + rich_context
+            + trunk_block
             + f"正在推进的故事线索：{thread['description']}（urgency={thread['urgency']:.2f}，类别={thread['category']}）\n"
             + f"近期思维片段：{state.text[-100:] if state.text else '（初始）'}\n\n"
             + history_block
-            + f"任务：生成一件与这条线索直接相关的事。{tone_hint}\n"
+            + f"任务：生成一件与这条线索直接相关的事。{action_hint}\n"
             "1~2句话，纯事实陈述，不写感受，不写情绪暗示。"
             "可以是：线索的直接发展、相关人物出现、环境触发对线索的联想。"
         )
 
         for _attempt in range(4):
             try:
-                return claude_call(user, system=system, max_tokens=512)
+                result = claude_call(user, system=system, max_tokens=512)
+                # 事件生成成功后标记 Trunk 被激活
+                if result and trunk_id and self.world_state is not None:
+                    self.world_state.mark_trunk_activated(trunk_id, state.tick)
+                return result
             except Exception as e:
                 if _attempt == 3:
                     print(f"[WorldEngine] 线索事件生成失败: {e}")
@@ -241,6 +263,13 @@ class WorldEngine:
             )
         rich_context = "\n".join(context_parts) + "\n\n" if context_parts else ""
 
+        trunk_block = ""
+        trunk_id = None
+        if self.world_state is not None:
+            trunk_id, trunk_context = self.world_state.get_trunk_context(state.emotion, state.tick)
+            if trunk_context:
+                trunk_block = f"{trunk_context}\n"
+
         system = (
             "你是事件记录员。用第三人称平白陈述发生了什么，不加感受描写，不加修辞。"
             "直接输出内容，不加任何前缀或解释。"
@@ -248,6 +277,7 @@ class WorldEngine:
         user = (
             f"人物：{self.profile.name}，{self.profile.current_situation}\n"
             + rich_context
+            + trunk_block
             + f"当前思维片段：{state.text[-100:] if state.text else '（初始）'}\n\n"
             + history_block
             + "任务：生成一件日常小事或新的发现/机会。1~2句话，纯事实陈述。"
@@ -255,7 +285,10 @@ class WorldEngine:
 
         for _attempt in range(4):
             try:
-                return claude_call(user, system=system, max_tokens=512)
+                result = claude_call(user, system=system, max_tokens=512)
+                if result and trunk_id and self.world_state is not None:
+                    self.world_state.mark_trunk_activated(trunk_id, state.tick)
+                return result
             except Exception as e:
                 if _attempt == 3:
                     print(f"[WorldEngine] 开放事件生成失败: {e}")
