@@ -386,6 +386,51 @@ def _apply_decay(emotion: EmotionState, factor: float = _PASSIVE_DECAY) -> Emoti
     })
 
 
+# B2：情绪积压-释放常量
+_SUPPRESSION_HIGH_THRESHOLD = 0.4   # 情绪维度超过此值视为"高"
+_SUPPRESSION_BIAS_KEYWORDS = ("情绪抑制", "情绪压抑", "压抑情绪")
+_SUPPRESSION_RELEASE_THRESHOLD = 0.8  # 积压超过此值触发 release
+_SUPPRESSION_RESET_VALUE = 0.2       # release 后压力重置到此值
+
+
+def _is_suppressing(profile: "PersonProfile", behavior: "BehaviorState | None", emotion: EmotionState) -> bool:
+    """B2：判断角色是否处于情绪压抑状态。"""
+    high_neg = emotion.sadness > _SUPPRESSION_HIGH_THRESHOLD or emotion.fear > _SUPPRESSION_HIGH_THRESHOLD
+    if not high_neg:
+        return False
+    # 性格中包含压抑倾向
+    for bias in getattr(profile, "cognitive_biases", []):
+        if any(kw in bias for kw in _SUPPRESSION_BIAS_KEYWORDS):
+            return True
+    # 行为活动中包含压抑关键词
+    if behavior and any(kw in getattr(behavior, "activity", "") for kw in ("忍", "压", "憋", "强撑")):
+        return True
+    return False
+
+
+def _update_suppression_pressure(
+    state: "ThoughtState",
+    profile: "PersonProfile",
+    behavior: "BehaviorState | None",
+    new_emotion: EmotionState,
+    module_outputs: dict,
+) -> float:
+    """B2：更新情绪积压压力值，返回新的 pressure。"""
+    pressure = state.suppression_pressure
+    # 检查是否有自然表达（reactive 模块有 expanded_speech 输出）
+    has_expression = any(
+        m.get("type") == "expanded_speech"
+        for m in module_outputs.get("reactive", [])
+    )
+    if has_expression:
+        pressure = max(0.0, pressure - 0.15)
+    elif _is_suppressing(profile, behavior, new_emotion):
+        pressure = min(1.0, pressure + 0.08)
+    else:
+        pressure = min(1.0, pressure + 0.01)
+    return pressure
+
+
 # ── 主入口（非流式）────────────────────────────────────────────────────────────
 
 def _extract_conclusion(reactive_moments: list[dict]) -> str | None:
@@ -619,6 +664,9 @@ def run_cognitive_cycle(
     if not full_thought.strip():
         full_thought = "(empty)"
 
+    # B2：更新情绪积压压力
+    new_pressure = _update_suppression_pressure(state, profile, behavior, new_emotion, module_outputs)
+
     new_state = ThoughtState(
         text=full_thought,
         emotion=new_emotion,
@@ -628,6 +676,7 @@ def run_cognitive_cycle(
         memory_fragment=mem_fragment,
         reasoning=reasoning,
         conclusion=conclusion,
+        suppression_pressure=new_pressure,
     )
 
     if tick_store is not None:

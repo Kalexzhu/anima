@@ -17,6 +17,7 @@ class ThoughtState:
     memory_fragment: str = ""          # 记忆层激活内容
     reasoning: str = ""                # 推理层内心推断
     conclusion: str | None = None      # B2 锚点链结论（微决定/新认识），供 writeback 使用
+    suppression_pressure: float = 0.0  # B2：情绪积压压力（0~1），超过 0.8 触发 release 事件
 
     def summary(self) -> str:
         dominant = self.emotion.dominant()

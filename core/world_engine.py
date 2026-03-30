@@ -146,6 +146,14 @@ class WorldEngine:
             self._ticks_since_last_event = 0
         return event
 
+    def maybe_release(self, state: "ThoughtState", behavior: "BehaviorState | None" = None) -> str:
+        """B2：积压超过阈值时触发释放事件，返回事件字符串（或空字符串）。
+        release 事件由 profile 的 cognitive_biases 方向决定，不一定是哭泣。
+        """
+        if state.suppression_pressure < 0.8:
+            return ""
+        return self._generate_release_event(state, behavior)
+
     def _decide_event(self, state: ThoughtState, behavior: "BehaviorState | None" = None) -> str:
         # ── 叙事线索驱动（v4）──────────────────────────────────────────────────
         if self.thread_mgr is not None:
@@ -370,6 +378,55 @@ class WorldEngine:
             except Exception as e:
                 if _attempt == 3:
                     print(f"[WorldEngine] 正向事件生成失败: {e}")
+        return ""
+
+    def _generate_release_event(
+        self,
+        state: "ThoughtState",
+        behavior: "BehaviorState | None",
+    ) -> str:
+        """B2：情绪积压超阈值后的释放事件。
+        方向由 profile.cognitive_biases 决定——不一定是哭泣，
+        可以是：独自笑出来、给朋友发了一条很长的消息、突然很饿、睡得很死。
+        """
+        biases = getattr(self.profile, "cognitive_biases", [])
+        biases_str = "；".join(biases[:3]) if biases else "无特殊认知偏向"
+
+        context_parts = []
+        if behavior:
+            context_parts.append(
+                f"当前时间：{behavior.wall_clock_time}，地点：{behavior.location}"
+            )
+        context_parts.append(
+            f"情绪积压强度：{state.suppression_pressure:.2f}，主导情绪：{state.emotion.dominant()}"
+        )
+        rich_context = "\n".join(context_parts) + "\n\n" if context_parts else ""
+
+        system = (
+            "你是事件记录员。用第三人称平白陈述发生了什么，不加感受描写，不加修辞。"
+            "直接输出内容，不加任何前缀或解释。"
+        )
+        user = (
+            f"人物：{self.profile.name}，{self.profile.current_situation}\n"
+            + rich_context
+            + f"人物认知偏向：{biases_str}\n\n"
+            + f"当前思维片段：{state.text[-100:] if state.text else '（初始）'}\n\n"
+            + "任务：这个人长期压抑的情绪已积累到临界点，即将以某种方式释放。\n"
+            "根据人物性格和认知偏向，生成一件真实发生了的「释放性」事件——不一定是哭泣，\n"
+            "可以是：独自笑出来、发了一条很长的消息、突然很饿、睡得很死、扔掉了什么东西。\n"
+            "1~2句话，纯事实陈述，不写感受。"
+        )
+
+        for _attempt in range(4):
+            try:
+                result = claude_call(user, system=system, max_tokens=512)
+                if result:
+                    self._append_history(result)
+                    self._ticks_since_last_event = 0
+                return result
+            except Exception as e:
+                if _attempt == 3:
+                    print(f"[WorldEngine] 释放事件生成失败: {e}")
         return ""
 
     # ── 事件生成 ───────────────────────────────────────────────────────────────

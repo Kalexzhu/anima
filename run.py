@@ -432,6 +432,16 @@ def main(profile_path: str, max_ticks_override: int | None = None):
 
             event = world.tick(state, behavior)
 
+            # B2：积压超阈值时触发释放事件（与正常事件互斥，释放优先）
+            if not event:
+                release_event = world.maybe_release(state, behavior)
+                if release_event:
+                    event = release_event
+                    # 重置积压压力
+                    from dataclasses import replace as dc_replace
+                    state = dc_replace(state, suppression_pressure=0.2)
+                    print(f"  [B2 release] pressure→0.2  事件：{release_event[:50]}")
+
             # B2 结论立刻传给线索管理器（关闭/新建线索）
             if state.conclusion:
                 thread_mgr.process_action(state.conclusion, current_tick=tick)
