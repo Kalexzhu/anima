@@ -55,15 +55,25 @@
 | 模块 | 类型 | 负责内容 |
 |------|------|---------|
 | ReactiveModule | 反应层 | 对外部事件的即时响应 |
-| 情绪惯性漂移 | DriftModule | 情绪的惯性延续与缓慢变化 |
-| 记忆浮现 | DriftModule | 无意识地想起某段记忆 |
-| 他人声音入侵 | DriftModule | 脑海中响起某个人说过的话 |
-| 意象碎片 | DriftModule | 模糊的视觉画面、感官碎片 |
-| 哲学沉思 | DriftModule | 关于某个命题的反复思考 |
-| 白日梦 | DriftModule | 对另一种可能的幻想 |
-| 反事实假设 | DriftModule | "如果当时……" |
-| 反刍思维 | DriftModule | 对某件事反复回想 |
-| 自我评价 | DriftModule | 对自己当下状态的内在评判 |
+| 反刍思维 | DriftModule | 对某件事反复回想，身体里有根 |
+| 自我评价 | DriftModule | 第三视角审视自己的行为模式 |
+| 哲学沉思 | DriftModule | 从具体处境出发向上追问 |
+| 审美联想 | DriftModule | 跨领域的形式感知、比例节奏 |
+| 反事实假设 | DriftModule | "如果当时……" 的分叉时间线 |
+| 正向记忆 | DriftModule | 带感官细节的记忆画面回溯 |
+| 白日梦 | DriftModule | 感官链条式的享乐性发散 |
+| 未来想象 | DriftModule | 心理时间旅行，今晚/明天的场景 |
+| 社交排演 | DriftModule | 假设对话的链条式推演 |
+| 意象碎片 | DriftModule | 意识边缘自发浮现的感知画面 |
+
+### 主干情境系统（WorldState）
+
+人物有 2~4 个长期悬而未决的**主干情境**（Trunk），分属不同生命域（工作 / 感情 / 家庭 / 自我认同……）。每个 tick，引擎从中选出当前最突显的主干，同时驱动：
+
+- **外部事件**：WorldEngine 生成与该域相关的事件
+- **内省漂移**：反刍、哲学、自我评价、未来想象等模块以该主干为认知锚点
+
+选择算法使用 **Softmax + Recency Penalty**，防止单一主干垄断全程——就像人的注意力会自然在不同人生议题间轮转。
 
 ### 情绪系统：OCC 模型
 
@@ -207,9 +217,10 @@ python3 scenarios/kobe_2020/runner.py
 
 ## 🗺️ Roadmap
 
-- [x] 10 模块并发认知架构
+- [x] 10 模块并发认知架构（ReactiveModule + 10 DriftModule）
 - [x] OCC 情绪模型 + 惯性衰减
 - [x] Tick 时间轴 + 断点续跑
+- [x] WorldState 主干情境系统（Trunk tree + 多域轮转）
 - [x] p5.js 浏览器端可视化
 - [x] 林晓雨示例档案
 - [x] 科比·布莱恩特档案
