@@ -430,25 +430,31 @@ function drawEventOverlay(alpha) {
   textAlign(CENTER, CENTER);
   noStroke();
 
+  // 根据事件文本长度动态调整字号和容器高度
+  const evLen = eventStr.length;
+  const evFontSize = evLen > 50 ? 16 : 19;
+  const evBoxH     = evLen > 50 ? 110 : 80;
+  const boxH       = evLen > 50 ? 185 : 165;
+
   fill(8, 14, 22, alpha * 0.70);
   rectMode(CENTER);
-  rect(cx, cy, min(width * 0.78, 640), 165, 12);
+  rect(cx, cy, min(width * 0.78, 640), boxH, 12);
 
   textFont('Noto Sans SC');
 
-  textSize(19);
+  textSize(evFontSize);
   fill(255, 255, 255, alpha * 0.95);
-  text(eventStr, cx, cy - 16, 580, 80);
+  text(eventStr, cx, cy - 16, 580, evBoxH);
 
   if (metaStr) {
     textSize(13);
     fill(170, 170, 170, alpha * 0.75);
-    text(metaStr, cx, cy + 22);
+    text(metaStr, cx, cy + (evLen > 50 ? 40 : 22));
   }
 
   textSize(11);
   fill(110, 110, 110, alpha * 0.55);
-  text(`TICK ${String(tickData.tick).padStart(2, '0')}`, cx, cy + 44);
+  text(`TICK ${String(tickData.tick).padStart(2, '0')}`, cx, cy + (evLen > 50 ? 62 : 44));
   pop();
 }
 
@@ -531,7 +537,10 @@ function drawEventIcon() {
       tickData.location ? `📍 ${tickData.location}` : '',
     ].filter(Boolean).join('  ');
 
-    const panelH = metaStr ? 96 : 74;
+    const evPanelLen  = eventStr.length;
+    const evPanelSize = evPanelLen > 40 ? 12 : 14;
+    const evPanelH    = evPanelLen > 40 ? 60 : 36;
+    const panelH = metaStr ? (evPanelLen > 40 ? 130 : 96) : (evPanelLen > 40 ? 108 : 74);
 
     fill(8, 14, 22, 0.80);
     rect(px, py, pw, panelH, 7);
@@ -543,14 +552,14 @@ function drawEventIcon() {
     fill(100, 100, 100, 0.70);
     text(tickLabel, px + 12, py + 10);
 
-    textSize(14);
+    textSize(evPanelSize);
     fill(215, 215, 215, 0.90);
-    text(eventStr, px + 12, py + 26, pw - 24, 36);
+    text(eventStr, px + 12, py + 26, pw - 24, evPanelH);
 
     if (metaStr) {
       textSize(11);
       fill(130, 130, 130, 0.65);
-      text(metaStr, px + 12, py + 76);
+      text(metaStr, px + 12, py + 26 + evPanelH + 8);
     }
   }
 

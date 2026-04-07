@@ -103,13 +103,13 @@ def _sample_memories(
 _reactive_module = ReactiveModule()
 _drift_modules: list[CognitiveModule] = create_drift_modules()
 _drift_module_map: dict[str, CognitiveModule] = {m.name: m for m in _drift_modules}
-_module_runner = ModuleRunner([_reactive_module] + _drift_modules, max_workers=4)
+_module_runner = ModuleRunner([_reactive_module] + _drift_modules, max_workers=6)
 
 _PASSIVE_DECAY = 0.7   # 清醒时每小时衰减 30%（约3轮强度减半）
 _SLEEP_DECAY   = 0.95  # 睡眠时每小时衰减 5%（8小时后保留 ~66%）
 
 # ── 测试模式开关 ────────────────────────────────────────────────────────────────
-_TEST_ALL_MODULES = False  # True = 每轮运行全部 drift 模块（不经 drift_sampler 采样）
+_TEST_ALL_MODULES = True   # True = 每轮运行全部 drift 模块（不经 drift_sampler 采样）；False = 采样模式（暂封存）
 
 _NEGATIVE_DIMS = {"anger", "fear", "sadness", "disgust"}
 _POSITIVE_DIMS = {"joy", "trust", "anticipation"}
@@ -364,15 +364,24 @@ def _dream_arbiter(
     behavior: BehaviorState,
     event: str,
     prev_state: ThoughtState,
+    dream_history: list[str] | None = None,
 ) -> str:
     """ASLEEP 状态下的简化循环：直接输出梦境文本。"""
     prev_text = prev_state.text[-150:] if prev_state.text else "（无）"
+
+    # 历史梦境意象去重：最多取前 3 段，告知模型已用过的核心意象
+    history_ctx = ""
+    if dream_history:
+        snippets = [t[:60] for t in dream_history[-3:]]
+        history_ctx = "\n已出现过的梦境意象（必须完全回避这些场景和意象）：" + "；".join(snippets)
+
     prompt = (
         f"人物：{profile.name}\n"
         f"入睡时间：{behavior.wall_clock_time}\n"
         f"今日处境：{profile.current_situation}\n"
         f"睡前残留情绪：{prev_state.emotion.dominant()}（强度{prev_state.emotion.intensity:.2f}）\n"
-        f"前一段意识内容（必须用不同的场景和意象，不得重复相同意象）：{prev_text}"
+        f"前一段意识内容（场景和意象必须与之不同）：{prev_text}"
+        + history_ctx
     )
     return fast_call(prompt, system=_SYS_DREAM, max_tokens=256)
 
@@ -579,7 +588,13 @@ def run_cognitive_cycle(
         decayed = _apply_decay(state.emotion, factor=_decay_factor)
         # 每个睡眠 tick 生成梦境碎片（fast_call，轻量）
         try:
-            dream_text = _dream_arbiter(profile, behavior, event, state)
+            # 从 tick_store 提取本次睡眠段已有的梦境文本（去重用）
+            prior_dreams: list[str] = []
+            if tick_store is not None:
+                for ts in tick_store:
+                    if ts.perceived == "（睡眠中）" and ts.text and ts.text != "（睡眠中）":
+                        prior_dreams.append(ts.text)
+            dream_text = _dream_arbiter(profile, behavior, event, state, dream_history=prior_dreams)
         except Exception as e:
             print(f"[dream] 生成失败：{e}")
             dream_text = "（睡眠中）"
