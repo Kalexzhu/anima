@@ -23,6 +23,7 @@ class Relationship:
     power_dynamic: str = ""                           # "权威型" / "平等型" / "依赖型"
     unresolved_conflicts: List[str] = field(default_factory=list)
     typical_phrases: List[str] = field(default_factory=list)
+    speech_style: str = ""                            # 这个人说话的方式（1句话）
 
     @classmethod
     def from_dict(cls, d: dict) -> "Relationship":
@@ -33,6 +34,7 @@ class Relationship:
             power_dynamic=d.get("power_dynamic", d.get("dynamic", "")),
             unresolved_conflicts=d.get("unresolved_conflicts", []),
             typical_phrases=d.get("typical_phrases", []),
+            speech_style=d.get("speech_style", ""),
         )
 
     def to_prompt_line(self) -> str:
@@ -40,6 +42,8 @@ class Relationship:
         line = f"{self.name}（{self.role}，情感倾向{sign}{self.valence:.1f}，{self.power_dynamic}）"
         if self.unresolved_conflicts:
             line += f" | 未解冲突：{self.unresolved_conflicts[0]}"
+        if self.speech_style:
+            line += f" | 说话方式：{self.speech_style}"
         return line
 
 
@@ -96,6 +100,10 @@ class PersonProfile:
     aesthetic_sensitivities: List[str] = field(default_factory=list)
     # 例：["线条的细腻感，墨线很细", "等间距排列产生的节奏感"]
 
+    imagery_seeds: List[str] = field(default_factory=list)
+    # 意识边缘自发浮现的感知触发点：日常物件、感官残留、身体记忆等碎片
+    # 例：["地铁换乘通道荧光灯打在地面的条纹", "开水烫到手指后的迟钝感"]
+
     counterfactual_nodes: List[str] = field(default_factory=list)
     # 例：["如果当初没有接这个项目", "如果分手前说了那句话"]
 
@@ -108,12 +116,42 @@ class PersonProfile:
     rumination_anchors: List[str] = field(default_factory=list)
     # 例：["「跟你在一起我喘不过气」", "「这个方案完全跑偏了」"]
 
+    # ── 认知指纹三维度（v6 新增，驱动角色差异化）─────
+    inner_voice_style: str = ""
+    # 内心语言方式：人称、句式、断句方式
+    # 例："内心独白在自我否定时切换为第二人称，情绪激动时句子断在动词上"
+
+    somatic_anchors: str = ""
+    # 情绪的身体着陆点
+    # 例："胸口（发紧）和手指（发凉、微颤）"
+
+    cognitive_default: str = ""
+    # 压力下的认知默认模式
+    # 例："反复回放对方最后那句话的语气和表情，或去做一件可控的小事"
+
     output_language: str = "zh"
     # "zh"（默认）或 "en"：控制 DES moment content 的输出语言
 
     # self_model 已删除（2026-03-27）：
     #   known_patterns 与 self_eval_patterns 冗余；
     #   open_questions 合并入 philosophy_seeds（保留第一人称内省题）
+
+    def to_cognitive_fingerprint(self) -> str:
+        """合并认知指纹三维度为紧凑文本块，注入 drift 模块 prompt。
+
+        当前：全量输出（~80字）。
+        未来扩展点：可接收 module_name 参数，按模块筛选相关子集。
+        """
+        parts = []
+        if self.inner_voice_style:
+            parts.append(self.inner_voice_style)
+        if self.somatic_anchors:
+            parts.append(f"身体感知集中在{self.somatic_anchors}")
+        if self.cognitive_default:
+            parts.append(self.cognitive_default)
+        if not parts:
+            return ""
+        return "认知特征：" + "。".join(parts)
 
     @property
     def relationship_objects(self) -> List[Relationship]:
@@ -164,4 +202,7 @@ class PersonProfile:
                 for m in selected
             ]
             lines.append("关键记忆：\n" + "\n".join(mem_lines))
+        fingerprint = self.to_cognitive_fingerprint()
+        if fingerprint:
+            lines.append(fingerprint)
         return "\n".join(lines)

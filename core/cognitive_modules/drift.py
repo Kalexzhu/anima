@@ -118,11 +118,20 @@ class FragmentModule(CognitiveModule):
                 v for v in ctx.recent_voice_contents[:4]
             )
 
+        # 背景事件着色（松散语境，不要求模块直接响应）
+        event_ctx = ""
+        if getattr(ctx, "event", None):
+            event_ctx = f"\n当前背景事件（作为松散着色，不必直接响应）：{ctx.event}"
+
+        fingerprint = ctx.profile.to_cognitive_fingerprint()
+
         user = (
             f"人物：{ctx.profile.name}，{ctx.profile.age}岁\n"
             f"处境：{ctx.profile.current_situation}\n"
-            f"情绪：{emotion_desc}"
+            + (f"{fingerprint}\n" if fingerprint else "")
+            + f"情绪：{emotion_desc}"
             + location_ctx
+            + event_ctx
             + f"\n\n锚点：{anchor}"
             + prev_ctx
             + voice_dedup_ctx
@@ -215,10 +224,16 @@ class ChainModule(CognitiveModule):
         emotion_desc: str,
         location_ctx: str,
     ) -> str:
+        fingerprint = ctx.profile.to_cognitive_fingerprint()
+        event_ctx = ""
+        if getattr(ctx, "event", None):
+            event_ctx = f"当前背景事件（作为松散着色，不必直接响应）：{ctx.event}\n"
         return (
             f"人物：{ctx.profile.name}，{ctx.profile.age}岁\n"
             f"处境：{ctx.profile.current_situation}\n"
+            + (f"{fingerprint}\n" if fingerprint else "")
             + location_ctx
+            + event_ctx
             + f"情绪：{emotion_desc}\n\n"
             f"链条第 {step_n}/{self._chain_length} 步。\n"
             f"上一步内容：{prev_step}\n"
@@ -455,7 +470,9 @@ def create_drift_modules() -> list[CognitiveModule]:
         ),
         moment_count="1~2",
         get_anchor=lambda ctx: (
-            ctx.perceived[:30] if ctx.perceived else ctx.profile.current_situation[:20]
+            random.choice(ctx.profile.imagery_seeds)
+            if ctx.profile.imagery_seeds
+            else (ctx.perceived[:30] if ctx.perceived else ctx.profile.current_situation[:20])
         ),
     ))
 

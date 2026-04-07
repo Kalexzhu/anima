@@ -21,7 +21,6 @@ from __future__ import annotations
 import json
 import os
 import re
-import tempfile
 from collections import Counter
 from typing import Any, Dict, List
 
@@ -126,7 +125,7 @@ class ResidualFeedback:
         profile_data = self._load_profile()
         updates: Dict[str, List[str]] = {}
 
-        # ── 1. perceived 高频实体 → relationships ────────────────────────────
+        # ── 1. perceived 高频实体 → staging 文件（不直接写入 profile）────────
         all_nouns = []
         for t in ticks:
             # max_len=3：中文人名通常 2-3 字，避免提取长句片段
@@ -141,18 +140,9 @@ class ResidualFeedback:
         ]
         new_rels = _top_items(all_nouns, existing_rel_names, len(ticks))
         if new_rels:
-            updates["relationships"] = new_rels
-            for name in new_rels:
-                profile_data.setdefault("relationships", []).append({
-                    "name": name,
-                    "role": "（自动检测）",
-                    "valence": 0.0,
-                    "power_dynamic": "",
-                    "unresolved_conflicts": [],
-                    "typical_phrases": [],
-                })
+            updates["relationships_staged"] = new_rels
 
-        # ── 2. reasoning 反复关键词 → cognitive_biases ───────────────────────
+        # ── 2. reasoning 反复关键词 → staging（不直接写入 profile）───────────
         reasoning_nouns = []
         for t in ticks:
             reasoning_nouns.extend(_extract_nouns(t.get("reasoning", ""), min_len=3))
@@ -160,10 +150,9 @@ class ResidualFeedback:
         existing_biases = profile_data.get("cognitive_biases", [])
         new_biases = _top_items(reasoning_nouns, existing_biases, len(ticks))
         if new_biases:
-            updates["cognitive_biases"] = new_biases
-            profile_data.setdefault("cognitive_biases", []).extend(new_biases)
+            updates["cognitive_biases_staged"] = new_biases
 
-        # ── 3. last_event 内容 → memories ────────────────────────────────────
+        # ── 3. last_event 内容 → staging（不直接写入 profile）────────────────
         events = [
             t.get("last_event", "").strip()
             for t in ticks
@@ -176,25 +165,40 @@ class ResidualFeedback:
         ]
         new_mem_events = _top_items(events, existing_mem_events, len(ticks))
         if new_mem_events:
-            updates["memories"] = new_mem_events
-            for ev in new_mem_events:
-                profile_data.setdefault("memories", []).append({
-                    "event": ev,
-                    "age": None,
-                    "emotion_tag": "（自动检测）",
-                    "importance": 0.5,
-                })
+            updates["memories_staged"] = new_mem_events
 
-        # ── 写回（原子写入）──────────────────────────────────────────────────
+        # ── 全部写入 staging 文件（原始 profile 只读，不再修改）───────────────
         if updates:
-            self._atomic_write(profile_data)
-            print(f"[ResidualFeedback] 更新完成：{list(updates.keys())}")
+            self._stage_all_detections(updates, profile_data)
         else:
             print("[ResidualFeedback] 未检测到需要更新的新模式。")
 
         return updates
 
     # ── 内部工具 ───────────────────────────────────────────────────────────────
+
+    def _stage_all_detections(self, updates: dict, profile_data: dict) -> None:
+        """将所有检测结果写入 staging 文件，原始 profile 只读不修改。"""
+        staging_dir = os.path.dirname(os.path.abspath(self.profile_path))
+        os.makedirs(staging_dir, exist_ok=True)
+        name = profile_data.get("name", "unknown")
+        staging_path = os.path.join(staging_dir, f"{name}_residual_staging.json")
+        existing: dict = {}
+        if os.path.exists(staging_path):
+            try:
+                with open(staging_path, encoding="utf-8") as f:
+                    existing = json.load(f)
+            except (json.JSONDecodeError, OSError):
+                existing = {}
+        for key, items in updates.items():
+            prev = existing.get(key, [])
+            for item in items:
+                if item not in prev:
+                    prev.append(item)
+            existing[key] = prev
+        with open(staging_path, "w", encoding="utf-8") as f:
+            json.dump(existing, f, ensure_ascii=False, indent=2)
+        print(f"[ResidualFeedback] 检测结果写入 staging（profile 未修改）：{staging_path}")
 
     def _load_ticks(self, path: str) -> List[Dict[str, Any]]:
         ticks = []
@@ -212,13 +216,4 @@ class ResidualFeedback:
         with open(self.profile_path, encoding="utf-8") as f:
             return json.load(f)
 
-    def _atomic_write(self, data: Dict[str, Any]) -> None:
-        """原子写入：先写临时文件，再 rename，防止写入中断导致 Profile 损坏。"""
-        dir_name = os.path.dirname(os.path.abspath(self.profile_path))
-        with tempfile.NamedTemporaryFile(
-            mode="w", encoding="utf-8",
-            dir=dir_name, suffix=".tmp", delete=False
-        ) as tmp:
-            json.dump(data, tmp, ensure_ascii=False, indent=2)
-            tmp_path = tmp.name
-        os.replace(tmp_path, self.profile_path)
+    # _atomic_write 已移除（v6）：原始 profile 只读，所有检测结果写入 staging 文件。

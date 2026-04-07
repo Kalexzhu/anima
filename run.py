@@ -7,6 +7,7 @@ run.py — ANIMA 主入口（重构版）。
 
 import json
 import os
+import shutil
 import sys
 import time
 from datetime import datetime
@@ -298,6 +299,12 @@ def main(profile_path: str, max_ticks_override: int | None = None):
     if max_ticks_override is not None:
         MAX_TICKS = max_ticks_override
     profile = load_profile(profile_path)
+    # 运行前备份 profile（防止 WritebackManager/ResidualFeedback 写入不可逆）
+    backup_dir = os.path.join(os.path.dirname(profile_path), "..", "output")
+    os.makedirs(backup_dir, exist_ok=True)
+    ts = time.strftime("%Y%m%d_%H%M%S")
+    backup_name = os.path.basename(profile_path).replace(".json", f"_pre_run_{ts}.json")
+    shutil.copy2(profile_path, os.path.join(backup_dir, backup_name))
     # 初始化记忆管理器并加载历史记忆
     memory = MemoryManager()
     memory.load_from_profile(profile.memories)
