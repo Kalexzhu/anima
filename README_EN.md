@@ -103,6 +103,20 @@ Example tick — Trunk: work domain ("stay or leave after the rejection")
   future:        Tonight, open the laptop. Blank document. Then what.
 ```
 
+### Cognitive Fingerprint
+
+Different characters don't just think about different things — they think *differently*. The cognitive fingerprint captures individuality across three dimensions:
+
+| Dimension | Purpose | Lin Xiaoyu | Kobe |
+|-----------|---------|------------|------|
+| **inner_voice_style** | How they talk to themselves | Second-person self-judgment: "You again—" | Command-style fragments: "Again." "Not enough." |
+| **somatic_anchors** | Where emotions land in the body | Chest tightness, cold fingers | Shoulder tension, knee ache |
+| **cognitive_default** | Default stress response | Replays others' facial expressions | Immediately dissects failure mechanics |
+
+Same rumination module, radically different output — driven by ~80 characters of cognitive context, not per-module customization.
+
+Each relationship also has a **speech_style** field, making voice intrusions from different people distinctly recognizable.
+
 ### Emotion Model
 
 Based on OCC cognitive appraisal theory, producing an **8-dimensional Plutchik vector** (anger / fear / joy / sadness / surprise / disgust / anticipation / trust). Emotions have **inertial decay** across ticks (decay=0.4/tick) — the accumulated state from one moment shapes the next.
@@ -273,6 +287,8 @@ Each tick output is based on **Descriptive Experience Sampling (DES)** methodolo
 - [x] p5.js browser-side floating text visualization
 - [x] Lin Xiaoyu & Kobe Bryant example profiles
 - [x] Multi-API key rotation + timeout protection
+- [x] Cognitive Fingerprint — character differentiation via 3 dimensions + relationship speech_style
+- [x] ResidualFeedback read-only protection — original profiles no longer modified by auto-detection
 
 **In Progress (Phase B → D)**
 - [ ] Real-time audio input (Whisper streaming STT)
