@@ -23,8 +23,6 @@ if TYPE_CHECKING:
     from core.narrative import NarrativeThreadManager
     from core.world_state import WorldState
 
-_MODEL = os.environ.get("CLAUDE_MODEL", "claude-sonnet-4-6")
-
 INTENSITY_THRESHOLD = 0.45
 CALM_TICK_INTERVAL  = 3
 

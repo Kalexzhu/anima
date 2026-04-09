@@ -36,9 +36,6 @@ class ModuleContext:
     memory_fragment: str          # 记忆层：激活的相关记忆
     reasoning: str                # 推理层：内心逻辑推演
 
-    # 叙事线索（可选，NarrativeThreadManager 提供）
-    narrative_thread: "dict | None" = None
-
     # Trunk 层注入：当前 tick 选中的主干情境描述（可选）
     # 格式：「当前主干情境[work]：方案被否后的去留——…」
     # 供 rumination / philosophy / self_eval / future 作为认知焦点锚点

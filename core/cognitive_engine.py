@@ -329,35 +329,6 @@ def reasoning_layer(
 
 
 # ── 梦境生成（ASLEEP 简化循环）─────────────────────────────────────────────────
-    """B3：确定性代码渲染，无 LLM 调用。"""
-    lines = []
-    for m in moments:
-        t = m.get("type", "")
-        content = m.get("content", "").strip()
-        if not content:
-            continue
-        if t == "unsymbolized":
-            lines.append(f"〔{content}〕")
-        elif t == "voice_intrusion":
-            source = m.get("source", "")
-            # 防御：source 可能含声音描述（"张明，男声，普通话"），只取第一个逗号前的人名
-            name = source.split("，")[0].split(",")[0].strip()
-            # 剥掉 LLM 可能自带的外层「」，避免双层括号
-            inner = re.sub(r"^「+|」+$", "", content).strip()
-            if name:
-                lines.append(f"{name}说，「{inner}」")
-            else:
-                lines.append(f"「{inner}」")
-        elif t == "compressed_speech":
-            if content and content[-1] not in "——…？！。":
-                content += "——"
-            lines.append(content)
-        else:  # visual_fragment, body_sensation, intrusion, expanded_speech
-            lines.append(content)
-    return "\n".join(lines)
-
-
-# ── 梦境生成（ASLEEP 简化循环）─────────────────────────────────────────────────
 
 def _dream_arbiter(
     profile: PersonProfile,
@@ -543,12 +514,12 @@ def run_cognitive_cycle(
     event: str = "",
     tick_store: TickHistoryStore | None = None,
     prev_tick_outputs: dict | None = None,
-    narrative_thread: dict | None = None,
     behavior_override: "BehaviorState | None" = None,
     tick_duration_hours: float | None = None,
     active_trunk_context: str = "",
     prev_sleep_state: str = "",
     secondary_trunk_context: str = "",
+    dream_history: list[str] | None = None,
 ) -> tuple[ThoughtState, BehaviorState, dict]:
     """
     执行一轮完整认知循环，返回 (ThoughtState, BehaviorState)。
@@ -588,13 +559,7 @@ def run_cognitive_cycle(
         decayed = _apply_decay(state.emotion, factor=_decay_factor)
         # 每个睡眠 tick 生成梦境碎片（fast_call，轻量）
         try:
-            # 从 tick_store 提取本次睡眠段已有的梦境文本（去重用）
-            prior_dreams: list[str] = []
-            if tick_store is not None:
-                for ts in tick_store:
-                    if ts.perceived == "（睡眠中）" and ts.text and ts.text != "（睡眠中）":
-                        prior_dreams.append(ts.text)
-            dream_text = _dream_arbiter(profile, behavior, event, state, dream_history=prior_dreams)
+            dream_text = _dream_arbiter(profile, behavior, event, state, dream_history=dream_history)
         except Exception as e:
             print(f"[dream] 生成失败：{e}")
             dream_text = "（睡眠中）"
@@ -679,7 +644,6 @@ def run_cognitive_cycle(
         perceived=perceived,
         memory_fragment=mem_fragment,
         reasoning=reasoning,
-        narrative_thread=narrative_thread,
         prev_tick_outputs=prev_tick_outputs or {},
         memory_sample=memory_sample,
         active_trunk_context=active_trunk_context,

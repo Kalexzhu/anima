@@ -93,10 +93,6 @@ def _rotate_key(reason: str = "") -> bool:
     return True
 
 
-# 主客户端（供 arbiter streaming 直接使用，会在 camel_step 内部轮转）
-_anthropic_client = _get_client()
-
-
 def make_camel_agent(system_prompt: str, temperature: float = 0.7) -> Optional["ChatAgent"]:
     """创建一个 CAMEL ChatAgent。代理环境直接返回 None 走 Anthropic 直连。"""
     if not _CAMEL_AVAILABLE or _BASE_URL:

@@ -332,6 +332,7 @@ def main(profile_path: str, max_ticks_override: int | None = None):
     )
     state = ThoughtState(text="", emotion=EmotionState(), tick=0)
     event = ""
+    dream_history: list[str] = []  # ASLEEP tick 的梦境文本，供去重
     writeback_mgr = WritebackManager(profile)
 
     # 输出文件路径
@@ -396,13 +397,19 @@ def main(profile_path: str, max_ticks_override: int | None = None):
             state, behavior, module_outputs = run_cognitive_cycle(
                 profile, state, memory, event, tick_store,
                 prev_tick_outputs=prev_tick_outputs,
-                narrative_thread=top,
                 active_trunk_context=trunk_context,
                 prev_sleep_state=prev_sleep_state,
                 secondary_trunk_context=secondary_trunk_context,
+                dream_history=dream_history,
             )
             prev_tick_outputs = module_outputs  # 保存供下轮影响机制使用
             prev_sleep_state = behavior.sleep_state  # B3：更新上一轮睡眠状态
+
+            # 梦境历史追踪（供下个 ASLEEP tick 去重）
+            if behavior.sleep_state == "ASLEEP" and state.text and state.text != "（睡眠中）":
+                dream_history.append(state.text)
+            elif behavior.sleep_state == "AWAKE":
+                dream_history.clear()  # 醒来后重置
 
             # 显示行为状态
             time_loc = f"  ⏰ {behavior.wall_clock_time}  📍 {behavior.location}  {'💤' if behavior.sleep_state == 'ASLEEP' else '👁'}"

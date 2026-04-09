@@ -91,8 +91,8 @@ class ReactiveModule(CognitiveModule):
         profile = ctx.profile
         behavior = ctx.behavior
 
-        desires = getattr(profile, "desires", [])
-        hobbies = getattr(profile, "hobbies", [])
+        desires = profile.desires
+        hobbies = profile.hobbies
         desires_ctx = ""
         if desires or hobbies:
             items = desires[:3] + hobbies[:2]
@@ -109,8 +109,7 @@ class ReactiveModule(CognitiveModule):
         for moments_list in (ctx.prev_tick_outputs or {}).values():
             for m in (moments_list or []):
                 if m.get("type") == "voice_intrusion" and m.get("content"):
-                    import re as _re
-                    inner = _re.sub(r"^「+|」+$", "", m["content"]).strip()
+                    inner = re.sub(r"^「+|」+$", "", m["content"]).strip()
                     if inner:
                         prev_voices.append(inner)
 
