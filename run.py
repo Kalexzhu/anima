@@ -70,15 +70,15 @@ def _resolve_narrative_state_path(profile_path: str) -> str:
     stem = profile_basename.replace("_profile.json", "").replace(".json", "")
     example_path = os.path.join(profile_dir, f"{stem}_narrative_state.json")
 
-    if not os.path.exists(example_path):
-        print(f"[run.py] 错误：找不到叙事线索初始文件 {example_path}")
-        print(f"         请创建该文件（参考 examples/demo_narrative_state.json 格式）")
-        sys.exit(1)
-
-    import shutil
     os.makedirs("output", exist_ok=True)
-    shutil.copy(example_path, output_path)
-    print(f"[run.py] 叙事线索初始文件已复制：{example_path} → {output_path}")
+    if os.path.exists(example_path):
+        import shutil
+        shutil.copy(example_path, output_path)
+        print(f"[run.py] 叙事线索初始文件已复制：{example_path} → {output_path}")
+    else:
+        with open(output_path, "w", encoding="utf-8") as f:
+            json.dump({"threads": []}, f, ensure_ascii=False, indent=2)
+        print(f"[run.py] 已创建空叙事线索文件：{output_path}")
     return output_path
 
 
