@@ -58,7 +58,9 @@ def _resolve_narrative_state_path(profile_path: str) -> str:
     2. 否则从 examples/*_narrative_state.json 复制初始版本。
     3. 若 examples 版本也不存在，报错退出。
     """
-    output_path = "output/narrative_state.json"
+    # 从 profile_path 提取角色名，用于隔离持久化文件
+    _profile_stem = os.path.splitext(os.path.basename(profile_path))[0]
+    output_path = f"output/{_profile_stem}_narrative_state.json"
     if os.path.exists(output_path):
         return output_path
 
@@ -314,7 +316,7 @@ def main(profile_path: str, max_ticks_override: int | None = None):
     thread_mgr = NarrativeThreadManager(state_path=narrative_path)
 
     # 初始化世界状态（Trunk 层）
-    world_state = WorldState(state_path="output/world_state.json")
+    world_state = WorldState(state_path=f"output/{profile.name}_world_state.json")
     world_state.init_trunks(profile)  # 首次运行提取 Trunk，续跑直接加载
 
     world = WorldEngine(
