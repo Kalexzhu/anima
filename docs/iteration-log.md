@@ -29,3 +29,5 @@
 | 2026-04-07 | [2026-04-07-cognitive-fingerprint-design.md](iterations/2026-04-07-cognitive-fingerprint-design.md) | 认知指纹迭代：fingerprint 三维度（inner_voice_style / somatic_anchors / cognitive_default）+ speech_style 作为上下文注入 drift 模块（2处）；数据层结构化为未来按模块筛选预留通道；否决翻译层方案；ResidualFeedback 全量 staging 保护（原始 profile 只读）；eng-review CLEARED |
 | 2026-04-07 | — | 持久化文件角色隔离：world_state.json + narrative_state.json 改为按角色名区分路径（output/{name}_world_state.json），修复科比读到林晓雨 Trunk 的跨角色污染问题；narrative_state 找不到初始文件时自动创建空版本 |
 | 2026-04-09 | — | 认知指纹验证：林晓雨 5 轮 + 科比 5 轮（隔离后重跑）对比，三维度全部命中（body_sensation 部位差异、compressed_speech 人称/句式差异、cognitive_default 思维模式差异），零角色泄漏 |
+| 2026-04-09 | — | ResidualFeedback 重写（analyze 方法 + output_dir 参数化 + docstring 准确化）+ 删除 emotion_schedule_correction 死字段 |
+| 2026-04-09 | [2026-04-09-code-health-cleanup.md](iterations/2026-04-09-code-health-cleanup.md) | 代码健康审计后实施计划：4 批清理（B1 梦境去重 / D1-D4 死代码 / A1 cognitive_engine 拆分至 500 行 / R1-R7 DRY 统一），已验证每项问题的真实性和原始设计意图 |
