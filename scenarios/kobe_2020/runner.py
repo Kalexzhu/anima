@@ -20,6 +20,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import shutil
 import sys
 import time
 from pathlib import Path
@@ -36,7 +37,8 @@ from core.thought import ThoughtState
 from core.memory import MemoryManager
 from core.behavior import BehaviorState
 from core.tick_history import TickHistoryStore
-from core.cognitive_engine import run_cognitive_cycle, render_all_outputs_labeled
+from core.cognitive_engine import run_cognitive_cycle
+from core.renderer import render_all_outputs_labeled
 from core.viz_renderer import render_for_viz, write_tick_viz
 
 # ── 路径常量 ────────────────────────────────────────────────────────────────────
@@ -117,6 +119,13 @@ def _print_divider(
 
 def run_scenario(profile_path: str, max_ticks: int | None = None, start_tick: int = 1) -> None:
     profile = _load_profile(profile_path)
+
+    # 运行前备份 profile
+    backup_dir = os.path.join("output")
+    os.makedirs(backup_dir, exist_ok=True)
+    ts = time.strftime("%Y%m%d_%H%M%S")
+    backup_name = os.path.basename(profile_path).replace(".json", f"_pre_run_{ts}.json")
+    shutil.copy2(profile_path, os.path.join(backup_dir, backup_name))
 
     with open(TIMELINE_PATH, "r", encoding="utf-8") as f:
         timeline: list[dict] = json.load(f)
