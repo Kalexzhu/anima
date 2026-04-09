@@ -33,6 +33,7 @@ from core.drift_sampler import sample_drift_category, DRIFT_CATEGORIES
 from core.occ import (
     OCCAppraisal, OCC_SYSTEM_PROMPT, parse_occ_response,
     occ_to_plutchik, apply_personality_modifiers, blend_with_prev_state,
+    apply_dutir_calibration as _apply_dutir_calibration,
 )
 from agents.base_agent import fast_call, claude_call
 from core.cognitive_modules import (
@@ -43,61 +44,9 @@ from core.cognitive_modules.base import CognitiveModule
 _constraint_builder = EmotionConstraintBuilder()
 _validator = EmotionValidator()
 
-# ── 记忆冷却追踪器 ────────────────────────────────────────────────────────────────
-
-class MemoryCooldownTracker:
-    """
-    记录每条记忆最近被采样的 tick，在冷却期内将其排除出随机池。
-    冷却只影响随机三条的候选范围，不影响 importance top-5。
-    """
-    COOLDOWN_TICKS = 5
-
-    def __init__(self) -> None:
-        self._last_sampled: dict[int, int] = {}  # memory_index → last tick number
-
-    def is_available(self, index: int, current_tick: int) -> bool:
-        return (current_tick - self._last_sampled.get(index, -999)) > self.COOLDOWN_TICKS
-
-    def record(self, indices: list[int], tick: int) -> None:
-        for i in indices:
-            self._last_sampled[i] = tick
-
+from core.memory_sampler import MemoryCooldownTracker, sample_memories as _sample_memories  # noqa: E402
 
 _cooldown_tracker = MemoryCooldownTracker()
-
-
-def _sample_memories(
-    profile: "PersonProfile",
-    tracker: MemoryCooldownTracker,
-    current_tick: int,
-    n_importance: int = 5,
-    n_random: int = 3,
-) -> list[dict]:
-    """
-    预采样记忆：
-      - top n_importance 条按 importance 降序（每轮稳定）
-      - n_random 条从剩余中随机取，冷却期内的条目被排除出随机池
-      - 若随机池因冷却全部耗尽，则从完整剩余中回退随机取（防止池枯竭）
-      - 记录本轮采样 indices 进 tracker
-    """
-    import random as _random
-    mems = profile.memories
-    if not mems:
-        return []
-
-    indexed = sorted(enumerate(mems), key=lambda x: -x[1].get("importance", 0))
-    top_n = indexed[:n_importance]
-    remaining = indexed[n_importance:]
-
-    available = [(i, m) for i, m in remaining if tracker.is_available(i, current_tick)]
-    pool = available if available else remaining  # 冷却全满时回退到全部剩余
-
-    random_picked = _random.sample(pool, min(n_random, len(pool)))
-
-    all_sampled_indices = [i for i, _ in top_n] + [i for i, _ in random_picked]
-    tracker.record(all_sampled_indices, current_tick)
-
-    return [m for _, m in top_n] + [m for _, m in random_picked]
 
 # ── 模块 Runner 初始化（模块池全局共享）──────────────────────────────────────────
 _reactive_module = ReactiveModule()
@@ -111,8 +60,7 @@ _SLEEP_DECAY   = 0.95  # 睡眠时每小时衰减 5%（8小时后保留 ~66%）
 # ── 测试模式开关 ────────────────────────────────────────────────────────────────
 _TEST_ALL_MODULES = True   # True = 每轮运行全部 drift 模块（不经 drift_sampler 采样）；False = 采样模式（暂封存）
 
-_NEGATIVE_DIMS = {"anger", "fear", "sadness", "disgust"}
-_POSITIVE_DIMS = {"joy", "trust", "anticipation"}
+from core.emotion_utils import NEGATIVE_DIMS as _NEGATIVE_DIMS, POSITIVE_DIMS as _POSITIVE_DIMS  # noqa: E402
 
 
 # ── 各层 system prompt ──────────────────────────────────────────────────────────
@@ -136,81 +84,6 @@ _SYS_DREAM = (
 )
 
 
-# ── 关系图谱工具函数 ────────────────────────────────────────────────────────────
-
-def _build_relationship_context(profile: PersonProfile, emotion_intensity: float) -> str:
-    rel_objs = profile.relationship_objects
-    if not rel_objs:
-        return ""
-    lines = ["重要关系网络（这些人此刻可能浮现在脑海中）："]
-    for r in rel_objs:
-        line = f"  · {r.to_prompt_line()}"
-        if emotion_intensity > 0.3 and r.typical_phrases:
-            phrases = "、".join(f'"{p}"' for p in r.typical_phrases[:2])
-            line += f"\n    Ta的声音：{phrases}"
-        lines.append(line)
-    return "\n".join(lines)
-
-
-def _get_inner_voices(profile: PersonProfile, emotion_intensity: float) -> str:
-    if emotion_intensity < 0.2:
-        return ""
-    voices = []
-    for r in profile.relationship_objects:
-        if r.valence < -0.1 and r.typical_phrases:
-            phrases = "、".join(f'"{p}"' for p in r.typical_phrases[:2])
-            voices.append(f"{r.name}的声音：{phrases}")
-        elif r.valence > 0.5 and r.typical_phrases and emotion_intensity > 0.4:
-            voices.append(f"（渴望）{r.name}会怎么看我……")
-    return "\n".join(voices)
-
-
-# ── DUTIR 方向校准 ──────────────────────────────────────────────────────────────
-
-def _apply_dutir_calibration(
-    blended: dict[str, float],
-    event_text: str,
-    perceived_text: str,
-) -> dict[str, float]:
-    """
-    若 OCC 主导情绪方向与 DUTIR 方向不一致，修正主导维度：
-      - 压低 OCC 错误主导 × 0.3
-      - 拉高 DUTIR 指示维度 + 0.3（capped 1.0）
-    """
-    combined = f"{event_text} {perceived_text}".strip()
-    if not combined:
-        return blended
-
-    try:
-        from core.dutir_loader import get_dominant_emotions
-        dutir_top_list = get_dominant_emotions(combined, top_n=1)
-        if not dutir_top_list:
-            return blended
-        dutir_top = dutir_top_list[0]
-    except Exception:
-        return blended
-
-    dims = {k: v for k, v in blended.items() if k in _NEGATIVE_DIMS | _POSITIVE_DIMS}
-    if not dims:
-        return blended
-    occ_top = max(dims, key=dims.get)
-
-    occ_neg = occ_top in _NEGATIVE_DIMS
-    dutir_neg = dutir_top in _NEGATIVE_DIMS
-
-    if occ_neg == dutir_neg:
-        return blended  # 方向一致
-
-    result = dict(blended)
-    result[occ_top] = result[occ_top] * 0.3
-    result[dutir_top] = min(1.0, result.get(dutir_top, 0.0) + 0.3)
-    print(
-        f"[DUTIR] 方向修正：{occ_top}({blended[occ_top]:.2f}→{result[occ_top]:.2f})"
-        f" → {dutir_top}({blended.get(dutir_top, 0):.2f}→{result[dutir_top]:.2f})"
-    )
-    return result
-
-
 # ── Layer 1: Perception ────────────────────────────────────────────────────────
 
 def perception_layer(
@@ -220,7 +93,7 @@ def perception_layer(
     behavior: BehaviorState | None = None,
     memory_sample: list | None = None,
 ) -> str:
-    rel_context = _build_relationship_context(profile, state.emotion.intensity)
+    rel_context = profile.build_relationship_context(state.emotion.intensity)
     base = f"人物档案：\n{profile.to_prompt_context(memory_override=memory_sample)}\n\n"
     if rel_context:
         base += f"{rel_context}\n\n"
@@ -305,7 +178,7 @@ def reasoning_layer(
     layer_ctx: LayerContext | None = None,
     behavior: BehaviorState | None = None,
 ) -> str:
-    inner_voices = _get_inner_voices(profile, emotion.intensity)
+    inner_voices = profile.get_inner_voices(emotion.intensity)
     location_ctx = ""
     if behavior:
         location_ctx = f"\n此刻位于：{behavior.location}，正在：{behavior.activity}（{behavior.wall_clock_time}）"
@@ -424,87 +297,7 @@ def _extract_conclusion(reactive_moments: list[dict]) -> str | None:
     return None
 
 
-def _render_moments(moments: list[dict]) -> str:
-    """将 moments 列表渲染为文本行（换行符连接）。
-    voice_intrusion → "name说，「content」"
-    unsymbolized    → "〔content〕"
-    其余             → content 原样
-    """
-    lines = []
-    for m in moments:
-        mtype = m.get("type", "")
-        content = (m.get("content") or "").strip()
-        source = (m.get("source") or "").strip()
-        if not content:
-            continue
-        if mtype == "voice_intrusion" and source:
-            lines.append(f"{source}说，「{content}」")
-        elif mtype == "unsymbolized":
-            lines.append(f"〔{content}〕")
-        else:
-            lines.append(content)
-    return "\n".join(lines)
-
-
-def _render_all_outputs(module_outputs: dict[str, list[dict]]) -> str:
-    """
-    渲染所有模块输出为文本流（无标签，写入文件用）。
-    reactive 输出在前（主思维流），drift 模块输出以 '……' 分隔追加。
-    _meta 标记的 moment 过滤掉（不渲染）。
-    """
-    sections: list[str] = []
-
-    reactive_moments = [m for m in module_outputs.get("reactive", []) if not m.get("_meta")]
-    if reactive_moments:
-        sections.append(_render_moments(reactive_moments))
-
-    drift_order = [
-        "rumination", "self_eval", "philosophy", "aesthetic",
-        "counterfactual", "positive_memory", "daydream", "future",
-        "social_rehearsal", "imagery",
-    ]
-    for name in drift_order:
-        if name not in module_outputs:
-            continue
-        moments = [m for m in module_outputs[name] if not m.get("_meta")]
-        if not moments:
-            continue
-        rendered = _render_moments(moments)
-        if rendered.strip():
-            sections.append(rendered)
-
-    return "\n\n……\n\n".join(sections)
-
-
-def render_all_outputs_labeled(module_outputs: dict[str, list[dict]]) -> str:
-    """
-    渲染所有模块输出为带标签文本（终端评估用）。
-    格式：== 模块名 ==\n{内容}
-    """
-    sections: list[str] = []
-
-    reactive_moments = [m for m in module_outputs.get("reactive", []) if not m.get("_meta")]
-    if reactive_moments:
-        rendered = _render_moments(reactive_moments)
-        if rendered.strip():
-            sections.append(f"== reactive ==\n{rendered}")
-
-    drift_order = [
-        "rumination", "self_eval", "philosophy", "aesthetic",
-        "counterfactual", "positive_memory", "daydream", "future",
-        "social_rehearsal", "imagery",
-    ]
-    for name in drift_order:
-        if name not in module_outputs:
-            continue
-        moments = [m for m in module_outputs[name] if not m.get("_meta")]
-        if not moments:
-            continue
-        rendered = _render_moments(moments)
-        if rendered.strip():
-            sections.append(f"== {name} ==\n{rendered}")
-
-    return "\n\n".join(sections)
+from core.renderer import render_all_outputs as _render_all_outputs, render_all_outputs_labeled  # noqa: E402
 
 
 def run_cognitive_cycle(

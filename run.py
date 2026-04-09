@@ -16,7 +16,8 @@ from core.profile import PersonProfile
 from core.emotion import EmotionState
 from core.thought import ThoughtState
 from core.memory import MemoryManager
-from core.cognitive_engine import run_cognitive_cycle, render_all_outputs_labeled
+from core.cognitive_engine import run_cognitive_cycle
+from core.renderer import render_all_outputs_labeled
 from core.viz_renderer import render_for_viz, write_tick_viz
 from core.tick_history import TickHistoryStore
 from core.world_engine import WorldEngine

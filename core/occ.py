@@ -206,3 +206,51 @@ def parse_occ_response(raw: str) -> OCCAppraisal | None:
         )
     except Exception:
         return None
+
+
+# ── DUTIR 方向校准 ──────────────────────────────────────────────────────────────
+
+def apply_dutir_calibration(
+    blended: dict[str, float],
+    event_text: str,
+    perceived_text: str,
+) -> dict[str, float]:
+    """
+    若 OCC 主导情绪方向与 DUTIR 方向不一致，修正主导维度：
+      - 压低 OCC 错误主导 × 0.3
+      - 拉高 DUTIR 指示维度 + 0.3（capped 1.0）
+    """
+    from core.emotion_utils import NEGATIVE_DIMS, POSITIVE_DIMS
+
+    combined = f"{event_text} {perceived_text}".strip()
+    if not combined:
+        return blended
+
+    try:
+        from core.dutir_loader import get_dominant_emotions
+        dutir_top_list = get_dominant_emotions(combined, top_n=1)
+        if not dutir_top_list:
+            return blended
+        dutir_top = dutir_top_list[0]
+    except Exception:
+        return blended
+
+    dims = {k: v for k, v in blended.items() if k in NEGATIVE_DIMS | POSITIVE_DIMS}
+    if not dims:
+        return blended
+    occ_top = max(dims, key=dims.get)
+
+    occ_neg = occ_top in NEGATIVE_DIMS
+    dutir_neg = dutir_top in NEGATIVE_DIMS
+
+    if occ_neg == dutir_neg:
+        return blended
+
+    result = dict(blended)
+    result[occ_top] = result[occ_top] * 0.3
+    result[dutir_top] = min(1.0, result.get(dutir_top, 0.0) + 0.3)
+    print(
+        f"[DUTIR] 方向修正：{occ_top}({blended[occ_top]:.2f}→{result[occ_top]:.2f})"
+        f" → {dutir_top}({blended.get(dutir_top, 0):.2f}→{result[dutir_top]:.2f})"
+    )
+    return result

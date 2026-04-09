@@ -152,6 +152,33 @@ class PersonProfile:
             return ""
         return "认知特征：" + "。".join(parts)
 
+    def build_relationship_context(self, emotion_intensity: float) -> str:
+        """构建关系网络上下文，高情绪时附加典型话语。"""
+        rel_objs = self.relationship_objects
+        if not rel_objs:
+            return ""
+        lines = ["重要关系网络（这些人此刻可能浮现在脑海中）："]
+        for r in rel_objs:
+            line = f"  · {r.to_prompt_line()}"
+            if emotion_intensity > 0.3 and r.typical_phrases:
+                phrases = "、".join(f'"{p}"' for p in r.typical_phrases[:2])
+                line += f"\n    Ta的声音：{phrases}"
+            lines.append(line)
+        return "\n".join(lines)
+
+    def get_inner_voices(self, emotion_intensity: float) -> str:
+        """提取当前情绪下脑中响起的他人声音。"""
+        if emotion_intensity < 0.2:
+            return ""
+        voices = []
+        for r in self.relationship_objects:
+            if r.valence < -0.1 and r.typical_phrases:
+                phrases = "、".join(f'"{p}"' for p in r.typical_phrases[:2])
+                voices.append(f"{r.name}的声音：{phrases}")
+            elif r.valence > 0.5 and r.typical_phrases and emotion_intensity > 0.4:
+                voices.append(f"（渴望）{r.name}会怎么看我……")
+        return "\n".join(voices)
+
     @property
     def relationship_objects(self) -> List[Relationship]:
         """将 dict 格式关系列表转为 Relationship 对象列表。"""

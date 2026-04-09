@@ -8,6 +8,8 @@ from __future__ import annotations
 from typing import Dict
 
 EMOTION_DIMS = ["anger", "fear", "joy", "sadness", "surprise", "disgust", "anticipation", "trust"]
+NEGATIVE_DIMS = {"anger", "fear", "sadness", "disgust"}
+POSITIVE_DIMS = {"joy", "trust", "anticipation"}
 
 
 def emotion_cosine(vec_a: Dict[str, float], vec_b: Dict[str, float]) -> float:
