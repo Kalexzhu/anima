@@ -11,11 +11,11 @@ core/cognitive_modules/reactive.py — ReactiveModule
 
 from __future__ import annotations
 
-import json
 import re
 
 from agents.base_agent import claude_call
 from core.emotion_descriptor import get_emotion_description
+from core.json_utils import parse_json_object as _parse_json
 from .base import CognitiveModule, ModuleContext
 
 # ── ReactiveModule 复用 cognitive_engine 里的 B1/B2 prompts ──────────────────
@@ -52,24 +52,6 @@ _SYS_B2 = (
     '{"moments": [{"type": "...", "content": "...", "source": "（仅 voice_intrusion 填写，其余省略此字段）"}], '
     '"conclusion": "..." or null, "write_back": true or false}'
 )
-
-
-def _parse_json(raw: str) -> dict | None:
-    try:
-        m = re.search(r'\{.*\}', raw, re.DOTALL)
-        if m:
-            return json.loads(m.group())
-        return json.loads(raw)
-    except Exception:
-        pass
-    try:
-        from json_repair import repair_json
-        result = json.loads(repair_json(raw))
-        if isinstance(result, dict):
-            return result
-    except Exception:
-        pass
-    return None
 
 
 class ReactiveModule(CognitiveModule):

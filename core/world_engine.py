@@ -193,6 +193,40 @@ class WorldEngine:
 
         return ""
 
+    # ── 共享工具 ──────────────────────────────────────────────────────────────────
+
+    def _history_block(self) -> str:
+        """构建最近事件历史（禁止重复约束），无历史时返回空。"""
+        if not self._event_history:
+            return ""
+        recent = self._event_history[-5:]
+        return (
+            "【已发生事件（禁止重复相同人物、地点、对话内容）】\n"
+            + "\n".join(f"  · {e}" for e in recent)
+            + "\n\n"
+        )
+
+    def _context_block(self, state: ThoughtState, behavior: "BehaviorState | None") -> str:
+        """构建时间/地点/情绪上下文。"""
+        parts = []
+        if behavior:
+            parts.append(f"当前时间：{behavior.wall_clock_time}，地点：{behavior.location}，活动：{behavior.activity}")
+        parts.append(f"人物当前情绪：{state.emotion.dominant()}（强度{state.emotion.intensity:.2f}）")
+        return "\n".join(parts) + "\n\n"
+
+    def _llm_generate(self, user: str, system: str, label: str, state: ThoughtState | None = None, trunk_id: str | None = None) -> str:
+        """调用 LLM 生成事件，含 4 次重试。成功后标记 Trunk 激活。"""
+        for _attempt in range(4):
+            try:
+                result = claude_call(user, system=system, max_tokens=512)
+                if result and trunk_id and self.world_state is not None and state is not None:
+                    self.world_state.mark_trunk_activated(trunk_id, state.tick)
+                return result
+            except Exception as e:
+                if _attempt == 3:
+                    print(f"[WorldEngine] {label}生成失败: {e}")
+        return ""
+
     # ── 叙事线索事件生成 ───────────────────────────────────────────────────────
 
     def _generate_thread_event(
@@ -203,32 +237,10 @@ class WorldEngine:
         tone: str,
     ) -> str:
         """生成一件推进指定线索的事件。"""
-        history_block = ""
-        if self._event_history:
-            recent = self._event_history[-5:]
-            history_block = (
-                "【已发生事件（禁止重复相同人物、地点、对话内容）】\n"
-                + "\n".join(f"  · {e}" for e in recent)
-                + "\n\n"
-            )
-
-        context_parts = []
-        if behavior:
-            context_parts.append(
-                f"当前时间：{behavior.wall_clock_time}，地点：{behavior.location}，活动：{behavior.activity}"
-            )
-        context_parts.append(
-            f"人物当前情绪：{state.emotion.dominant()}（强度{state.emotion.intensity:.2f}）"
-        )
-
-        rich_context = "\n".join(context_parts) + "\n\n" if context_parts else ""
-
-        # 行动方向：由 WorldState 根据 thread urgency 推导
         if self.world_state is not None:
             action_type, action_hint = self.world_state.get_action_directive(thread["urgency"])
             trunk_id, trunk_context = self.world_state.get_trunk_context(state.emotion, state.tick)
         else:
-            # 兼容回退：沿用旧 tone 逻辑
             action_hint = (
                 "这件事带有迫切感，直接触发线索的核心矛盾。"
                 if tone == "pressing"
@@ -248,28 +260,18 @@ class WorldEngine:
         )
         user = (
             f"人物：{self.profile.name}，{self.profile.current_situation}\n"
-            + rich_context
+            + self._context_block(state, behavior)
             + trunk_block
             + f"正在推进的故事线索：{thread['description']}（urgency={thread['urgency']:.2f}，类别={thread['category']}）\n"
             + f"近期思维片段：{state.text[-100:] if state.text else '（初始）'}\n\n"
-            + history_block
+            + self._history_block()
             + self._action_block()
             + f"任务：生成一件与这条线索直接相关的事。{action_hint}\n"
             "1~2句话，纯事实陈述，不写感受，不写情绪暗示。"
             "可以是：线索的直接发展、相关人物出现、环境触发对线索的联想。"
         )
 
-        for _attempt in range(4):
-            try:
-                result = claude_call(user, system=system, max_tokens=512)
-                # 事件生成成功后标记 Trunk 被激活
-                if result and trunk_id and self.world_state is not None:
-                    self.world_state.mark_trunk_activated(trunk_id, state.tick)
-                return result
-            except Exception as e:
-                if _attempt == 3:
-                    print(f"[WorldEngine] 线索事件生成失败: {e}")
-        return ""
+        return self._llm_generate(user, system, "线索事件", state, trunk_id)
 
     def _generate_open_event(
         self,
@@ -277,30 +279,12 @@ class WorldEngine:
         behavior: "BehaviorState | None",
     ) -> str:
         """所有线索已关闭时，生成开放性事件（新发现/机会/日常）。"""
-        history_block = ""
-        if self._event_history:
-            recent = self._event_history[-5:]
-            history_block = (
-                "【已发生事件（禁止重复相同人物、地点、对话内容）】\n"
-                + "\n".join(f"  · {e}" for e in recent)
-                + "\n\n"
-            )
-
-        context_parts = []
-        if behavior:
-            context_parts.append(
-                f"当前时间：{behavior.wall_clock_time}，地点：{behavior.location}，活动：{behavior.activity}"
-            )
-        rich_context = "\n".join(context_parts) + "\n\n" if context_parts else ""
-
         trunk_block = ""
         trunk_id = None
         if self.world_state is not None:
             trunk_id, trunk_context = self.world_state.get_trunk_context(state.emotion, state.tick)
             if trunk_context:
-                trunk_block = (
-                    f"{trunk_context}\n事件应与此主干所在域（工作/感情/家庭等）有关联，或形成对比。\n"
-                )
+                trunk_block = f"{trunk_context}\n事件应与此主干所在域（工作/感情/家庭等）有关联，或形成对比。\n"
 
         system = (
             "你是事件记录员。用第三人称平白陈述发生了什么，不加感受描写，不加修辞。"
@@ -308,97 +292,48 @@ class WorldEngine:
         )
         user = (
             f"人物：{self.profile.name}，{self.profile.current_situation}\n"
-            + rich_context
+            + self._context_block(state, behavior)
             + trunk_block
             + f"当前思维片段：{state.text[-100:] if state.text else '（初始）'}\n\n"
-            + history_block
+            + self._history_block()
             + self._action_block()
             + "任务：生成一件日常小事或新的发现/机会。1~2句话，纯事实陈述。"
         )
 
-        for _attempt in range(4):
-            try:
-                result = claude_call(user, system=system, max_tokens=512)
-                if result and trunk_id and self.world_state is not None:
-                    self.world_state.mark_trunk_activated(trunk_id, state.tick)
-                return result
-            except Exception as e:
-                if _attempt == 3:
-                    print(f"[WorldEngine] 开放事件生成失败: {e}")
-        return ""
+        return self._llm_generate(user, system, "开放事件", state, trunk_id)
 
     def _generate_positive_event(
         self,
         state: ThoughtState,
         behavior: "BehaviorState | None",
     ) -> str:
-        """A2：正向事件——情绪平静且有正向残余时，生成细小喘息型事件。
-        触发条件：joy + trust + anticipation > 0.2，且情绪强度不在峰值。
-        风格：细小、不戏剧化、来自外部环境或非核心关系（路人/天气/物件）。
-        """
-        history_block = ""
-        if self._event_history:
-            recent = self._event_history[-5:]
-            history_block = (
-                "【已发生事件（禁止重复相同人物、地点、对话内容）】\n"
-                + "\n".join(f"  · {e}" for e in recent)
-                + "\n\n"
-            )
-
-        context_parts = []
-        if behavior:
-            context_parts.append(
-                f"当前时间：{behavior.wall_clock_time}，地点：{behavior.location}，活动：{behavior.activity}"
-            )
-        context_parts.append(
-            f"正向情绪：joy={state.emotion.joy:.2f} trust={state.emotion.trust:.2f} anticipation={state.emotion.anticipation:.2f}"
-        )
-        rich_context = "\n".join(context_parts) + "\n\n" if context_parts else ""
-
+        """A2：正向事件——情绪平静且有正向残余时，生成细小喘息型事件。"""
         system = (
             "你是事件记录员。用第三人称平白陈述发生了什么，不加感受描写，不加修辞。"
             "直接输出内容，不加任何前缀或解释。"
         )
         user = (
             f"人物：{self.profile.name}，{self.profile.current_situation}\n"
-            + rich_context
+            + self._context_block(state, behavior)
+            + f"正向情绪：joy={state.emotion.joy:.2f} trust={state.emotion.trust:.2f} anticipation={state.emotion.anticipation:.2f}\n"
             + f"当前思维片段：{state.text[-100:] if state.text else '（初始）'}\n\n"
-            + history_block
+            + self._history_block()
             + "任务：生成一件细小的正向时刻。要求：\n"
             "- 来自外部环境或非核心关系（路人/天气/物件/偶然发现），不涉及人物的核心矛盾\n"
             "- 不解决任何问题，只是短暂的喘息或意外的小惊喜\n"
             "- 1~2句话，纯事实陈述，不写情绪"
         )
 
-        for _attempt in range(4):
-            try:
-                return claude_call(user, system=system, max_tokens=512)
-            except Exception as e:
-                if _attempt == 3:
-                    print(f"[WorldEngine] 正向事件生成失败: {e}")
-        return ""
+        return self._llm_generate(user, system, "正向事件")
 
     def _generate_release_event(
         self,
         state: "ThoughtState",
         behavior: "BehaviorState | None",
     ) -> str:
-        """B2：情绪积压超阈值后的释放事件。
-        方向由 profile.cognitive_biases 决定——不一定是哭泣，
-        可以是：独自笑出来、给朋友发了一条很长的消息、突然很饿、睡得很死。
-        """
-        biases = getattr(self.profile, "cognitive_biases", [])
+        """B2：情绪积压超阈值后的释放事件。"""
+        biases = self.profile.cognitive_biases
         biases_str = "；".join(biases[:3]) if biases else "无特殊认知偏向"
-
-        context_parts = []
-        if behavior:
-            context_parts.append(
-                f"当前时间：{behavior.wall_clock_time}，地点：{behavior.location}"
-            )
-        context_parts.append(
-            f"情绪积压强度：{state.suppression_pressure:.2f}，主导情绪：{state.emotion.dominant()}"
-        )
-        rich_context = "\n".join(context_parts) + "\n\n" if context_parts else ""
 
         system = (
             "你是事件记录员。用第三人称平白陈述发生了什么，不加感受描写，不加修辞。"
@@ -406,7 +341,8 @@ class WorldEngine:
         )
         user = (
             f"人物：{self.profile.name}，{self.profile.current_situation}\n"
-            + rich_context
+            + self._context_block(state, behavior)
+            + f"情绪积压强度：{state.suppression_pressure:.2f}\n"
             + f"人物认知偏向：{biases_str}\n\n"
             + f"当前思维片段：{state.text[-100:] if state.text else '（初始）'}\n\n"
             + "任务：这个人长期压抑的情绪已积累到临界点，即将以某种方式释放。\n"
@@ -415,17 +351,11 @@ class WorldEngine:
             "1~2句话，纯事实陈述，不写感受。"
         )
 
-        for _attempt in range(4):
-            try:
-                result = claude_call(user, system=system, max_tokens=512)
-                if result:
-                    self._append_history(result)
-                    self._ticks_since_last_event = 0
-                return result
-            except Exception as e:
-                if _attempt == 3:
-                    print(f"[WorldEngine] 释放事件生成失败: {e}")
-        return ""
+        result = self._llm_generate(user, system, "释放事件")
+        if result:
+            self._append_history(result)
+            self._ticks_since_last_event = 0
+        return result
 
     # ── 事件生成 ───────────────────────────────────────────────────────────────
 
@@ -436,26 +366,7 @@ class WorldEngine:
         relationship: Relationship | None = None,
         behavior: "BehaviorState | None" = None,
     ) -> str:
-        history_block = ""
-        if self._event_history:
-            recent = self._event_history[-5:]
-            history_block = (
-                "【已发生事件（禁止重复相同人物、地点、对话内容）】\n"
-                + "\n".join(f"  · {e}" for e in recent)
-                + "\n\n"
-            )
-
-        # 富上下文：时间/地点/情绪/最近推理
-        context_parts = []
-        if behavior:
-            context_parts.append(f"当前时间：{behavior.wall_clock_time}，地点：{behavior.location}，活动：{behavior.activity}")
-        context_parts.append(
-            f"主导情绪：{state.emotion.dominant()}（强度{state.emotion.intensity:.2f}）"
-        )
-        if state.reasoning:
-            context_parts.append(f"最近内心推断：{state.reasoning[:150]}")
-        rich_context = "\n".join(context_parts) + "\n\n" if context_parts else ""
-
+        """旧情绪驱动事件生成（dramatic/relational/subtle）。"""
         if mode == "dramatic":
             instruction = (
                 f"情绪强度 {state.emotion.intensity:.2f}。"
@@ -468,11 +379,15 @@ class WorldEngine:
                 "只写事实：Ta做了什么、说了什么、或出现在哪里。"
                 "1~2句话，不写感受，不写关系描述。"
             )
-        else:  # subtle
+        else:
             instruction = (
                 "一个环境细节或日常小事。只写发生了什么：什么东西在动、谁做了什么、出现了什么声音或物体。"
                 "1~2句话，纯事实陈述。"
             )
+
+        extra_ctx = ""
+        if state.reasoning:
+            extra_ctx = f"最近内心推断：{state.reasoning[:150]}\n"
 
         system = (
             "你是事件记录员。用第三人称平白陈述发生了什么，不加感受描写，不加修辞。"
@@ -480,16 +395,11 @@ class WorldEngine:
         )
         user = (
             f"人物：{self.profile.name}，{self.profile.current_situation}\n"
-            + rich_context
+            + self._context_block(state, behavior)
+            + extra_ctx
             + f"当前思维片段：{state.text[-150:] if state.text else '（初始）'}\n"
-            + history_block
+            + self._history_block()
             + f"任务：{instruction}"
         )
 
-        for _attempt in range(4):
-            try:
-                return claude_call(user, system=system, max_tokens=512)
-            except Exception as e:
-                if _attempt == 3:
-                    print(f"[WorldEngine] 事件生成失败: {e}")
-        return ""
+        return self._llm_generate(user, system, "事件")

@@ -186,19 +186,4 @@ class NarrativeThreadManager:
         return f"[{top['category']}] {top['description'][:30]}… urgency={top['urgency']:.2f}{rest}"
 
 
-def _parse_json(text: str) -> dict | None:
-    """从 LLM 输出中提取 JSON，支持 json_repair fallback。"""
-    text = text.strip()
-    if text.startswith("```"):
-        lines = text.split("\n")
-        text = "\n".join(lines[1:-1] if lines[-1].strip() == "```" else lines[1:])
-    try:
-        return json.loads(text)
-    except json.JSONDecodeError:
-        pass
-    try:
-        from json_repair import repair_json
-        return json.loads(repair_json(text))
-    except Exception:
-        pass
-    return None
+from core.json_utils import parse_json_object as _parse_json  # noqa: E402
