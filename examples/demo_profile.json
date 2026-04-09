@@ -57,12 +57,6 @@
       "mood_note": "失眠时会在黑暗里想很多，通常1小时内入睡"
     }
   ],
-  "emotion_schedule_correction": {
-    "high_negative_intensity": {
-      "shift_home_minutes": 45,
-      "sleep_delay_minutes": 60
-    }
-  },
   "hobbies": [
     "在小红书上收藏她永远不会去做的食谱",
     "周末去周边城市的小众咖啡馆，一个人坐很久",

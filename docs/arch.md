@@ -456,3 +456,5 @@ Phase 3（暂缓）：
 | **认知指纹** | **to_cognitive_fingerprint() 三维度 + speech_style，注入 drift prompt（2处）+ to_prompt_context()** | 角色差异化的最小杠杆：~80 字上下文（非规则），让 LLM 自行推导语言/身体/思维差异；否决翻译层（不能凭空创造信息）和多点注入方案（11 处改动冲突风险高） |
 | ResidualFeedback 只读 | 原始 profile 不再被修改，所有检测结果写入 staging 文件 | regex 提取不可靠（"睡眠中""喘不过""她说会比"被当作人名/偏差写入 profile），staging 保护原始数据完整性 |
 | 持久化角色隔离 | world_state / narrative_state 按 profile.name 区分文件路径 | 共用单一文件导致科比读到林晓雨的 Trunk，跨角色污染 |
+| WritebackManager 持久化 | 需要做，方案待定（增量 overlay vs 直接写回 vs 分层 profile） | 角色认知应跨 run 累积演化；风险是累积噪音导致 profile 偏移，需版本管理 |
+| emotion_schedule_correction | **删除** | 情绪影响作息（推迟回家/推迟入睡）的设计过于细碎，与核心目标（思维流质量）无关 |

@@ -117,7 +117,9 @@
 - **Why：** 装置艺术展示需要面向观众的界面；`tick_records` JSON 已为此预留接口
 - **Depends on：** 方向一 + 方向二完成，数据结构稳定后
 
-### Profile 时间演化
-- **What：** 单次运行超过阈值时自动标记/更新 `current_situation`
-- **Why：** 长期装置展示时处境字段会过时
-- **Note：** 与已定决策"时间在事件里体现，不更新 Profile"存在张力，待长期运行数据积累后再决策
+### Profile 时间演化 + WritebackManager 持久化
+- **What：** WritebackManager 每 5 tick 往 `profile.memories` 追加行动微决定，当前仅在内存中生效，run 结束后丢失。需要设计跨 run 持久化方案。
+- **Why：** 角色的认知基底应该跨 run 累积演化（"时间往前走"），而非每次从同一起点重播。第一次 run 她决定"明天去找陈总"，第二次 run 应该从这个认知状态继续。
+- **风险：** WritebackManager 的 LLM 审查不完美，累积写入可能引入噪音，profile 不可逆偏离原始设计。需要版本管理 + 回滚能力。
+- **设计待定：** 持久化的粒度（每次 run 结束写？每 5 tick 实时写？）、与原始 profile 的关系（覆盖？分层？增量 overlay？）、回滚策略（run 前备份已有，但需要更明确的版本链）
+- **Note：** 与旧议题"时间在事件里体现，不更新 Profile"存在张力。持久化 memories 是最小侵入方案（只加不改），current_situation 的更新是更大的设计决策，暂不动。

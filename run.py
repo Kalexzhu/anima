@@ -301,7 +301,7 @@ def main(profile_path: str, max_ticks_override: int | None = None):
     if max_ticks_override is not None:
         MAX_TICKS = max_ticks_override
     profile = load_profile(profile_path)
-    # 运行前备份 profile（防止 WritebackManager/ResidualFeedback 写入不可逆）
+    # 运行前备份 profile（防止 WritebackManager 内存写入在未来持久化时不可逆）
     backup_dir = os.path.join(os.path.dirname(profile_path), "..", "output")
     os.makedirs(backup_dir, exist_ok=True)
     ts = time.strftime("%Y%m%d_%H%M%S")
@@ -502,7 +502,7 @@ def main(profile_path: str, max_ticks_override: int | None = None):
     print(viz_text)
 
     # ── 认知残差写回 Profile ────────────────────────────────────────────────
-    ResidualFeedback(profile_path).analyze_and_update(tick_store._jsonl_path)
+    ResidualFeedback(profile_path, output_dir="output").analyze(tick_store._jsonl_path)
 
 
 if __name__ == "__main__":

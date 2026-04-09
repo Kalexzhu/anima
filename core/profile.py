@@ -81,7 +81,6 @@ class PersonProfile:
     scenario_start_time: str = ""      # ISO 格式，e.g. "2024-03-15T15:00:00"
     tick_duration_hours: float = 2.0   # 每轮 tick 对应的真实时长（小时）
     typical_schedule: List[Dict[str, Any]] = field(default_factory=list)
-    emotion_schedule_correction: Dict[str, Any] = field(default_factory=dict)
 
     # ── 欲望与兴趣（v3 新增，arbiter Direction B 内容来源）─
     hobbies: List[str] = field(default_factory=list)
