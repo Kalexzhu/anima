@@ -1,22 +1,30 @@
 # ANIMA — TODO
 
+## 下次最重要的 3 件事（2026-04-09 认知指纹迭代完成后更新）
+
+1. **跑完整 20 轮验证（林晓雨 + 科比各一次）**
+   - `python3 run.py examples/demo_profile.json --max-ticks 20`
+   - `python3 run.py scenarios/kobe_2020/kobe_profile.json --max-ticks 20`
+   - 验证重点：fingerprint 效果在长跑中是否持续稳定、drift_sampler 采样模式下差异化是否保持、情绪弧线合理性
+   - 对比旧 run（run_07/kobe_2020_04）和新 run 的差异
+
+2. **Phase B 启动准备：音频感知输入**
+   - 评估 Whisper 本地流式 STT 在 Mac M 系列的可行性
+   - 设计 audio/stt_listener.py + salience_filter.py 接口
+   - 见 arch.md Phase B 章节
+
+3. **Phase D 调研：TTS + 对口型视频**
+   - 调研 TTS 方案（内心独白 → 语音）
+   - 调研对口型视频生成（情绪驱动视觉输出）
+   - 这是视觉化 demo 的最终形态
+
+---
+
 ## 下次最重要的 3 件事（2026-03-30 方向三规划后更新）
 
-1. **Phase A 第一步：WorldEngine 事件记忆注入**
-   - 目标：生成事件前，把最近 N 个事件摘要注入 prompt，让 LLM 自动规避重复
-   - 改动范围：仅 `core/world_engine.py` 的 prompt 构建部分，不影响其他模块
-   - 验证方式：跑 50 轮，主观评估事件句式多样性是否提升
-   - 详细设计见 `docs/iterations/2026-03-30-realtime-cognitive-direction.md`
-
-2. **先初始化 git，再动代码**
-   - `cd ~/Projects/mind-reading && git init && git add . && git commit -m "feat: 初始化 ANIMA — v5 认知引擎开源版本"`
-   - 之后每次改动一件事就 commit 一次，格式参考 CLAUDE.md
-   - 原因：接下来改动较多，没有 git 等于没有安全网
-
-3. **Phase A 其余三项（事件记忆注入验证通过后）**
-   - 事件风格扩展（超越 dramatic/subtle）
-   - 情绪自然节律（积压-释放机制）
-   - 叙事线索淡出（关闭后渐退，不硬切断）
+1. - [x] **Phase A 第一步：WorldEngine 事件记忆注入**（已完成）
+2. - [x] **初始化 git**（已完成）
+3. - [x] **Phase A 其余三项**（已完成：事件风格扩展、积压-释放机制、Trunk 间渗透）
 
 ---
 
@@ -81,6 +89,10 @@
 - [x] 情绪标定系统（DUTIR 词典 + EmotionConstraint + 统计修正，2026-03-24）
 - [x] 认知残差 A+B 改造（TickHistoryStore + LayerContext + T1-T7 测试全绿，2026-03-24）
 - [x] 架构 v4 实现（B1/B2/B3 拆分、DES 类型时刻、常驻 drift_layer、write-back 行动准入、WorldEngine 平白记者体、json_repair 容错，2026-03-25）
+- [x] Phase A 全部完成：WorldState Trunk 系统 + 10 项精修（2026-03-30）
+- [x] 认知指纹 Cognitive Fingerprint：inner_voice_style / somatic_anchors / cognitive_default + speech_style（2026-04-07）
+- [x] ResidualFeedback 只读保护：原始 profile 不再被自动检测修改，全部写入 staging（2026-04-07）
+- [x] 持久化文件角色隔离：world_state / narrative_state 按角色名区分（2026-04-07）
 
 ## 已完成但仍开放的旧议题
 - [ ] 确定第一版场景：历史人物复现 / 剧本角色 / 心理咨询训练？（影响产品路径，暂未决策）

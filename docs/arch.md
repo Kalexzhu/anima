@@ -453,3 +453,6 @@ Phase 3（暂缓）：
 | voice_intrusion 去重 | ModuleContext.recent_voice_contents 跨模块注入禁止重复约束 | 同一声音在同一 tick 多模块重复破坏沉浸感；约束在 prompt 层实现，零架构成本 |
 | C2 强制冷却 | consecutive >= 4 强制排除候选（兜底：全冷却时解除限制）| 渐进惩罚在绝对强势 Trunk 面前失效；强制冷却保证最多 4 轮后强制领域轮转 |
 | OCC 自适应惯性 | adaptive_decay = 0.4 + 0.25 × min(1, intensity/0.5)，上限 0.65 | 高峰情绪（intensity > 0.4）被单一正向事件扭转不符合心理真实；随强度线性增大抵抗 |
+| **认知指纹** | **to_cognitive_fingerprint() 三维度 + speech_style，注入 drift prompt（2处）+ to_prompt_context()** | 角色差异化的最小杠杆：~80 字上下文（非规则），让 LLM 自行推导语言/身体/思维差异；否决翻译层（不能凭空创造信息）和多点注入方案（11 处改动冲突风险高） |
+| ResidualFeedback 只读 | 原始 profile 不再被修改，所有检测结果写入 staging 文件 | regex 提取不可靠（"睡眠中""喘不过""她说会比"被当作人名/偏差写入 profile），staging 保护原始数据完整性 |
+| 持久化角色隔离 | world_state / narrative_state 按 profile.name 区分文件路径 | 共用单一文件导致科比读到林晓雨的 Trunk，跨角色污染 |
