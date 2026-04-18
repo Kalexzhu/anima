@@ -15,19 +15,12 @@ core/drift_sampler.py — Drift 游荡方向采样器。
 from __future__ import annotations
 import random
 
-# ── 类别定义 ────────────────────────────────────────────────────────────────────
+# ── 类别定义（从 renderer.py 导入唯一数据源）──────────────────────────────────────
 
-DRIFT_CATEGORIES = [
-    "daydream",        # 白日梦/欲望幻想
-    "philosophy",      # 哲学/存在性探讨
-    "aesthetic",       # 创意/审美联想
-    "future",          # 未来规划/预期想象
-    "positive_memory", # 正向记忆回溯
-    "social_rehearsal",# 假设社交场景（演练/复盘对话）
-    "self_eval",       # 自我评估
-    "counterfactual",  # 反事实思考（"要是当时……"）
-    "rumination",      # 反刍
-]
+from core.renderer import DRIFT_MODULE_ORDER
+
+# drift_sampler 只管 9 个（不含 imagery，imagery 始终运行不参与采样）
+DRIFT_CATEGORIES = [m for m in DRIFT_MODULE_ORDER if m != "imagery"]
 
 _ZH_NAMES: dict[str, str] = {
     "daydream":        "白日梦/欲望幻想",
@@ -129,4 +122,4 @@ def sample_drift_category(emotion_dict: dict) -> str:
     total = sum(weights.values())
     probs = [weights[cat] / total for cat in DRIFT_CATEGORIES]
     chosen = random.choices(DRIFT_CATEGORIES, weights=probs, k=1)[0]
-    return _ZH_NAMES[chosen]
+    return chosen  # 直接返回英文 key

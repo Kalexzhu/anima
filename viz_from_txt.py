@@ -18,9 +18,7 @@ EMOTIONS_ZH = {
     "surprise": "惊讶", "disgust": "厌恶", "anticipation": "期待", "trust": "信任",
 }
 
-def _bar(value: float, width: int = 20) -> str:
-    filled = int(value * width)
-    return "█" * filled + "░" * (width - filled)
+from core.display_utils import intensity_bar as _bar
 
 
 def parse_txt(path: str) -> tuple[dict, list]:

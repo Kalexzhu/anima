@@ -108,9 +108,7 @@ def print_divider(tick: int, event: str, intensity: float, dominant: str, mem_mo
 
 # ── 可视化生成 ─────────────────────────────────────────────────────────────────
 
-def _bar(value: float, width: int = 20) -> str:
-    filled = int(value * width)
-    return "█" * filled + "░" * (width - filled)
+from core.display_utils import intensity_bar as _bar
 
 
 def _wrap(text: str, width: int = 60, indent: str = "  ") -> str:

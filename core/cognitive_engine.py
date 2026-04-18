@@ -402,23 +402,12 @@ def run_cognitive_cycle(
         # 测试模式：全部 drift 模块均运行，供逐模块评估
         selected_drift = [m.name for m in _drift_modules]
     else:
-        # 正常模式：采样 drift 方向（中文名 → 英文 key）
-        _ZH_TO_EN = {
-            "白日梦/欲望幻想": "daydream",
-            "哲学/存在性探讨": "philosophy",
-            "创意/审美联想": "aesthetic",
-            "未来规划/预期想象": "future",
-            "正向记忆回溯": "positive_memory",
-            "假设社交场景": "social_rehearsal",
-            "自我评估": "self_eval",
-            "反事实思考": "counterfactual",
-            "反刍": "rumination",
-        }
-        selected_drift = [_ZH_TO_EN.get(sample_drift_category(emo_dict), "daydream")]
+        # 正常模式：采样 drift 方向（直接返回英文 key）
+        selected_drift = [sample_drift_category(emo_dict)]
         if max_dim < 0.3:
-            second_en = _ZH_TO_EN.get(sample_drift_category(emo_dict), "")
-            if second_en and second_en not in selected_drift:
-                selected_drift.append(second_en)
+            second = sample_drift_category(emo_dict)
+            if second and second not in selected_drift:
+                selected_drift.append(second)
 
     modules_to_run = ["reactive"] + selected_drift
 
